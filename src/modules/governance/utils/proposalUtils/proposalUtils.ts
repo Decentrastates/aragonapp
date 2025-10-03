@@ -1,6 +1,6 @@
 import type { IDao } from '@/shared/api/daoService';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { invariant } from '@aragon/gov-ui-kit';
+import { invariant } from '@cddao/gov-ui-kit';
 import type { IProposal } from '../../api/governanceService';
 
 class ProposalUtils {

@@ -2,7 +2,7 @@ import { type ISppProposal, type ISppStage } from '@/plugins/sppPlugin/types';
 import { sppProposalUtils } from '@/plugins/sppPlugin/utils/sppProposalUtils';
 import { sppStageUtils } from '@/plugins/sppPlugin/utils/sppStageUtils';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { addressUtils, ProposalStatus } from '@aragon/gov-ui-kit';
+import { addressUtils, ProposalStatus } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import type { Hex } from 'viem';
 import { mainnet } from 'viem/chains';

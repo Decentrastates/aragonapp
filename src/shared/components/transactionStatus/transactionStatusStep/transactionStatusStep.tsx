@@ -1,4 +1,4 @@
-import { AvatarIcon, Icon, IconType, Link, Spinner } from '@aragon/gov-ui-kit';
+import { AvatarIcon, Icon, IconType, Link, Spinner } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import type {
     ITransactionStatusStepMeta,

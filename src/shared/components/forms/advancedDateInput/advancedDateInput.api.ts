@@ -1,5 +1,5 @@
 import type { IDateDuration } from '@/shared/utils/dateUtils';
-import type { IInputContainerProps } from '@aragon/gov-ui-kit';
+import type { IInputContainerProps } from '@cddao/gov-ui-kit';
 import type { DateTime } from 'luxon';
 
 export interface IAdvancedDateInputBaseProps {

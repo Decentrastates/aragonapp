@@ -1,5 +1,5 @@
 import type { TranslationFunction } from '@/shared/components/translationsProvider';
-import { addressUtils, type IDefinitionSetting } from '@aragon/gov-ui-kit';
+import { addressUtils, type IDefinitionSetting } from '@cddao/gov-ui-kit';
 import type { ISppPluginSettings } from '../../types';
 
 export interface ISppSettingsParseParams {

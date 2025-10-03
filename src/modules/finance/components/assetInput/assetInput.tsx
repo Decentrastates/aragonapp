@@ -10,7 +10,7 @@ import {
     NumberFormat,
     Toggle,
     ToggleGroup,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import { type ChangeEvent, type MouseEvent, useCallback, useEffect, useId, useState } from 'react';
 import { useFormContext } from 'react-hook-form';

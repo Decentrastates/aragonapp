@@ -7,7 +7,7 @@ import {
     generateFilterComponentPlugin,
     generateReactQueryResultSuccess,
 } from '@/shared/testUtils';
-import { GukModulesProvider, ProposalStatus } from '@aragon/gov-ui-kit';
+import { GukModulesProvider, ProposalStatus } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { generateProposal } from '../../testUtils';
 import { DaoProposalListDefaultItem, type IDaoProposalListDefaultItemProps } from './daoProposalListDefaultItem';

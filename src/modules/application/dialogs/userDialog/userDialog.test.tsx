@@ -1,14 +1,14 @@
 import * as useDialogContext from '@/shared/components/dialogProvider';
 import { generateDialogContext } from '@/shared/testUtils';
-import type * as GovUiKit from '@aragon/gov-ui-kit';
-import { addressUtils, clipboardUtils, GukModulesProvider, IconType } from '@aragon/gov-ui-kit';
+import type * as GovUiKit from '@cddao/gov-ui-kit';
+import { addressUtils, clipboardUtils, GukModulesProvider, IconType } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import * as wagmi from 'wagmi';
 import { type IUserDialogProps, UserDialog } from './userDialog';
 
-jest.mock('@aragon/gov-ui-kit', () => ({
-    ...jest.requireActual<typeof GovUiKit>('@aragon/gov-ui-kit'),
+jest.mock('@cddao/gov-ui-kit', () => ({
+    ...jest.requireActual<typeof GovUiKit>('@cddao/gov-ui-kit'),
     MemberAvatar: () => <div data-testid="member-avatar-mock" />,
 }));
 

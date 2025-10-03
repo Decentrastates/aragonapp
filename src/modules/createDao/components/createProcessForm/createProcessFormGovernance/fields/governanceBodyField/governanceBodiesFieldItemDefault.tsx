@@ -2,7 +2,7 @@ import { type ISetupBodyForm } from '@/modules/createDao/dialogs/setupBodyDialog
 import { useDao } from '@/shared/api/daoService';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
-import { addressUtils, ChainEntityType, DefinitionList, useBlockExplorer } from '@aragon/gov-ui-kit';
+import { addressUtils, ChainEntityType, DefinitionList, useBlockExplorer } from '@cddao/gov-ui-kit';
 import type { Hash } from 'viem';
 import { useEnsName } from 'wagmi';
 import { BodyType } from '../../../../../types/enum';

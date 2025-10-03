@@ -10,7 +10,7 @@ import {
 import type { ITransactionInfo } from '@/shared/components/transactionStatus';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useStepper } from '@/shared/hooks/useStepper';
-import { AssetDataListItem, invariant } from '@aragon/gov-ui-kit';
+import { AssetDataListItem, invariant } from '@cddao/gov-ui-kit';
 import { type Hex } from 'viem';
 import { useAccount } from 'wagmi';
 import { tokenApproveNftDialogUtils } from './tokenApproveNftDialogUtils';

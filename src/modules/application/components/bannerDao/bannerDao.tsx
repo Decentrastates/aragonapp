@@ -8,7 +8,7 @@ import { Banner } from '@/shared/components/banner';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useAdminStatus } from '@/shared/hooks/useAdminStatus';
-import { Button, IconType, invariant } from '@aragon/gov-ui-kit';
+import { Button, IconType, invariant } from '@cddao/gov-ui-kit';
 import type { Hex } from 'viem';
 import { daoUtils } from '../../../../shared/utils/daoUtils';
 

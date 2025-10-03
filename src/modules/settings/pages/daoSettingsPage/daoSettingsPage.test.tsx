@@ -1,6 +1,6 @@
 import { Network } from '@/shared/api/daoService';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { GukModulesProvider } from '@aragon/gov-ui-kit';
+import { GukModulesProvider } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { DaoSettingsPage, type IDaoSettingsPageProps } from './daoSettingsPage';
 import { DaoSettingsPageClient } from './daoSettingsPageClient';

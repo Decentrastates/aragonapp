@@ -1,6 +1,6 @@
 import type { Network } from '@/shared/api/daoService';
 import { useDialogContext, type IDialogComponentProps } from '@/shared/components/dialogProvider';
-import { invariant } from '@aragon/gov-ui-kit';
+import { invariant } from '@cddao/gov-ui-kit';
 import { useCallback, useEffect, useState } from 'react';
 import type { IProposalAction } from '../../api/governanceService';
 import { useDecodeTransaction } from '../../api/smartContractService';

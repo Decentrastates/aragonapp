@@ -18,7 +18,7 @@ import {
     formatterUtils,
     MemberAvatar,
     useBlockExplorer,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { useBlock } from 'wagmi';
 import EfpLogo from '../../../../assets/images/efp-logo.svg';
 import { daoUtils } from '../../../../shared/utils/daoUtils';

@@ -1,7 +1,7 @@
 import type { IDao } from '@/shared/api/daoService';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { dataListUtils } from '@/shared/utils/dataListUtils';
-import { DataListContainer, DataListPagination, DataListRoot, Toggle, ToggleGroup } from '@aragon/gov-ui-kit';
+import { DataListContainer, DataListPagination, DataListRoot, Toggle, ToggleGroup } from '@cddao/gov-ui-kit';
 import { useState } from 'react';
 import { useAccount } from 'wagmi';
 import { CampaignStatus, type IGetCampaignListParams, useCampaignList } from '../../api/capitalDistributorService';

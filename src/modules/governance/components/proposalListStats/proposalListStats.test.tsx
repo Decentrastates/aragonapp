@@ -1,7 +1,7 @@
 import * as daoService from '@/shared/api/daoService';
 import * as pluginHooks from '@/shared/hooks/useDaoPlugins';
 import { generateDao, generateFilterComponentPlugin, generateReactQueryResultSuccess } from '@/shared/testUtils';
-import * as formatterUtilsModule from '@aragon/gov-ui-kit';
+import * as formatterUtilsModule from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import * as proposalHooks from '../../hooks/useProposalListData';
 import { generateProposal } from '../../testUtils';

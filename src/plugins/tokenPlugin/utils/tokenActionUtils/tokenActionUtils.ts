@@ -11,7 +11,7 @@ import {
     IconType,
     type IProposalActionChangeSettings as IGukProposalActionChangeSettings,
     type IProposalActionTokenMint as IGukProposalActionTokenMint,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { formatUnits } from 'viem';
 import { TokenMintTokensAction } from '../../components/tokenActions/tokenMintTokensAction';
 import { TokenUpdateSettingsAction } from '../../components/tokenActions/tokenUpdateSettingsAction';

@@ -1,6 +1,6 @@
 import type { IMember } from '@/modules/governance/api/governanceService';
 import type { ITransactionRequest } from '@/shared/utils/transactionUtils';
-import type { ICompositeAddress } from '@aragon/gov-ui-kit';
+import type { ICompositeAddress } from '@cddao/gov-ui-kit';
 import type { Hex } from 'viem';
 
 export interface IBuildActionsArrayParams {

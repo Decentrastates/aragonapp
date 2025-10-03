@@ -9,7 +9,7 @@ import { Image } from '@/shared/components/image';
 import { Link } from '@/shared/components/link';
 import { TranslationsProvider } from '@/shared/components/translationsProvider';
 import type { Translations } from '@/shared/utils/translationsUtils';
-import { GukModulesProvider } from '@aragon/gov-ui-kit';
+import { GukModulesProvider } from '@cddao/gov-ui-kit';
 import { type DehydratedState, HydrationBoundary, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { type ReactNode } from 'react';

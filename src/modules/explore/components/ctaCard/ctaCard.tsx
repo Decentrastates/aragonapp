@@ -1,4 +1,4 @@
-import { Button, Heading, IconType } from '@aragon/gov-ui-kit';
+import { Button, Heading, IconType } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import Image from 'next/image';
 import type React from 'react';

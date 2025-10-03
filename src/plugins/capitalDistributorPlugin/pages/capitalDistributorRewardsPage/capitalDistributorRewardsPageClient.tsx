@@ -7,7 +7,7 @@ import { Page } from '@/shared/components/page';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { CardEmptyState, IconType, Link } from '@aragon/gov-ui-kit';
+import { CardEmptyState, IconType, Link } from '@cddao/gov-ui-kit';
 import { useAccount } from 'wagmi';
 import { type IGetCampaignListParams } from '../../api/capitalDistributorService';
 import { CapitalDistributorCampaignList } from '../../components/capitalDistributorCampaignList';

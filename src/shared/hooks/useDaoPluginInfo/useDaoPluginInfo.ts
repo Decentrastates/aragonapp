@@ -9,7 +9,7 @@ import {
     formatterUtils,
     type IDefinitionSetting,
     useBlockExplorer,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { useDaoPlugins } from '../useDaoPlugins';
 
 export interface IUseDaoPluginInfoParams {

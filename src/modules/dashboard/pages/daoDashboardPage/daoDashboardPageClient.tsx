@@ -23,7 +23,7 @@ import {
     addressUtils,
     formatterUtils,
     useBlockExplorer,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { DashboardDefaultHeader } from '../../components/dashboardDefaultHeader';
 import { DashboardDaoSlotId } from '../../constants/moduleDaoSlots';
 

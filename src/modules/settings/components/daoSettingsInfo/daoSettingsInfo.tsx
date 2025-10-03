@@ -12,7 +12,7 @@ import {
     Link,
     Tag,
     useBlockExplorer,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 
 export interface IDaoSettingsInfoProps {
     /**

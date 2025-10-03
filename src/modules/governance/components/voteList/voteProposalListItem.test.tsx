@@ -2,7 +2,7 @@ import { generateProposal, generateVote } from '@/modules/governance/testUtils';
 import * as daoService from '@/shared/api/daoService';
 import { generateDao, generateReactQueryResultSuccess } from '@/shared/testUtils';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { DateFormat, formatterUtils, GukModulesProvider } from '@aragon/gov-ui-kit';
+import { DateFormat, formatterUtils, GukModulesProvider } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { proposalUtils } from '../../utils/proposalUtils';
 import { type IVoteProposalListItemProps, VoteProposalListItem } from './voteProposalListItem';

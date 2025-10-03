@@ -2,7 +2,7 @@
 
 import { type IDialogComponentProps, useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Dialog } from '@aragon/gov-ui-kit';
+import { Dialog } from '@cddao/gov-ui-kit';
 
 export interface ISppInvalidAddressConnectedDialogParams {}
 

@@ -15,7 +15,7 @@ import {
     Link,
     useBlockExplorer,
     Wallet,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import { useState } from 'react';
 import { useAccount } from 'wagmi';

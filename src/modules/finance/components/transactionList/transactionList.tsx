@@ -10,7 +10,7 @@ import {
     TransactionType as DataListTransactionType,
     TransactionDataListItem,
     TransactionStatus,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import type { IGetTransactionListParams, TransactionSide } from '../../api/financeService';
 
 export interface ITransactionListProps {

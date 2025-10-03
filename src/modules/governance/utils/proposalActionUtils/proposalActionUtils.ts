@@ -17,7 +17,7 @@ import {
     type IProposalActionWithdrawToken as IGukProposalActionWithdrawToken,
     type IProposalActionUpdateMetadataDaoMetadata,
     type IProposalActionUpdateMetadataDaoMetadataLink,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { formatUnits, toFunctionSelector, type AbiStateMutability, type Hex } from 'viem';
 import { GovernanceSlotId } from '../../constants/moduleSlots';
 import type { INormalizeActionsParams } from '../../types';

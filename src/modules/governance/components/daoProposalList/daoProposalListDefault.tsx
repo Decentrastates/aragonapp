@@ -3,7 +3,7 @@ import { useProposalListData } from '@/modules/governance/hooks/useProposalListD
 import { useDao, type IDaoPlugin, type IPluginSettings } from '@/shared/api/daoService';
 import { PluginSingleComponent } from '@/shared/components/pluginSingleComponent';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { DataListContainer, DataListPagination, DataListRoot, ProposalDataListItem } from '@aragon/gov-ui-kit';
+import { DataListContainer, DataListPagination, DataListRoot, ProposalDataListItem } from '@cddao/gov-ui-kit';
 import type { ReactNode } from 'react';
 import { GovernanceSlotId } from '../../constants/moduleSlots';
 import { proposalUtils } from '../../utils/proposalUtils';

@@ -5,7 +5,7 @@ import { useDialogContext } from '@/shared/components/dialogProvider/dialogProvi
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
 import type { IDateDuration } from '@/shared/utils/dateUtils';
-import { Button, DefinitionList, InputContainer, Tag } from '@aragon/gov-ui-kit';
+import { Button, DefinitionList, InputContainer, Tag } from '@cddao/gov-ui-kit';
 import { Duration } from 'luxon';
 import { useFormContext, useWatch } from 'react-hook-form';
 import { type ICreateProcessFormStage, ProcessStageType } from '../../../createProcessFormDefinitions';

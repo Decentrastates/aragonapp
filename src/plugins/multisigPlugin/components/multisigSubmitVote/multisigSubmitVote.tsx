@@ -10,7 +10,7 @@ import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
-import { Button, ChainEntityType, IconType, useBlockExplorer } from '@aragon/gov-ui-kit';
+import { Button, ChainEntityType, IconType, useBlockExplorer } from '@cddao/gov-ui-kit';
 import type { IMultisigProposal, IMultisigVote } from '../../types';
 
 export interface IMultisigSubmitVoteProps extends ISubmitVoteProps<IMultisigProposal> {}

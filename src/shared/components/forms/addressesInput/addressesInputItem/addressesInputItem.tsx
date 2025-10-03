@@ -10,7 +10,7 @@ import {
     IconType,
     type IAddressInputResolvedValue,
     type ICompositeAddress,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { useCallback, useEffect, useState, type ComponentProps } from 'react';
 import { useFormContext, useWatch } from 'react-hook-form';
 import type { AddressListInputBaseForm } from '../addressesInputContainer/addressesInputContainer';

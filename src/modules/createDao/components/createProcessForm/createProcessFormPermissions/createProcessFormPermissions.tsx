@@ -15,7 +15,7 @@ import {
     RadioCard,
     RadioGroup,
     SmartContractFunctionDataListItem,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { useFieldArray, useFormContext } from 'react-hook-form';
 
 export interface ICreateProcessFormPermissionsProps {

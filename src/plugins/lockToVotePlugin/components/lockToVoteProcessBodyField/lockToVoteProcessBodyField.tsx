@@ -20,7 +20,7 @@ import {
     NumberFormat,
     Tag,
     useBlockExplorer,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { formatUnits } from 'viem';
 import { DaoLockToVoteVotingMode } from '../../types';
 import type { ILockToVoteSetupGovernanceForm } from '../lockToVoteSetupGovernance/lockToVoteSetupGovernance.api';

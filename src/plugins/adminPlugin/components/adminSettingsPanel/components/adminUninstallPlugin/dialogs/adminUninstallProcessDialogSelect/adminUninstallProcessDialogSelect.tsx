@@ -6,7 +6,7 @@ import { usePermissionCheckGuard } from '@/modules/governance/hooks/usePermissio
 import { useDao, type IDaoPlugin } from '@/shared/api/daoService';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { DialogAlert, DialogAlertFooter, type IDialogRootProps } from '@aragon/gov-ui-kit';
+import { DialogAlert, DialogAlertFooter, type IDialogRootProps } from '@cddao/gov-ui-kit';
 import { useState } from 'react';
 import type { Hex } from 'viem';
 import { adminUninstallProcessDialogSelectUtils } from './adminUninstallProcessDialogSelectUtils';

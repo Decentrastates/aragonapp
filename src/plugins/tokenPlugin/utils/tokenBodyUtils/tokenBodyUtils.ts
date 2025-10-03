@@ -4,7 +4,7 @@ import type { ISetupBodyFormExisting } from '@/modules/createDao/dialogs/setupBo
 import { daoProcessDetailsClientUtils } from '@/modules/settings/pages/daoProcessDetailsPage';
 import type { IPluginToFormDataParams } from '@/modules/settings/types';
 import type { ITokenPluginSettings } from '@/plugins/tokenPlugin/types';
-import type { ICompositeAddress } from '@aragon/gov-ui-kit';
+import type { ICompositeAddress } from '@cddao/gov-ui-kit';
 import type { ITokenSetupMembershipForm } from '../../components/tokenSetupMembership';
 import { tokenSettingsUtils } from '../tokenSettingsUtils';
 

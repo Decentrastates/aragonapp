@@ -1,5 +1,5 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Avatar } from '@aragon/gov-ui-kit';
+import { Avatar } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import type { ComponentProps } from 'react';
 import type { IToken } from '../../api/financeService';

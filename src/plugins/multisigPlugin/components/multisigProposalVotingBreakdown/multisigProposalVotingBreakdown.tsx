@@ -1,6 +1,6 @@
 'use client';
 
-import { ProposalVoting } from '@aragon/gov-ui-kit';
+import { ProposalVoting } from '@cddao/gov-ui-kit';
 import type { ReactNode } from 'react';
 import type { IMultisigProposal } from '../../types';
 

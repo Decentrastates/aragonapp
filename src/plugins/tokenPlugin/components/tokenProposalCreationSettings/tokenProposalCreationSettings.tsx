@@ -6,7 +6,7 @@ import type { IPluginProposalCreationSettingsParams } from '@/modules/createDao/
 import { BodyType } from '@/modules/createDao/types/enum';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { CheckboxCard, InputNumber, invariant, type CheckboxState } from '@aragon/gov-ui-kit';
+import { CheckboxCard, InputNumber, invariant, type CheckboxState } from '@cddao/gov-ui-kit';
 import { useEffect } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { formatUnits } from 'viem';

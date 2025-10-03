@@ -1,6 +1,6 @@
 import type { IDao } from '@/shared/api/daoService';
 import type { IDateDuration } from '@/shared/utils/dateUtils';
-import type { ICompositeAddress } from '@aragon/gov-ui-kit';
+import type { ICompositeAddress } from '@cddao/gov-ui-kit';
 import type { Hex } from 'viem';
 import type { ISetupBodyFormExisting, ISetupBodyFormMembership, ISetupBodyFormNew } from '../dialogs/setupBodyDialog';
 

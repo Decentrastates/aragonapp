@@ -8,7 +8,7 @@ import {
     DataListRoot,
     invariant,
     ProposalDataListItem,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { useAccount } from 'wagmi';
 import { useMemberLocks } from '../../../../api/tokenService';
 import { TokenLockListItem } from './tokenLockListItem';

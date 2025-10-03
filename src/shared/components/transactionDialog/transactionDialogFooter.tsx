@@ -1,5 +1,5 @@
 import type { TransactionType } from '@/shared/api/transactionService';
-import { DialogFooter, IconType } from '@aragon/gov-ui-kit';
+import { DialogFooter, IconType } from '@cddao/gov-ui-kit';
 import { useEffect, useState } from 'react';
 import type { TransactionReceipt } from 'viem';
 import { useBlockNavigationContext } from '../blockNavigationContext';

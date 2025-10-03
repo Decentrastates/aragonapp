@@ -25,7 +25,7 @@ import {
     Tag,
     useBlockExplorer,
     useGukModulesContext,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { useQueryClient } from '@tanstack/react-query';
 import { actionSimulationServiceKeys, useLastSimulation, useSimulateProposal } from '../../api/actionSimulationService';
 import { type IProposal, useProposalActions, useProposalBySlug } from '../../api/governanceService';

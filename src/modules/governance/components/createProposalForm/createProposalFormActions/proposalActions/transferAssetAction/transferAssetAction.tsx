@@ -5,7 +5,7 @@ import { useDao } from '@/shared/api/daoService';
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
 import { useFormField } from '@/shared/hooks/useFormField';
 import { useToken } from '@/shared/hooks/useToken';
-import { addressUtils, type IProposalActionComponentProps } from '@aragon/gov-ui-kit';
+import { addressUtils, type IProposalActionComponentProps } from '@cddao/gov-ui-kit';
 import { useEffect } from 'react';
 import { useFormContext, useWatch } from 'react-hook-form';
 import { encodeFunctionData, erc20Abi, formatUnits, type Hex, parseUnits, zeroAddress } from 'viem';

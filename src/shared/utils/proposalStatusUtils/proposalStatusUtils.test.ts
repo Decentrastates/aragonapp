@@ -1,5 +1,5 @@
 import { timeUtils } from '@/test/utils';
-import { ProposalStatus } from '@aragon/gov-ui-kit';
+import { ProposalStatus } from '@cddao/gov-ui-kit';
 import { DateTime } from 'luxon';
 import { proposalStatusUtils } from './proposalStatusUtils';
 import type { IGetProposalStatusParams } from './proposalStatusUtils.api';

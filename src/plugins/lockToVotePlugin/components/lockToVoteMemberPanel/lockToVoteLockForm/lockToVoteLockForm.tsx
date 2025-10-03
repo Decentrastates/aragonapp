@@ -1,7 +1,7 @@
 import { useConnectedWalletGuard } from '@/modules/application/hooks/useConnectedWalletGuard';
 import { AssetInput, type IAssetInputFormData } from '@/modules/finance/components/assetInput';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Button, formatterUtils, NumberFormat } from '@aragon/gov-ui-kit';
+import { Button, formatterUtils, NumberFormat } from '@cddao/gov-ui-kit';
 import { useCallback } from 'react';
 import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import { formatUnits, parseUnits } from 'viem';

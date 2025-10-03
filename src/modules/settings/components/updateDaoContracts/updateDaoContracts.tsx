@@ -7,7 +7,7 @@ import { type IDao, type IDaoPlugin } from '@/shared/api/daoService';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { Button, IconType } from '@aragon/gov-ui-kit';
+import { Button, IconType } from '@cddao/gov-ui-kit';
 import type { IUpdateDaoContractsListDialogParams } from '../../dialogs/updateDaoContractsListDialog';
 
 export interface IUpdateDaoContractsProps {

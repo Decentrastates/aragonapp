@@ -3,7 +3,7 @@ import { useDao } from '@/shared/api/daoService';
 import type { IDialogComponentProps } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { WizardDialog } from '@/shared/components/wizards/wizardDialog';
-import { addressUtils, invariant } from '@aragon/gov-ui-kit';
+import { addressUtils, invariant } from '@cddao/gov-ui-kit';
 import { useMemo } from 'react';
 import { useAccount } from 'wagmi';
 import { BodyType } from '../../types/enum';

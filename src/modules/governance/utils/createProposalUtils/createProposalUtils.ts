@@ -1,5 +1,5 @@
 import { dateUtils } from '@/shared/utils/dateUtils';
-import { invariant } from '@aragon/gov-ui-kit';
+import { invariant } from '@cddao/gov-ui-kit';
 import { DateTime } from 'luxon';
 import type { ICreateProposalEndDateForm, ICreateProposalStartDateForm } from './createProposalUtils.api';
 

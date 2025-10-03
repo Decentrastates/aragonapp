@@ -1,5 +1,5 @@
 import { Network } from '@/shared/api/daoService';
-import { GukModulesProvider } from '@aragon/gov-ui-kit';
+import { GukModulesProvider } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { generateAsset, generateToken } from '../../testUtils';
 import { AssetListItem, type IAssetListItemProps } from './assetListItem';

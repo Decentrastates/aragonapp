@@ -1,6 +1,6 @@
 import { useWhitelistedAddresses } from '@/modules/explore/api/cmsService/queries/useWhitelistedAddresses';
 import { useDebugContext } from '@/shared/components/debugProvider';
-import { addressUtils } from '@aragon/gov-ui-kit';
+import { addressUtils } from '@cddao/gov-ui-kit';
 import { useAccount } from 'wagmi';
 import type { IWhitelistValidationParams, IWhitelistValidationResult } from './useWhiteListValidation.api';
 

@@ -4,7 +4,7 @@ import type { INormalizeActionsParams } from '@/modules/governance/types';
 import type { IDaoPlugin } from '@/shared/api/daoService';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
-import { addressUtils } from '@aragon/gov-ui-kit';
+import { addressUtils } from '@cddao/gov-ui-kit';
 import type { ITokenPluginSettings } from '../../types';
 import { tokenActionUtils } from '../../utils/tokenActionUtils';
 

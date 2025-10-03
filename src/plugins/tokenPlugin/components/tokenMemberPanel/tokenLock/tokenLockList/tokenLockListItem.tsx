@@ -12,7 +12,7 @@ import {
     Rerender,
     Tag,
     type TagVariant,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import NumberFlow from '@number-flow/react';
 import { DateTime } from 'luxon';
 import { formatUnits, type Hex } from 'viem';

@@ -1,7 +1,7 @@
 import { useMemberExists } from '@/modules/governance/api/governanceService';
 import type { Network } from '@/shared/api/daoService';
 import { AddressesInput } from '@/shared/components/forms/addressesInput';
-import { addressUtils, type ICompositeAddress } from '@aragon/gov-ui-kit';
+import { addressUtils, type ICompositeAddress } from '@cddao/gov-ui-kit';
 
 export interface IMultisigSetupMembershipItemProps {
     /**

@@ -1,4 +1,4 @@
-import { DataList, type IDataListItemProps, StateSkeletonBar } from '@aragon/gov-ui-kit';
+import { DataList, type IDataListItemProps, StateSkeletonBar } from '@cddao/gov-ui-kit';
 
 export type ICapitalDistributorCampaignListItemSkeletonProps = IDataListItemProps;
 

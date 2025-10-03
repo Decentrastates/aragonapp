@@ -1,5 +1,5 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { CardEmptyState, type IEmptyStateProps } from '@aragon/gov-ui-kit';
+import { CardEmptyState, type IEmptyStateProps } from '@cddao/gov-ui-kit';
 
 export const VoteListFallback: React.FC<IEmptyStateProps> = () => {
     const { t } = useTranslations();

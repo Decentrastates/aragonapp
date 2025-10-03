@@ -4,7 +4,7 @@ import safeWallet from '@/assets/images/safeWallet.png';
 import type { ISetupBodyForm } from '@/modules/createDao/dialogs/setupBodyDialog';
 import type { IPluginProposalCreationSettingsParams } from '@/modules/createDao/types';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { addressUtils, CheckboxCard, type CheckboxState } from '@aragon/gov-ui-kit';
+import { addressUtils, CheckboxCard, type CheckboxState } from '@cddao/gov-ui-kit';
 import { BodyType } from '../../../types/enum';
 import { createProcessFormUtils } from '../createProcessFormUtils';
 

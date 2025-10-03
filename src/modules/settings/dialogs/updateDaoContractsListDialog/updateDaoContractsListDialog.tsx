@@ -5,7 +5,7 @@ import { networkDefinitions } from '@/shared/constants/networkDefinitions';
 import type { IPluginInfo } from '@/shared/types';
 import { daoUtils } from '@/shared/utils/daoUtils';
 import { pluginRegistryUtils } from '@/shared/utils/pluginRegistryUtils';
-import { Dialog, invariant } from '@aragon/gov-ui-kit';
+import { Dialog, invariant } from '@cddao/gov-ui-kit';
 import { SettingsDialogId } from '../../constants/settingsDialogId';
 import type { IPrepareDaoContractsUpdateDialogParams } from '../prepareDaoContractsUpdateDialog';
 import { UpdateDaoContractsCard } from './updateDaoContractsCard';

@@ -1,6 +1,6 @@
 import { useFilterUrlParam } from '@/shared/hooks/useFilterUrlParam';
 import { pluginRegistryUtils } from '@/shared/utils/pluginRegistryUtils';
-import { Toggle, ToggleGroup } from '@aragon/gov-ui-kit';
+import { Toggle, ToggleGroup } from '@cddao/gov-ui-kit';
 import { PluginSingleComponent } from '../pluginSingleComponent';
 import type { IPluginFilterComponentProps } from './pluginFilterComponent.api';
 

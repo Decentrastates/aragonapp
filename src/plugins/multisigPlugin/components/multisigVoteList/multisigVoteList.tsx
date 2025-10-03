@@ -12,7 +12,7 @@ import {
     DataListRoot,
     VoteDataListItem,
     VoteProposalDataListItem,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { type IMultisigVote } from '../../types';
 
 export interface IMultisigVoteListProps extends IVoteListProps {

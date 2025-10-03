@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, Heading } from '@aragon/gov-ui-kit';
+import { Card, Heading } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import Image from 'next/image';
 import type { ComponentProps } from 'react';

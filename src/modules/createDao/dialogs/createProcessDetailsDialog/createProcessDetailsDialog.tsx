@@ -1,7 +1,7 @@
 import { type IDialogComponentProps } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { type IWizardDetailsDialogStep, WizardDetailsDialog } from '@/shared/components/wizardDetailsDialog';
-import { invariant } from '@aragon/gov-ui-kit';
+import { invariant } from '@cddao/gov-ui-kit';
 import type { Hex } from 'viem';
 
 export interface ICreateProcessDetailsDialogParams {

@@ -1,7 +1,7 @@
 import type { ISetupBodyFormMembership } from '@/modules/createDao/dialogs/setupBodyDialog';
 import type { IPluginSetupMembershipParams } from '@/modules/createDao/types';
 import type { IToken } from '@/modules/finance/api/financeService';
-import type { ICompositeAddress } from '@aragon/gov-ui-kit';
+import type { ICompositeAddress } from '@cddao/gov-ui-kit';
 
 export interface ITokenSetupMembershipProps extends IPluginSetupMembershipParams {
     /**

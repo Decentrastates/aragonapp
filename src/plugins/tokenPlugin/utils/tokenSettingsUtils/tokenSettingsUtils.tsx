@@ -1,7 +1,7 @@
 import { DaoTokenVotingMode, type ITokenPluginSettings } from '@/plugins/tokenPlugin/types';
 import { type TranslationFunction } from '@/shared/components/translationsProvider';
 import { dateUtils } from '@/shared/utils/dateUtils';
-import { formatterUtils, type IDefinitionSetting, NumberFormat } from '@aragon/gov-ui-kit';
+import { formatterUtils, type IDefinitionSetting, NumberFormat } from '@cddao/gov-ui-kit';
 import { formatUnits } from 'viem';
 
 export interface IParseTokenSettingsParams {

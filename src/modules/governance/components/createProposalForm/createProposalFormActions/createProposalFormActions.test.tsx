@@ -8,7 +8,7 @@ import {
     generateReactQueryResultSuccess,
 } from '@/shared/testUtils';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { GukModulesProvider } from '@aragon/gov-ui-kit';
+import { GukModulesProvider } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import * as CreateProposalProvider from '../createProposalFormProvider';
 import { CreateProposalFormActions, type ICreateProposalFormActionsProps } from './createProposalFormActions';

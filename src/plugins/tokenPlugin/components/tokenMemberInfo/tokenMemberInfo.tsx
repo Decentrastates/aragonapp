@@ -11,7 +11,7 @@ import {
     formatterUtils,
     NumberFormat,
     useBlockExplorer,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { formatUnits } from 'viem';
 import { useMemberList } from '../../../../modules/governance/api/governanceService';
 import { daoUtils } from '../../../../shared/utils/daoUtils';

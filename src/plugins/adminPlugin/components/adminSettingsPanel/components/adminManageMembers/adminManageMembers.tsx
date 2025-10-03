@@ -6,7 +6,7 @@ import { PluginInterfaceType } from '@/shared/api/daoService';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
-import { Button } from '@aragon/gov-ui-kit';
+import { Button } from '@cddao/gov-ui-kit';
 
 export interface IAdminMangeMembersProps {
     /**

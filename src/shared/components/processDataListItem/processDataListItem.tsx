@@ -1,6 +1,6 @@
 import type { IDaoPlugin } from '@/shared/api/daoService';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { DataList, type IDataListItemProps } from '@aragon/gov-ui-kit';
+import { DataList, type IDataListItemProps } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import { useTranslations } from '../translationsProvider';
 

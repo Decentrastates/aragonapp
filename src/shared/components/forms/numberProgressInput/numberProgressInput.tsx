@@ -1,5 +1,5 @@
 import { useFormField } from '@/shared/hooks/useFormField';
-import { AlertInline, Card, InputContainer, InputNumber, invariant, Progress, Tag } from '@aragon/gov-ui-kit';
+import { AlertInline, Card, InputContainer, InputNumber, invariant, Progress, Tag } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import { useId } from 'react';
 import type { INumberProgressInputProps } from './numberProgressInput.api';

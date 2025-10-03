@@ -1,5 +1,5 @@
 {
-  "name": "@aragon/app",
+  "name": "@cddao/app",
   "version": "1.11.0",
   "description": "Human-centered DAO infrastructure",
   "author": "Aragon Association",
@@ -22,7 +22,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@aragon/gov-ui-kit": "^1.19.1",
+    "@cddao/gov-ui-kit": "1.19.2",
     "@floating-ui/react": "^0.27.16",
     "@number-flow/react": "^0.5.10",
     "@reown/appkit": "^1.8.6",

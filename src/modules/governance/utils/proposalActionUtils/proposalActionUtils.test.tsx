@@ -12,7 +12,7 @@ import {
     type IProposalActionUpdateMetadata,
     type IProposalActionWithdrawToken,
     ProposalActionType as GukProposalActionType,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { ProposalActionType } from '../../api/governanceService';
 import { proposalActionUtils } from './proposalActionUtils';
 

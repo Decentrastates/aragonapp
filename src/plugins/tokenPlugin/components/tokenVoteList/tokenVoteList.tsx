@@ -14,7 +14,7 @@ import {
     VoteDataListItem,
     type VoteIndicator,
     VoteProposalDataListItem,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { formatUnits } from 'viem';
 import { type ITokenVote, VoteOption } from '../../types';
 

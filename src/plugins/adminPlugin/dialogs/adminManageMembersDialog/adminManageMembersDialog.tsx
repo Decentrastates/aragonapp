@@ -8,7 +8,7 @@ import { useDialogContext, type IDialogComponentProps } from '@/shared/component
 import { AddressesInput } from '@/shared/components/forms/addressesInput';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
-import { addressUtils, Dialog, invariant, type ICompositeAddress } from '@aragon/gov-ui-kit';
+import { addressUtils, Dialog, invariant, type ICompositeAddress } from '@cddao/gov-ui-kit';
 import { useEffect, useMemo } from 'react';
 import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import type { Hex } from 'viem';

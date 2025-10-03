@@ -5,7 +5,7 @@ import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
 import { PluginType } from '@/shared/types';
-import { Button } from '@aragon/gov-ui-kit';
+import { Button } from '@cddao/gov-ui-kit';
 import { useState } from 'react';
 import { AdminUninstallProcessDialogSelect } from './dialogs/adminUninstallProcessDialogSelect';
 

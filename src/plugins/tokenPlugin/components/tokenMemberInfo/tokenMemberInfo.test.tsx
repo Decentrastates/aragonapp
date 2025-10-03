@@ -11,7 +11,7 @@ import {
     generateReactQueryInfiniteResultSuccess,
     generateReactQueryResultSuccess,
 } from '@/shared/testUtils';
-import { GukModulesProvider, addressUtils } from '@aragon/gov-ui-kit';
+import { GukModulesProvider, addressUtils } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { type ITokenMemberInfoProps, TokenMemberInfo } from './tokenMemberInfo';
 

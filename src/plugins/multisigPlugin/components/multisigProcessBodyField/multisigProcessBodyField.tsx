@@ -4,7 +4,7 @@ import { type ISetupBodyFormExisting, type ISetupBodyFormNew } from '@/modules/c
 import { BodyType } from '@/modules/createDao/types/enum';
 import { useMemberList } from '@/modules/governance/api/governanceService';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { DefinitionList, type ICompositeAddress } from '@aragon/gov-ui-kit';
+import { DefinitionList, type ICompositeAddress } from '@cddao/gov-ui-kit';
 import type { IMultisigSetupGovernanceForm } from '../multisigSetupGovernance';
 import type { IMultisigSetupMembershipForm } from '../multisigSetupMembership';
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { InputContainer, RadioCard, RadioGroup } from '@aragon/gov-ui-kit';
+import { InputContainer, RadioCard, RadioGroup } from '@cddao/gov-ui-kit';
 import { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { zeroAddress } from 'viem';

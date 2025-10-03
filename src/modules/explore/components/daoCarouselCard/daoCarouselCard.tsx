@@ -1,6 +1,6 @@
 import type { IFeaturedDao } from '@/modules/explore/api/cmsService';
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
-import { DaoDataListItem } from '@aragon/gov-ui-kit';
+import { DaoDataListItem } from '@cddao/gov-ui-kit';
 
 export interface IDaoCarouselCardProps extends IFeaturedDao {}
 

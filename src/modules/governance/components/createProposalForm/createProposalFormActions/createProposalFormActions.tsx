@@ -9,7 +9,7 @@ import {
     type IProposalActionsItemDropdownItem,
     type ProposalActionComponent,
     ProposalActions,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { useState } from 'react';
 import { useFieldArray, useWatch } from 'react-hook-form';
 import { proposalActionUtils } from '../../../utils/proposalActionUtils';

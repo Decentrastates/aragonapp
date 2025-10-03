@@ -10,7 +10,7 @@ import { useTranslations } from '@/shared/components/translationsProvider';
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
 import { useFormField } from '@/shared/hooks/useFormField';
 import type { IStepperStep } from '@/shared/utils/stepperUtils';
-import { AddressInput, addressUtils } from '@aragon/gov-ui-kit';
+import { AddressInput, addressUtils } from '@cddao/gov-ui-kit';
 import { useEffect, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import type { Hex } from 'viem';

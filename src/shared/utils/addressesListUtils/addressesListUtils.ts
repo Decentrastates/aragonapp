@@ -1,4 +1,4 @@
-import { addressUtils, type ICompositeAddress } from '@aragon/gov-ui-kit';
+import { addressUtils, type ICompositeAddress } from '@cddao/gov-ui-kit';
 
 class AddressesListUtils {
     checkIsAlreadyInList = (members: ICompositeAddress[], currentIndex: number, address?: string): boolean => {

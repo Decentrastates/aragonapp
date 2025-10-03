@@ -3,7 +3,7 @@ import type { ISetupBodyDialogParams, ISetupBodyForm } from '@/modules/createDao
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { Button, IconType, InputContainer } from '@aragon/gov-ui-kit';
+import { Button, IconType, InputContainer } from '@cddao/gov-ui-kit';
 import { useEffect } from 'react';
 import { useWatch } from 'react-hook-form';
 import type { ICreateProcessFormData } from '../../../createProcessFormDefinitions';

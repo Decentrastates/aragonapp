@@ -1,6 +1,6 @@
 import { generateTokenPluginSettingsToken } from '@/plugins/tokenPlugin/testUtils';
 import { timeUtils } from '@/test/utils';
-import { ProposalStatus } from '@aragon/gov-ui-kit';
+import { ProposalStatus } from '@cddao/gov-ui-kit';
 import { DateTime } from 'luxon';
 import { type ITokenProposalOptionVotes, VoteOption } from '../../../tokenPlugin/types';
 import { generateLockToVotePluginSettings } from '../../testUtils/generators/lockToVotePluginSettings';

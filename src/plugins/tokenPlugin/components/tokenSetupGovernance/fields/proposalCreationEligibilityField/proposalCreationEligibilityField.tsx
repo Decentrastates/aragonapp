@@ -1,6 +1,6 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { Card, InputNumber, RadioCard, RadioGroup } from '@aragon/gov-ui-kit';
+import { Card, InputNumber, RadioCard, RadioGroup } from '@cddao/gov-ui-kit';
 import type { ITokenSetupGovernanceForm, ITokenSetupGovernanceProps } from '../../tokenSetupGovernance.api';
 
 export interface IProposalCreationEligibilityFieldProps {

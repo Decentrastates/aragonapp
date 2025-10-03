@@ -3,7 +3,7 @@ import type { INavigationLink } from '@/shared/components/navigation';
 import type { IPluginInfo } from '@/shared/types';
 import { daoUtils } from '@/shared/utils/daoUtils';
 import { pluginRegistryUtils } from '@/shared/utils/pluginRegistryUtils';
-import { IconType } from '@aragon/gov-ui-kit';
+import { IconType } from '@cddao/gov-ui-kit';
 
 export type NavigationDaoContext = 'page' | 'dialog';
 

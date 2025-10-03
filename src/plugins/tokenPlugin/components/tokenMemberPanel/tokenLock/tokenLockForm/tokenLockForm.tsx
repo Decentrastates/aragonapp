@@ -8,7 +8,7 @@ import type { ITokenPlugin } from '@/plugins/tokenPlugin/types';
 import { useDao } from '@/shared/api/daoService';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Button, invariant } from '@aragon/gov-ui-kit';
+import { Button, invariant } from '@cddao/gov-ui-kit';
 import { useEffect, useMemo } from 'react';
 import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import { formatUnits, parseUnits } from 'viem';

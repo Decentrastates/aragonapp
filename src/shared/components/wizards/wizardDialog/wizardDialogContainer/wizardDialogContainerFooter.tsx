@@ -1,6 +1,6 @@
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Dialog } from '@aragon/gov-ui-kit';
+import { Dialog } from '@cddao/gov-ui-kit';
 import { useWizardContext, useWizardFooter } from '../../wizard';
 
 export interface IWizardDialogContainerFooterProps {

@@ -3,7 +3,7 @@
 import type { IDaoProposalListDefaultItemProps } from '@/modules/governance/components/daoProposalList';
 import { sppProposalUtils } from '@/plugins/sppPlugin/utils/sppProposalUtils';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { ProposalDataListItem } from '@aragon/gov-ui-kit';
+import { ProposalDataListItem } from '@cddao/gov-ui-kit';
 import { daoUtils } from '../../../../shared/utils/daoUtils';
 import { type ISppProposal } from '../../types';
 import { sppStageUtils } from '../../utils/sppStageUtils';

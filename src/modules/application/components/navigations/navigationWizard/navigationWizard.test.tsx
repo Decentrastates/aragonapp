@@ -1,8 +1,8 @@
 import * as useDialogContext from '@/shared/components/dialogProvider';
 import { generateDao, generateDialogContext } from '@/shared/testUtils';
 import { ipfsUtils } from '@/shared/utils/ipfsUtils';
-import type * as GovUiKit from '@aragon/gov-ui-kit';
-import { GukModulesProvider } from '@aragon/gov-ui-kit';
+import type * as GovUiKit from '@cddao/gov-ui-kit';
+import { GukModulesProvider } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { type AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
@@ -11,8 +11,8 @@ import * as wagmi from 'wagmi';
 import { ApplicationDialogId } from '../../../constants/applicationDialogId';
 import { NavigationWizard, type INavigationWizardProps } from './navigationWizard';
 
-jest.mock('@aragon/gov-ui-kit', () => ({
-    ...jest.requireActual<typeof GovUiKit>('@aragon/gov-ui-kit'),
+jest.mock('@cddao/gov-ui-kit', () => ({
+    ...jest.requireActual<typeof GovUiKit>('@cddao/gov-ui-kit'),
     DaoAvatar: (props: { src: string }) => <div data-testid="dao-avatar-mock" data-src={props.src} />,
     Wallet: (props: { user?: { address: string }; onClick: () => void }) => (
         <button onClick={props.onClick}>{props.user ? props.user.address : 'connect-mock'}</button>

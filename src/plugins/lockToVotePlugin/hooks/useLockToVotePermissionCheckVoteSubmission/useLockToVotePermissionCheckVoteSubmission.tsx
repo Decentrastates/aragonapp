@@ -3,7 +3,7 @@
 import type { IPermissionCheckGuardParams, IPermissionCheckGuardResult } from '@/modules/governance/types';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
-import { ChainEntityType, DateFormat, formatterUtils, useBlockExplorer } from '@aragon/gov-ui-kit';
+import { ChainEntityType, DateFormat, formatterUtils, useBlockExplorer } from '@cddao/gov-ui-kit';
 import type { ILockToVotePlugin } from '../../types';
 import { useLockToVoteData } from '../useLockToVoteData';
 

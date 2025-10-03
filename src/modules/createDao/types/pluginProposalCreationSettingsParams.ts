@@ -1,4 +1,4 @@
-import type { ICompositeAddress } from '@aragon/gov-ui-kit';
+import type { ICompositeAddress } from '@cddao/gov-ui-kit';
 import type { ProposalCreationMode } from '../components/createProcessForm';
 import type { ISetupBodyForm, ISetupBodyFormMembership } from '../dialogs/setupBodyDialog';
 

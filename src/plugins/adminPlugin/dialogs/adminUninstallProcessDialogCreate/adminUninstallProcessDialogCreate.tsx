@@ -6,7 +6,7 @@ import { type IDaoPlugin, useDao } from '@/shared/api/daoService';
 import { type IDialogComponentProps, useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { Dialog, EmptyState, invariant } from '@aragon/gov-ui-kit';
+import { Dialog, EmptyState, invariant } from '@cddao/gov-ui-kit';
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 

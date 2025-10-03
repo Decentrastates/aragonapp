@@ -1,4 +1,4 @@
-import type { IllustrationObjectType } from '@aragon/gov-ui-kit';
+import type { IllustrationObjectType } from '@cddao/gov-ui-kit';
 
 export interface IWizardDetailsDialogStep {
     /**

@@ -2,7 +2,7 @@ import { daoService, Network, PluginInterfaceType } from '@/shared/api/daoServic
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
 import { generateDao, generateDaoPlugin } from '@/shared/testUtils';
 import { type IPluginInfo, PluginType } from '@/shared/types';
-import { addressUtils } from '@aragon/gov-ui-kit';
+import { addressUtils } from '@cddao/gov-ui-kit';
 import { ipfsUtils } from '../ipfsUtils';
 import { pluginRegistryUtils } from '../pluginRegistryUtils';
 import { daoUtils } from './daoUtils';

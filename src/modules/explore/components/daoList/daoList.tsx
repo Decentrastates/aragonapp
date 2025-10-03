@@ -13,7 +13,7 @@ import {
     DataListRoot,
     invariant,
     useDebouncedValue,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { useState } from 'react';
 import {
     useDaoList,

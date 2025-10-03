@@ -1,4 +1,4 @@
-import type { ButtonVariant } from '@aragon/gov-ui-kit';
+import type { ButtonVariant } from '@cddao/gov-ui-kit';
 import { useCallback } from 'react';
 import { useFormContext, type FieldErrors } from 'react-hook-form';
 import { useTranslations } from '../../translationsProvider';

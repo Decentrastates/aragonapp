@@ -1,4 +1,4 @@
-import { AvatarIcon, IconType } from '@aragon/gov-ui-kit';
+import { AvatarIcon, IconType } from '@cddao/gov-ui-kit';
 import { ToggleGroupItem as RadixToggle } from '@radix-ui/react-toggle-group';
 import classNames from 'classnames';
 import type { ComponentProps } from 'react';

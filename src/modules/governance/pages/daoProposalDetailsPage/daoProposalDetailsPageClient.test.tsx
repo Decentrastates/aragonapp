@@ -12,7 +12,7 @@ import {
     generateReactQueryResultError,
     generateReactQueryResultSuccess,
 } from '@/shared/testUtils';
-import { clipboardUtils, GukModulesProvider, ProposalStatus } from '@aragon/gov-ui-kit';
+import { clipboardUtils, GukModulesProvider, ProposalStatus } from '@cddao/gov-ui-kit';
 import { render, screen, within } from '@testing-library/react';
 import * as actionSimulationService from '../../api/actionSimulationService';
 import * as governanceService from '../../api/governanceService';

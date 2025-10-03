@@ -2,7 +2,7 @@ import type { IDao } from '@/shared/api/daoService';
 import { Page } from '@/shared/components/page';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { ipfsUtils } from '@/shared/utils/ipfsUtils';
-import { DaoAvatar, formatterUtils, NumberFormat } from '@aragon/gov-ui-kit';
+import { DaoAvatar, formatterUtils, NumberFormat } from '@cddao/gov-ui-kit';
 
 export interface IDashboardDefaultHeaderProps {
     /**

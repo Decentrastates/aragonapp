@@ -5,7 +5,7 @@ import { type IMultisigPluginSettings } from '@/plugins/multisigPlugin/types';
 import { type IDaoPlugin } from '@/shared/api/daoService';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { addressUtils, type IProposalActionComponentProps } from '@aragon/gov-ui-kit';
+import { addressUtils, type IProposalActionComponentProps } from '@cddao/gov-ui-kit';
 import { useEffect, useMemo } from 'react';
 import { useFormContext, useWatch } from 'react-hook-form';
 import { encodeFunctionData } from 'viem';

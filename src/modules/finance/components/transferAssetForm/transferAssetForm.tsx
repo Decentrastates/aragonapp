@@ -2,7 +2,7 @@ import { AssetInput, type IAssetInputFormData, type IAssetInputProps } from '@/m
 import type { Network } from '@/shared/api/daoService';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { AddressInput, addressUtils } from '@aragon/gov-ui-kit';
+import { AddressInput, addressUtils } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import { useState } from 'react';
 import { useWatch } from 'react-hook-form';

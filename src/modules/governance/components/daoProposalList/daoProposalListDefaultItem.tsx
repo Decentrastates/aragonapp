@@ -2,7 +2,7 @@ import type { IProposal } from '@/modules/governance/api/governanceService';
 import { type IDao } from '@/shared/api/daoService';
 import { useSlotSingleFunction } from '@/shared/hooks/useSlotSingleFunction';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { ProposalDataListItem, type ProposalStatus } from '@aragon/gov-ui-kit';
+import { ProposalDataListItem, type ProposalStatus } from '@cddao/gov-ui-kit';
 import { GovernanceSlotId } from '../../constants/moduleSlots';
 import { useUserVote } from '../../hooks/useUserVote';
 

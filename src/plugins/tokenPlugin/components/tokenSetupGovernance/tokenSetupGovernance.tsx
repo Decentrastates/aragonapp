@@ -3,7 +3,7 @@
 import { AdvancedDateInputDuration } from '@/shared/components/forms/advancedDateInput/advancedDateInputDuration';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { Card, InputContainer, Switch } from '@aragon/gov-ui-kit';
+import { Card, InputContainer, Switch } from '@cddao/gov-ui-kit';
 import { DaoTokenVotingMode } from '../../types';
 import { MinParticipationField } from './fields/minParticipationField';
 import { ProposalCreationEligibilityField } from './fields/proposalCreationEligibilityField';

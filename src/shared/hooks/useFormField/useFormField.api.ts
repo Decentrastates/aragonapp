@@ -1,5 +1,5 @@
 import type { ITFuncOptions } from '@/shared/utils/translationsUtils';
-import type { IInputContainerProps } from '@aragon/gov-ui-kit';
+import type { IInputContainerProps } from '@cddao/gov-ui-kit';
 import {
     type FieldPath,
     type FieldPathValue,

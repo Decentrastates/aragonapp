@@ -1,6 +1,6 @@
 'use client';
 
-import { DefinitionList } from '@aragon/gov-ui-kit';
+import { DefinitionList } from '@cddao/gov-ui-kit';
 import { useAdminGovernanceSettings } from '../../hooks/useAdminGovernanceSettings';
 
 export interface IAdminGovernanceInfoProps {}

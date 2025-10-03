@@ -1,7 +1,7 @@
 import { TransactionType } from '@/shared/api/transactionService';
 import { generateDialogContext } from '@/shared/testUtils';
 import { testLogger } from '@/test/utils';
-import { IconType } from '@aragon/gov-ui-kit';
+import { IconType } from '@cddao/gov-ui-kit';
 import { act, render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import type { TransactionReceipt } from 'viem';

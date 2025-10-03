@@ -14,7 +14,7 @@ import {
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
 import { useStepper } from '@/shared/hooks/useStepper';
-import { DaoDataListItem, invariant } from '@aragon/gov-ui-kit';
+import { DaoDataListItem, invariant } from '@cddao/gov-ui-kit';
 import { useCallback, useMemo } from 'react';
 import { useAccount } from 'wagmi';
 import type { ICreateDaoFormData } from '../../components/createDaoForm';

@@ -1,6 +1,6 @@
 import type { IToken } from '@/modules/finance/api/financeService';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Avatar } from '@aragon/gov-ui-kit';
+import { Avatar } from '@cddao/gov-ui-kit';
 
 interface ICapitalDistributorDetailsInfo {
     /**

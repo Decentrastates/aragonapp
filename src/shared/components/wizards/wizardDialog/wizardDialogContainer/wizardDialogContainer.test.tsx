@@ -1,6 +1,6 @@
 import * as useDialogContext from '@/shared/components/dialogProvider';
 import { generateDialogContext } from '@/shared/testUtils';
-import { Dialog } from '@aragon/gov-ui-kit';
+import { Dialog } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import type { IWizardFormProps, IWizardRootProps } from '../../wizard';
 import { type IWizardDialogContainerProps, WizardDialogContainer } from './wizardDialogContainer';

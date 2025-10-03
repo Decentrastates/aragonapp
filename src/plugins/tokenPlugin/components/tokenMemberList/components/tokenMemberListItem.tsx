@@ -1,7 +1,7 @@
 import type { ITokenMember, ITokenPluginSettings } from '@/plugins/tokenPlugin/types';
 import { type IDaoPlugin, useDao } from '@/shared/api/daoService';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { MemberDataListItem } from '@aragon/gov-ui-kit';
+import { MemberDataListItem } from '@cddao/gov-ui-kit';
 import { formatUnits } from 'viem';
 
 export interface ITokenMemberListItemProps {

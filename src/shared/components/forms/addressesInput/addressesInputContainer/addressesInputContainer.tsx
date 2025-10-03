@@ -5,7 +5,7 @@ import {
     IconType,
     type IInputComponentProps,
     InputContainer,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { Children, cloneElement, type ComponentProps, isValidElement } from 'react';
 import { useFieldArray } from 'react-hook-form';
 import { AddressesInputContextProvider } from '../addressesInputContext';

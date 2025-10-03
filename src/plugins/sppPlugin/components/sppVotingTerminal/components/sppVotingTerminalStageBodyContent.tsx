@@ -1,5 +1,5 @@
 import { brandedExternals } from '@/plugins/sppPlugin/constants/sppPluginBrandedExternals';
-import { addressUtils, ProposalVoting, ProposalVotingTab } from '@aragon/gov-ui-kit';
+import { addressUtils, ProposalVoting, ProposalVotingTab } from '@cddao/gov-ui-kit';
 import type { Hex } from 'viem';
 import { useEnsName } from 'wagmi';
 import type { ISppProposal, ISppStage, ISppStagePlugin } from '../../../types';

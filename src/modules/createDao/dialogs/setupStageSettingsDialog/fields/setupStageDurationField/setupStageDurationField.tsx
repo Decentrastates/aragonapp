@@ -1,6 +1,6 @@
 import { AdvancedDateInputDuration } from '@/shared/components/forms/advancedDateInput/advancedDateInputDuration';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Card, InputContainer } from '@aragon/gov-ui-kit';
+import { Card, InputContainer } from '@cddao/gov-ui-kit';
 
 export interface ISetupStageDurationFieldProps {
     /**

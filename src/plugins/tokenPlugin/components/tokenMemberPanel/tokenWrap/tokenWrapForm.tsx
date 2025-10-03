@@ -9,7 +9,7 @@ import type { ITokenMember, ITokenPluginSettings } from '@/plugins/tokenPlugin/t
 import { useDao, type IDaoPlugin } from '@/shared/api/daoService';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Button, formatterUtils, NumberFormat } from '@aragon/gov-ui-kit';
+import { Button, formatterUtils, NumberFormat } from '@cddao/gov-ui-kit';
 import { useEffect, useMemo } from 'react';
 import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import { formatUnits, parseUnits } from 'viem';

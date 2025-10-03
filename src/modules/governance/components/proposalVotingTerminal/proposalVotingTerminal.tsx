@@ -4,7 +4,7 @@ import { PluginSingleComponent } from '@/shared/components/pluginSingleComponent
 import { useDaoPluginInfo } from '@/shared/hooks/useDaoPluginInfo';
 import { useSlotSingleFunction } from '@/shared/hooks/useSlotSingleFunction';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { addressUtils, type IDefinitionSetting, ProposalStatus, ProposalVoting } from '@aragon/gov-ui-kit';
+import { addressUtils, type IDefinitionSetting, ProposalStatus, ProposalVoting } from '@cddao/gov-ui-kit';
 import type { Hex } from 'viem';
 import { useAccount, useEnsName } from 'wagmi';
 import type { IProposal } from '../../api/governanceService';

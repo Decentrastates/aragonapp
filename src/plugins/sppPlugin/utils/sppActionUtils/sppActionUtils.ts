@@ -3,7 +3,7 @@ import type { IActionComposerPluginData } from '@/modules/governance/types';
 import { type IDaoPlugin } from '@/shared/api/daoService';
 import { type TranslationFunction } from '@/shared/components/translationsProvider';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { addressUtils } from '@aragon/gov-ui-kit';
+import { addressUtils } from '@cddao/gov-ui-kit';
 import { type ISppPluginSettings } from '../../types';
 
 export interface IGetSppActionsProps {

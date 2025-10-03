@@ -1,7 +1,7 @@
 import { AragonLogo } from '@/shared/components/aragonLogo';
 import { useDialogContext, type IDialogComponentProps } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { AvatarIcon, Dialog, IconType, Link } from '@aragon/gov-ui-kit';
+import { AvatarIcon, Dialog, IconType, Link } from '@cddao/gov-ui-kit';
 import { useAppKit, useAppKitState } from '@reown/appkit/react';
 import { useCallback, useEffect } from 'react';
 import { useAccount } from 'wagmi';

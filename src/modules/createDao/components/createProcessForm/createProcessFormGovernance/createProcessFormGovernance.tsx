@@ -1,6 +1,6 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { RadioCard, RadioGroup } from '@aragon/gov-ui-kit';
+import { RadioCard, RadioGroup } from '@cddao/gov-ui-kit';
 import { useFormContext } from 'react-hook-form';
 import { GovernanceType, type ICreateProcessFormData } from '../createProcessFormDefinitions';
 import { createProcessFormUtils } from '../createProcessFormUtils';

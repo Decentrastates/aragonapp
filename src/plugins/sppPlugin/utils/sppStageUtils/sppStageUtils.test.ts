@@ -1,6 +1,6 @@
 import { pluginRegistryUtils } from '@/shared/utils/pluginRegistryUtils';
 import { timeUtils } from '@/test/utils';
-import { ProposalStatus } from '@aragon/gov-ui-kit';
+import { ProposalStatus } from '@cddao/gov-ui-kit';
 import { DateTime } from 'luxon';
 import {
     generateSppPluginSettings,

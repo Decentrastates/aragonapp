@@ -1,6 +1,6 @@
 'use client';
 
-import { Dialog, type IDialogRootProps as IGukDialogRootProps } from '@aragon/gov-ui-kit';
+import { Dialog, type IDialogRootProps as IGukDialogRootProps } from '@cddao/gov-ui-kit';
 import { useDialogContext, type IDialogComponentDefinitions } from '../dialogProvider';
 import { useTranslations } from '../translationsProvider';
 

@@ -5,7 +5,7 @@ import { type ISppProposal, type ISppStage } from '@/plugins/sppPlugin/types';
 import { sppStageUtils } from '@/plugins/sppPlugin/utils/sppStageUtils';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { addressUtils, Button, IconType } from '@aragon/gov-ui-kit';
+import { addressUtils, Button, IconType } from '@cddao/gov-ui-kit';
 import { useEffect, useRef } from 'react';
 import { useAccount } from 'wagmi';
 

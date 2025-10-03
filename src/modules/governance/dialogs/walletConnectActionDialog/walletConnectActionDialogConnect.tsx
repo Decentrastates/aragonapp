@@ -1,7 +1,7 @@
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { Dialog, IconType, InputText } from '@aragon/gov-ui-kit';
+import { Dialog, IconType, InputText } from '@cddao/gov-ui-kit';
 import { useForm } from 'react-hook-form';
 
 export interface IWalletConnectActionFormData {

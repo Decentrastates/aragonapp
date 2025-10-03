@@ -1,7 +1,7 @@
 import { generateMember } from '@/modules/governance/testUtils';
 import { permissionManagerAbi } from '@/shared/utils/permissionTransactionUtils/abi/permissionManagerAbi';
 import { transactionUtils } from '@/shared/utils/transactionUtils';
-import { addressUtils } from '@aragon/gov-ui-kit';
+import { addressUtils } from '@cddao/gov-ui-kit';
 import type { Hex } from 'viem';
 import * as Viem from 'viem';
 import { adminTransactionUtils } from '../../utils/adminTransactionUtils';

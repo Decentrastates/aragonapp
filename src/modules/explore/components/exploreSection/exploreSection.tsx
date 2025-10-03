@@ -1,4 +1,4 @@
-import { Heading } from '@aragon/gov-ui-kit';
+import { Heading } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import { type ComponentProps } from 'react';
 

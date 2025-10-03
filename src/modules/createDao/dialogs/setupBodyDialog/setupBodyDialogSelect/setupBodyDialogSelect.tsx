@@ -4,7 +4,7 @@ import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
 import type { IPluginInfo } from '@/shared/types';
 import { pluginRegistryUtils } from '@/shared/utils/pluginRegistryUtils';
-import { RadioCard, RadioGroup } from '@aragon/gov-ui-kit';
+import { RadioCard, RadioGroup } from '@cddao/gov-ui-kit';
 import { zeroAddress } from 'viem';
 import { BodyType } from '../../../types/enum';
 import { type ISetupBodyForm } from '../setupBodyDialogDefinitions';

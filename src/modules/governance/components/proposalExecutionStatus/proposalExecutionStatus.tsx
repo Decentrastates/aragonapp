@@ -11,7 +11,7 @@ import {
     IconType,
     ProposalStatus,
     useBlockExplorer,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import type { IProposal } from '../../api/governanceService';
 import { GovernanceDialogId } from '../../constants/governanceDialogId';
 import { GovernanceSlotId } from '../../constants/moduleSlots';

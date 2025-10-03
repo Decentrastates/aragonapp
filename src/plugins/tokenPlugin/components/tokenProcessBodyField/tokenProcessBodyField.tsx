@@ -16,7 +16,7 @@ import {
     NumberFormat,
     Tag,
     useBlockExplorer,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { formatUnits } from 'viem';
 import { DaoTokenVotingMode } from '../../types';
 import type { ITokenSetupGovernanceForm } from '../tokenSetupGovernance';

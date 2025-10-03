@@ -1,4 +1,4 @@
-import { ProposalStatus } from '@aragon/gov-ui-kit';
+import { ProposalStatus } from '@cddao/gov-ui-kit';
 import { DateTime } from 'luxon';
 import type { IGetProposalStatusParams, IHasEndedParams } from './proposalStatusUtils.api';
 

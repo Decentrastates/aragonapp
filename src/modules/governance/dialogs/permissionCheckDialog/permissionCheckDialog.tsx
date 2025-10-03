@@ -2,7 +2,7 @@ import type { IPermissionCheckGuardParams, IPermissionCheckGuardResult } from '@
 import { useDialogContext, type IDialogComponentProps } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useSlotSingleFunction } from '@/shared/hooks/useSlotSingleFunction';
-import { Dialog, invariant } from '@aragon/gov-ui-kit';
+import { Dialog, invariant } from '@cddao/gov-ui-kit';
 import { useCallback, useEffect } from 'react';
 import { PermissionsDefinitionList } from '../../components/permissionsDefinitionList';
 import { GovernanceDialogId } from '../../constants/governanceDialogId';

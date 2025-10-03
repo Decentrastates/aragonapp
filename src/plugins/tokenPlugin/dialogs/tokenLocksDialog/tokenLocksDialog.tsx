@@ -3,7 +3,7 @@
 import type { IDao, IDaoPlugin } from '@/shared/api/daoService';
 import { type IDialogComponentProps, useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Dialog, invariant } from '@aragon/gov-ui-kit';
+import { Dialog, invariant } from '@cddao/gov-ui-kit';
 import { useAccount } from 'wagmi';
 import { TokenLockList } from '../../components/tokenMemberPanel/tokenLock';
 import type { ITokenPluginSettings } from '../../types';

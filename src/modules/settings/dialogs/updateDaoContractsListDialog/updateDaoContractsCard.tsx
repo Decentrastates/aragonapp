@@ -1,7 +1,7 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
 import type { IContractVersionInfo } from '@/shared/types';
 import { versionComparatorUtils, type IVersion } from '@/shared/utils/versionComparatorUtils';
-import { addressUtils, DataList, Link } from '@aragon/gov-ui-kit';
+import { addressUtils, DataList, Link } from '@cddao/gov-ui-kit';
 
 export interface IUpdateDaoContractsCardProps {
     /**

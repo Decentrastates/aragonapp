@@ -3,7 +3,7 @@
 import type { IDaoMemberListDefaultProps } from '@/modules/governance/components/daoMemberList';
 import { useMemberListData } from '@/modules/governance/hooks/useMemberListData';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { DataListContainer, DataListPagination, DataListRoot, MemberDataListItem } from '@aragon/gov-ui-kit';
+import { DataListContainer, DataListPagination, DataListRoot, MemberDataListItem } from '@cddao/gov-ui-kit';
 import type { ITokenMember, ITokenPluginSettings } from '../../types';
 import { TokenMemberListItem } from './components/tokenMemberListItem';
 

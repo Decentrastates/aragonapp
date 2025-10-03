@@ -3,7 +3,7 @@
 import { Page } from '@/shared/components/page';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFilterUrlParam } from '@/shared/hooks/useFilterUrlParam';
-import { Tabs } from '@aragon/gov-ui-kit';
+import { Tabs } from '@cddao/gov-ui-kit';
 import type { ITokenPlugin, ITokenPluginSettings } from '../../types';
 import { TokenDelegationForm } from './tokenDelegation';
 import { TokenLockForm } from './tokenLock';

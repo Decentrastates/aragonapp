@@ -5,7 +5,7 @@ import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFilterUrlParam } from '@/shared/hooks/useFilterUrlParam';
 import { networkUtils } from '@/shared/utils/networkUtils';
-import { Button, Toggle, ToggleGroup } from '@aragon/gov-ui-kit';
+import { Button, Toggle, ToggleGroup } from '@cddao/gov-ui-kit';
 import { useEffect } from 'react';
 import { useAccount } from 'wagmi';
 import type { IGetDaoListParams } from '../../api/daoExplorerService';

@@ -4,7 +4,7 @@ import { useTranslations } from '@/shared/components/translationsProvider';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
 import { PluginType } from '@/shared/types';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { Button, DateFormat, formatterUtils, IconType } from '@aragon/gov-ui-kit';
+import { Button, DateFormat, formatterUtils, IconType } from '@cddao/gov-ui-kit';
 import type { IGetProposalListParams } from '../../api/governanceService';
 import { useProposalListData } from '../../hooks/useProposalListData';
 

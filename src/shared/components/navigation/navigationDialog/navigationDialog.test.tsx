@@ -1,7 +1,7 @@
 import { daoUtils } from '@/shared/utils/daoUtils';
 import { ipfsUtils } from '@/shared/utils/ipfsUtils';
 import { testLogger } from '@/test/utils';
-import { GukModulesProvider, IconType } from '@aragon/gov-ui-kit';
+import { GukModulesProvider, IconType } from '@cddao/gov-ui-kit';
 import { render, screen, within } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import type { Route } from 'next';

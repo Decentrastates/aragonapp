@@ -2,7 +2,7 @@ import { useMember, type IMember } from '@/modules/governance/api/governanceServ
 import type { IUsePluginMemberStatsParams } from '@/modules/governance/types';
 import { type IPageHeaderStat } from '@/shared/components/page/pageHeader/pageHeaderStat';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { formatterUtils, NumberFormat } from '@aragon/gov-ui-kit';
+import { formatterUtils, NumberFormat } from '@cddao/gov-ui-kit';
 import { formatUnits } from 'viem';
 import type { ITokenMember, ITokenPluginSettings } from '../../types';
 

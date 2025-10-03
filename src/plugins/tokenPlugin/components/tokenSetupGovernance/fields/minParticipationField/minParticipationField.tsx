@@ -1,6 +1,6 @@
 import { NumberProgressInput } from '@/shared/components/forms/numberProgressInput';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { formatterUtils, NumberFormat } from '@aragon/gov-ui-kit';
+import { formatterUtils, NumberFormat } from '@cddao/gov-ui-kit';
 import { useWatch } from 'react-hook-form';
 import { formatUnits } from 'viem';
 import type { ITokenSetupGovernanceForm, ITokenSetupGovernanceProps } from '../../tokenSetupGovernance.api';

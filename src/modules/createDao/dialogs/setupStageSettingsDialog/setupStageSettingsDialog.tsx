@@ -1,7 +1,7 @@
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import type { IDialogComponentProps } from '@/shared/components/dialogProvider/dialogProvider.api';
 import { useTranslations } from '@/shared/components/translationsProvider/translationsProvider';
-import { Dialog, invariant } from '@aragon/gov-ui-kit';
+import { Dialog, invariant } from '@cddao/gov-ui-kit';
 import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import { ProcessStageType } from '../../components/createProcessForm';
 import { SetupStageApprovalsField } from './fields/setupStageApprovalsField';

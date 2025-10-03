@@ -1,7 +1,7 @@
 import { AdvancedDateInputDuration } from '@/shared/components/forms/advancedDateInput/advancedDateInputDuration';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import type { IDateDuration } from '@/shared/utils/dateUtils';
-import { Card, Switch } from '@aragon/gov-ui-kit';
+import { Card, Switch } from '@cddao/gov-ui-kit';
 import { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 

@@ -14,7 +14,7 @@ import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
 import { PluginType } from '@/shared/types';
 import { daoUtils } from '@/shared/utils/daoUtils';
 import { versionComparatorUtils } from '@/shared/utils/versionComparatorUtils';
-import { IconType } from '@aragon/gov-ui-kit';
+import { IconType } from '@cddao/gov-ui-kit';
 import { useRouter } from 'next/navigation';
 import { CreateDaoDialogId } from '../../../createDao/constants/createDaoDialogId';
 import type { ICreateProcessDetailsDialogParams } from '../../../createDao/dialogs/createProcessDetailsDialog';

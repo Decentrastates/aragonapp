@@ -5,7 +5,7 @@ import type { ITokenMember, ITokenPluginSettings } from '@/plugins/tokenPlugin/t
 import { type IDaoPlugin, type Network, useDao } from '@/shared/api/daoService';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { formatterUtils, NumberFormat } from '@aragon/gov-ui-kit';
+import { formatterUtils, NumberFormat } from '@cddao/gov-ui-kit';
 import { formatUnits } from 'viem';
 import { useAccount } from 'wagmi';
 

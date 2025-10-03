@@ -3,7 +3,7 @@ import type { IAutocompleteInputGroup } from '@/shared/components/forms/autocomp
 import type { TranslationFunction } from '@/shared/components/translationsProvider';
 import { ipfsUtils } from '@/shared/utils/ipfsUtils';
 import { pluginRegistryUtils } from '@/shared/utils/pluginRegistryUtils';
-import { addressUtils, IconType } from '@aragon/gov-ui-kit';
+import { addressUtils, IconType } from '@cddao/gov-ui-kit';
 import { zeroAddress } from 'viem';
 import {
     ProposalActionType,

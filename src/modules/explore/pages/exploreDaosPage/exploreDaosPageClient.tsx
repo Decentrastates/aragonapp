@@ -5,7 +5,7 @@ import { Carousel } from '@/shared/components/carousel';
 import { Container } from '@/shared/components/container';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Heading } from '@aragon/gov-ui-kit';
+import { Heading } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import Image from 'next/image';
 import doItYourselfIcon from '../../../../assets/images/doItYourselfIcon.svg';

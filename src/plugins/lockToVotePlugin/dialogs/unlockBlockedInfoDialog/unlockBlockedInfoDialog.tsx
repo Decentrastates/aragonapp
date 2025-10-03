@@ -1,7 +1,7 @@
 import type { IDialogComponentProps } from '@/shared/components/dialogProvider';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Dialog, EmptyState } from '@aragon/gov-ui-kit';
+import { Dialog, EmptyState } from '@cddao/gov-ui-kit';
 
 export interface IUnlockBlockedInfoDialogProps extends IDialogComponentProps {}
 

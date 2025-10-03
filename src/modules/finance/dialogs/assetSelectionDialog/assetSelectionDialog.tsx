@@ -2,7 +2,7 @@ import { type IAsset, type IGetAssetListParams } from '@/modules/finance/api/fin
 import { AssetList } from '@/modules/finance/components/assetList';
 import { type IDialogComponentProps } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Dialog, invariant } from '@aragon/gov-ui-kit';
+import { Dialog, invariant } from '@cddao/gov-ui-kit';
 
 export interface IAssetSelectionDialogParams {
     /**

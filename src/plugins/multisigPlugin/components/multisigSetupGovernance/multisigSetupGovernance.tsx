@@ -3,7 +3,7 @@
 import { NumberProgressInput } from '@/shared/components/forms/numberProgressInput';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { RadioCard, RadioGroup } from '@aragon/gov-ui-kit';
+import { RadioCard, RadioGroup } from '@cddao/gov-ui-kit';
 import { useWatch } from 'react-hook-form';
 import type { IMultisigSetupGovernanceForm, IMultisigSetupGovernanceProps } from './multisigSetupGovernance.api';
 

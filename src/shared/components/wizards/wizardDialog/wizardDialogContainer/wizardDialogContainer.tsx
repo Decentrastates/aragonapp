@@ -1,5 +1,5 @@
 import { useDialogContext } from '@/shared/components/dialogProvider';
-import { Dialog } from '@aragon/gov-ui-kit';
+import { Dialog } from '@cddao/gov-ui-kit';
 import { useEffect } from 'react';
 import type { FieldValues } from 'react-hook-form';
 import { type IWizardFormProps, type IWizardRootProps, Wizard } from '../../wizard';

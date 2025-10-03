@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { formatterUtils, invariant, NumberFormat, Progress, ProposalStatus } from '@aragon/gov-ui-kit';
+import { formatterUtils, invariant, NumberFormat, Progress, ProposalStatus } from '@cddao/gov-ui-kit';
 import { formatUnits } from 'viem';
 import { VoteOption } from '../../../tokenPlugin/types';
 import { tokenSettingsUtils } from '../../../tokenPlugin/utils/tokenSettingsUtils';

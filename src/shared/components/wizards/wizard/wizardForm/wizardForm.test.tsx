@@ -1,5 +1,5 @@
 import { generateFormContext, generateWizardContext } from '@/shared/testUtils';
-import { Button } from '@aragon/gov-ui-kit';
+import { Button } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import * as ReactHookForm from 'react-hook-form';

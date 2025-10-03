@@ -10,7 +10,7 @@ import {
 } from '@/shared/components/transactionDialog';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useStepper } from '@/shared/hooks/useStepper';
-import { AssetDataListItem, invariant } from '@aragon/gov-ui-kit';
+import { AssetDataListItem, invariant } from '@cddao/gov-ui-kit';
 import { useRouter } from 'next/navigation';
 import { formatUnits } from 'viem';
 import { useAccount } from 'wagmi';

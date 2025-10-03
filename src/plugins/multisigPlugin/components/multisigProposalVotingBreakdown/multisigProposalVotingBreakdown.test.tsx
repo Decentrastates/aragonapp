@@ -1,4 +1,4 @@
-import { ProposalVotingTab, Tabs } from '@aragon/gov-ui-kit';
+import { ProposalVotingTab, Tabs } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { generateMultisigPluginSettings, generateMultisigProposal } from '../../testUtils';
 import {

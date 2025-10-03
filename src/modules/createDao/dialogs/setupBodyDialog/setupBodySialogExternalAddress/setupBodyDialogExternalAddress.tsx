@@ -8,7 +8,7 @@ import { useFormField } from '@/shared/hooks/useFormField';
 import { useIsSafeContract } from '@/shared/hooks/useIsSafeContract';
 import { daoUtils } from '@/shared/utils/daoUtils';
 import type { IStepperStep } from '@/shared/utils/stepperUtils';
-import { AddressInput, addressUtils, type IAddressInputResolvedValue } from '@aragon/gov-ui-kit';
+import { AddressInput, addressUtils, type IAddressInputResolvedValue } from '@cddao/gov-ui-kit';
 import { useEffect, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import type { ISetupBodyForm } from '../setupBodyDialogDefinitions';

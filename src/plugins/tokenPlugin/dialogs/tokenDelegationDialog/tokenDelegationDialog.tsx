@@ -9,7 +9,7 @@ import {
 } from '@/shared/components/transactionDialog';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useStepper } from '@/shared/hooks/useStepper';
-import { invariant, MemberDataListItem } from '@aragon/gov-ui-kit';
+import { invariant, MemberDataListItem } from '@cddao/gov-ui-kit';
 import { useRouter } from 'next/navigation';
 import { zeroAddress } from 'viem';
 import { useAccount } from 'wagmi';

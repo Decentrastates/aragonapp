@@ -1,6 +1,6 @@
 import type { IDao } from '@/shared/api/daoService';
 import { ipfsUtils } from '@/shared/utils/ipfsUtils';
-import { DaoAvatar } from '@aragon/gov-ui-kit';
+import { DaoAvatar } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import type { ComponentProps } from 'react';
 

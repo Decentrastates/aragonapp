@@ -2,7 +2,7 @@ import { type ISppProposal, type ISppStage } from '@/plugins/sppPlugin/types';
 import { sppStageUtils } from '@/plugins/sppPlugin/utils/sppStageUtils';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useDynamicValue } from '@/shared/hooks/useDynamicValue';
-import { CardEmptyState, DateFormat, formatterUtils } from '@aragon/gov-ui-kit';
+import { CardEmptyState, DateFormat, formatterUtils } from '@cddao/gov-ui-kit';
 import { DateTime } from 'luxon';
 
 export interface ISppVotingTerminalStageTimelockProps {

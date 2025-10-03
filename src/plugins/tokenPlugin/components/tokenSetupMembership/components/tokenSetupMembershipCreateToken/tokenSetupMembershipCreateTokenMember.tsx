@@ -8,7 +8,7 @@ import {
     type IAddressInputResolvedValue,
     IconType,
     InputNumber,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import { useCallback, useState } from 'react';
 import type { ITokenSetupMembershipForm, ITokenSetupMembershipMember } from '../../tokenSetupMembership.api';

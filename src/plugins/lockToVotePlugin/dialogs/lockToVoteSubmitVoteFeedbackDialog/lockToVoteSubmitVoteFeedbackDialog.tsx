@@ -2,7 +2,7 @@
 
 import { useDialogContext, type IDialogComponentProps } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Dialog, EmptyState, invariant } from '@aragon/gov-ui-kit';
+import { Dialog, EmptyState, invariant } from '@cddao/gov-ui-kit';
 import { LockToVotePluginDialogId } from '../../constants/lockToVotePluginDialogId';
 import { useLockToVoteData } from '../../hooks/useLockToVoteData';
 import { type ILockToVotePlugin } from '../../types';

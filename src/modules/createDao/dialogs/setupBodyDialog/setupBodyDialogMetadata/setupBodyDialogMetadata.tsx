@@ -1,7 +1,7 @@
 import { ResourcesInput } from '@/shared/components/forms/resourcesInput';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { InputText, TextArea } from '@aragon/gov-ui-kit';
+import { InputText, TextArea } from '@cddao/gov-ui-kit';
 import type { ISetupBodyForm } from '../setupBodyDialogDefinitions';
 
 export interface ISetupBodyDialogMetadataProps {}

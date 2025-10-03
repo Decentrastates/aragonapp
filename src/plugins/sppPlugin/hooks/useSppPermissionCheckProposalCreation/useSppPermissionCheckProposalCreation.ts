@@ -4,7 +4,7 @@ import type { IPermissionCheckGuardParams, IPermissionCheckGuardResult } from '@
 import { type IDaoPlugin, useDao } from '@/shared/api/daoService';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
 import { pluginRegistryUtils } from '@/shared/utils/pluginRegistryUtils';
-import { addressUtils, invariant } from '@aragon/gov-ui-kit';
+import { addressUtils, invariant } from '@cddao/gov-ui-kit';
 import type { ISppPluginSettings } from '../../types';
 
 export interface IUseSppPermissionCheckProposalCreationParams

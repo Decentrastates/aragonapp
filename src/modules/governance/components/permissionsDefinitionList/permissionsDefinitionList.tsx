@@ -1,5 +1,5 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { DefinitionList, StateSkeletonBar } from '@aragon/gov-ui-kit';
+import { DefinitionList, StateSkeletonBar } from '@cddao/gov-ui-kit';
 import type { IPermissionCheckGuardResult } from '../../types';
 
 export interface IPermissionsDefinitionListProps extends Pick<IPermissionCheckGuardResult, 'isLoading' | 'settings'> {}

@@ -1,6 +1,6 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { addressUtils, Avatar, invariant } from '@aragon/gov-ui-kit';
+import { addressUtils, Avatar, invariant } from '@cddao/gov-ui-kit';
 
 export interface IGovernanceBodyInfoProps {
     /**

@@ -1,4 +1,4 @@
-import { Button, Dialog, Heading, IllustrationObject, Link } from '@aragon/gov-ui-kit';
+import { Button, Dialog, Heading, IllustrationObject, Link } from '@cddao/gov-ui-kit';
 import { Description, Title } from '@radix-ui/react-dialog';
 import { useDialogContext } from '../dialogProvider';
 import { useTranslations } from '../translationsProvider';

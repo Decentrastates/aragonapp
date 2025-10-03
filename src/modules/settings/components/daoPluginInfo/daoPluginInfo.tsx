@@ -2,7 +2,7 @@ import { useDao } from '@/shared/api/daoService';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useDaoPluginInfo } from '@/shared/hooks/useDaoPluginInfo';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { Button, DefinitionList } from '@aragon/gov-ui-kit';
+import { Button, DefinitionList } from '@cddao/gov-ui-kit';
 import { type IDaoPlugInfoProps } from './daoPluginInfo.api';
 import { DaoPluginInfoMetadata } from './daoPluginInfoMetadata';
 

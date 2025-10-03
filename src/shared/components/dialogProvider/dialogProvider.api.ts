@@ -1,4 +1,4 @@
-import type { IDialogRootProps } from '@aragon/gov-ui-kit';
+import type { IDialogRootProps } from '@cddao/gov-ui-kit';
 import type { ComponentType } from 'react';
 
 // Default properties type for dialog components.

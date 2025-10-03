@@ -4,7 +4,7 @@ import { networkDefinitions } from '@/shared/constants/networkDefinitions';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
 import { PluginType } from '@/shared/types';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { addressUtils, ChainEntityType, DefinitionList, useBlockExplorer } from '@aragon/gov-ui-kit';
+import { addressUtils, ChainEntityType, DefinitionList, useBlockExplorer } from '@cddao/gov-ui-kit';
 
 export interface IDaoVersionInfoProps {
     /**

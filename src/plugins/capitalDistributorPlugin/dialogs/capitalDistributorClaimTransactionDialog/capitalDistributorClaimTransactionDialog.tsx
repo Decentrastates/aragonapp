@@ -9,7 +9,7 @@ import {
 } from '@/shared/components/transactionDialog';
 import { useTranslations } from '@/shared/components/translationsProvider/translationsProvider';
 import { useStepper } from '@/shared/hooks/useStepper/useStepper';
-import { invariant } from '@aragon/gov-ui-kit';
+import { invariant } from '@cddao/gov-ui-kit';
 import { useQueryClient } from '@tanstack/react-query';
 import type { Hex } from 'viem';
 import { CapitalDistributorServiceKey, type ICampaign } from '../../api/capitalDistributorService';

@@ -1,7 +1,7 @@
 import * as useProposalListData from '@/modules/governance/hooks/useProposalListData';
 import * as useDao from '@/shared/api/daoService';
 import { generateDao, generateDaoPlugin, generateReactQueryResultSuccess } from '@/shared/testUtils';
-import { GukModulesProvider } from '@aragon/gov-ui-kit';
+import { GukModulesProvider } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import type { IProposal } from '../../api/governanceService';
 import { generateProposal } from '../../testUtils';

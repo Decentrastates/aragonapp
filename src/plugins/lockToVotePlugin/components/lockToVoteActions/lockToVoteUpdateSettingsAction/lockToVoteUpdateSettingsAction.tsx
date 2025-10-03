@@ -4,7 +4,7 @@ import type { ITokenSetupGovernanceForm } from '@/plugins/tokenPlugin/components
 import { tokenSettingsUtils } from '@/plugins/tokenPlugin/utils/tokenSettingsUtils';
 import type { IDaoPlugin } from '@/shared/api/daoService';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { type IProposalActionComponentProps } from '@aragon/gov-ui-kit';
+import { type IProposalActionComponentProps } from '@cddao/gov-ui-kit';
 import { useEffect } from 'react';
 import { useFormContext, useWatch } from 'react-hook-form';
 import { encodeFunctionData, parseUnits } from 'viem';

@@ -7,7 +7,7 @@ import {
 } from '@/shared/api/daoService';
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
 import { PluginType, type IDaoPageParams, type IPluginInfo } from '@/shared/types';
-import { addressUtils } from '@aragon/gov-ui-kit';
+import { addressUtils } from '@cddao/gov-ui-kit';
 import { pluginRegistryUtils } from '../pluginRegistryUtils';
 import { versionComparatorUtils } from '../versionComparatorUtils';
 

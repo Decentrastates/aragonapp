@@ -7,7 +7,7 @@ import { pluginRegistryUtils } from '@/shared/utils/pluginRegistryUtils';
 import { pluginTransactionUtils } from '@/shared/utils/pluginTransactionUtils';
 import { transactionUtils, type ITransactionRequest } from '@/shared/utils/transactionUtils';
 import { versionComparatorUtils } from '@/shared/utils/versionComparatorUtils';
-import { invariant } from '@aragon/gov-ui-kit';
+import { invariant } from '@cddao/gov-ui-kit';
 import { encodeFunctionData, zeroHash, type Hex } from 'viem';
 import { settingsService } from '../../api/settingsService';
 import { SettingsSlotId } from '../../constants/moduleSlots';

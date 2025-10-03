@@ -2,7 +2,7 @@ import { GovernanceSlotId } from '@/modules/governance/constants/moduleSlots';
 import { brandedExternals } from '@/plugins/sppPlugin/constants/sppPluginBrandedExternals';
 import { PluginSingleComponent } from '@/shared/components/pluginSingleComponent';
 import { useDynamicValue } from '@/shared/hooks/useDynamicValue';
-import { ProposalStatus, ProposalVoting } from '@aragon/gov-ui-kit';
+import { ProposalStatus, ProposalVoting } from '@cddao/gov-ui-kit';
 import { useCallback } from 'react';
 import type { ISppProposal, ISppStage } from '../../../types';
 import { sppStageUtils } from '../../../utils/sppStageUtils';

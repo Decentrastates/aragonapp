@@ -1,6 +1,6 @@
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Avatar, Dialog, Heading, IconType, Link, Spinner } from '@aragon/gov-ui-kit';
+import { Avatar, Dialog, Heading, IconType, Link, Spinner } from '@cddao/gov-ui-kit';
 import { useEffect } from 'react';
 import type { IProposalAction } from '../../api/governanceService';
 import type { IAppMetadata } from '../../api/walletConnectService';

@@ -7,7 +7,7 @@ import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
 import type { IPluginInfo } from '@/shared/types';
 import { pluginRegistryUtils } from '@/shared/utils/pluginRegistryUtils';
-import { Accordion, Button, Dropdown, IconType } from '@aragon/gov-ui-kit';
+import { Accordion, Button, Dropdown, IconType } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import { useWatch } from 'react-hook-form';
 import { BodyType } from '../../../../../types/enum';

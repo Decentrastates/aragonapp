@@ -4,7 +4,7 @@ import { DialogProvider } from '@/shared/components/dialogProvider/dialogProvide
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
 import { generateReactQueryResultError, generateStepperResult } from '@/shared/testUtils';
 import type { IStepperStep } from '@/shared/utils/stepperUtils';
-import { Dialog, GukModulesProvider, IconType } from '@aragon/gov-ui-kit';
+import { Dialog, GukModulesProvider, IconType } from '@cddao/gov-ui-kit';
 import * as ReactQuery from '@tanstack/react-query';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import type { WaitForTransactionReceiptErrorType } from 'viem';

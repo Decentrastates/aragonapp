@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { CardEmptyState } from '@aragon/gov-ui-kit';
+import { CardEmptyState } from '@cddao/gov-ui-kit';
 
 export const AdminVotingTerminal: React.FC = () => {
     const { t } = useTranslations();

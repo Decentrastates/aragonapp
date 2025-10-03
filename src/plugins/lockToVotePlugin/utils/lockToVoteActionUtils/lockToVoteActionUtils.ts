@@ -10,7 +10,7 @@ import {
     ProposalActionType as GukProposalActionType,
     IconType,
     type IProposalActionChangeSettings as IGukProposalActionChangeSettings,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { LockToVoteUpdateSettingsAction } from '../../components/lockToVoteActions/lockToVoteUpdateSettingsAction';
 import type {
     ILockToVoteActionChangeSettings,

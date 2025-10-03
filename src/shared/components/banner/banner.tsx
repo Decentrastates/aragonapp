@@ -1,5 +1,5 @@
 import { Container } from '@/shared/components/container';
-import { Icon, IconType } from '@aragon/gov-ui-kit';
+import { Icon, IconType } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import type { ComponentProps } from 'react';
 

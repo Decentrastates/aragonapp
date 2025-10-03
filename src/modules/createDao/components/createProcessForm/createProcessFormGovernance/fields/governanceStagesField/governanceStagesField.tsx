@@ -1,5 +1,5 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Button, IconType } from '@aragon/gov-ui-kit';
+import { Button, IconType } from '@cddao/gov-ui-kit';
 import { useFieldArray } from 'react-hook-form';
 import type { ICreateProcessFormData } from '../../../createProcessFormDefinitions';
 import { createProcessFormUtils } from '../../../createProcessFormUtils';

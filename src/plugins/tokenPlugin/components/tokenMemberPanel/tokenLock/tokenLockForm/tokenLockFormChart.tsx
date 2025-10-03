@@ -1,6 +1,6 @@
 import type { ITokenPluginSettings } from '@/plugins/tokenPlugin/types';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { formatterUtils, NumberFormat } from '@aragon/gov-ui-kit';
+import { formatterUtils, NumberFormat } from '@cddao/gov-ui-kit';
 import { DateTime } from 'luxon';
 import { useState } from 'react';
 import { Area, AreaChart, ReferenceDot, ResponsiveContainer, XAxis, YAxis } from 'recharts';

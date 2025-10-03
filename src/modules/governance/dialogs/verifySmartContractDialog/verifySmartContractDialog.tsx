@@ -8,7 +8,7 @@ import {
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
 import type { IStepperStep } from '@/shared/utils/stepperUtils';
-import { AddressInput, addressUtils, Dialog, invariant, type ICompositeAddress } from '@aragon/gov-ui-kit';
+import { AddressInput, addressUtils, Dialog, invariant, type ICompositeAddress } from '@cddao/gov-ui-kit';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useSmartContractAbi, type IGetAbiUrlParams, type ISmartContractAbi } from '../../api/smartContractService';

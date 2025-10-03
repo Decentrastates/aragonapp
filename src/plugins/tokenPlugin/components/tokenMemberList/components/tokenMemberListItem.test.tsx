@@ -6,7 +6,7 @@ import {
 import * as daoService from '@/shared/api/daoService';
 import { Network } from '@/shared/api/daoService';
 import { generateDao, generateDaoPlugin, generateReactQueryResultSuccess } from '@/shared/testUtils';
-import { GukModulesProvider } from '@aragon/gov-ui-kit';
+import { GukModulesProvider } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { TokenMemberListItem, type ITokenMemberListItemProps } from './tokenMemberListItem';
 

@@ -4,7 +4,7 @@ import * as useVoteListData from '@/modules/governance/hooks/useVoteListData';
 import { generateProposal } from '@/modules/governance/testUtils';
 import * as daoService from '@/shared/api/daoService';
 import { generateAddressInfo, generateDao, generateReactQueryResultSuccess } from '@/shared/testUtils';
-import { addressUtils, GukModulesProvider, type VoteIndicator } from '@aragon/gov-ui-kit';
+import { addressUtils, GukModulesProvider, type VoteIndicator } from '@cddao/gov-ui-kit';
 import { render, screen, within } from '@testing-library/react';
 import { daoUtils } from '../../../../shared/utils/daoUtils';
 import { generateTokenVote } from '../../testUtils';

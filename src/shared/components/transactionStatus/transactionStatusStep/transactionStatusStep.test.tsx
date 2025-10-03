@@ -1,4 +1,4 @@
-import { IconType } from '@aragon/gov-ui-kit';
+import { IconType } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { TransactionStatusStep } from './transactionStatusStep';
 import type { ITransactionStatusStepProps } from './transactionStatusStep.api';

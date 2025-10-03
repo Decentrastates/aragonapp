@@ -5,7 +5,7 @@ import type { ISetupBodyForm } from '@/modules/createDao/dialogs/setupBodyDialog
 import type { IPluginProposalCreationSettingsParams } from '@/modules/createDao/types';
 import { BodyType } from '@/modules/createDao/types/enum';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { CheckboxCard, invariant, type CheckboxState } from '@aragon/gov-ui-kit';
+import { CheckboxCard, invariant, type CheckboxState } from '@cddao/gov-ui-kit';
 import { useEffect } from 'react';
 import type { IMultisigSetupGovernanceForm } from '../multisigSetupGovernance';
 

@@ -10,7 +10,7 @@ import {
     InputNumber,
     type ICompositeAddress,
     type IProposalActionComponentProps,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { useEffect, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { encodeFunctionData, parseUnits, zeroAddress } from 'viem';

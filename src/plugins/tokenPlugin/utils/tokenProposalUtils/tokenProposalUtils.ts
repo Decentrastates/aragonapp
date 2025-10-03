@@ -1,5 +1,5 @@
 import { proposalStatusUtils } from '@/shared/utils/proposalStatusUtils';
-import { type ProposalStatus } from '@aragon/gov-ui-kit';
+import { type ProposalStatus } from '@cddao/gov-ui-kit';
 import { DateTime } from 'luxon';
 import { formatUnits } from 'viem';
 import { DaoTokenVotingMode, VoteOption, type ITokenProposal, type ITokenProposalOptionVotes } from '../../types';

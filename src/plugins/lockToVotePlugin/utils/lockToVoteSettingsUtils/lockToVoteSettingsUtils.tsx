@@ -1,6 +1,6 @@
 import { type TranslationFunction } from '@/shared/components/translationsProvider';
 import { dateUtils } from '@/shared/utils/dateUtils';
-import { formatterUtils, type IDefinitionSetting, NumberFormat } from '@aragon/gov-ui-kit';
+import { formatterUtils, type IDefinitionSetting, NumberFormat } from '@cddao/gov-ui-kit';
 import { formatUnits } from 'viem';
 import { tokenSettingsUtils } from '../../../tokenPlugin/utils/tokenSettingsUtils';
 import { DaoLockToVoteVotingMode, type ILockToVotePluginSettings } from '../../types';

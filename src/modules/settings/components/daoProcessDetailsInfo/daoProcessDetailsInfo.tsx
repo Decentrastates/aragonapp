@@ -2,7 +2,7 @@ import type { IDao, IDaoPlugin } from '@/shared/api/daoService';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useDaoPluginInfo } from '@/shared/hooks/useDaoPluginInfo';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { DefinitionList } from '@aragon/gov-ui-kit';
+import { DefinitionList } from '@cddao/gov-ui-kit';
 
 export interface IDaoProcessDetailsInfoProps {
     /**

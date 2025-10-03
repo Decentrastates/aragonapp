@@ -1,7 +1,7 @@
 import { AssetList, type IAssetListProps } from '@/modules/finance/components/assetList';
 import * as useAssetListData from '@/modules/finance/hooks/useAssetListData/useAssetListData';
 import { generateAsset, generateToken } from '@/modules/finance/testUtils';
-import { GukModulesProvider } from '@aragon/gov-ui-kit';
+import { GukModulesProvider } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 
 describe('<AssetList /> component', () => {

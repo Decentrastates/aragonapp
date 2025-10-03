@@ -2,7 +2,7 @@
 
 import { useDebugContext } from '@/shared/components/debugProvider/debugProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Button, Heading, IconType } from '@aragon/gov-ui-kit';
+import { Button, Heading, IconType } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import { useEffect, useRef, useState } from 'react';
 import { DebugPanelControl } from './debugPanelControl';

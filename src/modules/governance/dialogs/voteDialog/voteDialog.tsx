@@ -9,7 +9,7 @@ import {
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useStepper } from '@/shared/hooks/useStepper';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { invariant, type VoteIndicator, VoteProposalDataListItemStructure } from '@aragon/gov-ui-kit';
+import { invariant, type VoteIndicator, VoteProposalDataListItemStructure } from '@cddao/gov-ui-kit';
 import { useRouter } from 'next/navigation';
 import { useAccount } from 'wagmi';
 import type { IProposal } from '../../api/governanceService';

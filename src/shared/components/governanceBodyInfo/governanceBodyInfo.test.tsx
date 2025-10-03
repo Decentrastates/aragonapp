@@ -1,4 +1,4 @@
-import { addressUtils } from '@aragon/gov-ui-kit';
+import { addressUtils } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { GovernanceBodyInfo, type IGovernanceBodyInfoProps } from './governanceBodyInfo';
 

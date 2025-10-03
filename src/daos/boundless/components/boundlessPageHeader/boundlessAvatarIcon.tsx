@@ -1,4 +1,4 @@
-import { Icon, IconType } from '@aragon/gov-ui-kit';
+import { Icon, IconType } from '@cddao/gov-ui-kit';
 import { motion } from 'framer-motion';
 
 export interface IBoundlessActionAvatarIconProps {

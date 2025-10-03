@@ -1,4 +1,4 @@
-import type { IDefinitionSetting } from '@aragon/gov-ui-kit';
+import type { IDefinitionSetting } from '@cddao/gov-ui-kit';
 
 export interface IPermissionCheckGuardResult {
     /**

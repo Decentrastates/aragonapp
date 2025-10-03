@@ -1,4 +1,4 @@
-import type { ICompositeAddress } from '@aragon/gov-ui-kit';
+import type { ICompositeAddress } from '@cddao/gov-ui-kit';
 import type { IAssetInputFormData } from '../assetInput';
 
 export interface ITransferAssetFormData extends IAssetInputFormData {

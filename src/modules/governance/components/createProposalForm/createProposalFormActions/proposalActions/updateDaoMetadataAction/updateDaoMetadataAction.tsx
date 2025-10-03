@@ -5,7 +5,7 @@ import { usePinFile } from '@/shared/api/ipfsService/mutations/usePinFile';
 import { useFormField } from '@/shared/hooks/useFormField';
 import { ipfsUtils } from '@/shared/utils/ipfsUtils';
 import { transactionUtils } from '@/shared/utils/transactionUtils';
-import type { IProposalActionComponentProps } from '@aragon/gov-ui-kit';
+import type { IProposalActionComponentProps } from '@cddao/gov-ui-kit';
 import { useCallback, useEffect } from 'react';
 import { encodeFunctionData } from 'viem';
 import type { IProposalActionData } from '../../../createProposalFormDefinitions';

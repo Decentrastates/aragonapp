@@ -11,7 +11,7 @@ import {
     IconType,
     type IProposalActionChangeMembers as IGukProposalActionChangeMembers,
     type IProposalActionChangeSettings as IGukProposalActionChangeSettings,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { MultisigAddMembersAction } from '../../components/multisigActions/multisigAddMembersAction';
 import { MultisigRemoveMembersAction } from '../../components/multisigActions/multisigRemoveMembersAction';
 import { MultisigUpdateSettingsAction } from '../../components/multisigActions/multisigUpdateSettingsAction';

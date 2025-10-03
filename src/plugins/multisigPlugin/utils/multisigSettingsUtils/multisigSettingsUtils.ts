@@ -1,6 +1,6 @@
 import { type IMultisigPluginSettings } from '@/plugins/multisigPlugin/types';
 import { type TranslationFunction } from '@/shared/components/translationsProvider';
-import type { IDefinitionSetting } from '@aragon/gov-ui-kit';
+import type { IDefinitionSetting } from '@cddao/gov-ui-kit';
 
 export interface IMultisigSettingsParseParams {
     /**

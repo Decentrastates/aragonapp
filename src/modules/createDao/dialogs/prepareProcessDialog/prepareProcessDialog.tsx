@@ -14,7 +14,7 @@ import { useTranslations } from '@/shared/components/translationsProvider';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
 import { useStepper } from '@/shared/hooks/useStepper';
 import { pluginTransactionUtils } from '@/shared/utils/pluginTransactionUtils';
-import { invariant } from '@aragon/gov-ui-kit';
+import { invariant } from '@cddao/gov-ui-kit';
 import { useCallback, useMemo, useState } from 'react';
 import type { TransactionReceipt } from 'viem';
 import { useAccount } from 'wagmi';

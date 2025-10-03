@@ -4,7 +4,7 @@ import type { Network } from '@/shared/api/daoService';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
 import { monitoringUtils } from '@/shared/utils/monitoringUtils';
-import { addressUtils, InputText } from '@aragon/gov-ui-kit';
+import { addressUtils, InputText } from '@cddao/gov-ui-kit';
 import { useAccount } from 'wagmi';
 import type { ICapitalDistributorClaimDialogForm } from '../capitalDistributorClaimDialogDefinitions';
 

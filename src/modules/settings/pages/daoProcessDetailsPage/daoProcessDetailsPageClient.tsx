@@ -17,7 +17,7 @@ import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
 import { useSlotSingleFunction } from '@/shared/hooks/useSlotSingleFunction';
 import { PluginType } from '@/shared/types';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { Card, DateFormat, formatterUtils } from '@aragon/gov-ui-kit';
+import { Card, DateFormat, formatterUtils } from '@cddao/gov-ui-kit';
 import { FormProvider, useForm } from 'react-hook-form';
 import { DaoProcessAllowedActions } from '../../components/daoProccessAllowedActions';
 import { DaoProcessDetailsInfo } from '../../components/daoProcessDetailsInfo';

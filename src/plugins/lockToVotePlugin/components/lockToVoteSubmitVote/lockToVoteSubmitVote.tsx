@@ -12,7 +12,7 @@ import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
-import { Button, Card, ChainEntityType, IconType, useBlockExplorer, type VoteIndicator } from '@aragon/gov-ui-kit';
+import { Button, Card, ChainEntityType, IconType, useBlockExplorer, type VoteIndicator } from '@cddao/gov-ui-kit';
 import { useCallback, useEffect, useState } from 'react';
 import { LockToVotePluginDialogId } from '../../constants/lockToVotePluginDialogId';
 import type { ILockToVoteSubmitVoteFeedbackDialogParams } from '../../dialogs/lockToVoteSubmitVoteFeedbackDialog';

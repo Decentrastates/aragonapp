@@ -4,7 +4,7 @@ import type { Network } from '@/shared/api/daoService';
 import { useDialogContext, type IDialogComponentProps } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { WizardDialog } from '@/shared/components/wizards/wizardDialog';
-import { invariant } from '@aragon/gov-ui-kit';
+import { invariant } from '@cddao/gov-ui-kit';
 import { useAccount } from 'wagmi';
 import type { ICampaign } from '../../api/capitalDistributorService';
 import { CapitalDistributorPluginDialogId } from '../../constants/capitalDistributorPluginDialogId';

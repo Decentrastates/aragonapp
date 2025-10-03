@@ -1,5 +1,5 @@
 import type { IResourcesInputResource } from '@/shared/components/forms/resourcesInput';
-import type { ICompositeAddress } from '@aragon/gov-ui-kit';
+import type { ICompositeAddress } from '@cddao/gov-ui-kit';
 import type { BodyType } from '../../types/enum';
 
 export interface ISetupBodyFormBase {

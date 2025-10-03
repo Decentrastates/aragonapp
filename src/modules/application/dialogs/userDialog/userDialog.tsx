@@ -10,7 +10,7 @@ import {
     Link,
     MemberAvatar,
     useBlockExplorer,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { useEffect } from 'react';
 import { mainnet } from 'viem/chains';
 import { useAccount, useDisconnect, useEnsName } from 'wagmi';

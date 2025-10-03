@@ -1,6 +1,6 @@
 import { useFormField } from '@/shared/hooks/useFormField';
 import { dateUtils, type IDateDuration } from '@/shared/utils/dateUtils';
-import { Card, InputNumber } from '@aragon/gov-ui-kit';
+import { Card, InputNumber } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import { Duration } from 'luxon';
 import type { ComponentProps } from 'react';

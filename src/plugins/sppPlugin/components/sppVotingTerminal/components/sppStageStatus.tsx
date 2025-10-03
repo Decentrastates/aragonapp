@@ -7,7 +7,7 @@ import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
 import { useDynamicValue } from '@/shared/hooks/useDynamicValue';
-import { Button, ChainEntityType, IconType, ProposalStatus, useBlockExplorer } from '@aragon/gov-ui-kit';
+import { Button, ChainEntityType, IconType, ProposalStatus, useBlockExplorer } from '@cddao/gov-ui-kit';
 import { DateTime } from 'luxon';
 
 export interface ISppStageStatusProps {

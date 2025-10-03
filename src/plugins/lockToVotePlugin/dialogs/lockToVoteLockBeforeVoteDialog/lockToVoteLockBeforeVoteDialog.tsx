@@ -3,7 +3,7 @@
 import { AssetInput, type IAssetInputFormData } from '@/modules/finance/components/assetInput';
 import { useDialogContext, type IDialogComponentProps } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Dialog, invariant } from '@aragon/gov-ui-kit';
+import { Dialog, invariant } from '@cddao/gov-ui-kit';
 import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import { parseUnits } from 'viem';
 import { useLockToVoteData } from '../../hooks/useLockToVoteData';

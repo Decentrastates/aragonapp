@@ -1,5 +1,5 @@
 import { proposalStatusUtils } from '@/shared/utils/proposalStatusUtils';
-import { ProposalStatus } from '@aragon/gov-ui-kit';
+import { ProposalStatus } from '@cddao/gov-ui-kit';
 import { DateTime } from 'luxon';
 import { generateSppPluginSettings, generateSppProposal, generateSppStage } from '../../testUtils';
 import { type ISppProposal } from '../../types';

@@ -4,7 +4,7 @@ import { ApplicationDialogId } from '@/modules/application/constants/application
 import { AragonLogo } from '@/shared/components/aragonLogo';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { Navigation } from '@/shared/components/navigation';
-import { Wallet } from '@aragon/gov-ui-kit';
+import { Wallet } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';

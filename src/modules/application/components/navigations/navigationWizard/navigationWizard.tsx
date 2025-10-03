@@ -8,7 +8,7 @@ import { Navigation, type INavigationContainerProps } from '@/shared/components/
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { ipfsUtils } from '@/shared/utils/ipfsUtils';
 import type { ITFuncOptions } from '@/shared/utils/translationsUtils';
-import { DaoAvatar, Icon, IconType, Wallet } from '@aragon/gov-ui-kit';
+import { DaoAvatar, Icon, IconType, Wallet } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import { type Route } from 'next';
 import { useAccount } from 'wagmi';

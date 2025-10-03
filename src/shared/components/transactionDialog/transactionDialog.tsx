@@ -2,7 +2,7 @@ import { Network } from '@/shared/api/daoService';
 import { useTransactionStatus } from '@/shared/api/transactionService';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
-import { ChainEntityType, Dialog, IconType, useBlockExplorer } from '@aragon/gov-ui-kit';
+import { ChainEntityType, Dialog, IconType, useBlockExplorer } from '@cddao/gov-ui-kit';
 import { useMutation } from '@tanstack/react-query';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useAccount, useSendTransaction, useSwitchChain, useWaitForTransactionReceipt } from 'wagmi';

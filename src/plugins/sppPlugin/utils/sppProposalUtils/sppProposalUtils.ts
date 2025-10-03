@@ -1,5 +1,5 @@
 import { proposalStatusUtils } from '@/shared/utils/proposalStatusUtils';
-import { ProposalStatus } from '@aragon/gov-ui-kit';
+import { ProposalStatus } from '@cddao/gov-ui-kit';
 import { type ISppProposal, type ISppStage, SppProposalType } from '../../types';
 import { sppStageUtils } from '../sppStageUtils';
 

@@ -5,7 +5,7 @@ import { ProcessDataListItem } from '@/shared/components/processDataListItem';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
 import { PluginType } from '@/shared/types';
-import { Dialog, invariant } from '@aragon/gov-ui-kit';
+import { Dialog, invariant } from '@cddao/gov-ui-kit';
 import { useState } from 'react';
 
 export interface ISelectPluginDialogParams {

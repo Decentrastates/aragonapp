@@ -1,5 +1,5 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { InputContainer, ToggleGroup, useRandomId } from '@aragon/gov-ui-kit';
+import { InputContainer, ToggleGroup, useRandomId } from '@cddao/gov-ui-kit';
 import { VoteOption } from '../../../types';
 import { TokenVotingOptionToggle } from './tokenVotingOptionToggle';
 

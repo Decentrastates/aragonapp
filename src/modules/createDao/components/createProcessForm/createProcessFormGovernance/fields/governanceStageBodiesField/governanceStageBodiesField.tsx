@@ -2,7 +2,7 @@ import { CreateDaoDialogId } from '@/modules/createDao/constants/createDaoDialog
 import { type ISetupBodyDialogParams, type ISetupBodyForm } from '@/modules/createDao/dialogs/setupBodyDialog';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Button, CardEmptyState, IconType, InputContainer } from '@aragon/gov-ui-kit';
+import { Button, CardEmptyState, IconType, InputContainer } from '@cddao/gov-ui-kit';
 import { useFieldArray, useFormContext, useWatch } from 'react-hook-form';
 import { BodyType } from '../../../../../types/enum';
 import { GovernanceBodyField } from '../governanceBodyField';

@@ -13,7 +13,7 @@ import {
     RadioCard,
     RadioGroup,
     type IAddressInputResolvedValue,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { useEffect, useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useAccount } from 'wagmi';

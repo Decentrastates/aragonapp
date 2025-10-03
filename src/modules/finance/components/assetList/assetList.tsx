@@ -9,7 +9,7 @@ import {
     DataListFilter,
     DataListPagination,
     DataListRoot,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { useMemo, useState, type ComponentProps } from 'react';
 import { AssetListItem } from './assetListItem';
 

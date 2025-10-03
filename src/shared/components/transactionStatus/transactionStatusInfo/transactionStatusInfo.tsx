@@ -1,5 +1,5 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Heading, invariant } from '@aragon/gov-ui-kit';
+import { Heading, invariant } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 
 export interface ITransactionInfo {

@@ -11,7 +11,7 @@ import { useDaoPluginFilterUrlParam } from '@/shared/hooks/useDaoPluginFilterUrl
 import { pluginGroupFilter } from '@/shared/hooks/useDaoPlugins';
 import { PluginType } from '@/shared/types';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { invariant } from '@aragon/gov-ui-kit';
+import { invariant } from '@cddao/gov-ui-kit';
 import { useRouter } from 'next/navigation';
 import type { IGetProposalListParams } from '../../api/governanceService';
 import { DaoProposalList } from '../../components/daoProposalList';

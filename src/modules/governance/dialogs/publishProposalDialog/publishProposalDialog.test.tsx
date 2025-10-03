@@ -16,7 +16,7 @@ import {
     generateReactQueryResultSuccess,
 } from '@/shared/testUtils';
 import { testLogger, timeUtils } from '@/test/utils';
-import { GukModulesProvider, modulesCopy } from '@aragon/gov-ui-kit';
+import { GukModulesProvider, modulesCopy } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { act, type ReactNode } from 'react';
 import * as Wagmi from 'wagmi';

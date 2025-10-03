@@ -12,7 +12,7 @@ import {
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useStepper } from '@/shared/hooks/useStepper';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { invariant, ProposalDataListItem, ProposalStatus } from '@aragon/gov-ui-kit';
+import { invariant, ProposalDataListItem, ProposalStatus } from '@cddao/gov-ui-kit';
 import { useRouter } from 'next/navigation';
 import type { ISppProposal } from '../../types';
 import { sppAdvanceStageDialogUtils } from './sppAdvanceStageDialogUtils';

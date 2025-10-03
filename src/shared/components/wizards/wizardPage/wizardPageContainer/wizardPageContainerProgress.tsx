@@ -1,5 +1,5 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Progress } from '@aragon/gov-ui-kit';
+import { Progress } from '@cddao/gov-ui-kit';
 import { useWizardContext } from '../../wizard';
 
 export interface IWizardPageContainerProgressProps {

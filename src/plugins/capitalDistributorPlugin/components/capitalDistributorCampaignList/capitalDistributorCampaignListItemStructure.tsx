@@ -12,7 +12,7 @@ import {
     IconType,
     NumberFormat,
     useBlockExplorer,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import { formatUnits } from 'viem';
 import { CampaignStatus, type ICampaign } from '../../api/capitalDistributorService';
 import { CapitalDistributorPluginDialogId } from '../../constants/capitalDistributorPluginDialogId';

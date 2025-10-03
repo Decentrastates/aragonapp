@@ -1,6 +1,6 @@
 import { StatCard } from '@/shared/components/statCard';
 import { useTranslations } from '@/shared/components/translationsProvider/translationsProvider';
-import { DateFormat, formatterUtils } from '@aragon/gov-ui-kit';
+import { DateFormat, formatterUtils } from '@cddao/gov-ui-kit';
 import { useAccount } from 'wagmi';
 import { CampaignStatus, type IGetCampaignListParams, useCampaignList } from '../../api/capitalDistributorService';
 

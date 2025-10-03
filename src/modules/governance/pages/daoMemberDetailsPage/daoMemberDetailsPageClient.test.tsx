@@ -15,7 +15,7 @@ import {
     formatterUtils,
     GukModulesProvider,
     IconType,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import type * as ReactQuery from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
@@ -25,8 +25,8 @@ import * as governanceService from '../../api/governanceService';
 import { generateMember, generateMemberMetrics } from '../../testUtils';
 import { DaoMemberDetailsPageClient, type IDaoMemberDetailsPageClientProps } from './daoMemberDetailsPageClient';
 
-jest.mock('@aragon/gov-ui-kit', () => ({
-    ...jest.requireActual<typeof ReactQuery>('@aragon/gov-ui-kit'),
+jest.mock('@cddao/gov-ui-kit', () => ({
+    ...jest.requireActual<typeof ReactQuery>('@cddao/gov-ui-kit'),
     MemberAvatar: (props: { src: string }) => <div data-testid="avatar-mock" data-src={props.src} />,
 }));
 

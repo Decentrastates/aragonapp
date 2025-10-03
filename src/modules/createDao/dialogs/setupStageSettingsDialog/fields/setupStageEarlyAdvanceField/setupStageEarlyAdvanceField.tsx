@@ -1,6 +1,6 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { Switch } from '@aragon/gov-ui-kit';
+import { Switch } from '@cddao/gov-ui-kit';
 import { useFormContext } from 'react-hook-form';
 import type { ISetupStageSettingsForm } from '../../setupStageSettingsDialogDefinitions';
 

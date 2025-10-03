@@ -5,7 +5,7 @@ import { DaoMemberList } from '@/modules/governance/components/daoMemberList';
 import { type IDialogComponentProps, useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
-import { Dialog, invariant } from '@aragon/gov-ui-kit';
+import { Dialog, invariant } from '@cddao/gov-ui-kit';
 
 export interface IMultisigRemoveMembersActionDialogParams {
     /**

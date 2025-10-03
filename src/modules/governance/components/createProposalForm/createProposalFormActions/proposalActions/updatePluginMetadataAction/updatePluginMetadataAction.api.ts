@@ -5,7 +5,7 @@ import type {
 } from '@/modules/governance/api/governanceService';
 import type { IDaoPlugin } from '@/shared/api/daoService';
 import type { IResourcesInputResource } from '@/shared/components/forms/resourcesInput';
-import type { IProposalActionComponentProps } from '@aragon/gov-ui-kit';
+import type { IProposalActionComponentProps } from '@cddao/gov-ui-kit';
 import type { IProposalActionData } from '../../../createProposalFormDefinitions';
 
 export interface IUpdatePluginMetadataFormData extends Omit<IProposalActionUpdatePluginMetadataObject, 'links'> {

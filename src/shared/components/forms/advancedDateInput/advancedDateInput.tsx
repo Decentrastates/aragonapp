@@ -1,5 +1,5 @@
 import { useFormField } from '@/shared/hooks/useFormField';
-import { RadioCard, RadioGroup } from '@aragon/gov-ui-kit';
+import { RadioCard, RadioGroup } from '@cddao/gov-ui-kit';
 import { useTranslations } from '../../translationsProvider';
 import type { IAdvancedDateInputProps } from './advancedDateInput.api';
 import { AdvancedDateInputDuration } from './advancedDateInputDuration';

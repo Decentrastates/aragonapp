@@ -1,5 +1,5 @@
 import { useDebugContext, type IDebugContextControl } from '@/shared/components/debugProvider';
-import { InputText, Switch } from '@aragon/gov-ui-kit';
+import { InputText, Switch } from '@cddao/gov-ui-kit';
 
 export interface IDebugPanelControlProps {
     /**

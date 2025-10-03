@@ -15,7 +15,7 @@ import { PluginInterfaceType, type IDaoPlugin, type IPluginSettings } from '@/sh
 import { daoUtils } from '@/shared/utils/daoUtils';
 import { dateUtils } from '@/shared/utils/dateUtils';
 import { pluginRegistryUtils } from '@/shared/utils/pluginRegistryUtils';
-import type { ICompositeAddress } from '@aragon/gov-ui-kit';
+import type { ICompositeAddress } from '@cddao/gov-ui-kit';
 import { SettingsSlotId } from '../../constants/moduleSlots';
 import type { IPluginToFormDataParams } from '../../types';
 

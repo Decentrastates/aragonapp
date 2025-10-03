@@ -1,5 +1,5 @@
 import { generateToken, generateTransaction } from '@/modules/finance/testUtils';
-import { GukModulesProvider } from '@aragon/gov-ui-kit';
+import { GukModulesProvider } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import * as useTransactionListData from '../../hooks/useTransactionListData';
 import { TransactionList, type ITransactionListProps } from './transactionList';

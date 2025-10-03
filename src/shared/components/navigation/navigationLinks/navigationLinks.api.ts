@@ -1,4 +1,4 @@
-import type { IconType } from '@aragon/gov-ui-kit';
+import type { IconType } from '@cddao/gov-ui-kit';
 
 export type NavigationLinksVariant = 'column' | 'row';
 

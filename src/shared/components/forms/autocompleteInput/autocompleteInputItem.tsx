@@ -1,4 +1,4 @@
-import { Icon } from '@aragon/gov-ui-kit';
+import { Icon } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import { type ComponentProps, forwardRef } from 'react';
 import { KeyboardShortcut } from '../../keyboardShortcut';

@@ -1,5 +1,5 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { EmptyState, IconType, type IEmptyStateBaseProps, type IllustrationObjectType } from '@aragon/gov-ui-kit';
+import { EmptyState, IconType, type IEmptyStateBaseProps, type IllustrationObjectType } from '@cddao/gov-ui-kit';
 
 export interface IErrorFeedbackProps {
     /**

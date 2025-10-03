@@ -11,7 +11,7 @@ import {
     Heading,
     Link,
     NumberFormat,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import { formatUnits } from 'viem';

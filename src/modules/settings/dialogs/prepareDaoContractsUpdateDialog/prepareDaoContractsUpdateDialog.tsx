@@ -10,7 +10,7 @@ import {
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useStepper } from '@/shared/hooks/useStepper';
 import { daoUtils } from '@/shared/utils/daoUtils';
-import { invariant } from '@aragon/gov-ui-kit';
+import { invariant } from '@cddao/gov-ui-kit';
 import { useCallback, useEffect } from 'react';
 import type { TransactionReceipt } from 'viem';
 import { prepareDaoContractsUpdateDialogUtils } from './prepareDaoContractsUpdateDialogUtils';

@@ -7,7 +7,7 @@ import {
     DataList,
     SmartContractFunctionDataListItem,
     type IEmptyStateObjectIllustrationProps,
-} from '@aragon/gov-ui-kit';
+} from '@cddao/gov-ui-kit';
 
 export interface IDaoProcessAllowedActionsProps {
     /**

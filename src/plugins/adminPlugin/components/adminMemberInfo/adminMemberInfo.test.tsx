@@ -4,7 +4,7 @@ import {
     generatePaginatedResponseMetadata,
     generateReactQueryInfiniteResultSuccess,
 } from '@/shared/testUtils';
-import { GukModulesProvider } from '@aragon/gov-ui-kit';
+import { GukModulesProvider } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import * as governanceService from '../../../../modules/governance/api/governanceService';
 import { generateMember } from '../../../../modules/governance/testUtils';

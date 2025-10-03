@@ -1,6 +1,6 @@
 import type { ProposalActionType } from '@/modules/governance/api/governanceService';
 import type { IResource } from '@/shared/api/daoService';
-import { type IProposalActionUpdateMetadata as IGukProposalActionUpdateMetadata } from '@aragon/gov-ui-kit';
+import { type IProposalActionUpdateMetadata as IGukProposalActionUpdateMetadata } from '@cddao/gov-ui-kit';
 
 export interface IProposalActionUpdatePluginMetadataObject {
     /**

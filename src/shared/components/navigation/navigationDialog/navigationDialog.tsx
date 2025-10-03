@@ -1,5 +1,5 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Dialog, IconType, type IDialogRootProps } from '@aragon/gov-ui-kit';
+import { Dialog, IconType, type IDialogRootProps } from '@cddao/gov-ui-kit';
 import { NavigationLinks, type INavigationLink } from '../navigationLinks';
 import { NavigationLinksItem } from '../navigationLinks/navigationLinksItem';
 

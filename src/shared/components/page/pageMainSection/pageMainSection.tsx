@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Heading, type IButtonProps, Icon, type IconType } from '@aragon/gov-ui-kit';
+import { Button, Heading, type IButtonProps, Icon, type IconType } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import type { ComponentProps } from 'react';
 

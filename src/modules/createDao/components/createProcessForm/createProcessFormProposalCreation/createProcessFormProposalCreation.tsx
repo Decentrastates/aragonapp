@@ -2,7 +2,7 @@ import { CreateDaoSlotId } from '@/modules/createDao/constants/moduleSlots';
 import { PluginSingleComponent } from '@/shared/components/pluginSingleComponent';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import { InputContainer, RadioCard, RadioGroup } from '@aragon/gov-ui-kit';
+import { InputContainer, RadioCard, RadioGroup } from '@cddao/gov-ui-kit';
 import { useEffect, useMemo } from 'react';
 import { useFormContext, useWatch } from 'react-hook-form';
 import { BodyType } from '../../../types/enum';

@@ -1,4 +1,4 @@
-import { Button, DefinitionList, IconType } from '@aragon/gov-ui-kit';
+import { Button, DefinitionList, IconType } from '@cddao/gov-ui-kit';
 import { useTranslations } from '../../../../shared/components/translationsProvider';
 import type { IEfpStats } from '../../api/efpService/domain';
 

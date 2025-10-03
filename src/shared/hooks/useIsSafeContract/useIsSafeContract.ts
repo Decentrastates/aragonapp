@@ -1,5 +1,5 @@
 import { useSmartContractAbi } from '@/modules/governance/api/smartContractService';
-import { addressUtils } from '@aragon/gov-ui-kit';
+import { addressUtils } from '@cddao/gov-ui-kit';
 import { useMemo } from 'react';
 import type { Network } from '../../api/daoService';
 import type { QueryOptions } from '../../types';

@@ -3,7 +3,7 @@ import { PluginInterfaceType } from '@/shared/api/daoService';
 import * as useDaoPluginInfo from '@/shared/hooks/useDaoPluginInfo';
 import * as useSlotSingleFunction from '@/shared/hooks/useSlotSingleFunction';
 import { generatePluginSettings } from '@/shared/testUtils';
-import { ProposalStatus } from '@aragon/gov-ui-kit';
+import { ProposalStatus } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import * as wagmi from 'wagmi';

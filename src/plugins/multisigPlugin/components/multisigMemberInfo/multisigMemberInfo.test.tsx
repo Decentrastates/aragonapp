@@ -10,7 +10,7 @@ import {
     generateReactQueryInfiniteResultSuccess,
     generateReactQueryResultSuccess,
 } from '@/shared/testUtils';
-import { GukModulesProvider } from '@aragon/gov-ui-kit';
+import { GukModulesProvider } from '@cddao/gov-ui-kit';
 import { render, screen } from '@testing-library/react';
 import { generateMultisigPluginSettings } from '../../testUtils';
 import { type IMultisigMemberInfoProps, MultisigMemberInfo } from './multisigMemberInfo';

@@ -1,4 +1,4 @@
-import { invariant } from '@aragon/gov-ui-kit';
+import { invariant } from '@cddao/gov-ui-kit';
 import { createContext, useContext } from 'react';
 
 export interface IAddressesInputContext {

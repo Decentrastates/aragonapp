@@ -2,7 +2,7 @@
 
 import { type IDaoPlugin, useDao } from '@/shared/api/daoService';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { DefinitionList } from '@aragon/gov-ui-kit';
+import { DefinitionList } from '@cddao/gov-ui-kit';
 import { useMemberList } from '../../../../modules/governance/api/governanceService';
 import { daoUtils } from '../../../../shared/utils/daoUtils';
 import type { IMultisigPluginSettings } from '../../types';
