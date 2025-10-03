@@ -1,0 +1,1 @@
+export { CreateNewNftSwitch, type ICreateNewNftSwitchProps } from './createNewNftSwitch';

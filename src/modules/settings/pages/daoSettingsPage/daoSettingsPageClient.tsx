@@ -22,6 +22,7 @@ import { DaoSettingsInfo } from '../../components/daoSettingsInfo';
 import { DaoVersionInfo } from '../../components/daoVersionInfo';
 import { UpdateDaoContracts } from '../../components/updateDaoContracts';
 import { SettingsSlotId } from '../../constants/moduleSlots';
+import { type ICreateDrawDetailsDialogParams } from '@/modules/createDao/dialogs/createDrawDetailsDialog';
 
 export interface IDaoSettingsPageClientProps {
     /**
@@ -81,12 +82,23 @@ export const DaoSettingsPageClient: React.FC<IDaoSettingsPageClientProps> = (pro
         const params: ICreateProcessDetailsDialogParams = { onActionClick: handleConfirmProcessCreation };
         open(CreateDaoDialogId.CREATE_PROCESS_DETAILS, { params });
     };
+    const handleAddDraw = () => {
+        const params: ICreateDrawDetailsDialogParams = {
+            onActionClick: () => handleConfirmProcessCreation('draw'),
+        };
+        open(CreateDaoDialogId.CREATE_DRAW_DETAILS, { params });
+    };
 
     // Adding processes to a DAO is only supported on OSx versions equal or greater to 1.4
     const supportsAddProcess = versionComparatorUtils.isGreaterOrEqualTo(dao?.version, '1.4');
     const addProcessAction = {
         onClick: handleAddProcess,
         label: t('app.settings.daoSettingsPage.main.governanceAction'),
+        iconLeft: IconType.PLUS,
+    };
+    const addDrawAction = {
+        onClick: handleAddDraw,
+        label: t('app.settings.daoSettingsPage.main.drawAction'),
         iconLeft: IconType.PLUS,
     };
 
@@ -123,6 +135,25 @@ export const DaoSettingsPageClient: React.FC<IDaoSettingsPageClientProps> = (pro
                         ))}
                     </Page.MainSection>
                 )}
+                <Page.MainSection
+                    id="draw-plugin"
+                    className="gap-3"
+                    inset={false}
+                    title={t('app.plugins.draw.settingsPanel.title')}
+                    action={addDrawAction}
+                >
+                    <div className="text-sm text-neutral-600">
+                        {t('app.plugins.draw.settingsPanel.description') ||
+                            'Deploy and manage the Draw plugin for your DAO.'}
+                    </div>
+                    {/* {processPlugins.map((process) => (
+                        <ProcessDataListItem
+                            key={process.uniqueId}
+                            process={process.meta}
+                            href={daoUtils.getDaoUrl(dao, `/settings/${process.meta.slug}`)}
+                        />
+                    ))} */}
+                </Page.MainSection>
             </Page.Main>
             <Page.Aside>
                 <Page.AsideCard title={t('app.settings.daoSettingsPage.aside.versionInfoTitle')}>

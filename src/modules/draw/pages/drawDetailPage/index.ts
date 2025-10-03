@@ -1,0 +1,1 @@
+export { DrawDetailPage, type IDrawDetailPageProps } from './drawDetailPage';
