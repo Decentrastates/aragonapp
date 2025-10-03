@@ -5,7 +5,7 @@ import { sanctionedAddressesOptions } from '@/modules/explore/api/cmsService';
 import { whitelistedAddressesOptions } from '@/modules/explore/api/cmsService/queries/useWhitelistedAddresses';
 import { translations } from '@/shared/constants/translations';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
-import { headers } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import NextTopLoader from 'nextjs-toploader';
 import type { ReactNode } from 'react';
 import { cookieToInitialState } from 'wagmi';
@@ -29,7 +29,18 @@ fetchInterceptorUtils.intecept();
 export const LayoutRoot: React.FC<ILayoutRootProps> = async (props) => {
     const { children } = props;
 
-    const translationAssets = await translations.en();
+    // Get language from cookies, with fallback to 'en'
+    const cookieStore = await cookies();
+    const language = cookieStore.get('language')?.value ?? 'en';
+    
+    // Dynamically load translation assets based on language configuration
+    let translationAssets;
+    if (Object.keys(translations).includes(language)) {
+        const languageKey = language as keyof typeof translations;
+        translationAssets = await translations[languageKey]();
+    } else {
+        translationAssets = await translations.en();
+    }
 
     const requestHeaders = await headers();
     const wagmiInitialState = cookieToInitialState(wagmiConfig, requestHeaders.get('cookie'));
@@ -40,7 +51,7 @@ export const LayoutRoot: React.FC<ILayoutRootProps> = async (props) => {
     const dehydratedState = dehydrate(queryClient);
 
     return (
-        <html lang="en" className="h-full">
+        <html lang={language} className="h-full">
             <body className="flex h-full flex-col bg-neutral-50">
                 <NextTopLoader
                     color="var(--color-primary-400)"

@@ -12,6 +12,7 @@ import { DaoAvatar, Icon, IconType, Wallet } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import { type Route } from 'next';
 import { useAccount } from 'wagmi';
+import { LanguageSwitcher } from '@/shared/components/languageSwitcher/languageSwitcher';
 
 export interface INavigationWizardProps extends INavigationContainerProps {
     /**
@@ -66,7 +67,10 @@ export const NavigationWizard: React.FC<INavigationWizardProps> = (props) => {
                     )}
                 </div>
             </div>
-            <Wallet onClick={handleWalletClick} user={walletUser} />
+            <div className="flex items-center gap-x-2">
+                <LanguageSwitcher />
+                <Wallet onClick={handleWalletClick} user={walletUser} />
+            </div>
         </Navigation.Container>
     );
 };

@@ -2184,6 +2184,11 @@
       "governanceBodyInfo": {
         "external": "External address"
       },
+      "languageSwitcher": {
+        "english": "English",
+        "chinese": "中文",
+        "selectLanguage": "Select language"
+      },
       "page": {
         "header": {
           "readLess": "Read less",

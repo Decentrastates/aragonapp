@@ -21,6 +21,7 @@ import { useState } from 'react';
 import { useAccount } from 'wagmi';
 import { NavigationDaoHome } from './navigationDaoHome';
 import { navigationDaoUtils } from './navigationDaoUtils';
+import { LanguageSwitcher } from '@/shared/components/languageSwitcher/languageSwitcher';
 
 export interface INavigationDaoProps extends INavigationContainerProps {
     /**
@@ -58,6 +59,7 @@ export const NavigationDao: React.FC<INavigationDaoProps> = (props) => {
                 <NavigationDaoHome dao={dao} onClick={() => setIsDialogOpen(true)} />
                 <Navigation.Links className="hidden lg:flex" links={navigationDaoUtils.buildLinks(dao, 'page')} />
                 <div className="flex items-center gap-x-2 lg:gap-x-3">
+                    <LanguageSwitcher />
                     <Wallet onClick={handleWalletClick} user={walletUser} />
                     <Navigation.Trigger className="md:hidden" onClick={() => setIsDialogOpen(true)} />
                 </div>
