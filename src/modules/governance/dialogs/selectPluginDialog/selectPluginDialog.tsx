@@ -20,7 +20,7 @@ export interface ISelectPluginDialogParams {
     /**
      * Callback called on plugin selected.
      */
-    onPluginSelected?: (plugin: IDaoPlugin) => void;
+    onPluginSelected?: (plugin: IDaoPlugin, variant: 'proposal' | 'process' | 'draw' | 'ico') => void;
     /**
      * Plugin to preselect.
      */
@@ -28,7 +28,7 @@ export interface ISelectPluginDialogParams {
     /**
      * Variant of the dialog. Used to customize labels.
      */
-    variant?: 'proposal' | 'process';
+    variant?: 'proposal' | 'process' | 'draw' | 'ico';
     /**
      * Only allow plugins with full execute permissions.
      */
@@ -66,7 +66,7 @@ export const SelectPluginDialog: React.FC<ISelectPluginDialogProps> = (props) =>
 
     const handleConfirm = () => {
         close();
-        onPluginSelected?.(selectedPlugin!.meta);
+        onPluginSelected?.(selectedPlugin!.meta, variant);
     };
 
     return (

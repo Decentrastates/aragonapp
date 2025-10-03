@@ -1,4 +1,5 @@
 import { daoOptions } from '@/shared/api/daoService';
+import { Page } from '@/shared/components/page';
 import type { IDaoPageParams } from '@/shared/types';
 import { daoUtils } from '@/shared/utils/daoUtils';
 import { QueryClient } from '@tanstack/react-query';
@@ -24,7 +25,7 @@ export const DrawDetailPage: React.FC<IDrawDetailPageProps> = async (props) => {
     const { address, addressOrEns, network } = await params;
     const daoId = await daoUtils.resolveDaoId({ addressOrEns, network });
     const queryClient = new QueryClient();
-    
+
     // 预取DAO数据
     await queryClient.fetchQuery(daoOptions({ urlParams: { id: daoId } }));
 
@@ -32,6 +33,8 @@ export const DrawDetailPage: React.FC<IDrawDetailPageProps> = async (props) => {
     // 示例：await queryClient.fetchQuery(drawOptions({ urlParams: { id: address } }));
 
     return (
-        <DrawDetailPageClient daoId={daoId} drawId={address} />
+        <Page.Container>
+            <DrawDetailPageClient daoId={daoId} drawId={address} />
+        </Page.Container>
     );
 };

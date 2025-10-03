@@ -1,4 +1,4 @@
-import { type INftCollectionDetailProps } from '@cddao/gov-ui-kit';
+import { type INftCollectionDetailProps } from '@/plugins/drawPlugin/components/nftCollectionDetail';
 
 // 模拟的NFT集合详情数据
 export const mockNftCollectionDetail: INftCollectionDetailProps = {

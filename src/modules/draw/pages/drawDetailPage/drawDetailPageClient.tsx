@@ -6,8 +6,8 @@ import { useDrawDialogs } from '@/plugins/drawPlugin/hooks/useDrawDialogs';
 import { Page } from '@/shared/components/page';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { daoUtils } from '@/shared/utils/daoUtils/daoUtils';
-import { NftCollectionDetail } from '@cddao/gov-ui-kit';
 import { useAccount } from 'wagmi';
+import { NftCollectionDetail } from '@/plugins/drawPlugin/components/nftCollectionDetail';
 
 export interface IDrawDetailPageClientProps {
     /**
@@ -58,8 +58,8 @@ export const DrawDetailPageClient: React.FC<IDrawDetailPageClientProps> = ({ dao
     };
 
     return (
-        <Page.Container>
-            <Page.Header breadcrumbs={pageBreadcrumbs} />
+        <>
+            <Page.Header breadcrumbs={pageBreadcrumbs} title='抽奖详情' description='抽奖详情' />
             <Page.Content>
                 <Page.Main>
                     <NftCollectionDetail
@@ -70,10 +70,11 @@ export const DrawDetailPageClient: React.FC<IDrawDetailPageClientProps> = ({ dao
                         onRedemptionClick={handleRedemptionClick}
                     />
                 </Page.Main>
+                
                 <Page.Aside>
                     <DrawWidget daoId={daoId} />
                 </Page.Aside>
             </Page.Content>
-        </Page.Container>
+        </>
     );
 };

@@ -14,14 +14,14 @@
       },
       "connectWalletDialog": {
         "a11y": {
-          "description": "Connect your wallet to Aragon",
+          "description": "Connect your wallet to cddao",
           "title": "Connect wallet"
         },
         "action": {
           "cancel": "Cancel",
           "connect": "Connect"
         },
-        "auditLink": "https://github.com/aragon/osx/blob/main/audits/Halborn_AragonOSx_v1_4_Smart_Contract_Security_Assessment_Report_2025_01_03.pdf",
+        "auditLink": "https://github.com/cddao/osx/blob/main/audits/Halborn_cddaoOSx_v1_4_Smart_Contract_Security_Assessment_Report_2025_01_03.pdf",
         "connect": "wants to connect to your wallet",
         "feature": {
           "permissions": "View-only permissions",
@@ -33,8 +33,11 @@
         "title": "Debug"
       },
       "footer": {
-        "copyright": "© {{year}} Aragon",
+        "copyright": "© {{year}} cddao",
         "governed": "Governed on",
+        "languageSwitcher": {
+          "toggleLanguage": "Switch language"
+        },
         "link": {
           "build": "Build",
           "explore": "Explore",
@@ -74,7 +77,10 @@
           "members": "Members",
           "proposals": "Proposals",
           "settings": "Settings",
-          "transactions": "Transactions"
+          "transactions": "Transactions",
+          "ico": "ICO",
+          "draw": "Draw",
+          "mine": "Mine"
         }
       },
       "notFoundBase": {
@@ -92,6 +98,8 @@
           "description": "Information about the connected user",
           "title": "Connected user"
         },
+        "send": "Send",
+        "swap": "Swap",
         "disconnect": "Disconnect"
       }
     },
@@ -357,6 +365,9 @@
       "layoutWizardCreateProcess": {
         "name": "Create process"
       },
+      "layoutWizardCreateDraw": {
+        "name": "Create draw"
+      },
       "prepareProcessDialog": {
         "button": {
           "submit": "Prepare installation"
@@ -591,7 +602,7 @@
       "exploreDaosPage": {
         "doItYourself": {
           "actionLabel": "Developer portal",
-          "subtitle": "Build your own custom Aragon OSx DAO or your own web application using our Governance UI Kit and App Template.",
+          "subtitle": "Build your own custom cddao OSx DAO or your own web application using our Governance UI Kit and App Template.",
           "title": "Do it yourself"
         },
         "enterpriseService": {
@@ -601,7 +612,7 @@
         },
         "hero": {
           "subtitle": "Explore the organizations using our modular governance stack to secure their onchain governance.",
-          "title": "Governed on Aragon"
+          "title": "Governed on DAO"
         },
         "noCodeSetup": {
           "actionLabel": "Create a DAO",
@@ -977,6 +988,10 @@
           "cancel": "Cancel",
           "select": "Create proposal"
         },
+        "draw": {
+          "description": "Select the draw plugin to use for creating the draw event.",
+          "title": "Select draw plugin"
+        },
         "process": {
           "description": "Select the governance process to use for creating the proposal.",
           "title": "Select process"
@@ -1064,6 +1079,586 @@
       }
     },
     "plugins": {
+      "draw": {
+        "nftCollectionList": {
+          "noImage": "No image",
+          "floorPrice": "Floor price",
+          "items": "Items",
+          "owners": "Owners",
+          "volume": "Volume"
+        },
+        "nftCollectionListItem": {
+          "noImage": "No image",
+          "price": "Price",
+          "lastSale": "Last sale",
+          "owner": "Owner"
+        },
+        "nftCollectionDetail": {
+          "noImage": "No image",
+          "lotteryButton": "Participate in draw",
+          "redemptionButton": "Redeem rewards",
+          "floorPrice": "Floor price",
+          "items": "Items",
+          "owners": "Owners",
+          "volume": "Volume",
+          "contractAddress": "Contract address",
+          "nftItemsTitle": "NFT Items",
+          "nftItemsCount": "{{count}} items"
+        },
+        "createDrawForm": {
+          "metadata": {
+            "description": {
+              "helpText": "This is shown on the proposals list to help users understand the governance for proposals of this type.",
+              "label": "Description"
+            },
+            "name": {
+              "label": "Draw name"
+            },
+            "processKey": {
+              "helpText": "The key is part of the unique identifier for proposals of this type. Something like DRAW would lead to DRAW-1 and increment for each proposal.",
+              "label": "Key"
+            },
+            "resources": {
+              "helpText": "These are shown as links on the proposal list under the description as additional external resources."
+            }
+          },
+          "step1": {
+            "description": {
+              "helpText": "This is shown on the proposals list to help users understand the governance for proposals of this type.",
+              "label": "Description"
+            },
+            "name": {
+              "label": "Draw name",
+              "placeholder": "e.g. Community Reward Draw"
+            },
+            "processKey": {
+              "helpText": "The key is part of the unique identifier for proposals of this type. Something like DRAW would lead to DRAW-1 and increment for each proposal.",
+              "label": "Key"
+            },
+            "resources": {
+              "helpText": "These are shown as links on the proposal list under the description as additional external resources."
+            }
+          },
+          "step2": {
+            "isCreateNewNft": {
+              "label": "Create new NFT collection"
+            },
+            "nftName": {
+              "label": "NFT name",
+              "placeholder": "e.g. My Awesome Collection",
+              "required": "NFT name is required"
+            },
+            "nftSymbol": {
+              "label": "NFT symbol",
+              "placeholder": "e.g. MAC",
+              "required": "NFT symbol is required"
+            },
+            "nftInitialSupply": {
+              "label": "Initial NFT supply",
+              "placeholder": "e.g. 1000",
+              "invalidNumber": "Please enter a valid number"
+            },
+            "nftMaxSupply": {
+              "label": "Maximum NFT supply",
+              "placeholder": "e.g. 10000",
+              "invalidNumber": "Please enter a valid number"
+            },
+            "nftUri": {
+              "label": "NFT Contract Metadata URI",
+              "placeholder": "e.g. ipfs://bafybeihralqqlrq3f7dwzoo6m7ws4rph4eetecwl3bn3mtk4tuuwp7bdsy",
+              "helpText": "Enter the URI for the NFT contract metadata"
+            },
+            "nftMetadata": {
+              "title": {
+                "label": "NFT元数据",
+                "description": "为您的收藏中的每个NFT定义元数据"
+              },
+              "addAction": "Add NFT Metadata",
+              "removeAction": "Remove",
+              "nftItem": "NFT Item {{index}}",
+              "name": {
+                "label": "Name",
+                "placeholder": "e.g. Dragon"
+              },
+              "description": {
+                "label": "Description",
+                "placeholder": "e.g. Zodiac animal of the year"
+              },
+              "image": {
+                "label": "Image CID",
+                "placeholder": "e.g. bafybeihralqqlrq3f7dwzoo6m7ws4rph4eetecwl3bn3mtk4tuuwp7bdsy",
+                "helpText": "Enter the CID of your image on IPFS. The full URI will be automatically generated as ipfs://{cid}"
+              },
+              "animation_url": {
+                "label": "Animation URL",
+                "placeholder": "e.g. ipfs://bafybeihralqqlrq3f7dwzoo6m7ws4rph4eetecwl3bn3mtk4tuuwp7bdsy",
+                "helpText": "Enter the URL for the NFT animation"
+              },
+              "external_url": {
+                "label": "External URL",
+                "placeholder": "e.g. https://game.example.com/items/456"
+              },
+              "background_color": {
+                "label": "Background Color",
+                "placeholder": "e.g. FF5500",
+                "helpText": "Background color of the item. Must be a six-character hexadecimal without a pre-pended #."
+              },
+              "supply": {
+                "label": "Supply",
+                "placeholder": "e.g. 500",
+                "helpText": "Maximum supply of this NFT"
+              },
+              "attributes": {
+                "label": "Attributes",
+                "addAction": "Add Attribute",
+                "removeAction": "Remove",
+                "traitTypePlaceholder": "e.g. Background",
+                "valuePlaceholder": "e.g. Blue Gradient"
+              }
+            },
+            "tokenB": {
+              "description": "This is the token that will be distributed as rewards in the draw.",
+              "invalidAddress": "Please enter a valid Ethereum address",
+              "label": "Reward token address",
+              "placeholder": "0x…",
+              "required": "Reward token address is required",
+              "title": "Reward token"
+            }
+          },
+          "step3": {
+            "isCreateNewToken": {
+              "label": "Create new token"
+            },
+            "tokenA": {
+              "description": "This is the token users need to participate in the draw.",
+              "invalidAddress": "Please enter a valid Ethereum address",
+              "label": "Exchange token address",
+              "placeholder": "0x…",
+              "required": "Exchange token address is required",
+              "title": "Exchange token"
+            },
+            "tokenDecimals": {
+              "label": "Token decimals",
+              "placeholder": "18",
+              "required": "Token decimals is required"
+            },
+            "tokenName": {
+              "label": "Token name",
+              "placeholder": "e.g. My Token",
+              "required": "Token name is required"
+            },
+            "tokenSymbol": {
+              "label": "Token symbol",
+              "placeholder": "e.g. MTK",
+              "required": "Token symbol is required"
+            }
+          },
+          "step4": {
+            "drawInterval": {
+              "invalidSeconds": "Please enter a valid number of seconds",
+              "label": "Minimum interval between draws (seconds)",
+              "placeholder": "e.g. 86400",
+              "helpText": "Minimum time interval between two draws for the same user (in seconds)",
+              "required": "Draw interval is required"
+            },
+            "eligibleToken": {
+              "invalidAddress": "Please enter a valid Ethereum address",
+              "label": "Eligible token address",
+              "placeholder": "0x…",
+              "helpText": "Token address required for eligibility",
+              "required": "Eligible token address is required"
+            },
+            "minTokenAmount": {
+              "label": "Minimum token amount required",
+              "placeholder": "e.g. 100",
+              "helpText": "Minimum token amount required for eligibility",
+              "required": "Minimum token amount is required",
+              "invalidNumber": "Please enter a valid number"
+            },
+            "useCustomEligibleToken": {
+              "label": "Specify custom eligible token address",
+              "helpText": "Enable this to specify a custom token address for user eligibility instead of using the token defined in Step 3",
+              "defaultInfo": "By default, the token defined in Step 3 will be used for user eligibility."
+            },
+            "useCustomTokenA": {
+              "label": "Specify custom exchange token address",
+              "helpText": "Enable this to specify a custom token address for NFT exchanges instead of using the token defined in Step 3"
+            },
+            "customTokenA": {
+              "label": "Custom exchange token address",
+              "placeholder": "0x…",
+              "helpText": "Token address to be used for NFT exchanges",
+              "required": "Custom exchange token address is required",
+              "invalidAddress": "Please enter a valid Ethereum address"
+            },
+            "eligibilityRules": {
+              "title": "Eligibility Rules"
+            },
+            "drawRewardRules": {
+              "title": "Draw Reward Rules",
+              "infoTitle": "Reward Information",
+              "infoDescription": "Each draw will randomly reward one NFT from the collection defined in Step 2. If initial supply was defined, NFTs will be randomly selected from IDs 1 to the initial supply count. Each NFT (ERC1155) can be minted multiple times."
+            },
+            "swapRules": {
+              "title": "NFT Swap Rules",
+              "infoTitle": "Swap Information",
+              "infoDescription": "Define combinations of NFTs (from the collection defined in Step 2) that can be exchanged for tokens defined in Step 3. Each combo specifies the NFTs and their quantities required for exchange.",
+              "tokenAInfoTitle": "Exchange Token Information",
+              "tokenAInfoWithAddress": "Users will exchange NFT combos for the following token: {{tokenA}}",
+              "tokenAInfoWithCustomAddress": "Users will exchange NFT combos for the following custom token: {{tokenA}}",
+              "tokenAInfoWithoutAddress": "Users will exchange NFT combos for the token defined in Step 3.",
+              "nftComboUnits": "NFT Combo Units",
+              "addNftUnit": "Add NFT Unit",
+              "nftUnitAddButton": "Add NFT Unit",
+              "nftUnitCancelButton": "Cancel",
+              "nftUnit": "NFT #{{id}}: Unit {{unit}}",
+              "noNftUnits": "No NFT units defined",
+              "nftIdOutOfRange": "NFT ID is out of allowed range (max ID: {{maxId}})",
+              "nftIdAlreadyExists": "NFT ID already exists in the combo",
+              "nftIdAndUnitRequired": "Both NFT ID and unit are required",
+              "enableCombo": "启用组合"
+            },
+            "nftCombos": {
+              "label": "NFT Combos"
+            }
+          },
+          "finalStep": "Publish process",
+          "steps": {
+            "METADATA": {
+              "description": "Describe the governance process so visitors understand its purpose and how decisions are made. Any of these fields can be changed later via governance.",
+              "name": "Process description",
+              "title": "Describe new proposal type"
+            },
+            "PERMISSIONS": {
+              "description": "Define what this governance process is authorized to do. Proposals of this type will only be able to execute the actions specified here.",
+              "name": "Proposal permissions",
+              "title": "Set permissions"
+            },
+            "PROPOSAL_CREATION": {
+              "description": "Define who can create proposals of this type.",
+              "name": "Proposal creation rules",
+              "title": "Set proposal creation rules"
+            },
+            "STAGES": {
+              "description": "Design how decisions are made in this type of proposal. A proposal can go through multiple sequential stages and have any number of governing bodies.",
+              "name": "Governance design",
+              "title": "Design the governance process"
+            }
+          },
+          "submitHelpText": "You will have to sign two transactions.",
+          "submitLabel": "Publish process"
+        },
+        "createDrawDetailsDialog": {
+          "title": "Create Draw Plugin",
+          "description": "Deploy the Draw plugin to enable lottery and NFT exchange functionality for your DAO.",
+          "actionLabel": "Get started",
+          "steps": {
+            "describe": "Describe your draw plugin",
+            "configureNft": "Configure NFT",
+            "configureRedemption": "Configure Redemption Rules",
+            "configureDraw": "Configure Draw Rules",
+            "review": "Review",
+            "create": "Create Draw Proposal",
+            "success": "View Draw Proposal"
+          }
+        },
+        "detailPage": {
+          "title": "NFT Collection Details",
+          "totalSupply": "Total Supply",
+          "remaining": "Remaining",
+          "items": "NFT Items"
+        },
+        "dialog": {
+          "participate": {
+            "title": "Participate in Draw",
+            "description": "Confirm your participation in the current draw event",
+            "drawing": "Drawing",
+            "pleaseWait": "Please wait while we process your participation",
+            "ready": "Ready",
+            "confirmParticipation": "Confirm your participation in the draw",
+            "processing": "Processing",
+            "participate": "Participate",
+            "cancel": "Cancel"
+          }
+        },
+        "historyPage": {
+          "title": "Draw History",
+          "description": "View the history of previous draw events and results",
+          "noHistory": "No draw history",
+          "noHistoryDescription": "There are no previous draw events to display."
+        },
+        "mainPage": {
+          "home": { 
+            "title": "Draw",
+            "description": "Participate in the DAO governance lottery event and win generous rewards"
+          },
+          "title": "Draw Event",
+          "description": "Participate in the DAO governance lottery event and win generous rewards",
+          "howItWorks": "How It Works",
+          "step1": {
+            "title": "Meet Participation Requirements",
+            "description": "Hold sufficient governance tokens and meet other participation requirements"
+          },
+          "step2": {
+            "title": "Participate in Draw",
+            "description": "Click the participate button to join the draw"
+          },
+          "step3": {
+            "title": "Claim Your Rewards",
+            "description": "Claim your rewards after the draw event is completed"
+          },
+          "step4": {
+            "title": "Claim Your Rewards",
+            "description": "Claim your rewards after the draw event is completed"
+          },
+          "rewards": "Reward Types",
+          "reward1": {
+            "title": "NFT Rewards",
+            "description": "Rare NFT collectibles"
+          },
+          "reward2": {
+            "title": "Token Rewards",
+            "description": "Governance token rewards"
+          },
+          "reward3": {
+            "title": "Rights Rewards",
+            "description": "Special governance rights"
+          },
+          "eligibility": "Participation Eligibility",
+          "eligible": "You are eligible to participate in the draw!",
+          "notEligible": "You are not eligible to participate in the draw",
+          "tokenBalance": "Current Balance",
+          "requiredBalance": "Required Balance",
+          "drawButton": "Participate Now"
+        },
+        "participationPage": {
+          "title": "Draw Participation",
+          "description": "Participate in the current draw event",
+          "result": {
+            "win": {
+              "title": "Congratulations!",
+              "description": "You have won {{reward}} in the draw!"
+            },
+            "lose": {
+              "title": "Better luck next time!",
+              "description": "You did not win in this draw."
+            },
+            "tryAgain": "Try Again"
+          },
+          "draw": {
+            "title": "Participate in Draw",
+            "description": "Click the button below to participate in the current draw event",
+            "button": {
+              "processing": "Processing",
+              "participate": "Participate Now"
+            }
+          },
+          "eligible": {
+            "message": "You are eligible to participate in the draw!"
+          },
+          "ineligible": {
+            "title": "Not Eligible",
+            "defaultReason": "You do not meet the participation requirements for this draw."
+          },
+          "requirements": {
+            "title": "Participation Requirements",
+            "tokenBalance": "Current Balance",
+            "requiredBalance": "Required Balance"
+          }
+        },
+        "proposalSettings": {
+          "eligibilityTitle": "Eligibility Settings",
+          "eligibilityDescription": "Configure the eligibility requirements for participation in draw events",
+          "eligibleToken": "Eligible Token",
+          "eligibleTokenDescription": "The token that users must hold to be eligible for participation",
+          "minTokenAmount": "Minimum Token Amount",
+          "minTokenAmountDescription": "The minimum amount of tokens users must hold to be eligible",
+          "isErc1155Eligible": "Supports ERC1155",
+          "isErc1155EligibleDescription": "Whether ERC1155 tokens are accepted for eligibility",
+          "eligibleNftId": "Eligible NFT ID",
+          "eligibleNftIdDescription": "The specific NFT ID required for eligibility (if applicable)",
+          "drawInterval": "Draw Interval",
+          "drawIntervalDescription": "The time interval between draw events",
+          "tokenSettingsTitle": "Token Settings",
+          "tokenSettingsDescription": "Configure the tokens used in draw events",
+          "tokenA": "Token A Address",
+          "tokenADescription": "The address of the first token used in the draw",
+          "tokenB": "Token B Address",
+          "tokenBDescription": "The address of the second token used in the draw",
+          "nftCombosTitle": "NFT Combos",
+          "nftCombosDescription": "Configure NFT combinations that can be used for participation",
+          "comboEnabled": "Combo Enabled",
+          "maxExchangeCount": "Max Exchange Count",
+          "maxSingleBatch": "Max Single Batch",
+          "nftId": "ID",
+          "nftUnit": "Unit"
+        },
+        "redemptionPage": {
+          "title": "Reward Redemption",
+          "description": "Redeem your rewards from draw events",
+          "sectionTitle": "Redeem Your Rewards",
+          "holdings": {
+            "title": "Your Holdings",
+            "empty": "You don't have any rewards to redeem."
+          },
+          "requirements": {
+            "title": "Redemption Requirements",
+            "met": "Requirements met",
+            "notMet": "Requirements not met",
+            "empty": "No redemption requirements specified."
+          },
+          "redeemButton": "Redeem Rewards",
+          "error": {
+            "title": "Data Loading Failed",
+            "description": "Failed to load reward redemption information. Please try again later."
+          }
+        },
+        "settingsPanel": {
+          "title": "Draw Plugin Settings",
+          "description": "Deploy and manage the Draw plugin for your DAO",
+          "eligibilitySettings": "Eligibility Settings",
+          "eligibleToken": "Eligible Token",
+          "minTokenAmount": "Minimum Token Amount",
+          "isErc1155Eligible": "Supports ERC1155",
+          "eligibleNftId": "Eligible NFT ID",
+          "drawInterval": "Draw Interval",
+          "tokenSettings": "Token Settings",
+          "tokenA": "Token A Address",
+          "tokenB": "Token B Address",
+          "nftCombos": "NFT Combos",
+          "noCombos": "No NFT combos available",
+          "maxExchangeCount": "Max Exchange Count",
+          "maxSingleBatch": "Max Single Batch"
+        },
+        "testPage": {
+          "title": "Draw Test",
+          "description": "Test the draw functionality"
+        },
+        "dialog": {
+          "participate": {
+            "title": "Participate in Draw",
+            "description": "Confirm participation in this draw event",
+            "ready": "Ready",
+            "confirmParticipation": "Click the button below to confirm participation in the draw",
+            "participate": "Confirm Participation",
+            "processing": "Processing...",
+            "cancel": "Cancel",
+            "drawing": "Drawing",
+            "pleaseWait": "Please wait..."
+          }
+        },
+        "widget": {
+          "title": "Draw Event",
+          "eligible": "You are eligible to participate!",
+          "drawButton": "Participate Now",
+          "notEligible": "You are not eligible to participate",
+          "tokenBalance": "Current Balance",
+          "requiredBalance": "Required Balance"
+        },
+        "meta": {
+          "setup": {
+            "name": "Draw Plugin",
+            "description": "NFT draw and batch exchange plugin"
+          }
+        },
+        "drawCreateProposalSettingsForm": {
+          "description": "Configure the draw proposal settings"
+        },
+        "drawVotingTerminal": {
+          "title": "Draw Proposal",
+          "description": "This is a draw proposal that can be executed by DAO members"
+        },
+        "drawProposalListItem": {
+          "stage": "Stage {{stageIndex}}"
+        },
+        "createDrawProposalPage": {
+          "finalStep": "Create proposal",
+          "submitLabel": "Create proposal",
+          "submitHelpText": "Submit the form to create a new draw proposal",
+          "steps": {
+            "METADATA": {
+              "name": "Describe proposal",
+              "title": "Describe your proposal",
+              "description": "Name and describe your draw proposal to help members understand its purpose."
+            },
+            "SETTINGS": {
+              "name": "Configure settings",
+              "title": "Configure draw settings",
+              "description": "Set the parameters for the draw, including eligibility requirements and reward distribution."
+            },
+            "PROPOSAL_SETTINGS": {
+              "name": "Proposal settings",
+              "title": "Proposal settings",
+              "description": "Configure how the draw proposal will be created and executed."
+            }
+          }
+        },
+        "createDrawPage": {
+          "finalStep": "创建抽奖",
+          "submitLabel": "创建抽奖",
+          "submitHelpText": "提交表单以创建新的抽奖提案",
+          "steps": {
+            "METADATA": {
+              "name": "描述抽奖",
+              "title": "描述您的抽奖",
+              "description": "为您的抽奖活动命名和添加描述，以帮助成员了解其目的。"
+            },
+            "NFT_SETTINGS": {
+              "name": "配置抽奖代币（NFT）",
+              "title": "配置抽奖代币信息",
+              "description": "设置抽奖的参数，包括参与资格和奖励分配。"
+            },
+            "TOKEN_SETTINGS": {
+              "name": "配置兑换代币",
+              "title": "配置兑换代币信息",
+              "description": "配置抽奖提案的创建和执行方式。"
+            },
+            "DRAW_SETTINGS": {
+              "name": "配置抽奖规则",
+              "title": "设置抽奖规则",
+              "description": "定义抽奖用户参与的规则，NFT兑换COIN的规则。"
+            }
+          }
+        },
+        "prepareDrawDialog": {
+          "title": "Prepare Draw Plugin",
+          "description": "Prepare the draw plugin for deployment to your DAO.",
+          "button": {
+            "submit": "Prepare Draw"
+          },
+          "transactionInfoTitle": "Prepare Draw Plugin",
+          "step": {
+            "PIN_METADATA": {
+              "label": "Pin metadata to IPFS",
+              "errorLabel": "Failed to pin metadata"
+            }
+          },
+          "proposal": {
+            "title": "Install Draw Plugin: {{name}}",
+            "summary": "Proposal to install the draw plugin to the DAO."
+          }
+        },
+        "publishDrawDialog": {
+          "admin": {
+            "transactionInfoTitle": "Publish Draw Proposal",
+            "step": {
+              "PUBLISH_PROPOSAL": {
+                "label": "Publish proposal",
+                "errorLabel": "Failed to publish proposal"
+              }
+            }
+          },
+          "default": {
+            "transactionInfoTitle": "Publish Draw Proposal",
+            "step": {
+              "PUBLISH_PROPOSAL": {
+                "label": "Publish proposal",
+                "errorLabel": "Failed to publish proposal"
+              }
+            }
+          }
+        }
+      },
       "admin": {
         "adminGovernanceSettings": {
           "auto": "Automatic",
@@ -1694,6 +2289,13 @@
           },
           "footerInfo": "Locking tokens will transfer them out of your wallet to the locking contract, where they can be withdrawn back to your wallet after the minimum locktime.",
           "locks": "View {{count}} locks",
+          "percentage": {
+            "0": "None",
+            "100": "100%",
+            "25": "25%",
+            "50": "50%",
+            "75": "75%"
+          },
           "submit": {
             "approve": "Approve {{symbol}}",
             "lock": "Lock {{symbol}}"
@@ -1983,6 +2585,13 @@
           "approveTransactionInfoTitle": "Approve {{symbol}}",
           "footerInfo": "Wrapping tokens will transfer them out of your wallet to the wrapping contract, where they can be withdrawn back to your wallet at any time.",
           "info": "Wrap {{underlyingSymbol}} to increase your voting power.",
+          "percentage": {
+            "0": "None",
+            "100": "100%",
+            "25": "25%",
+            "50": "50%",
+            "75": "75%"
+          },
           "submit": {
             "approve": "Approve {{underlyingSymbol}}",
             "unwrap": "Unwrap {{amount}} {{symbol}}",
@@ -2068,6 +2677,7 @@
           "versionInfoTitle": "Contracts"
         },
         "main": {
+          "drawAction": "Add Draw",
           "governanceAction": "Process",
           "governanceInfoTitle": "Governance",
           "settingsInfoTitle": "DAO",
@@ -2077,7 +2687,7 @@
       "daoVersionInfo": {
         "governanceValue": "{{name}} v{{release}}.{{build}}",
         "osLabel": "Operating system",
-        "osValue": "Aragon OSx v{{version}}"
+        "osValue": "cddao OSx v{{version}}"
       },
       "prepareDaoContractsUpdateDialog": {
         "button": {
@@ -2097,7 +2707,7 @@
       },
       "updateDaoContracts": {
         "button": "Upgrade contracts",
-        "description": "There are updates available for Aragon OSx and its plugin contracts."
+        "description": "There are updates available for cddao OSx and its plugin contracts."
       },
       "updateDaoContractsCard": {
         "releaseNotes": "Release notes",
@@ -2108,10 +2718,10 @@
           "cancel": "Cancel",
           "confirm": "Propose"
         },
-        "description": "New versions of the following contracts have been released by the Aragon team. To perform an upgrade, you will have to create a proposal and execute it.",
+        "description": "New versions of the following contracts have been released by the cddao team. To perform an upgrade, you will have to create a proposal and execute it.",
         "osxUpdate": {
           "name": "Operating system",
-          "smartContractName": "Aragon OSx"
+          "smartContractName": "cddao OSx"
         },
         "title": "Review contracts to upgrade"
       }

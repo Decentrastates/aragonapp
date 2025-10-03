@@ -454,7 +454,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cddao/app@workspace:."
   dependencies:
-    "@cddao/gov-ui-kit": "npm:1.19.2"
+    "@cddao/gov-ui-kit": "npm:1.19.3"
     "@changesets/changelog-github": "npm:^0.5.1"
     "@changesets/cli": "npm:^2.29.7"
     "@floating-ui/react": "npm:^0.27.16"
@@ -521,9 +521,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cddao/gov-ui-kit@npm:1.19.2":
-  version: 1.19.2
-  resolution: "@cddao/gov-ui-kit@npm:1.19.2"
+"@cddao/gov-ui-kit@npm:1.19.3":
+  version: 1.19.3
+  resolution: "@cddao/gov-ui-kit@npm:1.19.3"
   dependencies:
     "@radix-ui/react-accordion": "npm:^1.2.0"
     "@radix-ui/react-alert-dialog": "npm:^1.1.0"
@@ -562,7 +562,7 @@ __metadata:
     tailwindcss: ^4.1.0
     viem: ^2.37.0
     wagmi: ^2.16.0
-  checksum: 10c0/fa8645a5afdd5656c53fe2ee5e54ef83ddc4337f16210de468536e58588a5b40ef2ad4d4abab93ac363155d08a6e0d090ed4ecbb8c8a115f7fd72205c9db1ebe
+  checksum: 10c0/39fe8ea978b28b867a058a5328294faeebb69444e36b41027be22e82e7329addb4a2ec575f671bfc8b6dc7eec4331db6dd6a3accdf82e17422756eb16fed2a86
   languageName: node
   linkType: hard
 

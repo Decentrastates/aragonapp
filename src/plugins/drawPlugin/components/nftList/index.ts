@@ -1,1 +1,0 @@
-// export { NftList, type INftListProps } from './nftList';

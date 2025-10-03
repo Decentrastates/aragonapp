@@ -4,6 +4,7 @@ import { GovernanceDialogId } from '@/modules/governance/constants/governanceDia
 import { GovernanceSlotId } from '@/modules/governance/constants/moduleSlots';
 import type { ISelectPluginDialogParams } from '@/modules/governance/dialogs/selectPluginDialog';
 import { usePermissionCheckGuard } from '@/modules/governance/hooks/usePermissionCheckGuard';
+import type { ICreateDrawDetailsDialogParams } from '@/modules/createDao/dialogs/createDrawDetailsDialog';
 import { type IDaoPlugin, useDao } from '@/shared/api/daoService';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { Page } from '@/shared/components/page';
@@ -22,7 +23,6 @@ import { DaoSettingsInfo } from '../../components/daoSettingsInfo';
 import { DaoVersionInfo } from '../../components/daoVersionInfo';
 import { UpdateDaoContracts } from '../../components/updateDaoContracts';
 import { SettingsSlotId } from '../../constants/moduleSlots';
-import { type ICreateDrawDetailsDialogParams } from '@/modules/createDao/dialogs/createDrawDetailsDialog';
 
 export interface IDaoSettingsPageClientProps {
     /**
@@ -51,37 +51,39 @@ export const DaoSettingsPageClient: React.FC<IDaoSettingsPageClientProps> = (pro
         daoId,
     });
 
-    const handlePermissionGuardSuccess = (plugin: IDaoPlugin) =>
-        router.push(daoUtils.getDaoUrl(dao, `create/${plugin.address}/process`)!);
+    const handlePermissionGuardSuccess = (plugin: IDaoPlugin, variant: 'proposal' | 'process' | 'draw' | 'ico') =>
+        router.push(daoUtils.getDaoUrl(dao, `create/${plugin.address}/${variant}`)!);
 
-    const handlePluginSelected = (plugin: IDaoPlugin) => {
+    const handlePluginSelected = (plugin: IDaoPlugin, variant: 'proposal' | 'process' | 'draw' | 'ico') => {
         createProposalGuard({
             plugin,
-            onSuccess: () => handlePermissionGuardSuccess(plugin),
+            onSuccess: () => handlePermissionGuardSuccess(plugin, variant),
             // on error, go back to the plugin selection
-            onError: handleConfirmProcessCreation,
+            onError: () => handleConfirmProcessCreation(variant),
         });
     };
 
-    const handleConfirmProcessCreation = () => {
+    const handleConfirmProcessCreation = (variant: 'proposal' | 'process' | 'draw' | 'ico') => {
         // Select a plugin (a process to use to create a new process). If there is only 1 plugin, skip selection step.
         if (processPlugins.length === 1) {
-            handlePluginSelected(processPlugins[0].meta);
+            handlePluginSelected(processPlugins[0].meta, variant);
             return;
         }
-
         const params: ISelectPluginDialogParams = {
             daoId,
             onPluginSelected: handlePluginSelected,
-            variant: 'process',
+            variant,
         };
         open(GovernanceDialogId.SELECT_PLUGIN, { params });
     };
 
     const handleAddProcess = () => {
-        const params: ICreateProcessDetailsDialogParams = { onActionClick: handleConfirmProcessCreation };
+        const params: ICreateProcessDetailsDialogParams = {
+            onActionClick: () => handleConfirmProcessCreation('process'),
+        };
         open(CreateDaoDialogId.CREATE_PROCESS_DETAILS, { params });
     };
+
     const handleAddDraw = () => {
         const params: ICreateDrawDetailsDialogParams = {
             onActionClick: () => handleConfirmProcessCreation('draw'),
@@ -135,6 +137,7 @@ export const DaoSettingsPageClient: React.FC<IDaoSettingsPageClientProps> = (pro
                         ))}
                     </Page.MainSection>
                 )}
+                {/* Draw Plugin Section */}
                 <Page.MainSection
                     id="draw-plugin"
                     className="gap-3"
@@ -146,13 +149,13 @@ export const DaoSettingsPageClient: React.FC<IDaoSettingsPageClientProps> = (pro
                         {t('app.plugins.draw.settingsPanel.description') ||
                             'Deploy and manage the Draw plugin for your DAO.'}
                     </div>
-                    {/* {processPlugins.map((process) => (
+                    {processPlugins.map((process) => (
                         <ProcessDataListItem
                             key={process.uniqueId}
                             process={process.meta}
                             href={daoUtils.getDaoUrl(dao, `/settings/${process.meta.slug}`)}
                         />
-                    ))} */}
+                    ))}
                 </Page.MainSection>
             </Page.Main>
             <Page.Aside>

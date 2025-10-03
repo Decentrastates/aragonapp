@@ -16,13 +16,19 @@ export const LanguageSwitcher: React.FC<ILanguageSwitcherProps> = (props) => {
     const { t } = useTranslations();
     const dropdownRef = React.useRef<HTMLDivElement>(null);
 
-    // Get initial language from localStorage or default to 'en'
-    const [currentLanguage, setCurrentLanguage] = React.useState<string>(() => {
-        if (typeof window !== 'undefined') {
-            return localStorage.getItem('language') ?? 'en';
+    // Get initial language from cookie or default to 'en'
+    const [currentLanguage, setCurrentLanguage] = React.useState<string>('en');
+
+    // Set the initial language after mounting
+    React.useEffect(() => {
+        const savedLanguage = typeof window !== 'undefined' 
+            ? localStorage.getItem('language') ?? document.cookie.split('; ').find(row => row.startsWith('language='))?.split('=')[1] ?? 'en'
+            : 'en';
+        
+        if (savedLanguage && savedLanguage !== 'en') {
+            setCurrentLanguage(savedLanguage);
         }
-        return 'en';
-    });
+    }, []);
 
     const languageOptions = [
         { value: 'en', label: t('app.shared.languageSwitcher.english') },
@@ -63,7 +69,7 @@ export const LanguageSwitcher: React.FC<ILanguageSwitcherProps> = (props) => {
     };
 
     const selectedLanguageLabel =
-        languageOptions.find((option) => option.value === currentLanguage)?.label ?? 'English';
+        languageOptions.find((option) => option.value === currentLanguage)?.label ?? t('app.shared.languageSwitcher.english');
 
     // Custom SVG icon for the dropdown arrow
     const ChevronDownIcon = () => (

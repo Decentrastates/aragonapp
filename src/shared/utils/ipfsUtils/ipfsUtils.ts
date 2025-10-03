@@ -7,7 +7,7 @@ export interface ICidToSrcOptions {
 }
 
 class IpfsUtils {
-    private ipfsGateway = 'https://aragon-1.mypinata.cloud';
+    private ipfsGateway = process.env.NEXT_PUBLIC_PINATA_URL ?? 'https://aragon-1.mypinata.cloud';
 
     private ipfsPrefix = 'ipfs://';
 

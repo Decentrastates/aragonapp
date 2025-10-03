@@ -5,36 +5,39 @@
         "adminMember": {
           "action": "添加治理",
           "manage": "管理管理员",
-          "message": "您是DAO管理员。您可以根据需要为DAO添加任意数量的自定义治理流程。"
+          "message": "您是DAO管理员。您可以根据DAO的需要添加任意数量的自定义治理流程。"
         },
         "adminPlugin": {
           "action": "查看管理员",
-          "message": "此DAO由管理员治理。他们可以在没有提案的情况下对DAO进行更改。"
+          "message": "此DAO由管理员治理。他们可以在不需要提案的情况下对DAO进行更改。"
         }
       },
       "connectWalletDialog": {
         "a11y": {
-          "description": "连接您的钱包到Aragon",
+          "description": "将您的钱包连接到cddao",
           "title": "连接钱包"
         },
         "action": {
           "cancel": "取消",
           "connect": "连接"
         },
-        "auditLink": "https://github.com/aragon/osx/blob/main/audits/Halborn_AragonOSx_v1_4_Smart_Contract_Security_Assessment_Report_2025_01_03.pdf",
+        "auditLink": "https://github.com/cddao/osx/blob/main/audits/Halborn_cddaoOSx_v1_4_Smart_Contract_Security_Assessment_Report_2025_01_03.pdf",
         "connect": "想要连接到您的钱包",
         "feature": {
-          "permissions": "只读权限",
-          "smartContracts": "经过审计的智能合约",
-          "stats": "受7,500多个DAO和270亿美元信任"
+          "permissions": "仅查看权限",
+          "smartContracts": "已审计的智能合约",
+          "stats": "受到7,500+个DAO和270亿美元+的信任"
         }
       },
       "debugPanel": {
         "title": "调试"
       },
       "footer": {
-        "copyright": "© {{year}} Aragon",
+        "copyright": "© {{year}} cddao",
         "governed": "治理于",
+        "languageSwitcher": {
+          "toggleLanguage": "切换语言"
+        },
         "link": {
           "build": "构建",
           "explore": "探索",
@@ -45,24 +48,20 @@
         }
       },
       "layoutDao": {
-        "error": {
-          "notFound": {
-            "description": "我们找不到您要查找的DAO。",
-            "title": "未找到DAO"
-          }
+        "notFound": {
+          "description": "我们找不到您要查找的DAO。",
+          "title": "未找到DAO"
         }
       },
       "layoutWizard": {
-        "error": {
-          "notFound": {
-            "description": "我们找不到您要查找的DAO。",
-            "title": "未找到DAO"
-          }
+        "notFound": {
+          "description": "我们找不到您要查找的DAO。",
+          "title": "未找到DAO"
         }
       },
       "navigationDao": {
         "a11y": {
-          "description": "此对话框提供关键的DAO详细信息以及治理、金库和社区页面的链接",
+          "description": "此对话框提供关键的DAO详细信息以及治理、财库和社区页面的链接",
           "title": "DAO导航菜单"
         },
         "dialog": {
@@ -74,31 +73,36 @@
           "members": "成员",
           "proposals": "提案",
           "settings": "设置",
-          "transactions": "交易"
+          "transactions": "交易",
+          "ico": "代币发售",
+          "draw": "抽奖",
+          "mine": "我的"
         }
       },
       "notFoundBase": {
         "action": "探索DAO",
         "description": "我们找不到您要查找的页面。",
-        "title": "未找到页面"
+        "title": "页面未找到"
       },
       "notFoundDao": {
-        "action": "转到仪表板",
+        "action": "前往仪表板",
         "description": "我们找不到您要查找的页面。",
-        "title": "未找到页面"
+        "title": "页面未找到"
       },
       "userDialog": {
         "a11y": {
-          "description": "已连接用户的信息",
+          "description": "关于已连接用户的信息",
           "title": "已连接用户"
         },
+        "send": "发送",
+        "swap": "兑换",
         "disconnect": "断开连接"
       }
     },
     "createDao": {
       "createDaoDetailsDialog": {
         "actionLabel": "开始",
-        "description": "从简单开始，边学边做。您可以随时调整DAO。",
+        "description": "从简单开始，边学边做。您可以随时调整您的DAO。",
         "steps": {
           "describe": "描述您的DAO",
           "network": "选择链"
@@ -109,14 +113,14 @@
         "metadata": {
           "avatar": {
             "error": {
-              "file-invalid-type": "不支持所选文件类型。请上传有效的图像文件（例如PNG、JPG或GIF）。",
-              "file-too-large": "文件大小超过1 MB的最大允许限制。",
+              "file-invalid-type": "不支持所选的文件类型。请上传有效的图像文件（如PNG、JPG或GIF）。",
+              "file-too-large": "文件大小超过了1MB的最大允许限制。",
               "square-only": "图像必须是正方形。请上传正方形图像。",
               "too-many-files": "一次只能上传一个文件。",
               "unknown-file-error": "无法上传图像",
-              "wrong-dimension": "图像尺寸超过1024x1024像素的最大允许尺寸。"
+              "wrong-dimension": "图像尺寸超过了1024x1024像素的最大允许大小。"
             },
-            "helpText": "JPG、PNG或GIF格式，不超过1 MB且小于1024x1024像素。",
+            "helpText": "JPG、PNG或GIF格式，不超过1MB且小于1024x1024像素。",
             "label": "标志"
           },
           "description": {
@@ -128,14 +132,14 @@
               "invalid": "ENS子域名无效。",
               "taken": "ENS子域名不可用。"
             },
-            "helpText": "这是您DAO的自定义链上标识符。它可以用于URL访问您的DAO以及发送资产。",
+            "helpText": "这是您DAO的自定义链上标识符。它可以用于URL中访问您的DAO以及发送资产。",
             "label": "ENS子名称"
           },
           "name": {
             "label": "DAO名称"
           },
           "resources": {
-            "helpText": "这些将作为链接显示在DAO仪表板上。最适合您的网站、社交媒体或其他通信渠道。"
+            "helpText": "这些将作为链接显示在DAO仪表板上。它们最适合您的网站、社交媒体或其他沟通渠道。"
           }
         },
         "network": {
@@ -160,12 +164,12 @@
             "title": "调试"
           },
           "METADATA": {
-            "description": "描述您的DAO，以便访问者知道他们来到了正确的地方。不用担心它们是否最终确定——这些字段中的任何一个都可以稍后更改。",
+            "description": "描述您的DAO，让访问者知道他们来对了地方。不用担心是否最终确定——这些字段以后都可以更改。",
             "name": "描述您的DAO",
             "title": "描述您的DAO"
           },
           "NETWORK": {
-            "description": "您选择的链是部署DAO和代币的地方。如果您已经有代币，请选择代币所在的链。",
+            "description": "您选择的链是部署DAO和代币的地方。如果您已经有代币，请选择您的代币所在的链。",
             "name": "选择链",
             "title": "选择链"
           }
@@ -176,7 +180,7 @@
         "actionLabel": "开始",
         "description": "治理应该适合您DAO的需求。无论是资产管理、协议升级还是团队协调，您都可以随时提议添加新的治理流程。",
         "steps": {
-          "describe": "描述新的提案类型",
+          "describe": "描述新提案类型",
           "design": "设计治理流程",
           "designate": "设置提案创建规则",
           "permissions": "设置权限"
@@ -190,39 +194,37 @@
               "add": "添加"
             },
             "error": {
-              "required": "必须为此流程添加主体。"
+              "required": "必须为此流程添加一个治理机构。"
             },
-            "helpText": "治理主体决定提案是否通过。",
-            "label": "投票主体"
+            "helpText": "治理机构决定提案是否通过。",
+            "label": "投票机构"
           },
           "bodyField": {
             "action": {
               "edit": "编辑",
               "more": "更多",
-              "remove": "移除主体"
+              "remove": "移除机构"
             },
             "default": {
               "address": "地址",
-              "ens": "ENS名称",
-              "safe": "Safe{Wallet}",
-              "type": "类型"
+              "ens": "ENS名称"
             }
           },
           "stageBodiesField": {
             "action": {
-              "add": "添加主体",
-              "edit": "编辑主体",
+              "add": "添加机构",
+              "edit": "编辑机构",
               "more": "更多",
-              "remove": "移除主体"
+              "remove": "移除机构"
             },
-            "helpText": "这些主体将决定此阶段是否通过。",
+            "helpText": "这些机构将决定此阶段是否通过。",
             "label": {
-              "normal": "投票主体",
-              "veto": "否决主体"
+              "normal": "投票机构",
+              "veto": "否决机构"
             },
             "timelockStage": {
-              "description": "如果没有主体，该阶段将是一个时间锁，因此提案在结束时会自动通过。",
-              "heading": "无投票主体"
+              "description": "没有机构时，该阶段将成为时间锁，提案在结束时自动通过。",
+              "heading": "无投票机构"
             }
           },
           "stageField": {
@@ -232,7 +234,7 @@
               "remove": "移除阶段"
             },
             "name": {
-              "helpText": "这用于标识提案所在的阶段。例如：社区审查、监护人否决或创始人签署",
+              "helpText": "用于识别提案所处的阶段。例如：社区审查、监护人否决或founder签署",
               "label": "名称"
             },
             "number": "阶段 {{stageNumber}}",
@@ -240,19 +242,19 @@
           },
           "stageSettingsField": {
             "NORMAL": {
-              "description": "提案只有在获得批准后才能通过阶段。",
+              "description": "提案只有在获得批准后才能通过该阶段。",
               "label": "批准"
             },
             "OPTIMISTIC": {
-              "description": "提案只有在被否决时才会被阻止通过阶段。",
+              "description": "提案除非被否决，否则将通过该阶段。",
               "label": "否决"
             },
-            "approvalHelpText": "提案只有在获得批准后才能通过阶段。",
+            "approvalHelpText": "提案只有在获得批准后才能通过该阶段。",
             "approvalThreshold": "批准阈值",
-            "earlyAdvance": "提前阶段推进",
+            "earlyAdvance": "提前推进阶段",
             "edit": "编辑设置",
             "expiration": "阶段过期",
-            "expirationPeriod": "过期时间",
+            "expirationPeriod": "过期期限",
             "governanceType": "治理类型",
             "label": "设置",
             "no": "禁用",
@@ -266,27 +268,27 @@
               "label": "高级"
             },
             "BASIC": {
-              "description": "提案由单个主体决定。",
-              "label": "基本"
+              "description": "提案由单一机构决定。",
+              "label": "基础"
             },
-            "helpText": "这决定了您需要设计治理流程的控制量和灵活性。",
-            "label": "治理设计者"
+            "helpText": "这决定了您设计治理流程所需的控制和灵活性程度。",
+            "label": "治理设计器"
           }
         },
         "metadata": {
           "description": {
-            "helpText": "这将显示在提案列表上，以帮助用户了解此类型的治理。",
+            "helpText": "这将显示在提案列表中，帮助用户了解此类提案的治理方式。",
             "label": "描述"
           },
           "name": {
             "label": "流程名称"
           },
           "processKey": {
-            "helpText": "该键是此类型提案的唯一标识符的一部分。例如EIP会导致EIP-1，并在每个提案中递增。",
-            "label": "键"
+            "helpText": "前缀是此类提案唯一标识符的一部分。例如EIP将导致EIP-1，并为每个提案递增。",
+            "label": "前缀"
           },
           "resources": {
-            "helpText": "这些将作为链接显示在提案列表下的描述中，作为额外的外部资源。"
+            "helpText": "这些将作为链接显示在提案列表的描述下方，作为额外的外部资源。"
           },
           "type": {
             "plugin": "插件",
@@ -295,18 +297,18 @@
         },
         "permissions": {
           "anyEmptyState": {
-            "description": "此流程将被授予代表DAO执行的权限。它可以提取资金、修改治理合约，并调用任何智能合约上的任何函数。",
+            "description": "此流程将被授权代表DAO执行。它可以提取资金、修改治理合约，并调用任何智能合约上的任何函数。",
             "heading": "无限制执行"
           },
           "permissionField": {
-            "anyDescription": "可以向提案添加任何操作",
+            "anyDescription": "任何操作都可以添加到提案中",
             "anyLabel": "任何操作",
             "error": {
-              "duplicate": "列表中发现重复操作"
+              "duplicate": "列表中存在重复的操作"
             },
             "helpText": "每个操作都由特定智能合约地址上的函数选择器定义。",
             "label": "授权操作",
-            "specificDescription": "可以选择向提案添加操作",
+            "specificDescription": "选定的操作可以添加到提案中",
             "specificLabel": "特定操作"
           },
           "specificEmptyState": {
@@ -331,9 +333,9 @@
         "finalStep": "发布流程",
         "steps": {
           "METADATA": {
-            "description": "描述治理流程，以便访问者了解其目的和决策方式。这些字段中的任何一个都可以通过治理稍后更改。",
+            "description": "描述治理流程，让访问者了解其目的和决策方式。这些字段中的任何一个都可以稍后通过治理进行更改。",
             "name": "流程描述",
-            "title": "描述新的提案类型"
+            "title": "描述新提案类型"
           },
           "PERMISSIONS": {
             "description": "定义此治理流程被授权执行的操作。此类型的提案只能执行此处指定的操作。",
@@ -346,16 +348,19 @@
             "title": "设置提案创建规则"
           },
           "STAGES": {
-            "description": "设计此类型提案中的决策方式。提案可以经历多个顺序阶段，并具有任意数量的治理主体。",
+            "description": "设计此类提案中如何做出决策。提案可以经过多个连续阶段，并拥有任意数量的治理机构。",
             "name": "治理设计",
             "title": "设计治理流程"
           }
         },
-        "submitHelpText": "您将需要签署两笔交易。",
+        "submitHelpText": "您需要签署两笔交易。",
         "submitLabel": "发布流程"
       },
       "layoutWizardCreateProcess": {
         "name": "创建流程"
+      },
+      "layoutWizardCreateDraw": {
+        "name": "创建抽奖"
       },
       "prepareProcessDialog": {
         "button": {
@@ -405,29 +410,23 @@
       },
       "setupBodyDialog": {
         "a11y": {
-          "description": "为您的DAO创建新的投票主体"
+          "description": "为您的DAO创建新的投票机构"
         },
         "externalAddress": {
           "address": {
-            "helpText": "添加任何地址作为主体，例如Safe或Governor",
+            "helpText": "添加任何地址作为机构，例如Safe或Governor",
             "label": "外部地址"
-          },
-          "addressTypeCheck": {
-            "loading": "正在分析地址类型",
-            "success": "已检测到地址类型",
-            "successSafe": "检测到Safe合约",
-            "validation": "请等待地址类型检查完成"
           }
         },
         "metadata": {
           "name": {
-            "label": "主体名称"
+            "label": "机构名称"
           },
           "resources": {
-            "helpText": "这些将作为链接显示在成员列表下的描述中，作为额外的外部资源。"
+            "helpText": "这些将作为链接显示在成员列表的描述下方，作为额外的外部资源。"
           },
           "summary": {
-            "helpText": "这将显示在成员列表上，以帮助访问者了解主体的职责。",
+            "helpText": "这将显示在成员列表中，帮助访问者了解该机构的职责。",
             "label": "描述"
           }
         },
@@ -436,16 +435,16 @@
             "label": "按请求"
           },
           "external": {
-            "description": "添加任何地址作为主体，例如Safe或Governor",
+            "description": "添加任何地址作为机构，例如Safe或Governor",
             "label": "外部地址"
           },
           "plugin": {
-            "helpText": "这决定了主体用于决策的治理。",
+            "helpText": "这决定了机构用于做出决策的治理方式。",
             "label": "治理类型"
           }
         },
         "submit": "保存",
-        "title": "添加投票主体"
+        "title": "添加投票机构"
       },
       "setupStageSettingsDialog": {
         "a11y": {
@@ -458,23 +457,23 @@
         "fields": {
           "stageApprovalsField": {
             "approve": {
-              "helpText": "必须批准此提案的主体数量才能推进。",
+              "helpText": "必须批准此提案以推进它的机构数量。",
               "label": "批准阈值"
             },
-            "summary": "共 {{count}} 个主体",
+            "summary": "共{{count}}个机构",
             "veto": {
-              "helpText": "必须否决此提案的主体数量才能阻止其推进。",
+              "helpText": "必须否决此提案以阻止其推进的机构数量。",
               "label": "否决阈值"
             }
           },
           "stageDurationField": {
-            "helpText": "提案活跃的时间段。提案可以创建更长的持续时间，但不能更短。",
+            "helpText": "提案处于活跃状态的时间段。提案可以创建更长的持续时间，但不能更短。",
             "infoText": "建议的最短投票期为7天。",
             "label": "阶段持续时间"
           },
           "stageEarlyAdvanceField": {
-            "helpText": "这允许提案在投票期结束前获得批准时提前推进到后续阶段。",
-            "label": "提前阶段推进",
+            "helpText": "如果提案在投票期结束前获得批准，这允许提案提前推进到后续阶段。",
+            "label": "提前推进阶段",
             "no": "禁用",
             "yes": "启用"
           },
@@ -487,14 +486,14 @@
           },
           "stageTypeField": {
             "NORMAL": {
-              "description": "提案只有在获得批准后才能通过阶段。",
+              "description": "提案只有在获得批准后才能通过该阶段。",
               "label": "批准"
             },
             "OPTIMISTIC": {
-              "description": "提案只有在被否决时才会被阻止通过阶段。",
+              "description": "提案除非被否决，否则将通过该阶段。",
               "label": "否决"
             },
-            "helpText": "这将决定治理在阶段中扮演的角色。",
+            "helpText": "这将决定治理在该阶段中发挥的作用。",
             "label": "治理类型"
           }
         },
@@ -520,16 +519,16 @@
               "title": "领取"
             },
             "govern": {
-              "description": "一起治理",
+              "description": "共同治理协议",
               "title": "治理"
             },
             "stake": {
-              "description": "参与",
+              "description": "参与其中",
               "title": "质押"
             }
           },
-          "info": "Boundless治理致力于推进Boundless愿景：将ZK带给每个区块链、开发者和介于两者之间的每个人。",
-          "to": "到Boundless治理",
+          "info": "Boundless DAO是一个社区主导的组织，推进Boundless愿景：将ZK技术带给每个区块链、开发者以及其间的每个人。",
+          "to": "欢迎来到Boundless DAO",
           "welcome": "欢迎"
         }
       }
@@ -541,7 +540,7 @@
             "address": "DAO地址",
             "chain": "链",
             "ens": "ENS",
-            "launched": "启动",
+            "launched": "启动时间",
             "title": "合约"
           },
           "links": "资源"
@@ -570,13 +569,13 @@
     "explore": {
       "daoList": {
         "emptyState": {
-          "description": "当有相关DAO时，这将显示。",
+          "description": "可用时将显示相关的DAO。",
           "heading": "未找到DAO"
         },
         "entity": "DAO",
         "errorState": {
-          "description": "加载DAO时出错。请稍后再试。",
-          "heading": "加载DAO时出错"
+          "description": "加载DAO时出错。请稍后重试。",
+          "heading": "加载DAO错误"
         },
         "searchPlaceholder": "按名称、地址或ENS搜索"
       },
@@ -590,25 +589,25 @@
       "exploreDaosPage": {
         "doItYourself": {
           "actionLabel": "开发者门户",
-          "subtitle": "使用我们的治理UI套件和应用模板构建您自己的自定义Aragon OSx DAO或您自己的Web应用程序。",
+          "subtitle": "使用我们的治理UI套件和应用模板构建您自己的定制cddao OSx DAO或您自己的Web应用程序。",
           "title": "自己动手"
         },
         "enterpriseService": {
           "actionLabel": "联系我们",
-          "subtitle": "让我们的团队管理治理的复杂性，这样您就可以专注于构建产品和社区。",
+          "subtitle": "让我们的团队管理治理的复杂性，这样您就可以专注于构建您的产品和社区。",
           "title": "企业服务"
         },
         "hero": {
           "subtitle": "探索使用我们的模块化治理堆栈来保护其链上治理的组织。",
-          "title": "在Aragon上治理"
+          "title": "在DAO上治理"
         },
         "noCodeSetup": {
           "actionLabel": "创建DAO",
-          "subtitle": "使用我们简单的无代码部署向导，在几分钟内轻松部署新的Aragon OSx DAO。",
+          "subtitle": "使用我们简单的无代码部署向导，在几分钟内轻松在cddao OSx上部署新的DAO。",
           "title": "无代码设置"
         },
         "section": {
-          "cta": "入门指南",
+          "cta": "开始使用",
           "daos": "探索",
           "featured": "精选"
         }
@@ -618,7 +617,7 @@
       "assetInput": {
         "maxButtonLabel": "最大",
         "percentage": {
-          "0": "无",
+          "0": "None",
           "100": "100%",
           "25": "25%",
           "50": "50%",
@@ -630,13 +629,13 @@
       },
       "assetList": {
         "emptyState": {
-          "description": "当有DAO的链上资产时，这将显示。",
+          "description": "这将在可用时显示DAO的链上资产。",
           "heading": "未找到资产"
         },
         "entity": "资产",
         "errorState": {
-          "description": "加载资产时出错。请稍后再试。",
-          "heading": "加载资产时出错"
+          "description": "加载资产时出错。请稍后重试。",
+          "heading": "加载资产错误"
         },
         "searchPlaceholder": "搜索资产..."
       },
@@ -650,7 +649,7 @@
         "aside": {
           "details": {
             "chain": "链",
-            "title": "详细信息"
+            "title": "详情"
           }
         },
         "main": {
@@ -661,7 +660,7 @@
         "aside": {
           "details": {
             "chain": "链",
-            "title": "详细信息"
+            "title": "详情"
           }
         },
         "main": {
@@ -670,7 +669,7 @@
       },
       "financeDetailsList": {
         "chain": "链",
-        "octavDescription": "Octav提供高级金库分析。",
+        "octavDescription": "Octav提供高级财务分析。",
         "octavLabel": "在Octav上查看",
         "title": "金库",
         "vaultAddress": "金库地址",
@@ -678,22 +677,22 @@
       },
       "transactionList": {
         "emptyState": {
-          "description": "当有DAO的链上操作时，这将显示。",
+          "description": "这将在可用时显示DAO的链上操作。",
           "heading": "未找到交易"
         },
         "entity": "交易",
         "errorState": {
-          "description": "加载交易时出错。请稍后再试。",
-          "heading": "加载交易时出错"
+          "description": "加载交易时出错。请稍后重试。",
+          "heading": "加载交易错误"
         }
       },
       "transferAssetForm": {
         "amount": {
-          "label": "金额",
+          "label": "数量",
           "placeholder": "0"
         },
         "receiver": {
-          "helpText": "要转移资产到的地址。",
+          "helpText": "要转移资产的地址。",
           "label": "接收者",
           "placeholder": "ENS或0x…"
         }
@@ -734,19 +733,19 @@
         },
         "metadata": {
           "actions": {
-            "helpText": "操作是可以执行的链上交易，如果提案通过的话。",
+            "helpText": "操作是链上交易，如果提案通过可以执行。",
             "label": "是",
             "title": "添加操作"
           },
           "body": {
-            "helpText": "这是完整的提案文本，仅在提案详情页面上可见。",
+            "helpText": "这是完整的提案文本，仅在提案详情页面可见。",
             "title": "正文"
           },
           "resources": {
-            "helpText": "这些将作为链接显示在提案页面上。它们可以用来帮助成员理解提案。"
+            "helpText": "这些在提案页面显示为链接。它们可以帮助成员理解提案。"
           },
           "summary": {
-            "helpText": "这将显示在提案页面的顶部和提案列表上，以便任何人都能快速了解其内容。",
+            "helpText": "这显示在提案页面顶部和提案列表中，以便任何人都能快速了解其内容。",
             "title": "摘要"
           },
           "title": {
@@ -755,19 +754,15 @@
         }
       },
       "createProposalPage": {
-        "createProposalPageClientSteps": {
-          "simulate": "模拟操作",
-          "skipSimulation": "跳过模拟"
-        },
         "finalStep": "发布提案",
         "steps": {
           "ACTIONS": {
-            "description": "添加操作来治理DAO、与智能合约交互或连接到其他应用程序。它们将按照此页面上列出的顺序执行。",
+            "description": "添加操作来治理DAO、与智能合约交互或连接到其他应用程序。它们将按此页面上列出的顺序执行。",
             "name": "添加操作",
             "title": "添加操作"
           },
           "METADATA": {
-            "description": "描述提案，以便投票者拥有理解它并做出决定所需的信息。",
+            "description": "描述提案，以便投票者获得理解和做出决定所需的信息。",
             "name": "描述提案",
             "title": "描述提案"
           },
@@ -785,7 +780,7 @@
             "address": "地址",
             "ens": "ENS",
             "firstActivity": "首次活动",
-            "title": "详细信息"
+            "title": "详情"
           },
           "efpCard": {
             "title": "以太坊关注协议"
@@ -826,8 +821,8 @@
         },
         "entity": "成员",
         "error": {
-          "description": "加载DAO成员时出错。请稍后再试。",
-          "title": "加载成员时出错"
+          "description": "加载DAO成员时出错。请稍后重试。",
+          "title": "加载成员错误"
         }
       },
       "daoMembersPage": {
@@ -838,12 +833,12 @@
       "daoProposalDetailsPage": {
         "aside": {
           "details": {
-            "creator": "提议者",
+            "creator": "提案人",
             "id": "ID",
             "onChainId": "链上ID",
-            "published": "发布",
+            "published": "发布时间",
             "status": "状态",
-            "title": "详细信息"
+            "title": "详情"
           },
           "links": {
             "title": "链接"
@@ -863,9 +858,7 @@
         },
         "main": {
           "actions": {
-            "header": "操作",
-            "lastSimulationError": "获取上次模拟数据时出错。请稍后再试。",
-            "simulationError": "模拟操作时出错。请稍后再试。"
+            "header": "操作"
           },
           "description": {
             "header": "提案",
@@ -877,13 +870,13 @@
       },
       "daoProposalList": {
         "empty": {
-          "description": "当有相关提案时，这将显示。",
+          "description": "可用时将显示相关提案。",
           "title": "未找到提案"
         },
         "entity": "提案",
         "error": {
-          "description": "加载DAO提案时出错。请稍后再试。",
-          "title": "加载提案时出错"
+          "description": "加载DAO提案时出错。请稍后重试。",
+          "title": "加载提案错误"
         },
         "groupTab": "所有提案"
       },
@@ -899,7 +892,7 @@
       "efpCard": {
         "cta": "在EFP上查看",
         "followers": "关注者",
-        "following": "关注",
+        "following": "关注中",
         "info": "以太坊关注协议是以太坊的链上社交图谱。"
       },
       "executeDialog": {
@@ -907,7 +900,7 @@
           "submit": "执行提案",
           "success": "查看提案"
         },
-        "description": "要执行提案，请在钱包中确认链上交易。",
+        "description": "要执行提案，请在您的钱包中确认链上交易。",
         "title": "执行提案"
       },
       "layoutWizardCreateDao": {
@@ -926,17 +919,17 @@
       },
       "permissionCheckDialog": {
         "a11y": {
-          "description": "检查用户是否具有执行操作的权限。"
+          "description": "检查用户是否有权限执行该操作。"
         },
         "action": "确定",
-        "loading": "检查权限",
+        "loading": "检查权限中",
         "or": "或",
         "proposal": {
-          "description": "您不满足提案创建要求。",
+          "description": "您不符合提案创建要求。",
           "title": "无资格创建提案"
         },
         "vote": {
-          "description": "您不满足投票要求。",
+          "description": "在提案创建时的区块，您不符合投票要求。",
           "title": "无资格投票"
         }
       },
@@ -952,7 +945,7 @@
       "proposalListStats": {
         "button": "查看治理设置",
         "executed": "已执行",
-        "mostRecent": "最新",
+        "mostRecent": "最近",
         "recentUnit": " {{unit}}前",
         "total": "总计",
         "types": "类型"
@@ -962,7 +955,7 @@
           "submit": "发布提案",
           "success": "查看提案"
         },
-        "description": "要发布您的提案，请在钱包中确认链上交易。",
+        "description": "要发布您的提案，请在您的钱包中确认链上交易。",
         "step": {
           "PIN_METADATA": {
             "errorLabel": "无法在IPFS上固定数据",
@@ -976,6 +969,10 @@
           "cancel": "取消",
           "select": "创建提案"
         },
+        "draw": {
+          "description": "选择用于创建抽奖活动的审批流程。",
+          "title": "选择抽奖插件发布提案流程"
+        },
         "process": {
           "description": "选择用于创建提案的治理流程。",
           "title": "选择流程"
@@ -985,255 +982,861 @@
           "title": "创建提案"
         }
       },
-      "simulateActionsDialog": {
-        "action": {
-          "cancel": "取消",
-          "error": "仍然继续",
-          "success": "继续"
-        },
-        "error": "模拟操作时出错。请稍后再试。",
-        "title": "模拟操作"
-      },
       "verifySmartContractDialog": {
         "action": {
           "add": "添加合约",
           "cancel": "取消",
-          "verify": "验证"
+          "verify": "验证合约"
         },
-        "description": "此合约的写入函数可用于添加操作。",
-        "error": {
-          "description": "验证合约时出错。请稍后再试。",
-          "title": "验证失败"
-        },
-        "input": {
-          "label": "合约地址",
-          "placeholder": "0x…"
-        },
-        "success": {
-          "description": "合约已成功验证。",
-          "title": "验证成功"
-        },
-        "title": "验证智能合约",
+        "description": "此合约上的写入函数可用于添加操作。",
         "smartContractLabel": "地址",
         "step": {
           "abi": {
-            "default": "获取ABI",
-            "warning": "无法获取ABI"
+            "default": "检索 ABI",
+            "warning": "无法检索 ABI"
           },
           "proxy": {
             "default": "检测代理合约"
           },
           "verify": {
-            "warning": "无法验证合约",
-            "default": "验证合约"
+            "default": "验证合约",
+            "warning": "无法验证合约"
           }
         },
-        "unverified": "未验证合约"
+        "title": "添加合约地址",
+        "unverified": "未验证的合约"
+      },
+      "voteDialog": {
+        "button": {
+          "submit": "提交投票",
+          "success": "查看提案"
+        },
+        "description": "要提交您的投票，请在钱包中确认链上交易。",
+        "title": "提交投票"
       },
       "voteList": {
         "empty": {
-          "description": "当有相关投票时，这将显示。",
+          "description": "未找到投票。",
           "title": "未找到投票"
         },
-        "entity": "投票",
         "error": {
-          "description": "加载投票时出错。请稍后再试。",
-          "title": "加载投票时出错"
+          "description": "加载投票时出错。请稍后重试。",
+          "title": "加载投票出错"
         }
-      },
-      "voteProposalListItem": {
-        "breakdown": "分解",
-        "voted": "已投票",
-        "votedOption": "已投票选项"
-      },
-      "voteDialog": {
-        "description": "要提交您的投票，请在钱包中确认链上交易。",
-        "button": {
-          "success": "查看提案",
-          "submit": "提交投票"
-        },
-        "title": "提交投票"
       },
       "walletConnectActionDialog": {
         "connect": {
           "action": {
-            "retry": "重试",
             "cancel": "取消",
-            "connect": "连接dApp"
+            "connect": "连接 dApp",
+            "retry": "重试"
           },
+          "description": "要连接，请打开 dApp，将 WalletConnect 二维码复制到剪贴板，然后粘贴到此处。",
+          "title": "连接到 dApp",
           "uriField": {
             "placeholder": "wc:…"
-          },
-          "title": "连接到dApp",
-          "description": "要连接，请打开dApp，将WalletConnect二维码复制到剪贴板，然后粘贴到这里。"
+          }
         },
         "listener": {
           "action": {
+            "addActions": "添加 {{count}} 个操作",
             "cancel": "取消",
-            "open": "打开dApp",
-            "addActions": "添加{{count}}个操作"
+            "open": "打开 dApp"
           },
-          "info_1": "您现在可以与",
           "helpLink": "遇到问题？",
-          "progress": "监听dApp",
-          "info_2": "代表您的DAO。交易将被提供作为操作添加到提案中，而不是转到您的钱包。"
+          "info_1": "您现在可以代表您的 DAO 与 ",
+          "info_2": " 进行交互。交易将不会发送到您的钱包，而是可以作为操作添加到提案中。",
+          "progress": "正在监听 dApp"
         }
       }
     },
     "plugins": {
+      "draw": {
+        "drawContractList": {
+          "status": {
+            "active": "进行中",
+            "upcoming": "即将到来",
+            "completed": "已完成"
+          },
+          "address": "合约地址",
+          "participants": "参与者",
+          "viewDetails": "查看详情"
+        },
+        "nftCollectionList": {
+          "noImage": "暂无图片",
+          "floorPrice": "地板价",
+          "items": "物品数量",
+          "owners": "持有者",
+          "volume": "总交易额"
+        },
+        "nftCollectionListItem": {
+          "noImage": "暂无图片",
+          "price": "当前价格",
+          "lastSale": "上次成交价",
+          "owner": "持有者"
+        },
+        "nftCollectionDetail": {
+          "noImage": "暂无图片",
+          "lotteryButton": "参与抽奖",
+          "redemptionButton": "兑换奖励",
+          "floorPrice": "地板价",
+          "items": "物品数量",
+          "owners": "持有者",
+          "volume": "总交易额",
+          "contractAddress": "合约地址",
+          "nftItemsTitle": "NFT物品",
+          "nftItemsCount": "共 {{count}} 个项目"
+        },
+        "createDrawForm": {
+          "metadata": {
+            "description": {
+              "helpText": "这将显示在提案列表中，帮助用户了解此类提案的治理方式。",
+              "label": "描述"
+            },
+            "name": {
+              "label": "抽奖名称"
+            },
+            "processKey": {
+              "helpText": "前缀是此类提案唯一标识符的一部分。例如DRAW将导致DRAW-1，并为每个提案递增。",
+              "label": "前缀"
+            },
+            "resources": {
+              "helpText": "这些将作为链接显示在提案列表的描述下方，作为额外的外部资源。"
+            }
+          },
+          "step1": {
+            "name": {
+              "label": "抽奖名称",
+              "placeholder": "请输入抽奖名称"
+            },
+            "description": {
+              "label": "抽奖描述",
+              "placeholder": "请输入抽奖描述",
+              "helpText": "请输入抽奖描述"
+            },
+            "resources": {
+              "label": "抽奖资源",
+              "placeholder": "请输入抽奖资源",
+              "helpText": "请输入抽奖资源"
+            }
+          },
+          "step2": {
+            "tokenB": {
+              "description": "这是将在抽奖中作为奖励分发的代币。",
+              "invalidAddress": "请输入有效的以太坊地址",
+              "label": "奖励代币地址",
+              "placeholder": "0x…",
+              "required": "需要奖励代币地址",
+              "title": "奖励代币"
+            },
+            "isCreateNewNft": {
+              "label": "创建新的NFT合约",
+              "helpText": "选择是否创建新的NFT合约"
+            },
+            "nftName": {
+              "label": "名称",
+              "placeholder": "请输入NFT名称",
+              "helpText": "请输入NFT名称",
+              "required": "需要NFT名称"
+            },
+            "nftDescription": {
+              "label": "描述",
+              "placeholder": "请输入NFT描述"
+            },
+            "nftSymbol": {
+              "label": "符号",
+              "placeholder": "请输入NFT符号",
+              "helpText": "请输入NFT符号",
+              "required": "需要NFT符号"
+            },
+            "nftInitialSupply": {
+              "label": "初始供应量",
+              "description": "若空置，不做任何初始发行",
+              "placeholder": "请输入NFT初始供应量",
+              "helpText": "若空置，不做任何初始发行",
+              "required": "需要NFT初始供应量",
+              "invalidNumber": "请输入有效的数字"
+            },
+            "nftMaxSupply": {
+              "label": "最大供应量",
+              "description": "若空置，则表示不受限制",
+              "placeholder": "请输入NFT最大供应量",
+              "helpText": "若空置，则表示不受限制",
+              "required": "需要NFT最大供应量",
+              "invalidNumber": "请输入有效的数字"
+            },
+            "nftUri": {
+              "label": "URI",
+              "placeholder": "请输入NFT基本URI",
+              "helpText": "请输入NFT基本URI，铸造的每一个NFT的URI，如：https://ipfs.io/ipfs/Qm.../{nftid}.json",
+              "required": "需要NFT基本URI"
+            },
+            "nftMetadata": {
+              "buttonLabelOpened": "关闭",
+              "buttonLabelClosed": "展开",
+              "title": {
+                "label": "初始化发行的NFT信息",
+                "description": "初始化发行的NFT元数据，如果不定义则使用默认值",
+                "helpText": "请输入NFT项目名称"
+              },
+              "addAction": "添加NFT",
+              "removeAction": "删除NFT",
+              "label": "NFT元数据",
+              "placeholder": "请输入NFT元数据",
+              "helpText": "请输入NFT元数据",
+              "required": "需要NFT元数据",
+              "nftItem": "NFT #{{index}}",
+              "name": {
+                "label": "名称",
+                "placeholder": "请输入NFT项目名称",
+                "helpText": "请输入NFT项目名称"
+              },
+              "description": {
+                "label": "描述",
+                "placeholder": "请输入NFT项目描述"
+              },
+              "image": {
+                "label": "图片链接",
+                "placeholder": "请输入NFT图片的IPFS CID",
+                "helpText": "请输入NFT图片的IPFS CID"
+              },
+              "external_url": {
+                "label": "外部链接",
+                "placeholder": "请输入NFT项目外部链接",
+                "helpText": "请输入NFT项目外部链接"
+              },
+              "background_color": {
+                "label": "背景颜色",
+                "placeholder": "请输入NFT项目背景颜色",
+                "helpText": "请输入NFT项目背景颜色"
+              },
+              "animation_url": {
+                "label": "动画链接",
+                "placeholder": "请输入NFT项目动画链接",
+                "helpText": "请输入NFT项目动画链接"
+              },
+              "supply": {
+                "label": "供应量",
+                "placeholder": "请输入NFT项目供应量",
+                "helpText": "请输入NFT项目供应量"
+              },
+              "attributes": {
+                "addAction": "添加属性",
+                "removeAction": "删除属性",
+                "label": "NFT属性",
+                "placeholder": "请输入NFT属性",
+                "helpText": "请输入NFT属性",
+                "nftAttribute": "NFT属性 {{index}}",
+                "traitTypePlaceholder": "属性类型",
+                "valuePlaceholder": "属性值"
+              }
+            }
+          },
+          "step3": {
+            "tokenA": {
+              "description": "这是用户参与抽奖所需的代币。",
+              "invalidAddress": "请输入有效的以太坊地址",
+              "label": "兑换代币地址",
+              "placeholder": "0x…",
+              "helpText": "输入用于兑换的代币地址",
+              "required": "需要兑换代币地址",
+              "title": "兑换代币"
+            },
+            "isCreateNewToken": {
+              "label": "是否创建新的代币",
+              "helpText": "选择是否创建新的代币"
+            },
+            "tokenName": {
+              "label": "代币名称",
+              "placeholder": "请输入代币名称",
+              "helpText": "请输入代币名称",
+              "required": "需要代币名称"
+            },
+            "tokenSymbol": {
+              "label": "代币符号",
+              "placeholder": "请输入代币符号",
+              "helpText": "请输入代币符号",
+              "required": "需要代币符号"
+            },
+            "tokenDecimals": {
+              "label": "代币精度",
+              "placeholder": "请输入代币精度",
+              "helpText": "请输入代币精度",
+              "required": "需要代币精度"
+            }
+          },
+          "step4": {
+            "eligibleToken": {
+              "label": "参与资格代币地址",
+              "placeholder": "请输入参与资格代币地址",
+              "helpText": "用户需要持有的代币地址",
+              "required": "需要参与资格代币地址"
+            },
+            "minTokenAmount": {
+              "label": "最小代币数量",
+              "placeholder": "请输入最小代币数量",
+              "helpText": "用户需要持有的最低代币数量",
+              "required": "需要最小代币数量"
+            },
+            "drawInterval": {
+              "label": "抽奖间隔(秒)",
+              "placeholder": "请输入抽奖间隔",
+              "helpText": "同一用户两次抽奖之间的最小时间间隔（秒）",
+              "required": "需要抽奖间隔",
+              "invalidSeconds": "请输入有效的秒数"
+            },
+            "useCustomEligibleToken": {
+              "label": "指定自定义参与资格代币地址",
+              "helpText": "启用此选项可为用户参与资格指定自定义代币地址，而不是使用步骤3中定义的代币",
+              "defaultInfo": "默认情况下，将使用步骤3中定义的代币作为用户参与资格。"
+            },
+            "useCustomTokenA": {
+              "label": "指定自定义兑换代币地址",
+              "helpText": "启用此选项可为NFT兑换指定自定义代币地址，而不是使用步骤3中定义的代币"
+            },
+            "customTokenA": {
+              "label": "自定义兑换代币地址",
+              "placeholder": "请输入自定义兑换代币地址",
+              "helpText": "用于NFT兑换的代币地址",
+              "required": "需要自定义兑换代币地址"
+            },
+            "eligibilityRules": {
+              "title": "用户参与抽奖规则"
+            },
+            "drawRewardRules": {
+              "title": "抽奖奖励规则",
+              "infoTitle": "奖励信息",
+              "infoDescription": "每次抽奖将从步骤2中定义的NFT集合中随机奖励一个NFT。如果定义了初始发行数量，将从ID 1到初始发行数量中随机选择NFT。每个NFT（ERC1155）可以多次铸造。"
+            },
+            "swapRules": {
+              "title": "兑换规则",
+              "infoTitle": "兑换信息",
+              "infoDescription": "定义NFT组合（来自步骤2中定义的NFT集合），可用于兑换步骤3中定义的代币。每个组合指定兑换所需的NFT及其数量。",
+              "tokenAInfoTitle": "兑换代币信息",
+              "tokenAInfoWithAddress": "用户将使用NFT组合兑换以下代币：{{tokenA}}",
+              "tokenAInfoWithCustomAddress": "用户将使用NFT组合兑换以下自定义代币：{{tokenA}}",
+              "tokenAInfoWithoutAddress": "用户将使用NFT组合兑换步骤3中定义的代币。",
+              "nftComboUnits": "NFT组合",
+              "addNftUnit": "添加NFT",
+              "nftUnitAddButton": "添加NFT",
+              "nftUnitCancelButton": "取消",
+              "nftUnit": "NFT #{{id}}: 数量 {{unit}}",
+              "noNftUnits": "暂无NFT单位",
+              "nftIdOutOfRange": "NFT ID超出允许范围（最大ID: {{maxId}}）",
+              "nftIdAlreadyExists": "NFT ID已存在于组合中",
+              "nftIdAndUnitRequired": "NFT ID和数量都是必填项",
+              "enableCombo": "启用组合"
+            },
+            "nftCombos": {
+              "label": "NFT组合"
+            }
+          },
+          "finalStep": "发布流程",
+          "steps": {
+            "METADATA": {
+              "description": "描述治理流程，让访问者了解其目的和决策方式。这些字段中的任何一个都可以稍后通过治理进行更改。",
+              "name": "流程描述",
+              "title": "描述新提案类型"
+            },
+            "PERMISSIONS": {
+              "description": "定义此治理流程被授权执行的操作。此类型的提案只能执行此处指定的操作。",
+              "name": "提案权限",
+              "title": "设置权限"
+            },
+            "PROPOSAL_CREATION": {
+              "description": "定义谁可以创建此类型的提案。",
+              "name": "提案创建规则",
+              "title": "设置提案创建规则"
+            },
+            "STAGES": {
+              "description": "设计此类提案中如何做出决策。提案可以经过多个连续阶段，并拥有任意数量的治理机构。",
+              "name": "治理设计",
+              "title": "设计治理流程"
+            }
+          },
+          "submitHelpText": "您需要签署两笔交易。",
+          "submitLabel": "发布流程"
+        },
+        "createDrawDetailsDialog": {
+          "title": "创建抽奖插件",
+          "description": "部署抽奖插件，为您的DAO启用抽奖和NFT兑换功能。",
+          "actionLabel": "开始",
+          "steps": {
+            "describe": "描述新的抽奖类型",
+            "configureNft": "配置NFT",
+            "configureRedemption": "配置兑换规则",
+            "configureDraw": "配置抽奖规则",
+            "review": "审核",
+            "create": "创建抽奖提案",
+            "success": "查看抽奖提案"
+          }
+        },
+        "detailPage": {
+          "title": "NFT集合详情",
+          "totalSupply": "总供应量",
+          "remaining": "剩余数量",
+          "items": "NFT项目"
+        },
+        "meta": {
+          "setup": {
+            "name": "抽奖插件",
+            "description": "NFT抽奖和批量兑换插件"
+          }
+        },
+        "mainPage": {
+          "home": {
+            "title": "抽奖"
+          },
+          "title": "抽奖活动",
+          "description": "参与DAO抽奖活动，赢取丰厚奖励",
+          "howItWorks": "参与方式",
+          "step1": {
+            "title": "满足参与条件",
+            "description": "持有足够的治理代币或满足其他参与条件"
+          },
+          "step2": {
+            "title": "点击抽奖按钮",
+            "description": "连接钱包并点击抽奖按钮参与活动"
+          },
+          "step3": {
+            "title": "等待开奖结果",
+            "description": "抽奖结果将实时显示，中奖用户可获得奖励"
+          },
+          "step4": {
+            "title": "领取您的奖励",
+            "description": "在抽奖活动结束后领取您的奖励"
+          },
+          "rewards": "奖励类型",
+          "reward1": {
+            "title": "NFT奖励",
+            "description": "稀有NFT收藏品"
+          },
+          "reward2": {
+            "title": "代币奖励",
+            "description": "治理代币或其他代币"
+          },
+          "reward3": {
+            "title": "实物奖励",
+            "description": "限量版实物商品"
+          },
+          "eligibility": "参与资格",
+          "eligible": "恭喜！您满足参与条件",
+          "notEligible": "暂不满足参与条件",
+          "tokenBalance": "当前余额",
+          "requiredBalance": "最低要求",
+          "drawButton": "立即抽奖",
+          "quickActions": "快捷方式",
+          "viewHistory": "查看历史记录",
+          "redeemRewards": "兑换奖品",
+          "participate": "参与抽奖"
+        },
+        "settingsPanel": {
+          "title": "抽奖设置",
+          "description": "部署和管理抽奖插件以启用DAO的抽奖功能",
+          "eligibilitySettings": "参与资格设置",
+          "eligibleToken": "资格代币",
+          "minTokenAmount": "最低代币数量",
+          "isErc1155Eligible": "ERC1155资格",
+          "eligibleNftId": "资格NFT ID",
+          "drawInterval": "抽奖间隔",
+          "tokenSettings": "代币设置",
+          "tokenA": "代币A地址",
+          "tokenB": "代币B地址",
+          "nftCombos": "NFT组合",
+          "noCombos": "暂无NFT组合",
+          "maxExchangeCount": "最大兑换次数",
+          "maxSingleBatch": "单次最大组数",
+          "comboEnabled": "启用状态"
+        },
+        "proposalSettings": {
+          "eligibilityTitle": "参与资格设置",
+          "eligibilityDescription": "配置用户参与抽奖活动的资格条件",
+          "eligibleToken": "资格代币",
+          "eligibleTokenDescription": "用户需要持有的代币地址",
+          "minTokenAmount": "最低代币数量",
+          "minTokenAmountDescription": "用户需要持有的最低代币数量",
+          "isErc1155Eligible": "ERC1155资格",
+          "isErc1155EligibleDescription": "是否需要持有特定的ERC1155 NFT",
+          "eligibleNftId": "资格NFT ID",
+          "eligibleNftIdDescription": "需要持有的NFT ID",
+          "drawInterval": "抽奖间隔",
+          "drawIntervalDescription": "用户两次抽奖之间的最小时间间隔（秒）",
+          "tokenSettingsTitle": "代币设置",
+          "tokenSettingsDescription": "配置抽奖活动涉及的代币",
+          "tokenA": "代币A地址",
+          "tokenADescription": "用于兑换的代币地址（ERC20）",
+          "tokenB": "代币B地址",
+          "tokenBDescription": "抽奖奖励的代币地址（ERC1155 NFT）",
+          "nftCombosTitle": "NFT组合设置",
+          "nftCombosDescription": "配置用于兑换的NFT组合",
+          "comboEnabled": "启用",
+          "maxExchangeCount": "最大兑换次数",
+          "maxSingleBatch": "单次最大组数",
+          "addNftCombo": "添加NFT组合",
+          "comboId": "组合ID",
+          "nftId": "NFT ID",
+          "nftUnit": "NFT单位",
+          "remove": "移除",
+          "noNftCombos": "暂无NFT组合",
+          "addCombo": "添加组合"
+        },
+        "widget": {
+          "title": "抽奖活动",
+          "eligible": "您满足参与条件",
+          "notEligible": "暂不满足参与条件",
+          "tokenBalance": "当前余额",
+          "requiredBalance": "最低要求",
+          "drawButton": "立即抽奖"
+        },
+        "historyPage": {
+          "title": "抽奖历史",
+          "description": "查看您的抽奖历史记录",
+          "noHistory": "暂无抽奖记录",
+          "noHistoryDescription": "您还没有参与过抽奖活动"
+        },
+        "participationPage": {
+          "title": "参与抽奖",
+          "description": "参与DAO抽奖活动",
+          "draw": {
+            "title": "参与抽奖",
+            "description": "点击下方按钮参与抽奖活动",
+            "button": {
+              "participate": "立即抽奖",
+              "processing": "抽奖中..."
+            }
+          },
+          "eligible": {
+            "message": "恭喜！您满足参与条件"
+          },
+          "ineligible": {
+            "title": "暂不满足参与条件",
+            "defaultReason": "您当前不满足参与抽奖的条件"
+          },
+          "requirements": {
+            "title": "参与要求",
+            "tokenBalance": "当前余额",
+            "requiredBalance": "最低要求"
+          },
+          "result": {
+            "win": {
+              "title": "恭喜中奖！",
+              "description": "您获得了 {reward}"
+            },
+            "lose": {
+              "title": "未中奖",
+              "description": "很遗憾，您本次未中奖，请再接再厉"
+            },
+            "tryAgain": "再次抽奖"
+          }
+        },
+        "redemptionPage": {
+          "title": "奖励兑换",
+          "description": "兑换您抽中的NFT奖励",
+          "sectionTitle": "兑换您的奖励",
+          "holdings": {
+            "title": "NFT持有情况",
+            "empty": "您当前没有可兑换的NFT"
+          },
+          "requirements": {
+            "title": "兑换要求",
+            "empty": "暂无兑换要求",
+            "met": "已满足",
+            "notMet": "未满足"
+          },
+          "redeemButton": "立即兑换",
+          "error": {
+            "title": "数据加载失败",
+            "description": "无法加载奖励兑换信息，请稍后重试"
+          }
+        },
+        "testPage": {
+          "title": "抽奖测试",
+          "description": "抽奖插件测试页面"
+        },
+        "dialog": {
+          "participate": {
+            "title": "参与抽奖",
+            "description": "确认参与本次抽奖活动",
+            "ready": "准备就绪",
+            "confirmParticipation": "点击下方按钮确认参与抽奖",
+            "participate": "确认参与",
+            "processing": "处理中...",
+            "cancel": "取消",
+            "drawing": "抽奖中",
+            "pleaseWait": "请稍候..."
+          }
+        },
+        "drawCreateProposalSettingsForm": {
+          "description": "配置抽奖提案设置"
+        },
+        "drawVotingTerminal": {
+          "title": "抽奖提案",
+          "description": "这是一个可以由DAO成员执行的抽奖提案"
+        },
+        "drawProposalListItem": {
+          "stage": "阶段 {{stageIndex}}"
+        },
+        "createDrawProposalPage": {
+          "finalStep": "创建提案",
+          "submitLabel": "创建提案",
+          "submitHelpText": "提交表单以创建新的抽奖提案",
+          "steps": {
+            "METADATA": {
+              "name": "描述提案",
+              "title": "描述您的提案",
+              "description": "为您的抽奖提案命名和添加描述，以帮助成员了解其目的。"
+            },
+            "SETTINGS": {
+              "name": "配置设置",
+              "title": "配置抽奖设置",
+              "description": "设置抽奖的参数，包括参与资格和奖励分配。"
+            },
+            "PROPOSAL_SETTINGS": {
+              "name": "提案设置",
+              "title": "提案设置",
+              "description": "配置抽奖提案的创建和执行方式。"
+            }
+          }
+        },
+        "createDrawPage": {
+          "finalStep": "创建抽奖",
+          "submitLabel": "创建抽奖",
+          "submitHelpText": "提交表单以创建新的抽奖提案",
+          "steps": {
+            "METADATA": {
+              "name": "描述抽奖",
+              "title": "描述您的抽奖",
+              "description": "为您的抽奖活动命名和添加描述，以帮助成员了解其目的。"
+            },
+            "NFT_SETTINGS": {
+              "name": "配置抽奖代币（NFT）",
+              "title": "配置抽奖代币信息",
+              "description": "设置抽奖的参数，包括参与资格和奖励分配。"
+            },
+            "TOKEN_SETTINGS": {
+              "name": "配置兑换代币",
+              "title": "配置兑换代币信息",
+              "description": "配置抽奖提案的创建和执行方式。"
+            },
+            "DRAW_SETTINGS": {
+              "name": "配置抽奖规则",
+              "title": "设置抽奖规则",
+              "description": "定义抽奖用户参与的规则，NFT兑换COIN的规则。"
+            }
+          }
+        },
+        "prepareDrawDialog": {
+          "title": "准备抽奖插件",
+          "description": "准备抽奖插件以部署到您的DAO。",
+          "button": {
+            "submit": "准备抽奖"
+          },
+          "transactionInfoTitle": "准备抽奖插件",
+          "step": {
+            "PIN_METADATA": {
+              "label": "将元数据固定到IPFS",
+              "errorLabel": "固定元数据失败"
+            }
+          },
+          "proposal": {
+            "title": "安装抽奖插件: {{name}}",
+            "summary": "安装抽奖插件到DAO的提案。"
+          }
+        },
+        "publishDrawDialog": {
+          "admin": {
+            "transactionInfoTitle": "发布抽奖提案",
+            "step": {
+              "PUBLISH_PROPOSAL": {
+                "label": "发布提案",
+                "errorLabel": "发布提案失败"
+              }
+            }
+          },
+          "default": {
+            "transactionInfoTitle": "发布抽奖提案",
+            "step": {
+              "PUBLISH_PROPOSAL": {
+                "label": "发布提案",
+                "errorLabel": "发布提案失败"
+              }
+            }
+          }
+        },
+        "drawParticipateDialog": {
+          "title": "参与抽奖",
+          "description": "确认参与本次抽奖活动",
+          "ready": "准备就绪",
+          "confirmParticipation": "点击下方按钮确认参与抽奖",
+          "participate": "确认参与",
+          "processing": "处理中...",
+          "cancel": "取消",
+          "drawing": "抽奖中",
+          "pleaseWait": "请稍候...",
+          "submit": "参与抽奖",
+          "entry": "参与抽奖",
+          "success": "参与成功"
+        },
+        "drawRedeemDialog": {
+          "title": "兑换奖品",
+          "description": "确认兑换奖品",
+          "processing": "处理中...",
+          "cancel": "取消",
+          "redeem": "确认兑换",
+          "success": "兑换成功",
+          "transactionInfoTitle": "兑换奖品",
+          "redeemAmount": "本次兑换数量",
+          "redeemDetails": "奖品详情",
+          "nftHoldingsError": "NFT持有者信息加载失败",
+          "requirements": "奖品领取条件",
+          "redeemableTokens": "可兑换代币",
+          "redeemAmountDescription": "奖品数量",
+          "yourNfts": "您的NFT",
+          "loading": "加载中...",
+          "requirementsError": "奖品领取条件加载失败",
+          "availableCombos": "可兑换组合数",
+          "redeemAmountPlaceholder": "请输入本次兑换数量",
+          "submit": "兑换"
+        }
+      },
       "admin": {
         "adminGovernanceSettings": {
           "auto": "自动",
-          "members": "成员",
+          "members": "管理员成员",
           "proposalCreation": "提案创建",
           "proposalExecution": "提案执行"
         },
-        "adminSettingsPanel": {
-          "description": "管理员可以随时更新DAO设置和治理流程。",
-          "title": "管理员"
-        },
-        "adminVotingTerminal": {
-          "description": "管理员可以随时对提案进行投票。",
-          "title": "管理员投票"
-        },
-        "adminPermissionCheckProposalCreation": {
-          "pluginLabelName": "名称",
-          "function": "提案创建",
-          "requirement": "仅限管理员"
+        "adminManageMembers": {
+          "button": "管理管理员",
+          "dialog": {
+            "action": {
+              "cancel": "取消",
+              "update": "更新管理员"
+            },
+            "description": "添加或移除应该能够在不需要提案的情况下对 DAO 进行任何更改的地址。",
+            "title": "管理管理员"
+          }
         },
         "adminMemberInfo": {
           "admins": "管理员",
-          "membersCount": "{{count}}个地址"
+          "membersCount": "{{count}} 个地址"
+        },
+        "adminPermissionCheckProposalCreation": {
+          "function": "提案创建",
+          "pluginLabelName": "名称",
+          "requirement": "仅限管理员"
         },
         "adminPublishManageMembersDialog": {
-          "title": "更新管理员",
-          "description": "要更新管理员，请在钱包中确认链上交易。",
           "button": {
             "submit": "更新管理员"
-          }
+          },
+          "description": "要更新管理员，请在钱包中确认链上交易。",
+          "title": "更新管理员"
+        },
+        "adminSettingsPanel": {
+          "title": "管理员"
         },
         "adminUninstallPlugin": {
+          "adminUninstallProcessDialogCreate": {
+            "description": "要移除所有管理员，您需要首先创建至少一个能够代表 DAO 执行任何操作的治理流程。",
+            "heading": "未找到有效的治理流程",
+            "label": "创建治理流程",
+            "title": "移除所有管理员"
+          },
           "adminUninstallProcessDialogSelect": {
             "a11y": {
-              "description": "您必须在另一个治理流程中创建并通过提案来移除DAO的管理员控制权。这应该只在DAO准备就绪且不再需要管理员控制权时进行。"
+              "description": "您必须在另一个治理流程中创建并通过提案来移除 DAO 的管理员控制。这只应在 DAO 准备就绪且不再需要管理员控制时进行。"
             },
             "action": {
               "cancel": "取消",
               "select": "选择流程"
             },
-            "descriptionSecondLine": "这应该只在DAO准备就绪且不再需要管理员控制权时进行。",
-            "descriptionFirstLine": "您必须在另一个治理流程中创建并通过提案来移除DAO的管理员控制权。",
+            "descriptionFirstLine": "您必须在另一个治理流程中创建并通过提案来移除 DAO 的管理员控制。",
+            "descriptionSecondLine": "这只应在 DAO 准备就绪且不再需要管理员控制时进行。",
             "title": "移除所有管理员"
-          },
-          "adminUninstallProcessDialogCreate": {
-            "heading": "否 valid governance process found",
-            "title": "移除所有管理员",
-            "label": "创建治理流程",
-            "description": "要移除所有管理员，您需要首先创建至少一个能够代表DAO执行任何操作的治理流程。"
           },
           "label": "移除所有管理员"
         },
-        "adminManageMembers": {
-          "dialog": {
-            "description": "添加或移除能够无需提案即可对DAO进行任何更改的地址。",
-            "action": {
-              "cancel": "取消",
-              "update": "更新管理员"
-            },
-            "title": "管理管理员"
-          },
-          "button": "管理管理员"
+        "adminVotingTerminal": {
+          "description": "管理员创建的提案会自动通过，无需任何治理。",
+          "title": "自动执行"
         }
       },
       "capitalDistributor": {
-        "capitalDistributorRewardsPage": {
+        "capitalDistributorCampaignList": {
           "emptyState": {
-            "description": "当有奖励可领取时，这将显示。",
-            "heading": "无奖励"
+            "description": "可用时将显示您的活动。",
+            "heading": "未找到活动"
           },
+          "entity": "活动",
           "errorState": {
-            "description": "加载奖励时出错。请稍后再试。",
-            "heading": "加载奖励时出错"
+            "description": "加载活动时出错。请稍后重试。",
+            "heading": "加载活动出错"
           },
-          "reward": {
-            "claim": "领取",
-            "claimed": "已领取",
-            "pending": "待处理"
+          "filter": {
+            "claimable": "可领取",
+            "claimed": "已领取"
           },
-          "title": "奖励",
-          "main": {
-            "title": "奖励",
-            "connect": {
-              "heading": "连接您的钱包",
-              "description": "连接您的钱包以查看您的奖励。",
-              "action": "连接"
-            }
-          },
-          "error": {
-            "restricted": {
-              "title": "位置受限",
-              "description": "您无法继续，因为您的位置不允许访问。"
-            }
-          }
-        },
-        "capitalDistributorRewardsAside": {
-          "stats": {
-            "claimableCount": "可领取的活动",
-            "recentUnit": "{{unit}}前",
-            "latestClaim": "最新领取"
+          "item": {
+            "amount": "数量",
+            "value": "价值"
           }
         },
         "capitalDistributorClaimDialog": {
           "details": {
             "amount": "总金额",
-            "status": "状态",
-            "value": "价值",
-            "resources": "资源",
-            "termsConditionsAccepted": {
-              "link": "条款和条件",
-              "label": "我同意",
-              "error": "您尚未同意服务条款。"
-            },
-            "type": "类型",
             "claimable": "可领取",
-            "timeLeft": "剩余{{time}}",
-            "deadline": "截止日期"
+            "deadline": "截止日期",
+            "resources": "资源",
+            "status": "状态",
+            "termsConditionsAccepted": {
+              "error": "您尚未同意服务条款。",
+              "label": "我同意",
+              "link": "条款和条件"
+            },
+            "timeLeft": "剩余 {{time}}",
+            "type": "类型",
+            "value": "价值"
           },
           "inputs": {
             "recipient": {
-              "helpText": "支付将发送到的地址。",
               "error": {
                 "ofac": "此地址受限制，无法使用。"
               },
+              "helpText": "将发送付款的地址。",
               "label": "接收者"
             }
           },
           "submit": "领取"
         },
-        "capitalDistributorCampaignList": {
-          "filter": {
-            "claimed": "已领取",
-            "claimable": "可领取"
-          },
-          "item": {
-            "amount": "金额",
-            "value": "价值"
-          },
-          "emptyState": {
-            "heading": "否 campaigns found",
-            "description": "当有活动时，这里将显示您的活动。"
-          },
-          "entity": "活动",
-          "errorState": {
-            "description": "加载活动时出错。请稍后再试。",
-            "heading": "加载活动时出错"
-          }
-        },
         "capitalDistributorClaimTransactionDialog": {
-          "successLinkLabel": "查看奖励",
           "description": "确认链上交易以领取您的奖励",
           "submit": "领取奖励",
+          "successLinkLabel": "查看奖励",
           "title": "领取交易"
+        },
+        "capitalDistributorRewardsAside": {
+          "stats": {
+            "claimableCount": "可领取活动",
+            "latestClaim": "最新领取",
+            "recentUnit": " {{unit}} 前"
+          }
+        },
+        "capitalDistributorRewardsPage": {
+          "error": {
+            "restricted": {
+              "description": "由于您所在位置的访问不被允许，您无法继续。",
+              "title": "位置受限"
+            }
+          },
+          "main": {
+            "connect": {
+              "action": "连接",
+              "description": "连接您的钱包以查看您的奖励。",
+              "heading": "连接您的钱包"
+            },
+            "title": "奖励"
+          }
         },
         "meta": {
           "link": {
@@ -1241,721 +1844,704 @@
           }
         }
       },
-      "lockToVote": {
-        "lockToVoteGovernanceSettings": {
-          "minimumLockAmount": "最低锁定金额",
-          "minimumLockAmountDescription": "用户必须锁定的最低代币数量才能参与投票。",
-          "proposalThreshold": "提案阈值",
-          "proposalThresholdDescription": "用户必须锁定的最低代币数量才能创建提案。",
-          "votingPowerDecay": "投票权衰减",
-          "votingPowerDecayDescription": "锁定代币的投票权随时间衰减的速率。",
-          "proposalAccess": "成员 with ≥ {{balance}} {{symbol}} voting power or balance",
-          "yes": "已启用",
-          "threshold": "> {{threshold}}",
-          "vetoThreshold": "否决支持阈值",
-          "proposalDuration": "提案持续时间",
-          "voteChange": "投票变更",
-          "minimumParticipation": "最低参与度",
-          "duration": "{{days}} days {{hours}} hours {{minutes}} minutes",
-          "participation": "≥ {{participation}}  (≥ {{token价值}} {{tokenSymbol}})",
-          "approvalThreshold": "支持阈值",
-          "no": "已禁用"
-        },
-        "lockToVoteMemberPanel": {
-          "description": "锁定您的代币以获得投票权。锁定的代币越多，投票权越强。",
-          "lock": "锁定",
-          "locked": "已锁定",
-          "title": "锁定投票",
-          "unlock": "解锁",
-          "unlocked": "已解锁",
-          "withdraw": "提取"
-        },
-        "lockToVoteProposalVotingTerminal": {
-          "description": "锁定您的代币以对提案进行投票。",
-          "title": "锁定投票终端"
-        },
-        "lockToVoteSettingsPanel": {
-          "description": "用户可以锁定代币以获得投票权。",
-          "title": "锁定投票"
-        },
-        "lockToVoteSubmitVote": {
-          "description": "锁定您的代币以对提案进行投票。",
-          "title": "锁定投票",
-          "buttons": {
-            "cancel": "取消",
-            "vote": "对提案投票",
-            "update": {
-              "vote": "更新 vote",
-              "submit": "提交 update"
-            },
-            "submit": "提交投票",
-            "submitted": "投票已提交"
-          },
-          "veto": "否决",
-          "approve": "批准"
-        },
-        "unlockBlockedInfoDialog": {
-          "action": {
-            "ok": "确定"
-          },
-          "message": "您无法解锁代币，因为您有正在进行的投票。",
-          "title": "解锁被阻止",
-          "a11y": {
-            "description": "通知用户由于存在活跃提案而无法解锁代币的对话框"
-          }
-        },
-        "lockToVoteSetupGovernance": {
-          "supportThreshold": {
-            "alert": {
-              "majority": "提案将由多数通过",
-              "minority": "提案可能由少数而非多数通过。"
-            },
-            "tag": {
-              "yes": "是",
-              "no": "否"
-            },
-            "helpText": "在所有已投票的代币中，投票支持提案的代币百分比必须大于此值。",
-            "label": "支持阈值"
-          },
-          "voteChange": {
-            "label": "投票变更",
-            "helpText": "允许投票者在投票期间更改投票。这可以防止主体提前批准或否决。",
-            "switch": {
-              "label": "已启用"
-            }
-          },
-          "proposalDuration": {
-            "label": "提案持续时间",
-            "helpText": "提案开放投票的时间。",
-            "alertInfo": "确保成员有足够的时间投票。建议将其设置为至少1天。"
-          },
-          "eligibleField": {
-            "helpText": "指定谁可以创建提案和最低代币要求。",
-            "anyWallet": {
-              "label": "任何钱包",
-              "description": "任何连接的地址。"
-            },
-            "members": {
-              "description": "只有拥有至少这么多投票权或代币余额的成员才能创建提案。",
-              "label": "成员"
-            },
-            "label": "谁有资格"
-          },
-          "minParticipation": {
-            "label": "最低参与度",
-            "helpText": "参与提案的代币百分比（占总供应量）必须大于或等于此值。"
-          },
-          "minVotingPower": {
-            "label": "最低要求",
-            "helpText": "只有拥有至少这么多投票权或代币余额的成员才能创建提案。"
-          }
-        },
-        "lockToVoteSubmitVoteFeedbackDialog": {
-          "cta": {
-            "lock": "锁定 now",
-            "cancel": "取消",
-            "vote": "继续投票"
-          },
-          "a11y": {
-            "title": "提交投票",
-            "description": "提交 your vote or lock more tokens."
-          },
-          "default": {
-            "description": "锁定{{symbol}} in order to be able to vote.",
-            "title": "您没有投票权"
-          },
-          "lockMore": {
-            "title": "您有未锁定的代币",
-            "description": "锁定 more {{symbol}} to increase your voting power."
-          }
-        },
-        "lockToVoteProcessBodyField": {
-          "enabled": "已启用",
-          "voteChange": "投票变更",
-          "tokenTerm": "代币",
-          "holders": "{{count}} token holders",
-          "supplyTerm": "供应量",
-          "distributionTerm": "分配",
-          "supportTerm": "支持阈值",
-          "supportDefinition": "> {{threshold}}%",
-          "proposalDurationTerm": "提案持续时间",
-          "minParticipationDefinition": "≥ {{minParticipation}}",
-          "proposalDurationDefinition": "{{days}} days {{hours}} hours {{minutes}} minutes",
-          "disabled": "已禁用",
-          "minParticipationTerm": "最低参与度",
-          "tokenNameAndSymbol": "{{tokenName}} ({{tokenSymbol}})"
-        },
-        "lockToVoteLockForm": {
-          "submit": {
-            "lock": "锁定{{symbol}}",
-            "unlock": "解锁 {{amount}} {{symbol}}",
-            "approve": "批准{{symbol}}"
-          },
-          "footerInfo": "锁定ing tokens will transfer them out of your wallet to the lock manager contract, where they can be unlocked to regain control.",
-          "approveTransactionInfoTitle": "批准{{symbol}}",
-          "info": "锁定{{symbol}} to participate in governance."
-        },
-        "lockToVotePermissionCheckVoteSubmission": {
-          "votingPower": "您的代币余额",
-          "createdAt": "创建d"
-        },
-        "lockToVoteLockUnlockDialog": {
-          "lock": {
-            "transactionInfoTitle": "锁定{{symbol}}",
-            "success": "查看成员",
-            "title": "锁定代币",
-            "description": "要锁定您的代币，请在钱包中确认链上交易。",
-            "submit": "锁定代币"
-          },
-          "unlock": {
-            "success": "查看成员",
-            "description": "要解锁您的代币，请在钱包中确认链上交易。",
-            "title": "解锁代币",
-            "submit": "解锁代币",
-            "transactionInfoTitle": "解锁{{symbol}}"
-          }
-        },
-        "lockToVoteLockBeforeVoteDialog": {
-          "action": {
-            "lock": "锁定 now",
-            "cancel": "取消"
-          },
-          "info": "锁定ing tokens will transfer them out of your wallet to the lock manager contract, where they can be unlocked to regain control.",
-          "title": "锁定代币",
-          "a11y": {
-            "description": "锁定代币 before voting on the proposal"
-          }
-        },
-        "lockToVoteCreateProposalSettingsForm": {
-          "startTime": {
-            "label": "投票开始时间"
-          }
-        },
-        "lockToVoteProposalVotingSummary": {
-          "notApproved": "did not approve",
-          "approved": "approved",
-          "supportLabel": "support",
-          "notVetoed": "did not veto",
-          "optimisticSupportLabel": "veto support",
-          "votesDescription": "of {{details}}",
-          "vetoed": "vetoed"
-        },
-        "lockToVotePermissionCheckProposalCreation": {
-          "function": "提案创建",
-          "userLockedBalance": "锁定ed balance",
-          "pluginNameLabel": "名称"
-        },
-        "meta": {
-          "setup": {
-            "description": "主要ity voting with locked ERC20 tokens",
-            "name": "锁定 to vote"
-          }
-        },
-        "lockToVoteActions": {
-          "UpdateLockToVoteVoteSettings": "更新 settings"
-        },
-        "lockToVoteSetupMembership": {
-          "importToken": {
-            "helpText": "地址必须是部署在与您的DAO相同链上的ERC-20代币合约。",
-            "step": {
-              "erc20": "ERC-20 token standard"
-            },
-            "label": "代币地址"
-          }
-        }
-      },
       "multisig": {
-        "multisigGovernanceSettings": {
-          "approvals": "批准",
-          "approvalsDescription": "批准提案所需的最小签名者数量。",
-          "minimumVeto": "最小 veto",
-          "members": "多重签名成员",
-          "minimumApproval": "最小 approval",
-          "anyWallet": "任何钱包",
-          "proposalCreation": "提案创建"
-        },
-        "multisigMembersPage": {
-          "emptyState": {
-            "description": "此DAO目前没有多重签名成员。",
-            "heading": "无成员"
-          },
-          "errorState": {
-            "description": "加载成员时出错。请稍后再试。",
-            "heading": "加载成员时出错"
-          },
-          "title": "成员"
-        },
-        "multisigProposalDetails": {
-          "approvedBy": "批准者",
-          "approvedByYou": "您已批准",
-          "notApprovedByYou": "您未批准"
-        },
-        "multisigSettingsPanel": {
-          "description": "提案需要多重签名成员的批准。",
-          "title": "多重签名"
-        },
-        "multisigSubmitApproval": {
-          "description": "批准此提案以推进治理流程。",
-          "title": "批准提案"
-        },
-        "multisigSubmitVote": {
-          "description": "批准此提案以推进治理流程。",
-          "title": "批准提案",
-          "veto": "否决 proposal",
-          "approve": "批准 proposal",
-          "vetoed": "已否决",
-          "approved": "已批准"
-        },
-        "multisigVotingTerminal": {
-          "description": "多重签名成员可以批准提案。",
-          "title": "多重签名投票"
-        },
-        "multisigSetupGovernance": {
-          "onlyListed": {
-            "helpText": "指定谁可以创建提案。",
-            "members": {
-              "description": "仅批准的地址。",
-              "label": "成员"
-            },
-            "anyWallet": {
-              "label": "任何钱包",
-              "description": "任何连接的地址。"
-            },
-            "label": "提案创建"
-          },
-          "minimumApproval": {
-            "total": "of {{total}} addresses",
-            "alert": {
-              "minority": "提案可能由少数而非多数通过。",
-              "majority": "提案将由多数通过"
-            },
-            "label": "批准阈值",
-            "helpText": "至少需要这么多成员批准提案。"
-          }
-        },
-        "multisigPermissionCheckVoteSubmission": {
-          "membership": "您的成员资格",
-          "nonMember": "否t a member",
-          "createdAt": "创建d"
-        },
-        "multisigSetupMembership": {
-          "helpText": "这些地址将是唯一能够参与的地址。",
-          "item": {
-            "alreadyMember": "地址 is already a member of the DAO"
-          },
-          "label": "成员"
-        },
-        "multisigProcessBodyField": {
-          "membersDefinition": "{{count}} members",
-          "membersTerm": "成员",
-          "thresholdDefinition": "{{threshold}} of {{count}}",
-          "thresholdTerm": "多重签名阈值"
-        },
-        "multisigPermissionCheckProposalCreation": {
-          "requirement": "多重签名成员",
-          "function": "提案创建",
-          "pluginLabelName": "名称"
-        },
-        "multisigProposalVotingSummary": {
-          "approved": "approved",
-          "notVetoed": "did not veto",
-          "optimisticApprovalLabel": "veto",
-          "approvalLabel": "approval",
-          "notApproved": "did not approve",
-          "memberCount": "of {{count}} members",
-          "vetoed": "vetoed"
-        },
         "meta": {
           "setup": {
             "description": "指定成员必须达到最低批准阈值",
             "name": "多重签名"
           }
         },
+        "multisigActions": {
+          "MultisigAddMembers": "添加成员",
+          "MultisigRemoveMembers": "移除成员",
+          "UpdateMultiSigSettings": "更新设置"
+        },
         "multisigCreateProposalSettingsForm": {
           "endTime": {
             "helpText": "提案过期后，您无法批准或执行它。",
-            "infoText": "建议设置{{days}}天的过期时间以保持提案列表的整洁。",
+            "infoText": "建议设置 {{days}} 天的过期时间以保持提案列表整洁。",
             "label": "过期时间"
           },
           "startTime": {
-            "label": "批准 start time",
-            "helpText": "这是提案可供批准的时间。"
+            "helpText": "这是提案可供批准的时间。",
+            "label": "批准开始时间"
           }
         },
-        "multisigMembersInfo": {
-          "linkDescription": "查看 all members",
-          "membersCount": "查看{{count}}个地址",
-          "multisigMembers": "多重签名成员",
-          "eligibleVoters": "有资格的投票者",
-          "membersLabel": "成员"
+        "multisigGovernanceSettings": {
+          "anyWallet": "任何钱包",
+          "approvals": "{{min}} / {{max}} 成员",
+          "members": "多重签名成员",
+          "minimumApproval": "最低批准数",
+          "minimumVeto": "最低否决数",
+          "proposalCreation": "提案创建"
         },
-        "multisigActions": {
-          "MultisigAddMembers": "添加 members",
-          "UpdateMultiSigSettings": "更新 settings",
-          "MultisigRemoveMembers": "移除成员s"
+        "multisigMembersInfo": {
+          "eligibleVoters": "合格投票者",
+          "linkDescription": "查看所有成员",
+          "membersCount": "查看 {{count}} 个地址",
+          "membersLabel": "成员",
+          "multisigMembers": "多重签名成员"
+        },
+        "multisigPermissionCheckProposalCreation": {
+          "function": "提案创建",
+          "pluginLabelName": "名称",
+          "requirement": "多重签名成员"
+        },
+        "multisigPermissionCheckVoteSubmission": {
+          "createdAt": "创建时间",
+          "membership": "您的成员身份",
+          "nonMember": "非成员"
+        },
+        "multisigProcessBodyField": {
+          "membersDefinition": "{{count}} 个成员",
+          "membersTerm": "成员",
+          "thresholdDefinition": "{{threshold}} / {{count}}",
+          "thresholdTerm": "多重签名阈值"
+        },
+        "multisigProposalVotingSummary": {
+          "approvalLabel": "批准",
+          "approved": "已批准",
+          "memberCount": "共 {{count}} 个成员",
+          "notApproved": "未批准",
+          "notVetoed": "未否决",
+          "optimisticApprovalLabel": "否决",
+          "vetoed": "已否决"
         },
         "multisigRemoveMembersAction": {
           "dialog": {
-            "heading": "移除成员s"
+            "heading": "移除成员"
           }
         },
+        "multisigSetupGovernance": {
+          "minimumApproval": {
+            "alert": {
+              "majority": "提案将由多数票批准",
+              "minority": "提案可能由少数票而非多数票批准。"
+            },
+            "helpText": "至少需要这么多成员批准提案。",
+            "label": "批准阈值",
+            "total": "共 {{total}} 个地址"
+          },
+          "onlyListed": {
+            "anyWallet": {
+              "description": "任何连接的地址。",
+              "label": "任何钱包"
+            },
+            "helpText": "指定谁可以创建提案。",
+            "label": "提案创建",
+            "members": {
+              "description": "仅限已批准的地址。",
+              "label": "成员"
+            }
+          }
+        },
+        "multisigSetupMembership": {
+          "helpText": "这些地址将是唯一能够参与的地址。",
+          "item": {
+            "alreadyMember": "地址已经是 DAO 的成员"
+          },
+          "label": "成员"
+        },
+        "multisigSubmitVote": {
+          "approve": "批准提案",
+          "approved": "已批准",
+          "veto": "否决提案",
+          "vetoed": "已否决"
+        },
         "multisigVoteList": {
-          "entity": "投票s"
+          "entity": "投票"
+        }
+      },
+      "lockToVote": {
+        "lockToVoteActions": {
+          "UpdateLockToVoteVoteSettings": "更新设置"
+        },
+        "lockToVoteCreateProposalSettingsForm": {
+          "startTime": {
+            "label": "投票开始时间"
+          }
+        },
+        "lockToVoteGovernanceSettings": {
+          "approvalThreshold": "支持阈值",
+          "duration": "{{days}} 天 {{hours}} 小时 {{minutes}} 分钟",
+          "minimumParticipation": "最低参与度",
+          "no": "已禁用",
+          "participation": "≥ {{participation}}  (≥ {{tokenValue}} {{tokenSymbol}})",
+          "proposalAccess": "拥有 ≥ {{balance}} {{symbol}} 投票权或余额的成员",
+          "proposalDuration": "提案持续时间",
+          "proposalThreshold": "提案阈值",
+          "threshold": "> {{threshold}}",
+          "vetoThreshold": "否决支持阈值",
+          "voteChange": "投票变更",
+          "yes": "已启用"
+        },
+        "lockToVoteLockBeforeVoteDialog": {
+          "a11y": {
+            "description": "在对提案投票前锁定代币"
+          },
+          "action": {
+            "cancel": "取消",
+            "lock": "立即锁定"
+          },
+          "info": "锁定代币会将其从您的钱包转移到锁定管理合约中，在那里可以解锁以重新获得控制权。",
+          "title": "锁定代币"
+        },
+        "lockToVoteLockForm": {
+          "approveTransactionInfoTitle": "批准 {{symbol}}",
+          "footerInfo": "锁定代币会将其从您的钱包转移到锁定管理合约中，在那里可以解锁以重新获得控制权。",
+          "info": "锁定 {{symbol}} 以参与治理。",
+          "submit": {
+            "approve": "批准 {{symbol}}",
+            "lock": "锁定 {{symbol}}",
+            "unlock": "解锁 {{amount}} {{symbol}}"
+          }
+        },
+        "lockToVoteLockUnlockDialog": {
+          "lock": {
+            "description": "要锁定您的代币，请在钱包中确认链上交易。",
+            "submit": "锁定代币",
+            "success": "查看成员",
+            "title": "锁定代币",
+            "transactionInfoTitle": "锁定 {{symbol}}"
+          },
+          "unlock": {
+            "description": "要解锁您的代币，请在钱包中确认链上交易。",
+            "submit": "解锁代币",
+            "success": "查看成员",
+            "title": "解锁代币",
+            "transactionInfoTitle": "解锁 {{symbol}}"
+          }
+        },
+        "lockToVotePermissionCheckProposalCreation": {
+          "function": "提案创建",
+          "pluginNameLabel": "名称",
+          "userLockedBalance": "锁定余额"
+        },
+        "lockToVotePermissionCheckVoteSubmission": {
+          "createdAt": "创建时间",
+          "votingPower": "您的代币余额"
+        },
+        "lockToVoteProcessBodyField": {
+          "disabled": "已禁用",
+          "distributionTerm": "分配",
+          "enabled": "已启用",
+          "holders": "{{count}} 个代币持有者",
+          "minParticipationDefinition": "≥ {{minParticipation}}",
+          "minParticipationTerm": "最低参与度",
+          "proposalDurationDefinition": "{{days}} 天 {{hours}} 小时 {{minutes}} 分钟",
+          "proposalDurationTerm": "提案持续时间",
+          "supplyTerm": "供应量",
+          "supportDefinition": "> {{threshold}}%",
+          "supportTerm": "支持阈值",
+          "tokenNameAndSymbol": "{{tokenName}} ({{tokenSymbol}})",
+          "tokenTerm": "代币",
+          "voteChange": "投票变更"
+        },
+        "lockToVoteProposalVotingSummary": {
+          "approved": "已批准",
+          "notApproved": "未批准",
+          "notVetoed": "未否决",
+          "optimisticSupportLabel": "否决支持",
+          "supportLabel": "支持",
+          "vetoed": "已否决",
+          "votesDescription": "共 {{details}}"
+        },
+        "lockToVoteSetupGovernance": {
+          "eligibleField": {
+            "anyWallet": {
+              "description": "任何连接的地址。",
+              "label": "任何钱包"
+            },
+            "helpText": "指定谁可以创建提案以及最低代币要求。",
+            "label": "谁有资格",
+            "members": {
+              "description": "只有拥有至少这么多投票权或代币余额的成员才能创建提案。",
+              "label": "成员"
+            }
+          },
+          "minParticipation": {
+            "helpText": "参与提案的代币百分比（占总供应量）必须大于或等于此值。",
+            "label": "最低参与度"
+          },
+          "minVotingPower": {
+            "helpText": "只有拥有至少这么多投票权或代币余额的成员才能创建提案。",
+            "label": "最低要求"
+          },
+          "proposalDuration": {
+            "alertInfo": "确保成员有足够时间投票。建议至少设置为 1 天。",
+            "helpText": "提案开放投票的时间。",
+            "label": "提案持续时间"
+          },
+          "supportThreshold": {
+            "alert": {
+              "majority": "提案将由多数票批准",
+              "minority": "提案可能由少数票而非多数票批准。"
+            },
+            "helpText": "支持提案投'是'票的代币百分比（占所有已投票代币）必须大于此值。",
+            "label": "支持阈值",
+            "tag": {
+              "no": "否",
+              "yes": "是"
+            }
+          },
+          "voteChange": {
+            "helpText": "允许投票者在投票期间更改投票。这防止机构给予提前批准或否决。",
+            "label": "投票变更",
+            "switch": {
+              "label": "已启用"
+            }
+          }
+        },
+        "lockToVoteSetupMembership": {
+          "importToken": {
+            "helpText": "地址必须是部署在与您的 DAO 相同链上的 ERC-20 代币合约。",
+            "label": "代币地址",
+            "step": {
+              "erc20": "ERC-20 代币标准"
+            }
+          }
+        },
+        "lockToVoteSubmitVote": {
+          "approve": "批准",
+          "buttons": {
+            "cancel": "取消",
+            "submit": "提交投票",
+            "submitted": "投票已提交",
+            "update": {
+              "submit": "提交更新",
+              "vote": "更新投票"
+            },
+            "vote": "对提案投票"
+          },
+          "veto": "否决"
+        },
+        "lockToVoteSubmitVoteFeedbackDialog": {
+          "a11y": {
+            "description": "提交您的投票或锁定更多代币。",
+            "title": "提交投票"
+          },
+          "cta": {
+            "cancel": "取消",
+            "lock": "立即锁定",
+            "vote": "继续投票"
+          },
+          "default": {
+            "description": "锁定 {{symbol}} 以能够投票。",
+            "title": "您没有投票权"
+          },
+          "lockMore": {
+            "description": "锁定更多 {{symbol}} 以增加您的投票权。",
+            "title": "您有未锁定的代币"
+          }
+        },
+        "meta": {
+          "setup": {
+            "description": "使用锁定的 ERC20 代币进行多数投票",
+            "name": "锁定投票"
+          }
+        },
+        "unlockBlockedInfoDialog": {
+          "a11y": {
+            "description": "通知用户由于存在活跃提案而无法解锁代币的对话框"
+          },
+          "action": {
+            "ok": "确定"
+          },
+          "message": "您创建或投票的提案仍在活跃状态。",
+          "title": "您还不能解锁"
         }
       },
       "spp": {
-        "sppGovernanceSettings": {
-          "numberOfStages": "阶段数",
-          "default": {
-            "name": "ENS 名称",
-            "address": "地址"
-          }
-        },
-        "sppSettingsPanel": {
-          "description": "提案在多个阶段中推进。",
-          "title": "阶段提案流程"
-        },
-        "sppStageStatus": {
-          "approved": "已批准",
-          "current": "当前",
-          "failed": "失败",
-          "passed": "通过",
-          "pending": "待处理",
-          "rejected": "拒绝",
-          "skipped": "跳过",
-          "button": {
-            "vote": "对提案投票",
-            "advance": "推进提案",
-            "advanced": "提案已推进"
-          },
-          "expiredExecute": "提案未及时执行",
-          "expiredAdvance": "提案未及时推进"
-        },
-        "sppVotingTerminal": {
-          "description": "提案在多个阶段中推进。",
-          "title": "阶段提案流程"
-        },
-        "sppVotingTerminalBodyBreakdownDefault": {
-          "voted": {
-            "veto": "已否决",
-            "approve": "已批准"
-          },
-          "vote": {
-            "veto": "否t vetoed yet",
-            "approve": "否t approved yet"
-          },
-          "expired": {
-            "approve": "未批准",
-            "veto": "未否决"
-          }
-        },
-        "sppVotingTerminalStageBodySummaryFooter": {
-          "actionRequired": "required to {{action}}",
-          "thresholdLabel": "{{count}} {{entity类型}}"
-        },
-        "sppVotingTerminalBodyVoteDefault": {
-          "helpText": "如果您是此地址的所有者，可以使用Wallet连接以对此提案进行投票。",
-          "veto": "否决 proposal",
-          "vetoed": "已否决",
-          "approved": "已批准",
-          "approve": "批准 proposal"
-        },
-        "sppReportProposalResultDialog": {
-          "title": "提交投票",
-          "button": {
-            "success": "查看提案",
-            "submit": "提交投票"
-          },
-          "description": "要提交您的投票，请在钱包中确认链上交易。",
-          "voteDescription": {
-            "veto": "否决",
-            "approve": "批准"
-          }
-        },
         "advanceStageDialog": {
           "button": {
             "submit": "推进",
             "success": "查看提案"
           },
-          "description": "要将提案推进到下一阶段，请在钱包中确认链上交易。",
+          "description": "要将提案推进到下一阶段，请在您的钱包中确认链上交易。",
           "title": "推进提案"
-        },
-        "sppInvalidAddressConnectedDialog": {
-          "title": "否t eligible to vote",
-          "description": "您未连接到正确的地址。如果您是其所有者之一，可以使用Wallet连接。",
-          "action": "关闭"
-        },
-        "sppVotingTerminalStageTimelock": {
-          "pending": {
-            "description": "开始s once the previous stage is advanced",
-            "heading": "时间lock pending"
-          },
-          "complete": {
-            "heading": "时间lock ended",
-            "description": "结束ed {{date}}"
-          },
-          "active": {
-            "description": "结束s {{date}}",
-            "heading": "时间lock active"
-          }
         },
         "sppCreateProposalSettingsForm": {
           "startTime": {
-            "helpText": "第一阶段的投票期从此时间开始。",
-            "label": "阶段1开始时间"
+            "helpText": "第一阶段的投票期从此时开始。",
+            "label": "第一阶段开始时间"
           }
+        },
+        "sppGovernanceSettings": {
+          "default": {
+            "address": "地址",
+            "name": "ENS 名称"
+          },
+          "numberOfStages": "阶段数量"
+        },
+        "sppInvalidAddressConnectedDialog": {
+          "action": "关闭",
+          "description": "您未连接到正确的地址。如果您是其所有者之一，可以使用 WalletConnect 连接。",
+          "title": "无投票资格"
         },
         "sppProposalListItem": {
-          "stage": "阶段 {{stageIndex}}"
-        }
-      },
-      "token": {
-        "tokenDelegationDialog": {
-          "action": {
-            "delegate": "委托",
-            "remove": "移除委托"
-          },
-          "description": "将您的投票权委托给另一个地址。",
-          "input": {
-            "label": "委托地址",
-            "placeholder": "ENS或0x…"
-          },
-          "title": "委托投票权"
+          "stage": "第 {{stageIndex}} 阶段"
         },
-        "tokenGovernanceSettings": {
-          "approvalThreshold": "批准阈值",
-          "approvalThresholdDescription": "提案通过所需的最低支持率。",
-          "minimumParticipation": "最低参与度",
-          "minimumParticipationDescription": "投票的最低代币持有者百分比。",
-          "proposalThreshold": "提案阈值",
-          "proposalThresholdDescription": "创建提案所需的最低代币数量。",
-          "support": "支持",
-          "votingPeriod": "投票期",
-          "votingPeriodDescription": "提案的投票期长度。",
-          "vetoThreshold": "否决支持阈值",
-          "no": "已禁用",
-          "proposalAccess": "成员 with ≥ {{balance}} {{symbol}} voting power or balance",
-          "minimumDuration": "最短持续时间",
-          "yes": "已启用",
-          "earlyExecution": "提前执行",
-          "participation": "≥ {{participation}}  (≥ {{token价值}} {{tokenSymbol}})",
-          "threshold": "> {{threshold}}",
-          "duration": "{{days}} days {{hours}} hours {{minutes}} minutes",
-          "voteChange": "投票变更"
-        },
-        "tokenLockUnlockDialog": {
-          "action": {
-            "lock": "锁定",
-            "unlock": "解锁",
-            "withdraw": "提取"
+        "sppReportProposalResultDialog": {
+          "button": {
+            "submit": "提交投票",
+            "success": "查看提案"
           },
-          "description": {
-            "lock": "锁定您的代币以获得投票权。",
-            "unlock": "解锁您的代币以移除投票权。",
-            "withdraw": "提取您的代币。"
-          },
-          "input": {
-            "label": "金额",
-            "placeholder": "0"
-          },
-          "title": {
-            "lock": "锁定代币",
-            "unlock": "解锁代币",
-            "withdraw": "提取代币"
-          },
-          "withdraw": {
-            "description": "要提取您的{{symbol}}，请在钱包中确认链上交易。",
-            "title": "提取{{symbol}}",
-            "success": "查看锁定",
-            "transactionInfoTitle": "提取{{symbol}}",
-            "submit": "提取"
-          },
-          "unlock": {
-            "title": "解锁{{symbol}}",
-            "description": "要解锁您的{{symbol}}，请在钱包中确认链上交易。",
-            "success": "查看锁定",
-            "transactionInfoTitle": "解锁{{symbol}}",
-            "submit": "解锁"
-          },
-          "lock": {
-            "description": "要锁定您的{{symbol}}，请在钱包中确认链上交易。",
-            "submit": "锁定",
-            "success": "查看您的veLock",
-            "title": "锁定{{symbol}}",
-            "transactionInfoTitle": "锁定{{symbol}}"
-          }
-        },
-        "tokenMemberPanel": {
-          "delegation": {
-            "delegate": "委托",
-            "delegatedTo": "委托给",
-            "description": "将您的投票权委托给另一个地址。",
-            "remove": "移除委托",
-            "title": "委托投票权"
-          },
-          "description": "锁定您的代币以获得投票权。锁定的代币越多，投票权越强。",
-          "lock": {
-            "description": "锁定您的代币以获得投票权。",
-            "title": "锁定代币"
-          },
-          "title": "代币投票",
-          "unlock": {
-            "description": "解锁您的代币以移除投票权。",
-            "title": "解锁代币"
-          },
-          "wrap": {
-            "description": "将您的代币包装为治理代币。",
-            "title": "包装代币"
-          },
-          "tabs": {
-            "wrap": "包装",
-            "delegate": "委托",
-            "lock": "锁定"
-          }
-        },
-        "tokenSettingsPanel": {
-          "description": "代币持有者可以对提案进行投票。",
-          "title": "代币投票"
-        },
-        "tokenSubmitVote": {
-          "description": "使用您的代币投票权对提案进行投票。",
-          "title": "代币投票",
-          "options": {
-            "label": "您是否想要{{label}}此提案？",
-            "abstain": "弃权",
-            "vetoNoDescription": "，我不否决",
-            "approveLabel": "approve",
-            "approveNoDescription": "，我不批准",
-            "approveYesDescription": "，我批准",
-            "vetoLabel": "veto",
-            "yes": "是",
-            "no": "否",
-            "vetoYesDescription": "，我否决"
-          },
+          "description": "要提交您的投票，请在您的钱包中确认链上交易。",
+          "title": "提交投票",
           "voteDescription": {
             "approve": "批准",
             "veto": "否决"
-          },
-          "buttons": {
-            "submit": "提交投票",
-            "cancel": "取消",
-            "change": {
-              "submit": "提交更改",
-              "vote": "更改投票"
-            },
-            "submitted": "投票已提交",
-            "vote": "对提案投票"
           }
         },
-        "tokenVotingTerminal": {
-          "description": "代币持有者可以对提案进行投票。",
-          "title": "代币投票终端"
+        "sppStageStatus": {
+          "button": {
+            "advance": "推进提案",
+            "advanced": "提案已推进",
+            "vote": "对提案投票"
+          },
+          "expiredAdvance": "提案未及时推进",
+          "expiredExecute": "提案未及时执行"
         },
-        "tokenWrapDialog": {
-          "action": {
-            "unwrap": "解包装",
-            "wrap": "包装"
+        "sppVotingTerminalBodyBreakdownDefault": {
+          "expired": {
+            "approve": "未批准",
+            "veto": "未否决"
           },
-          "description": {
-            "unwrap": "将您的治理代币解包装为原始代币。",
-            "wrap": "将您的原始代币包装为治理代币。"
+          "vote": {
+            "approve": "尚未批准",
+            "veto": "尚未否决"
           },
-          "input": {
-            "label": "金额",
-            "placeholder": "0"
+          "voted": {
+            "approve": "已批准",
+            "veto": "已否决"
+          }
+        },
+        "sppVotingTerminalBodyVoteDefault": {
+          "approve": "批准提案",
+          "approved": "已批准",
+          "helpText": "如果您是此地址的所有者，可以使用 WalletConnect 连接以对此提案投票。",
+          "veto": "否决提案",
+          "vetoed": "已否决"
+        },
+        "sppVotingTerminalStageBodySummaryFooter": {
+          "actionRequired": "需要 {{action}}",
+          "thresholdLabel": "{{count}} {{entityType}}"
+        },
+        "sppVotingTerminalStageTimelock": {
+          "active": {
+            "description": "结束于 {{date}}",
+            "heading": "时间锁激活"
           },
-          "title": {
-            "unwrap": "解包装代币",
-            "wrap": "包装代币"
+          "complete": {
+            "description": "结束于 {{date}}",
+            "heading": "时间锁已结束"
+          },
+          "pending": {
+            "description": "一旦前一阶段推进即开始",
+            "heading": "时间锁待定"
+          }
+        }
+      },
+      "token": {
+        "meta": {
+          "setup": {
+            "description": "基于代币投票权的多数投票",
+            "name": "代币投票"
+          }
+        },
+        "tokenActions": {
+          "Mint": "铸造",
+          "UpdateTokenVoteSettings": "更新设置"
+        },
+        "tokenApproveNftDialog": {
+          "UNLOCK": {
+            "description": "要解锁您的代币，请在您的钱包中确认两笔链上交易。",
+            "nftName": "锁定 NFT",
+            "submit": "批准 NFT",
+            "title": "批准解锁"
           }
         },
         "tokenApproveTokensDialog": {
-          "WRAP": {
-            "title": "批准 wrapping",
-            "submit": "批准代币",
-            "description": "要包装您的代币，请在钱包中确认两笔链上交易。"
-          },
           "LOCK": {
-            "description": "要锁定您的代币，请在钱包中确认两笔链上交易。",
+            "description": "要锁定您的代币，请在您的钱包中确认两笔链上交易。",
             "submit": "批准代币",
-            "title": "批准 locking"
+            "title": "批准锁定"
+          },
+          "WRAP": {
+            "description": "要包装您的代币，请在您的钱包中确认两笔链上交易。",
+            "submit": "批准代币",
+            "title": "批准包装"
           }
         },
-        "tokenProposalVotingSummary": {
-          "notVetoed": "did not veto",
-          "approved": "approved",
-          "votesDescription": "of {{details}}",
-          "vetoed": "vetoed",
-          "notApproved": "did not approve",
-          "optimisticSupportLabel": "veto support",
-          "supportLabel": "support"
+        "tokenCreateProposalSettingsForm": {
+          "endTime": {
+            "infoText": "最短持续时间为 {{days}} 天 {{hours}} 小时 {{minutes}} 分钟，由 DAO 治理设定。",
+            "label": "投票持续时间 / 结束时间"
+          },
+          "startTime": {
+            "label": "投票开始时间"
+          }
+        },
+        "tokenDelegationForm": {
+          "delegate": {
+            "helpText": "输入您想要委托当前或未来代币余额投票权的地址。",
+            "label": "您的委托",
+            "placeholder": "ENS 或 0x…"
+          },
+          "dialog": {
+            "button": {
+              "submit": "委托",
+              "success": "查看成员"
+            },
+            "description": "要委托给此地址，请在您的钱包中确认链上交易。",
+            "title": "委托"
+          },
+          "info": "委托会将您的余额增加到上述地址的投票权中。如果您委托给其他人，在收回投票权之前您无法投票。",
+          "selection": {
+            "label": "您想委托给谁？",
+            "option": {
+              "other": "其他人",
+              "self": "您自己"
+            }
+          },
+          "submit": "委托投票权"
+        },
+        "tokenGovernanceSettings": {
+          "approvalThreshold": "支持阈值",
+          "duration": "{{days}} 天 {{hours}} 小时 {{minutes}} 分钟",
+          "earlyExecution": "提前执行",
+          "minimumDuration": "最短持续时间",
+          "minimumParticipation": "最低参与度",
+          "no": "已禁用",
+          "participation": "≥ {{participation}}  (≥ {{tokenValue}} {{tokenSymbol}})",
+          "proposalAccess": "拥有 ≥ {{balance}} {{symbol}} 投票权或余额的成员",
+          "proposalThreshold": "提案阈值",
+          "threshold": "> {{threshold}}",
+          "vetoThreshold": "否决支持阈值",
+          "voteChange": "投票变更",
+          "yes": "已启用"
+        },
+        "tokenLockForm": {
+          "approveTransactionInfoTitle": "批准 {{symbol}}",
+          "chart": {
+            "now": "现在",
+            "votingPower": "投票权"
+          },
+          "footerInfo": "锁定代币会将它们从您的钱包转移到锁定合约中，在最短锁定时间后可以提取回您的钱包。",
+          "locks": "查看 {{count}} 个锁定",
+          "percentage": {
+            "0": "无",
+            "100": "100%",
+            "25": "25%",
+            "50": "50%",
+            "75": "75%"
+          },
+          "submit": {
+            "approve": "批准 {{symbol}}",
+            "lock": "锁定 {{symbol}}"
+          }
+        },
+        "tokenLockList": {
+          "empty": {
+            "description": "有相关锁定时将在此显示。",
+            "title": "未找到锁定"
+          },
+          "entity": "veLocks",
+          "error": {
+            "description": "加载锁定时出错。请稍后重试。",
+            "title": "加载锁定错误"
+          },
+          "item": {
+            "actions": {
+              "unlock": "解锁 {{symbol}}",
+              "withdraw": "提取 {{symbol}}"
+            },
+            "approveTransactionInfoTitle": "批准 NFT #{{tokenId}}",
+            "metrics": {
+              "locked": "已锁定",
+              "multiplier": "倍数",
+              "votingPower": "投票权"
+            },
+            "minLockTimeLeftSuffix": "剩余时间直到可解锁",
+            "statusLabel": {
+              "active": "活跃",
+              "available": "可用",
+              "cooldown": "冷却中",
+              "warmup": "预热中"
+            },
+            "timeLeftSuffix": "剩余",
+            "withdrawTimeLeftSuffix": "剩余时间直到可提取"
+          }
+        },
+        "tokenLockUnlockDialog": {
+          "lock": {
+            "description": "要锁定您的 {{symbol}}，请在您的钱包中确认链上交易。",
+            "submit": "锁定",
+            "success": "查看您的 veLock",
+            "title": "锁定 {{symbol}}",
+            "transactionInfoTitle": "锁定 {{symbol}}"
+          },
+          "unlock": {
+            "description": "要解锁您的 {{symbol}}，请在您的钱包中确认链上交易。",
+            "submit": "解锁",
+            "success": "查看锁定",
+            "title": "解锁 {{symbol}}",
+            "transactionInfoTitle": "解锁 {{symbol}}"
+          },
+          "withdraw": {
+            "description": "要提取您的 {{symbol}}，请在您的钱包中确认链上交易。",
+            "submit": "提取",
+            "success": "查看锁定",
+            "title": "提取 {{symbol}}",
+            "transactionInfoTitle": "提取 {{symbol}}"
+          }
+        },
+        "tokenLocksDialog": {
+          "description": "解锁或提取您的 {{symbol}} 代币",
+          "title": "您的锁定"
         },
         "tokenMemberInfo": {
           "distribution": "分配",
-          "tokenSupply": "{{supply}} {{symbol}}",
-          "tokenNameAndSymbol": "{{tokenName}} ({{tokenSymbol}})",
-          "tokenDistribution": "{{count}} token holders",
+          "eligibleVoters": "合格投票者",
           "members": "成员",
-          "tokenHolders": "代币 holders",
-          "eligibleVoters": "有资格的投票者",
           "supply": "供应量",
-          "tokenLabel": "代币"
+          "tokenDistribution": "{{count}} 个代币持有者",
+          "tokenHolders": "代币持有者",
+          "tokenLabel": "代币",
+          "tokenNameAndSymbol": "{{tokenName}} ({{tokenSymbol}})",
+          "tokenSupply": "{{supply}} {{symbol}}"
         },
-        "tokenWrapUnwrapDialog": {
-          "wrap": {
-            "submit": "包装代币",
-            "transactionInfoTitle": "包装{{symbol}}",
-            "description": "要包装您的代币，请在钱包中确认两笔链上交易。",
-            "success": "查看成员",
-            "title": "包装代币"
+        "tokenMemberList": {
+          "entity": "成员"
+        },
+        "tokenMemberPanel": {
+          "tabs": {
+            "delegate": "委托",
+            "lock": "锁定",
+            "wrap": "包装"
+          }
+        },
+        "tokenMemberStats": {
+          "tokenBalance": "代币余额",
+          "votingPower": "投票权"
+        },
+        "tokenMintTokensAction": {
+          "address": {
+            "label": "地址",
+            "placeholder": "ENS 或 0x…"
           },
-          "unwrap": {
-            "submit": "解包装代币",
-            "transactionInfoTitle": "解包装{{symbol}}",
-            "description": "要解包装您的代币，请在钱包中确认两笔链上交易。",
-            "success": "查看成员",
-            "title": "解包装代币"
+          "amount": {
+            "label": "数量",
+            "placeholder": "0 {{symbol}}"
+          }
+        },
+        "tokenPermissionCheckProposalCreation": {
+          "function": "提案创建",
+          "pluginNameLabel": "名称",
+          "userTokenBalance": "您的余额",
+          "userVotingPower": "您的投票权"
+        },
+        "tokenPermissionCheckVoteSubmission": {
+          "createdAt": "创建时间",
+          "membership": "您的投票权"
+        },
+        "tokenProcessBodyField": {
+          "disabled": "已禁用",
+          "distributionTerm": "分配",
+          "earlyExecution": "提前执行",
+          "enabled": "已启用",
+          "holders": "{{count}} 个代币持有者",
+          "minDurationDefinition": "{{days}} 天 {{hours}} 小时 {{minutes}} 分钟",
+          "minDurationTerm": "最短持续时间",
+          "minParticipationDefinition": "≥ {{minParticipation}}",
+          "minParticipationTerm": "最低参与度",
+          "supplyTerm": "供应量",
+          "supportDefinition": "> {{threshold}}%",
+          "supportTerm": "支持阈值",
+          "tokenTerm": "代币",
+          "voteChange": "投票变更"
+        },
+        "tokenProposalCreationSettings": {
+          "helpText": "创建提案所需的投票权或代币余额。",
+          "label": "最低要求",
+          "placeholder": "≥ 1"
+        },
+        "tokenProposalVotingSummary": {
+          "approved": "已批准",
+          "notApproved": "未批准",
+          "notVetoed": "未否决",
+          "optimisticSupportLabel": "否决支持",
+          "supportLabel": "支持",
+          "vetoed": "已否决",
+          "votesDescription": "共 {{details}}"
+        },
+        "tokenSetupGovernance": {
+          "earlyExecution": {
+            "helpText": "允许在投票期结束前执行提案。只有当提案满足支持阈值、满足最低参与度且不会被剩余投票者推翻时才可能。",
+            "label": "提前执行",
+            "switch": {
+              "label": "已启用"
+            }
+          },
+          "eligibleField": {
+            "anyWallet": {
+              "description": "任何连接的地址。",
+              "label": "任何钱包"
+            },
+            "helpText": "指定谁可以创建提案以及最低代币要求。",
+            "label": "谁有资格",
+            "members": {
+              "description": "只有拥有至少这么多投票权或代币余额的成员才能创建提案。",
+              "label": "成员"
+            }
+          },
+          "minDuration": {
+            "alertInfo": "确保成员有足够时间投票。建议至少设置为 1 天。",
+            "helpText": "提案开放投票的最短时间。提案可以有更长的持续时间但不能更短。",
+            "label": "最短持续时间"
+          },
+          "minParticipation": {
+            "helpText": "参与提案的代币百分比（占总供应量）必须大于或等于此值。",
+            "label": "最低参与度"
+          },
+          "minVotingPower": {
+            "helpText": "只有拥有至少这么多投票权或代币余额的成员才能创建提案。",
+            "label": "最低要求"
+          },
+          "supportThreshold": {
+            "alert": {
+              "majority": "提案将由多数票批准",
+              "minority": "提案可能由少数票而非多数票批准。"
+            },
+            "helpText": "支持提案投'是'票的代币百分比（占所有已投票代币）必须大于此值。",
+            "label": "支持阈值",
+            "tag": {
+              "no": "否",
+              "yes": "是"
+            }
+          },
+          "voteChange": {
+            "helpText": "允许投票者在投票期间更改投票。这防止机构给予提前批准或否决。",
+            "label": "投票变更",
+            "switch": {
+              "label": "已启用"
+            }
           }
         },
         "tokenSetupMembership": {
-          "type": {
-            "label": "ERC-20 token",
-            "helpText": "您可以创建一个新的ERC-20代币用于治理，或导入一个现有的代币。",
-            "option": {
-              "import": "导入代币",
-              "create": "创建新代币"
-            }
-          },
-          "importToken": {
-            "step": {
-              "erc20": "ERC-20 token standard",
-              "delegation": "委托 compatible",
-              "governance": "治理兼容"
-            },
-            "alert": {
-              "notGovernanceCompatible": {
-                "description1": "此代币必须由其持有者包装才能用于治理。",
-                "description2": "代币持有者将能够随时包装他们的代币以接收等价的治理代币，可用于对提案进行投票。他们可以随时解包装以接收原始代币。",
-                "message": "需要包装"
-              },
-              "infoLabel": "了解更多",
-              "notErc20Compatible": {
-                "message": "否t compatible",
-                "description1": "该地址不是有效的ERC-20地址，因此无法在治理中使用。"
-              }
-            },
-            "label": "代币地址",
-            "helpText": "地址必须是部署在与您的DAO相同链上的ERC-20代币合约。"
-          },
           "createToken": {
+            "distribute": {
+              "helpText": "这些地址将接收新铸造的代币。",
+              "label": "代币接收者"
+            },
             "member": {
-              "address": {
-                "placeholder": "ENS or 0x…",
-                "label": "地址"
-              },
               "action": {
-                "remove": "移除",
-                "add": "添加"
+                "add": "添加",
+                "remove": "移除"
+              },
+              "address": {
+                "label": "地址",
+                "placeholder": "ENS 或 0x…"
               },
               "tokens": {
                 "label": "代币"
@@ -1966,406 +2552,277 @@
               "label": "代币名称"
             },
             "symbol": {
-              "helpText": "这是代币的缩写代号。例如：UNI",
+              "helpText": "这是代币的缩写标识。例如：UNI",
               "label": "代币符号"
-            },
-            "distribute": {
-              "helpText": "这些地址将收到新铸造的代币。",
-              "label": "代币接收者"
-            }
-          }
-        },
-        "tokenDelegationForm": {
-          "selection": {
-            "option": {
-              "other": "其他人",
-              "self": "您自己"
-            },
-            "label": "您想委托给谁？"
-          },
-          "submit": "委托投票权",
-          "info": "委托会通过您的余额增加上述地址的投票权。如果您委托给其他人，则在收回投票权之前无法投票。",
-          "dialog": {
-            "button": {
-              "submit": "委托",
-              "success": "查看成员"
-            },
-            "description": "要委托给此地址，请在钱包中确认链上交易。",
-            "title": "委托"
-          },
-          "delegate": {
-            "placeholder": "ENS or 0x…",
-            "helpText": "输入您想要委托当前或未来代币余额投票权的地址。",
-            "label": "您的委托"
-          }
-        },
-        "tokenWrapForm": {
-          "info": "包装{{underlyingSymbol}}以增加您的投票权。",
-          "submit": {
-            "approve": "批准{{underlyingSymbol}}",
-            "unwrap": "解包装{{amount}} {{symbol}}",
-            "wrap": "包装{{underlyingSymbol}}"
-          },
-          "approveTransactionInfoTitle": "批准{{symbol}}",
-          "footerInfo": "包装代币将把它们从您的钱包转移到包装合约中，您可以随时提取回钱包。"
-        },
-        "tokenLockList": {
-          "empty": {
-            "title": "否 locks found",
-            "description": "当有相关锁定时，这将显示。"
-          },
-          "item": {
-            "metrics": {
-              "multiplier": "倍数",
-              "locked": "已锁定",
-              "votingPower": "投票权"
-            },
-            "withdrawTimeLeftSuffix": "left until you can withdraw",
-            "approveTransactionInfoTitle": "批准NFT #{{tokenId}}",
-            "minLockTimeLeftSuffix": "left until unlockable",
-            "actions": {
-              "unlock": "解锁{{symbol}}",
-              "withdraw": "提取{{symbol}}"
-            },
-            "timeLeftSuffix": "left",
-            "statusLabel": {
-              "active": "活跃",
-              "cooldown": "冷却中",
-              "available": "可用",
-              "warmup": "预热中"
             }
           },
-          "entity": "veLocks",
-          "error": {
-            "title": "错误 loading locks",
-            "description": "加载锁定时出错。请稍后再试。"
-          }
-        },
-        "tokenSetupGovernance": {
-          "voteChange": {
-            "switch": {
-              "label": "已启用"
-            },
-            "helpText": "允许投票者在投票期间更改投票。这可以防止主体提前批准或否决。",
-            "label": "投票变更"
-          },
-          "minDuration": {
-            "helpText": "提案开放投票的最短时间。提案可以有更长的持续时间但不能更短。",
-            "label": "最短持续时间",
-            "alertInfo": "确保成员有足够的时间投票。建议将其设置为至少1天。"
-          },
-          "supportThreshold": {
+          "importToken": {
             "alert": {
-              "majority": "提案将由多数通过",
-              "minority": "提案可能由少数而非多数通过。"
+              "infoLabel": "了解更多",
+              "notErc20Compatible": {
+                "description1": "该地址不是有效的 ERC-20 地址，因此无法用于治理。",
+                "message": "不兼容"
+              },
+              "notGovernanceCompatible": {
+                "description1": "此代币必须由其持有者包装才能用于治理。",
+                "description2": "代币持有者可以随时包装其代币以获得等价的治理代币，用于对提案投票。他们可以随时解包装以获得原始代币。",
+                "message": "需要包装"
+              }
             },
-            "tag": {
-              "no": "否",
-              "yes": "是"
-            },
-            "label": "支持阈值",
-            "helpText": "在所有已投票的代币中，投票支持提案的代币百分比必须大于此值。"
+            "helpText": "地址必须是部署在与您的 DAO 相同链上的 ERC-20 代币合约。",
+            "label": "代币地址",
+            "step": {
+              "delegation": "委托兼容",
+              "erc20": "ERC-20 代币标准",
+              "governance": "治理兼容"
+            }
           },
-          "eligibleField": {
-            "anyWallet": {
-              "description": "任何连接的地址。",
-              "label": "任何钱包"
-            },
-            "members": {
-              "description": "只有拥有至少这么多投票权或代币余额的成员才能创建提案。",
-              "label": "成员"
-            },
-            "label": "谁有资格",
-            "helpText": "指定谁可以创建提案和最低代币要求。"
-          },
-          "earlyExecution": {
-            "label": "提前执行",
-            "switch": {
-              "label": "已启用"
-            },
-            "helpText": "允许提案在投票期结束前执行。这只有在提案满足支持阈值、满足最低参与度且不能被剩余投票者推翻时才可能。"
-          },
-          "minVotingPower": {
-            "helpText": "只有拥有至少这么多投票权或代币余额的成员才能创建提案。",
-            "label": "最低要求"
-          },
-          "minParticipation": {
-            "helpText": "参与提案的代币百分比（占总供应量）必须大于或等于此值。",
-            "label": "最低参与度"
+          "type": {
+            "helpText": "您可以创建新的 ERC-20 代币用于治理，或导入现有代币。",
+            "label": "ERC-20 代币",
+            "option": {
+              "create": "创建新代币",
+              "import": "导入代币"
+            }
           }
         },
-        "tokenMemberStats": {
-          "tokenBalance": "代币 balance",
-          "votingPower": "投票权"
-        },
-        "tokenApproveNftDialog": {
-          "UNLOCK": {
-            "description": "要解锁您的代币，请在钱包中确认两笔链上交易。",
-            "submit": "批准NFT",
-            "title": "批准 unlocking",
-            "nftName": "锁定 NFT"
-          }
-        },
-        "tokenProposalCreationSettings": {
-          "placeholder": "≥ 1",
-          "label": "最低要求",
-          "helpText": "创建提案所需的投票权或代币余额。"
-        },
-        "tokenProcessBodyField": {
-          "supportTerm": "支持阈值",
-          "enabled": "已启用",
-          "supportDefinition": "> {{threshold}}%",
-          "earlyExecution": "提前执行",
-          "tokenTerm": "代币",
-          "minDurationDefinition": "{{days}} days {{hours}} hours {{minutes}} minutes",
-          "supplyTerm": "供应量",
-          "holders": "{{count}} token holders",
-          "minParticipationDefinition": "≥ {{minParticipation}}",
-          "minDurationTerm": "最短持续时间",
-          "disabled": "已禁用",
-          "minParticipationTerm": "最低参与度",
-          "voteChange": "投票变更",
-          "distributionTerm": "分配"
-        },
-        "tokenPermissionCheckProposalCreation": {
-          "pluginNameLabel": "名称",
-          "userVotingPower": "您的投票权",
-          "userTokenBalance": "您的余额",
-          "function": "提案创建"
-        },
-        "tokenCreateProposalSettingsForm": {
-          "startTime": {
-            "label": "投票开始时间"
+        "tokenSubmitVote": {
+          "buttons": {
+            "cancel": "取消",
+            "change": {
+              "submit": "提交更改",
+              "vote": "更改投票"
+            },
+            "submit": "提交投票",
+            "submitted": "投票已提交",
+            "vote": "对提案投票"
           },
-          "endTime": {
-            "label": "投票持续时间/结束时间",
-            "infoText": "最短持续时间为{{days}}天，{{hours}}小时和{{minutes}}分钟，由DAO治理设置。"
-          }
-        },
-        "meta": {
-          "setup": {
-            "description": "主要ity voting based on token voting power",
-            "name": "代币 voting"
-          }
-        },
-        "tokenVoteList": {
-          "entity": "投票s",
-          "description": {
+          "options": {
+            "abstain": "弃权",
+            "approveLabel": "批准",
+            "approveNoDescription": "，我不批准",
+            "approveYesDescription": "，我批准",
+            "label": "您是否要{{label}}此提案？",
+            "no": "否",
+            "vetoLabel": "否决",
+            "vetoNoDescription": "，我不否决",
+            "vetoYesDescription": "，我否决",
+            "yes": "是"
+          },
+          "voteDescription": {
             "approve": "批准",
             "veto": "否决"
           }
         },
-        "tokenMemberList": {
-          "entity": "成员"
-        },
-        "tokenMintTokensAction": {
-          "address": {
-            "label": "地址",
-            "placeholder": "ENS or 0x…"
+        "tokenVoteList": {
+          "description": {
+            "approve": "批准",
+            "veto": "否决"
           },
-          "amount": {
-            "placeholder": "0 {{symbol}}",
-            "label": "金额"
+          "entity": "投票"
+        },
+        "tokenWrapForm": {
+          "approveTransactionInfoTitle": "批准 {{symbol}}",
+          "footerInfo": "包装代币将把它们从您的钱包转移到包装合约中，您可以随时将其提取回钱包。",
+          "info": "包装 {{underlyingSymbol}} 以增加您的投票权。",
+          "percentage": {
+            "0": "无",
+            "100": "100%",
+            "25": "25%",
+            "50": "50%",
+            "75": "75%"
+          },
+          "submit": {
+            "approve": "批准 {{underlyingSymbol}}",
+            "unwrap": "解包装 {{amount}} {{symbol}}",
+            "wrap": "包装 {{underlyingSymbol}}"
           }
         },
-        "tokenLocksDialog": {
-          "title": "您的锁定",
-          "description": "解锁 or withdraw your {{symbol}} tokens"
-        },
-        "tokenActions": {
-          "Mint": "铸造",
-          "UpdateTokenVoteSettings": "更新 settings"
-        },
-        "tokenLockForm": {
-          "footerInfo": "锁定代币将把它们从您的钱包转移到锁定合约中，在最短锁定时间后可以提取回您的钱包。",
-          "locks": "查看{{count}}个锁定",
-          "submit": {
-            "approve": "批准{{symbol}}",
-            "lock": "锁定{{symbol}}"
+        "tokenWrapUnwrapDialog": {
+          "unwrap": {
+            "description": "要解包装您的代币，请在钱包中确认两笔链上交易。",
+            "submit": "解包装代币",
+            "success": "查看成员",
+            "title": "解包装代币",
+            "transactionInfoTitle": "解包装 {{symbol}}"
           },
-          "chart": {
-            "now": "现在",
-            "votingPower": "投票权"
-          },
-          "approveTransactionInfoTitle": "批准{{symbol}}"
-        },
-        "tokenPermissionCheckVoteSubmission": {
-          "membership": "您的投票权",
-          "createdAt": "创建d"
+          "wrap": {
+            "description": "要包装您的代币，请在钱包中确认两笔链上交易。",
+            "submit": "包装代币",
+            "success": "查看成员",
+            "title": "包装代币",
+            "transactionInfoTitle": "包装 {{symbol}}"
+          }
         }
       }
     },
     "settings": {
-      "daoSettingsPage": {
-        "main": {
-          "title": "设置",
-          "governanceAction": "流程",
-          "governanceInfoTitle": "治理",
-          "settingsInfoTitle": "DAO"
+      "daoPluginInfo": {
+        "bodyName": "机构名称",
+        "processKey": "流程前缀",
+        "processName": "流程名称",
+        "viewProcess": "查看流程"
+      },
+      "daoProcessAllowedActions": {
+        "emptyState": {
+          "description": "此流程无权代表 DAO 执行操作。提案只能用于信号传递。",
+          "heading": "受限执行"
         },
-        "plugins": {
-          "title": "插件"
-        },
-        "aside": {
-          "versionInfoTitle": "合约"
+        "unrestricted": {
+          "description": "此流程将被授权代表 DAO 执行操作。它可以提取资金、修改治理合约，并调用任何智能合约上的任何函数。",
+          "heading": "无限制执行"
         }
       },
-      "daoUpdateContractsPage": {
-        "description": "更新DAO的智能合约。",
-        "title": "更新合约"
+      "daoProcessDetailsInfo": {
+        "pluginName": "插件名称",
+        "processKey": "流程前缀"
       },
-      "updateDaoContracts": {
-        "action": {
-          "update": "更新"
+      "daoProcessDetailsPage": {
+        "error": {
+          "action": "浏览设置",
+          "notFound": {
+            "description": "我们找不到您要查找的流程。",
+            "title": "流程未找到"
+          }
         },
-        "description": "更新DAO的智能合约以获得最新功能。",
-        "title": "更新DAO合约",
-        "button": "升级 contracts"
+        "header": {
+          "breadcrumb": {
+            "settings": "设置"
+          },
+          "stats": {
+            "lastProposal": "最后提案",
+            "latestActivityUnit": "{{unit}} 前",
+            "proposals": "提案"
+          }
+        },
+        "section": {
+          "actions": "授权操作",
+          "creationEligibility": "提案创建资格",
+          "details": "详情",
+          "governanceProcess": "治理流程"
+        }
       },
       "daoSettingsInfo": {
-        "readLess": "收起",
-        "summary": "描述",
-        "notChangeable": "否t changeable",
-        "ens": "ENS name",
-        "name": "名称",
-        "links": "资源",
         "chain": "链",
-        "readMore": "展开"
+        "ens": "ENS 名称",
+        "links": "资源",
+        "name": "名称",
+        "notChangeable": "不可更改",
+        "readLess": "收起",
+        "readMore": "展开",
+        "summary": "描述"
+      },
+      "daoSettingsPage": {
+        "aside": {
+          "versionInfoTitle": "合约"
+        },
+        "main": {
+          "drawAction": "抽奖",
+          "governanceAction": "流程",
+          "governanceInfoTitle": "治理",
+          "settingsInfoTitle": "DAO",
+          "title": "设置"
+        }
+      },
+      "daoVersionInfo": {
+        "governanceValue": "{{name}} v{{release}}.{{build}}",
+        "osLabel": "操作系统",
+        "osValue": "cddao OSx v{{version}}"
+      },
+      "prepareDaoContractsUpdateDialog": {
+        "button": {
+          "submit": "准备安装"
+        },
+        "description": "要发布合约升级，请在钱包中确认两笔链上交易。",
+        "title": "发布合约升级",
+        "transactionInfoTitle": "准备安装"
+      },
+      "publishDaoContractsUpdateDialog": {
+        "button": {
+          "submit": "提议合约升级"
+        },
+        "description": "要发布合约升级，请在钱包中确认两笔链上交易。",
+        "title": "发布合约升级",
+        "transactionInfoTitle": "提议合约升级"
+      },
+      "updateDaoContracts": {
+        "button": "升级合约",
+        "description": "cddao OSx 及其插件合约有可用更新。"
+      },
+      "updateDaoContractsCard": {
+        "releaseNotes": "发布说明",
+        "versionUpdate": "更新 {{from}} → {{to}}"
       },
       "updateDaoContractsListDialog": {
         "action": {
           "cancel": "取消",
           "confirm": "提议"
         },
-        "title": "审查要升级的合约",
+        "description": "cddao 团队已发布以下合约的新版本。要执行升级，您需要创建提案并执行它。",
         "osxUpdate": {
-          "smartContractName": "Aragon OSx",
-          "name": "操作系统"
+          "name": "操作系统",
+          "smartContractName": "cddao OSx"
         },
-        "description": "Aragon团队已发布以下合约的新版本。要执行升级，您需要创建提案并执行它。"
-      },
-      "prepareDaoContractsUpdateDialog": {
-        "button": {
-          "submit": "准备安装"
-        },
-        "transactionInfoTitle": "准备安装",
-        "title": "发布合约升级",
-        "description": "要发布合约升级，请在钱包中确认两笔链上交易。"
-      },
-      "daoProcessAllowedActions": {
-        "unrestricted": {
-          "description": "此流程将被授予代表DAO执行的权限。它可以提取资金、修改治理合约，并调用任何智能合约上的任何函数。",
-          "heading": "无限制执行"
-        },
-        "emptyState": {
-          "description": "此流程无权代表DAO执行操作。提案只能用于信号传递。",
-          "heading": "受限执行"
-        }
-      },
-      "daoProcessDetailsPage": {
-        "error": {
-          "action": "探索设置",
-          "notFound": {
-            "title": "未找到流程",
-            "description": "我们找不到您要查找的流程。"
-          }
-        },
-        "header": {
-          "stats": {
-            "proposals": "提案",
-            "latestActivityUnit": "{{unit}}前",
-            "lastProposal": "最后提案"
-          },
-          "breadcrumb": {
-            "settings": "设置"
-          }
-        },
-        "section": {
-          "governanceProcess": "治理流程",
-          "actions": "授权操作",
-          "creationEligibility": "提案创建 eligibility",
-          "details": "详情"
-        }
-      },
-      "publishDaoContractsUpdateDialog": {
-        "description": "要发布合约升级，请在钱包中确认两笔链上交易。",
-        "transactionInfoTitle": "提议合约升级",
-        "button": {
-          "submit": "提议合约升级"
-        },
-        "title": "发布合约升级"
-      },
-      "daoPluginInfo": {
-        "viewProcess": "查看流程",
-        "processName": "流程名称",
-        "processKey": "流程键",
-        "bodyName": "主体名称"
-      },
-      "daoVersionInfo": {
-        "osValue": "Aragon OSx v{{version}}",
-        "governanceValue": "{{name}} v{{release}}.{{build}}",
-        "osLabel": "操作系统"
-      },
-      "updateDaoContractsCard": {
-        "versionUpdate": "更新 {{from}} → {{to}}",
-        "releaseNotes": "发布说明"
-      },
-      "daoProcessDetailsInfo": {
-        "processKey": "流程键",
-        "pluginName": "插件名称"
+        "title": "审查要升级的合约"
       }
     },
     "shared": {
-      "addressInput": {
-        "error": {
-          "invalid": "地址无效"
-        },
-        "label": "地址"
-      },
       "addressesInput": {
-        "add": "添加",
-        "item": {
-          "removeAddress": "移除",
-          "input": {
-            "error": {
-              "invalid": "地址 is not valid.",
-              "alreadyInList": "地址 has already been added."
-            },
-            "placeholder": "ENS or 0x…",
-            "label": "成员"
-          },
-          "remove": "移除成员"
-        },
-        "title": "地址",
         "container": {
           "add": "添加"
+        },
+        "item": {
+          "input": {
+            "error": {
+              "alreadyInList": "地址已经添加过了。",
+              "invalid": "地址无效。"
+            },
+            "label": "成员",
+            "placeholder": "ENS或0x…"
+          },
+          "remove": "移除成员"
         }
       },
-      "aragonLogo": {
-        "label": "Aragon"
-      },
-      "blockNavigationContext": {
-        "message": "您有未保存的更改。确定要离开此页面吗？"
-      },
-      "daoAddress": {
-        "copy": "复制DAO地址",
-        "open": "在区块浏览器中打开"
-      },
-      "debugPanel": {
-        "link": {
-          "report": "报告问题"
+      "advancedDateInput": {
+        "duration": {
+          "days": "天",
+          "error": {
+            "minDuration": "持续时间必须至少为{{value}}。"
+          },
+          "hours": "小时",
+          "label": "持续时间",
+          "minutes": "分钟"
         },
-        "title": "出现问题？"
+        "fixed": {
+          "date": "日期",
+          "label": "具体日期和时间",
+          "time": "时间"
+        },
+        "now": "现在",
+        "timezone": "时区"
+      },
+      "autocompleteInput": {
+        "menu": {
+          "select": "选择"
+        }
+      },
+      "confirmWizardExit": {
+        "message": "如果您离开此过程，您将丢失到目前为止输入的所有信息。"
+      },
+      "daoPluginInfo": {
+        "launchedAt": "插件启动时间",
+        "plugin": "插件地址",
+        "pluginVersionInfo": "{{name}} v{{release}}.{{build}}"
       },
       "errorFeedback": {
-        "description": "尝试刷新页面。如果问题仍然存在，请联系支持。",
+        "description": "如果您愿意帮助，可以向我们的团队报告此问题。",
         "link": {
-          "report": "报告问题",
-          "explore": "探索DAO"
+          "explore": "探索DAO",
+          "report": "报告问题"
         },
-        "title": "出现问题"
+        "title": "出现了问题"
       },
-      "forms": {
+      "formField": {
         "error": {
           "max": "{{name}}必须小于{{value}}。",
           "min": "{{name}}必须大于{{value}}。",
@@ -2419,11 +2876,11 @@
         "step": {
           "APPROVE": {
             "addon": "钱包",
-            "errorLabel": "被钱包拒绝",
+            "errorLabel": "钱包拒绝",
             "label": "签署交易"
           },
           "CONFIRM": {
-            "addon": "详细信息",
+            "addon": "详情",
             "errorLabel": "确认失败",
             "label": "确认交易"
           },
@@ -2439,8 +2896,8 @@
       },
       "transactionStatus": {
         "info": {
-          "current": "步骤{{current}}",
-          "total": "共{{total}}步"
+          "current": "步骤 {{current}}",
+          "total": "共 {{total}} 步"
         }
       },
       "useApplicationVersion": {
@@ -2475,58 +2932,18 @@
           "back": "返回",
           "error": {
             "invalid": {
-              "description": "某些值无效。请检查并修复后继续。",
+              "description": "某些值无效。请检查并修复它们以继续。",
               "title": "无效数据"
             },
             "invalid-required": {
-              "description": "某些输入缺失或无效。请修复后继续。",
+              "description": "某些输入缺失或无效。请修复它们以继续。",
               "title": "缺失和无效数据"
             },
             "required": {
-              "description": "某些输入缺失。请填写所有必填字段后继续。",
+              "description": "某些输入缺失。请填写所有必填字段以继续。",
               "title": "缺失数据"
             }
           }
-        }
-      },
-      "daoPluginInfo": {
-        "plugin": "插件地址",
-        "pluginVersionInfo": "{{name}} v{{release}}.{{build}}",
-        "launchedAt": "插件已启动"
-      },
-      "advancedDateInput": {
-        "duration": {
-          "days": "天",
-          "minutes": "分钟",
-          "hours": "小时",
-          "error": {
-            "minDuration": "持续时间必须至少为{{value}}。"
-          },
-          "label": "持续时间"
-        },
-        "fixed": {
-          "time": "时间",
-          "label": "特定日期和时间",
-          "date": "日期"
-        },
-        "now": "现在",
-        "timezone": "时区"
-      },
-      "formField": {
-        "error": {
-          "max": "{{name}} must be less than {{value}}.",
-          "pattern": "无效的{{name}}格式。",
-          "min": "{{name}} must be greater than {{value}}.",
-          "required": "{{name}} is mandatory.",
-          "validate": "{{name}} is invalid."
-        }
-      },
-      "confirmWizardExit": {
-        "message": "如果您离开此流程，您将丢失到目前为止输入的所有信息。"
-      },
-      "autocompleteInput": {
-        "menu": {
-          "select": "选择"
         }
       }
     }

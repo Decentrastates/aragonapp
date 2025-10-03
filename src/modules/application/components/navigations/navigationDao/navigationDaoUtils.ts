@@ -23,6 +23,9 @@ class NavigationDaoUtils {
         const isPageContext = context === 'page';
         const isDialogContext = context === 'dialog';
 
+        const icoUrl = process.env.NEXT_PUBLIC_ICO_URL ?? `${baseUrl}/ico`;
+        const drawUrl = process.env.NEXT_PUBLIC_DRAW_URL ?? `${baseUrl}/draw`;
+
         return [
             {
                 label: 'app.application.navigationDao.link.dashboard',
@@ -57,11 +60,29 @@ class NavigationDaoUtils {
                 lgHidden: isDialogContext,
             },
             {
+                label: 'app.application.navigationDao.link.ico',
+                link: icoUrl,
+                icon: IconType.SALE,
+                lgHidden: isDialogContext,
+            },
+            {
+                label: 'app.application.navigationDao.link.draw',
+                link: drawUrl,
+                icon: IconType.DRAW,
+                lgHidden: isDialogContext,
+            },
+            {
                 label: 'app.application.navigationDao.link.settings',
                 link: `${baseUrl}/settings`,
                 icon: IconType.SETTINGS,
                 hidden: isPageContext,
             },
+            // {
+            //     label: 'app.application.navigationDao.link.mine',
+            //     link: `${baseUrl}/mine`,
+            //     icon: IconType.PERSON,
+            //     hidden: isPageContext,
+            // },
         ];
     };
 
