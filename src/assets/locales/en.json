@@ -1091,7 +1091,8 @@
           "noImage": "No image",
           "price": "Price",
           "lastSale": "Last sale",
-          "owner": "Owner"
+          "owner": "Owner",
+          "noNfts": "No holdings"
         },
         "nftCollectionDetail": {
           "noImage": "No image",

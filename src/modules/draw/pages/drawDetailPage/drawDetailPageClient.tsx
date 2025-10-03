@@ -1,13 +1,13 @@
 'use client';
 
 import { DrawWidget } from '@/plugins/drawPlugin/components/drawWidget';
+import { NftCollectionDetail } from '@/plugins/drawPlugin/components/nftCollectionDetail';
 import { mockNftCollectionDetail } from '@/plugins/drawPlugin/data/mockNftCollectionData';
 import { useDrawDialogs } from '@/plugins/drawPlugin/hooks/useDrawDialogs';
 import { Page } from '@/shared/components/page';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { daoUtils } from '@/shared/utils/daoUtils/daoUtils';
 import { useAccount } from 'wagmi';
-import { NftCollectionDetail } from '@/plugins/drawPlugin/components/nftCollectionDetail';
 
 export interface IDrawDetailPageClientProps {
     /**
@@ -59,7 +59,11 @@ export const DrawDetailPageClient: React.FC<IDrawDetailPageClientProps> = ({ dao
 
     return (
         <>
-            <Page.Header breadcrumbs={pageBreadcrumbs} title='抽奖详情' description='抽奖详情' />
+            <Page.Header
+                breadcrumbs={pageBreadcrumbs}
+                title={mockNftCollectionDetail.name}
+                description={mockNftCollectionDetail.description}
+            />
             <Page.Content>
                 <Page.Main>
                     <NftCollectionDetail
@@ -69,10 +73,25 @@ export const DrawDetailPageClient: React.FC<IDrawDetailPageClientProps> = ({ dao
                         onLotteryClick={handleLotteryClick}
                         onRedemptionClick={handleRedemptionClick}
                     />
+                    
                 </Page.Main>
-                
+
                 <Page.Aside>
                     <DrawWidget daoId={daoId} />
+                    <Page.MainSection title="How to Participate">
+                        <div className="rounded-lg border border-blue-100 bg-blue-50 p-6">
+                            <p className="mb-4 text-blue-700">
+                                {/* You can participate in the {tokenDetails.name} ICO through {dao.name}. Select the */}
+                                &quot;Participate in ICO&quot; button above to begin the process.
+                            </p>
+                            <ul className="list-inside list-disc space-y-1 text-blue-700">
+                                <li>Connect your wallet</li>
+                                <li>Choose your investment amount</li>
+                                <li>Confirm transaction</li>
+                                <li>Receive tokens after ICO completion</li>
+                            </ul>
+                        </div>
+                    </Page.MainSection>
                 </Page.Aside>
             </Page.Content>
         </>

@@ -3,7 +3,7 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
 import { InputText } from '@cddao/gov-ui-kit';
-import type { ICreateDrawFormData } from '../../../createDrawFormDefinitions';
+import type { IDrawExtendedFields } from '../../../createDrawFormDefinitions';
 import { useEffect } from 'react';
 
 export interface ITokenBFieldsProps {
@@ -38,7 +38,7 @@ export const TokenBFields: React.FC<ITokenBFieldsProps> = (props) => {
     },
   };
 
-  const tokenBField = useFormField<ICreateDrawFormData, 'governance.tokenB'>('governance.tokenB', {
+  const tokenBField = useFormField<IDrawExtendedFields, 'tokenB'>('tokenB', {
     label: t('app.plugins.draw.createDrawForm.step2.tokenB.label'),
     fieldPrefix,
     rules: tokenBRules,

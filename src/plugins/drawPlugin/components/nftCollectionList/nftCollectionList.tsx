@@ -6,6 +6,7 @@ import { NftCollectionItem, type INftCollection } from './nftCollectionItem';
 
 
 export interface INftCollectionListProps {
+    id?: string;
     /**
      * Array of NFT collections to display
      */
@@ -24,7 +25,7 @@ export const NftCollectionList: React.FC<INftCollectionListProps> = (props) => {
     const { collections, className = '', onCollectionClick } = props;
 
     return (
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${className}`}>
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ${className}`}>
             {collections.map((collection) => (
                 <NftCollectionItem
                     key={collection.id}

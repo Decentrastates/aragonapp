@@ -1,12 +1,11 @@
 'use client';
 
+import { NftCollectionList, type INftCollection } from '@/plugins/drawPlugin/components/nftCollectionList';
 import { Page } from '@/shared/components/page';
 import { useTranslations } from '@/shared/components/translationsProvider';
+import { useRouter } from '@/shared/lib/nextNavigation';
 import { daoUtils } from '@/shared/utils/daoUtils';
 import type React from 'react';
-import { NftCollectionList } from '@/plugins/drawPlugin/components/nftCollectionList/nftCollectionList';
-import type { INftCollection } from '@/plugins/drawPlugin/components/nftCollectionList/nftCollectionList';
-import { useRouter } from '@/shared/lib/nextNavigation';
 
 export interface IDrawPageClientProps {
     /**
@@ -34,13 +33,8 @@ export const DrawPageClient: React.FC<IDrawPageClientProps> = (props) => {
             name: 'Summer Collection Draw',
             description: 'Exclusive summer collection NFTs with unique designs',
             imageUrl: 'https://ipfs.cddao.com/ipfs/QmdRQbSffW3GzctwMdvFnWRCtutsVE2XCq3i4ZZAcU32yT/龙.png',
-            itemsCount: 10000,
-            ownersCount: 3500,
-            floorPrice: '15.5',
-            floorPriceCurrency: 'ETH',
-            volume: '25000',
-            volumeCurrency: 'ETH',
-            symbol: 'SUMMER'
+            standard: 'ERC-1155',
+            network: 'Ethereum',
         },
         {
             id: '2',
@@ -48,39 +42,29 @@ export const DrawPageClient: React.FC<IDrawPageClientProps> = (props) => {
             name: 'Holiday Special Draw',
             description: 'Limited edition holiday NFTs for special occasions',
             imageUrl: 'https://ipfs.cddao.com/ipfs/QmdRQbSffW3GzctwMdvFnWRCtutsVE2XCq3i4ZZAcU32yT/龙.png',
-            itemsCount: 5000,
-            ownersCount: 1200,
-            floorPrice: '22.8',
-            floorPriceCurrency: 'ETH',
-            volume: '18500',
-            volumeCurrency: 'ETH',
-            symbol: 'HOLIDAY'
+            standard: 'ERC-721',
+            network: 'Polygon',
         },
         {
             id: '3',
             contractAddress: '0x1234567890123456789012345678901234567892',
-            name: 'Limited Edition Draw',
-            description: 'Rare and limited edition NFTs for collectors',
+            name: 'Art Collection Draw',
+            description: 'Unique art pieces as NFTs',
             imageUrl: 'https://ipfs.cddao.com/ipfs/QmdRQbSffW3GzctwMdvFnWRCtutsVE2XCq3i4ZZAcU32yT/龙.png',
-            itemsCount: 1000,
-            ownersCount: 850,
-            floorPrice: '89.5',
-            floorPriceCurrency: 'ETH',
-            volume: '125000',
-            volumeCurrency: 'ETH',
-            symbol: 'LIMITED'
+            standard: 'ERC-1155',
+            network: 'Binance Smart Chain',
         },
     ];
 
     return (
         <Page.Content>
             <Page.Main title={t('app.plugins.draw.mainPage.title')}>
-                <NftCollectionList 
-                    collections={drawContracts} 
+                <NftCollectionList
+                    collections={drawContracts}
                     onCollectionClick={(collection: INftCollection) => {
                         // 处理集合点击事件，跳转到详情页
                         const { network, address } = parsedDaoInfo;
-                        router.push(`/dao/${network}/${address}/draw/${collection.id}`);
+                        router.push(`/dao/${network}/${address}/draw/${collection.contractAddress}`);
                     }}
                 />
             </Page.Main>

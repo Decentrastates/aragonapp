@@ -75,8 +75,8 @@ export interface INftCollectionHeaderProps {
 export const NftCollectionHeader: React.FC<INftCollectionHeaderProps> = (props) => {
     const {
         contractAddress,
-        name,
-        description,
+        // name,
+        // description,
         // imageUrl,
         itemsCount,
         ownersCount,
@@ -100,7 +100,7 @@ export const NftCollectionHeader: React.FC<INftCollectionHeaderProps> = (props) 
                 <div className="p-6 md:w-3/3">
                     <div className="mb-4 flex items-start justify-between">
                         <div>
-                            <h1 className="text-2xl font-bold text-neutral-900">{name}</h1>
+                            {/* <h1 className="text-2xl font-bold text-neutral-900">{name}</h1> */}
                             <div className="mt-1 flex items-center">
                                 <span className="mr-2 inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800">
                                     {symbol}
@@ -111,8 +111,6 @@ export const NftCollectionHeader: React.FC<INftCollectionHeaderProps> = (props) 
                             </div>
                         </div>
                     </div>
-
-                    <p className="mb-6 text-neutral-600">{description}</p>
 
                     <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                         <StatCard

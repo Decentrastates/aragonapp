@@ -3,7 +3,7 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
 import { Switch } from '@cddao/gov-ui-kit';
-import type { ICreateDrawFormData } from '../../../createDrawFormDefinitions';
+import type { IDrawExtendedFields } from '../../../createDrawFormDefinitions';
 
 export interface ICreateNewNftSwitchProps {
   /**
@@ -17,7 +17,7 @@ export const CreateNewNftSwitch: React.FC<ICreateNewNftSwitchProps> = (props) =>
 
   const { t } = useTranslations();
 
-  const isCreateNewNftField = useFormField<ICreateDrawFormData, 'governance.isCreateNewNft'>('governance.isCreateNewNft', {
+  const isCreateNewNftField = useFormField<IDrawExtendedFields, 'isCreateNewNft'>('isCreateNewNft', {
     label: t('app.plugins.draw.createDrawForm.step2.isCreateNewNft.label'),
     fieldPrefix,
     defaultValue: true,

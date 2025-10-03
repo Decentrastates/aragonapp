@@ -1065,7 +1065,7 @@
         "nftCollectionList": {
           "noImage": "暂无图片",
           "floorPrice": "地板价",
-          "items": "物品数量",
+          "items": "数量",
           "owners": "持有者",
           "volume": "总交易额"
         },
@@ -1073,18 +1073,19 @@
           "noImage": "暂无图片",
           "price": "当前价格",
           "lastSale": "上次成交价",
-          "owner": "持有者"
+          "owner": "持有者",
+          "noNfts": "无持有"
         },
         "nftCollectionDetail": {
           "noImage": "暂无图片",
           "lotteryButton": "参与抽奖",
           "redemptionButton": "兑换奖励",
           "floorPrice": "地板价",
-          "items": "物品数量",
+          "items": "数量",
           "owners": "持有者",
           "volume": "总交易额",
           "contractAddress": "合约地址",
-          "nftItemsTitle": "NFT物品",
+          "nftItemsTitle": "可抽奖资产（NFTs）",
           "nftItemsCount": "共 {{count}} 个项目"
         },
         "createDrawForm": {
