@@ -1132,9 +1132,9 @@
               "label": "Draw name",
               "placeholder": "e.g. Community Reward Draw"
             },
-            "processKey": {
-              "helpText": "The key is part of the unique identifier for proposals of this type. Something like DRAW would lead to DRAW-1 and increment for each proposal.",
-              "label": "Key"
+            "drawKey": {
+              "label": "Draw key",
+              "helpText": "A unique uppercase letter identifier used to identify this draw, up to 5 characters."
             },
             "resources": {
               "helpText": "These are shown as links on the proposal list under the description as additional external resources."

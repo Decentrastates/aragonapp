@@ -16,7 +16,7 @@ export interface IAddNftUnitDialogProps {
     /**
      * Callback when a new NFT unit is added
      */
-    onAdd: (nftId: string, nftUnit: string) => void;
+    onAdd: (nftId: number, nftUnit: number) => void;
     /**
      * Maximum NFT ID allowed (from Step 2)
      */
@@ -27,14 +27,14 @@ export const AddNftUnitDialog: React.FC<IAddNftUnitDialogProps> = (props) => {
     const { isOpen, onClose, onAdd, maxNftId } = props;
 
     const { t } = useTranslations();
-    const [nftId, setNftId] = useState<string>('');
-    const [nftUnit, setNftUnit] = useState<string>('1'); // Default NFT unit to 1
+    const [nftId, setNftId] = useState<number>(1);
+    const [nftUnit, setNftUnit] = useState<number>(1); // Default NFT unit to 1
 
     // Reset form when dialog opens
     useEffect(() => {
         if (isOpen) {
-            setNftId('');
-            setNftUnit('1'); // Reset to default value of 1
+            setNftId(1);
+            setNftUnit(1); // Reset to default value of 1
         }
     }, [isOpen]);
 
@@ -50,8 +50,7 @@ export const AddNftUnitDialog: React.FC<IAddNftUnitDialogProps> = (props) => {
         }
 
         // Validate NFT ID is within allowed range
-        const nftIdNum = BigInt(nftId);
-        if (maxNftId && Number(nftIdNum) > maxNftId) {
+        if (maxNftId && nftId > maxNftId) {
             alert(
                 t('app.plugins.draw.createDrawForm.step4.swapRules.nftIdOutOfRange', {
                     maxId: maxNftId,
@@ -61,7 +60,7 @@ export const AddNftUnitDialog: React.FC<IAddNftUnitDialogProps> = (props) => {
         }
 
         // Validate NFT ID is at least 1
-        if (Number(nftIdNum) < 1) {
+        if (nftId < 1) {
             alert(
                 t('app.plugins.draw.createDrawForm.step4.swapRules.nftIdOutOfRange', {
                     maxId: maxNftId ? `1-${String(maxNftId)}` : '>= 1',
@@ -72,15 +71,15 @@ export const AddNftUnitDialog: React.FC<IAddNftUnitDialogProps> = (props) => {
 
         onAdd(nftId, nftUnit);
         // Reset form
-        setNftId('');
-        setNftUnit('1'); // Reset to default value of 1
+        setNftId(1);
+        setNftUnit(1); // Reset to default value of 1
         onClose();
     };
 
     const handleCancel = () => {
         // Reset form
-        setNftId('');
-        setNftUnit('1'); // Reset to default value of 1
+        setNftId(1);
+        setNftUnit(1); // Reset to default value of 1
         onClose();
     };
 
@@ -96,13 +95,13 @@ export const AddNftUnitDialog: React.FC<IAddNftUnitDialogProps> = (props) => {
                         <InputContainer id="nft-id" label={t('app.plugins.draw.proposalSettings.nftId')}>
                             <InputText
                                 value={nftId}
-                                onChange={(e) => setNftId(e.target.value)}
+                                onChange={(e) => setNftId(Number(e.target.value))}
                                 placeholder={maxNftId ? `1-${String(maxNftId)}` : '>= 1'}
                             />
                         </InputContainer>
 
                         <InputContainer id="nft-unit" label={t('app.plugins.draw.proposalSettings.nftUnit')}>
-                            <InputText value={nftUnit} onChange={(e) => setNftUnit(e.target.value)} placeholder="1" />
+                            <InputText value={nftUnit} onChange={(e) => setNftUnit(Number(e.target.value))} placeholder="1" />
                         </InputContainer>
                     </div>
                 </form>

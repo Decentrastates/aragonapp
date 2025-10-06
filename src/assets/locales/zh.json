@@ -1110,6 +1110,10 @@
               "label": "抽奖名称",
               "placeholder": "请输入抽奖名称"
             },
+            "drawKey": {
+              "label": "抽奖标识",
+              "helpText": "用于标识此抽奖的唯一大写字母标识符，最多5个字符。"
+            },
             "description": {
               "label": "抽奖描述",
               "placeholder": "请输入抽奖描述",

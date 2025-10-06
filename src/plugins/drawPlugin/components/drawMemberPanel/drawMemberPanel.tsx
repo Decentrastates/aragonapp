@@ -1,70 +1,72 @@
 'use client';
 
-import { Page } from '@/shared/components/page';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { useFilterUrlParam } from '@/shared/hooks/useFilterUrlParam';
-import { Tabs } from '@cddao/gov-ui-kit';
-import type { IDrawPlugin, IDrawPluginSettings } from '../../types';
+import { MemberAvatar } from '@cddao/gov-ui-kit';
+import type { IDaoPlugin } from '@/shared/api/daoService';
+import type { IDrawPluginSettings } from '../../types';
 
 export interface IDrawMemberPanelProps {
     /**
-     * DAO plugin to display the member panel for.
+     * Plugin to display member panel for.
      */
-    plugin: IDrawPlugin;
-    /**
-     * ID of the DAO with draw plugin.
-     */
-    daoId: string;
+    plugin: IDaoPlugin<IDrawPluginSettings>;
 }
-
-enum DrawMemberPanelTab {
-    PARTICIPATE = 'participate',
-    HISTORY = 'history',
-}
-
-const getTabsDefinitions = (settings: IDrawPluginSettings) => [
-    { value: DrawMemberPanelTab.PARTICIPATE },
-    { value: DrawMemberPanelTab.HISTORY },
-];
-
-export const drawMemberPanelFilterParam = 'memberPanel';
 
 export const DrawMemberPanel: React.FC<IDrawMemberPanelProps> = (props) => {
-    const { plugin, daoId } = props;
-
+    const { plugin } = props;
+    console.log('DrawMemberPanel',props, plugin);
+    
     const { t } = useTranslations();
-
-    const visibleTabs = getTabsDefinitions(plugin.settings);
-
-    const [selectedTab, setSelectedTab] = useFilterUrlParam({
-        name: drawMemberPanelFilterParam,
-        fallbackValue: DrawMemberPanelTab.PARTICIPATE,
-        validValues: visibleTabs.map((tab) => tab.value),
-    });
-
+    
     return (
-        <Page.AsideCard title={t('app.plugins.draw.drawMemberPanel.title')}>
-            <Tabs.Root value={selectedTab} onValueChange={setSelectedTab}>
-                <Tabs.List className="pb-4">
-                    {visibleTabs.map(({ value }) => (
-                        <Tabs.Trigger
-                            key={value}
-                            label={t(`app.plugins.draw.drawMemberPanel.tabs.${value}`)}
-                            value={value}
-                        />
-                    ))}
-                </Tabs.List>
-                <Tabs.Content value={DrawMemberPanelTab.PARTICIPATE}>
-                    <div className="py-4">
-                        <p>{t('app.plugins.draw.drawMemberPanel.participate.description')}</p>
+        <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+                <MemberAvatar address="0x0000000000000000000000000000000000000000" />
+                <div className="flex flex-col">
+                    <span className="font-medium text-neutral-800">
+                        {t('app.plugins.draw.drawMemberPanel.member')}
+                    </span>
+                    <span className="text-sm text-neutral-500">
+                        {t('app.plugins.draw.drawMemberPanel.description')}
+                    </span>
+                </div>
+            </div>
+            
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                {/* Member info card */}
+                <div className="rounded-lg border border-neutral-200 p-4">
+                    <h3 className="mb-3 text-lg font-semibold text-neutral-800">
+                        {t('app.plugins.draw.drawMemberPanel.memberInfo')}
+                    </h3>
+                    <div className="flex flex-col gap-2">
+                        <div className="flex justify-between">
+                            <span className="text-neutral-500">
+                                {t('app.plugins.draw.drawMemberPanel.memberSince')}
+                            </span>
+                            <span className="font-medium text-neutral-800">
+                                {t('app.plugins.draw.drawMemberPanel.memberSinceValue')}
+                            </span>
+                        </div>
                     </div>
-                </Tabs.Content>
-                <Tabs.Content value={DrawMemberPanelTab.HISTORY}>
-                    <div className="py-4">
-                        <p>{t('app.plugins.draw.drawMemberPanel.history.description')}</p>
+                </div>
+                
+                {/* Governance info card */}
+                <div className="rounded-lg border border-neutral-200 p-4">
+                    <h3 className="mb-3 text-lg font-semibold text-neutral-800">
+                        {t('app.plugins.draw.drawMemberPanel.governanceInfo')}
+                    </h3>
+                    <div className="flex flex-col gap-2">
+                        <div className="flex justify-between">
+                            <span className="text-neutral-500">
+                                {t('app.plugins.draw.drawMemberPanel.votingPower')}
+                            </span>
+                            <span className="font-medium text-neutral-800">
+                                {t('app.plugins.draw.drawMemberPanel.votingPowerValue')}
+                            </span>
+                        </div>
                     </div>
-                </Tabs.Content>
-            </Tabs.Root>
-        </Page.AsideCard>
+                </div>
+            </div>
+        </div>
     );
 };

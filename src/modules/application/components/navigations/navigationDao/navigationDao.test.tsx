@@ -12,6 +12,20 @@ import * as wagmi from 'wagmi';
 import { ApplicationDialogId } from '../../../constants/applicationDialogId';
 import { NavigationDao, type INavigationDaoProps } from './navigationDao';
 
+// Mock the useTranslations hook
+jest.mock('@/shared/components/translationsProvider', () => ({
+    useTranslations: () => ({
+        t: (key: string) => {
+            const translations: Record<string, string> = {
+                'app.application.navigationDao.a11y.title': 'DAO navigation menu',
+                'app.application.navigationDao.a11y.description': 'This dialog provides key DAO details and links to governance, treasury, and community pages',
+                'app.application.navigationDao.dialog.explore': 'Explore all DAOs'
+            };
+            return translations[key] || key;
+        }
+    })
+}));
+
 jest.mock('@cddao/gov-ui-kit', () => ({
     ...jest.requireActual<typeof GovUiKit>('@cddao/gov-ui-kit'),
     DaoAvatar: (props: { src: string }) => <div data-testid="dao-avatar-mock" data-src={props.src} />,
@@ -24,7 +38,12 @@ jest.mock('@/shared/components/navigation', () => ({
     Navigation: {
         ...jest.requireActual<typeof Navigation>('@/shared/components/navigation').Navigation,
         Trigger: (props: { onClick: () => void; className: string }) => (
-            <button data-testid="nav-trigger-mock" onClick={props.onClick} className={props.className} />
+            <button 
+                data-testid="nav-trigger-mock" 
+                onClick={props.onClick} 
+                className={props.className} 
+                aria-label="DAO navigation menu"
+            />
         ),
     },
 }));
@@ -99,6 +118,7 @@ describe('<NavigationDao /> component', () => {
         const triggerButton = screen.getByTestId('nav-trigger-mock');
         expect(triggerButton).toBeInTheDocument();
         expect(triggerButton.className).toContain('md:hidden');
+        expect(triggerButton).toHaveAttribute('aria-label', 'DAO navigation menu');
         await userEvent.click(triggerButton);
         expect(screen.getByRole('dialog')).toBeInTheDocument();
     });

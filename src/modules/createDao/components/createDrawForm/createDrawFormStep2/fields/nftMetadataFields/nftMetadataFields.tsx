@@ -3,7 +3,7 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { Collapsible, InputText, TextArea } from '@cddao/gov-ui-kit';
 import { useEffect, useRef, useState } from 'react';
-import type { INftMetadata } from '../../../createDrawFormDefinitions';
+import type { IErc1155Metadata } from '../../../createDrawFormDefinitions';
 
 export interface INftMetadataFieldsProps {
   /**
@@ -19,12 +19,12 @@ export const NftMetadataFields: React.FC<INftMetadataFieldsProps> = (props) => {
   const prevResetCounterRef = useRef<number | undefined>(undefined);
 
   // State for NFT metadata
-  const [nftMetadata, setNftMetadata] = useState<INftMetadata[]>([]);
+  const [erc1155Metadata, setErc1155Metadata] = useState<IErc1155Metadata[]>([]);
 
   // Function to add a new NFT metadata entry
   const addNftMetadata = () => {
-    setNftMetadata([
-      ...nftMetadata,
+    setErc1155Metadata([
+      ...erc1155Metadata,
       {
         name: '',
         description: '',
@@ -44,7 +44,7 @@ export const NftMetadataFields: React.FC<INftMetadataFieldsProps> = (props) => {
     field: 'name' | 'description' | 'image' | 'animation_url' | 'external_url' | 'background_color' | 'supply',
     value: string,
   ) => {
-    setNftMetadata((prevMetadata) => {
+    setErc1155Metadata((prevMetadata) => {
       const updatedMetadata = [...prevMetadata];
       if (field === 'image') {
         // Automatically prepend ipfs:// to the CID
@@ -65,7 +65,7 @@ export const NftMetadataFields: React.FC<INftMetadataFieldsProps> = (props) => {
 
   // Function to remove NFT metadata
   const removeNftMetadata = (index: number) => {
-    setNftMetadata((prevMetadata) => {
+    setErc1155Metadata((prevMetadata) => {
       const updatedMetadata = [...prevMetadata];
       updatedMetadata.splice(index, 1);
       return updatedMetadata;
@@ -74,7 +74,7 @@ export const NftMetadataFields: React.FC<INftMetadataFieldsProps> = (props) => {
 
   // Function to add attribute to NFT metadata
   const addAttribute = (index: number) => {
-    setNftMetadata((prevMetadata) => {
+    setErc1155Metadata((prevMetadata) => {
       const updatedMetadata = [...prevMetadata];
       updatedMetadata[index] = {
         ...updatedMetadata[index],
@@ -91,7 +91,7 @@ export const NftMetadataFields: React.FC<INftMetadataFieldsProps> = (props) => {
     field: 'trait_type' | 'value',
     value: string | number,
   ) => {
-    setNftMetadata((prevMetadata) => {
+    setErc1155Metadata((prevMetadata) => {
       const updatedMetadata = [...prevMetadata];
       const updatedAttributes = [...updatedMetadata[nftIndex].attributes];
       updatedAttributes[attrIndex] = {
@@ -108,7 +108,7 @@ export const NftMetadataFields: React.FC<INftMetadataFieldsProps> = (props) => {
 
   // Function to remove attribute
   const removeAttribute = (nftIndex: number, attrIndex: number) => {
-    setNftMetadata((prevMetadata) => {
+    setErc1155Metadata((prevMetadata) => {
       const updatedMetadata = [...prevMetadata];
       const updatedAttributes = [...updatedMetadata[nftIndex].attributes];
       updatedAttributes.splice(attrIndex, 1);
@@ -124,7 +124,7 @@ export const NftMetadataFields: React.FC<INftMetadataFieldsProps> = (props) => {
   useEffect(() => {
     // Only reset when resetCounter actually changes (not on initial mount)
     if (prevResetCounterRef.current !== undefined && prevResetCounterRef.current !== resetCounter) {
-      setNftMetadata([]);
+      setErc1155Metadata([]);
     }
     
     // Update the previous reset counter value
@@ -140,7 +140,7 @@ export const NftMetadataFields: React.FC<INftMetadataFieldsProps> = (props) => {
         {t('app.plugins.draw.createDrawForm.step2.nftMetadata.title.description')}
       </p>
 
-      {nftMetadata.map((metadata, nftIndex) => (
+      {erc1155Metadata.map((metadata, nftIndex) => (
         <div 
           key={nftIndex}
           onClick={(e: React.MouseEvent) => {

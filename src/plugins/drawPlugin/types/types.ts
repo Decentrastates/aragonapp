@@ -1,4 +1,4 @@
-import { type Network } from '@/shared/api/daoService';
+import { type Network } from '@/shared/api/daoService/domain/enum';
 
 export interface ICreateDrawPageParams {
     /**

@@ -35,12 +35,12 @@ export interface INftComboUnit {
     /**
      * NFT ID
      */
-    id: bigint;
+    id: number;
     
     /**
      * Number of this NFT ID required per exchange
      */
-    unit: bigint;
+    unit: number;
 }
 
 /**
@@ -50,7 +50,7 @@ export interface INftCombo {
     /**
      * Combination ID
      */
-    comboId: bigint;
+    comboId: number;
     
     /**
      * Array of NFT units in this combination
@@ -65,17 +65,17 @@ export interface INftCombo {
     /**
      * Maximum total exchange count for this combination
      */
-    maxExchangeCount: bigint;
+    maxExchangeCount: number;
     
     /**
      * Maximum number of combinations that can be exchanged in a single batch
      */
-    maxSingleBatch: bigint;
+    maxSingleBatch: number;
     
     /**
      * Current exchange count for this combination
      */
-    currentExchangeCount: bigint;
+    currentExchangeCount: number;
 }
 
 /**
@@ -90,7 +90,7 @@ export interface IEligibilityParams {
     /**
      * Minimum token holding requirement
      */
-    minTokenAmount: bigint;
+    minTokenAmount: number;
     
     /**
      * Whether ERC1155 tokens are used for eligibility
@@ -100,12 +100,12 @@ export interface IEligibilityParams {
     /**
      * ERC1155 token ID (required if isErc1155Eligible is true)
      */
-    eligibleNftId?: bigint;
+    eligibleNftId?: number;
     
     /**
      * Draw interval in seconds
      */
-    drawInterval: bigint;
+    drawInterval: number;
 }
 
 /**

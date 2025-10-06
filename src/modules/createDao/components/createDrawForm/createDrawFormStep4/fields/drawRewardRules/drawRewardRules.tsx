@@ -1,6 +1,5 @@
 'use client';
 
-import { useTranslations } from '@/shared/components/translationsProvider';
 import { DrawRewardInfo } from './drawRewardInfo';
 
 export interface IDrawRewardRulesProps {
@@ -13,9 +12,11 @@ export interface IDrawRewardRulesProps {
 export const DrawRewardRules: React.FC<IDrawRewardRulesProps> = (props) => {
     const { fieldPrefix } = props;
 
-    const { t } = useTranslations();
+    // const { t } = useTranslations();
 
     return (
-        <DrawRewardInfo fieldPrefix={fieldPrefix} />
+        <>
+            <DrawRewardInfo fieldPrefix={fieldPrefix} />
+        </>
     );
 };

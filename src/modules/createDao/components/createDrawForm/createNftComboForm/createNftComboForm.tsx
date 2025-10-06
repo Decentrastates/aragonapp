@@ -1,17 +1,17 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { Button, InputContainer, InputNumber, InputText, Switch } from '@cddao/gov-ui-kit';
 import { useState } from 'react';
-import type { INftCombo, INftComboUnit } from '@/modules/createDao/components/createDrawForm/createDrawFormDefinitions';
+import type { IErc1155Combo, IErc1155ComboUnit } from '@/modules/createDao/components/createDrawForm/createDrawFormDefinitions';
 
-export interface INftComboInputProps {
+export interface IErc1155ComboInputProps {
     /**
      * Current value of the NFT combo
      */
-    value?: INftCombo;
+    value?: IErc1155Combo;
     /**
      * Callback when the value changes
      */
-    onChange: (value: INftCombo) => void;
+    onChange: (value: IErc1155Combo) => void;
     /**
      * Prefix to prepend to all the form fields
      */
@@ -22,29 +22,29 @@ export interface INftComboInputProps {
     maxNftId?: number;
 }
 
-export const CreateNftComboForm: React.FC<INftComboInputProps> = (props) => {
+export const CreateNftComboForm: React.FC<IErc1155ComboInputProps> = (props) => {
     const { value, onChange, maxNftId } = props;
 
     const { t } = useTranslations();
-    const [newNftUnit, setNewNftUnit] = useState<{ nftId?: string; nftUnit?: string }>({
+    const [newErc1155Unit, setNewErc1155Unit] = useState<{ nftId?: string; nftUnit?: number }>({
         nftId: '',
-        nftUnit: '',
+        nftUnit: 1,
     });
 
     // Initialize with default combo if not provided
-    const comboValue: INftCombo = value ?? {
+    const comboValue: IErc1155Combo = value ?? {
         comboId: "1",
         nftUnits: [],
         isEnabled: true,
-        maxExchangeCount: "0",
-        maxSingleBatch: "0",
-        currentExchangeCount: "0",
+        maxExchangeCount: 0,
+        maxSingleBatch: 0,
+        currentExchangeCount: 0,
     };
 
-    const handleAddNftUnit = () => {
-        if (newNftUnit.nftId && newNftUnit.nftUnit) {
+    const handleAddErc1155Unit = () => {
+        if (newErc1155Unit.nftId && newErc1155Unit.nftUnit) {
             // Validate NFT ID is within allowed range
-            const nftId = BigInt(newNftUnit.nftId);
+            const nftId = newErc1155Unit.nftId;
             if (maxNftId && Number(nftId) > maxNftId) {
                 alert(t('app.plugins.draw.createDrawForm.step4.swapRules.nftIdOutOfRange', {
                     maxId: maxNftId
@@ -52,13 +52,13 @@ export const CreateNftComboForm: React.FC<INftComboInputProps> = (props) => {
                 return;
             }
 
-            const updatedCombo: INftCombo = {
+            const updatedCombo: IErc1155Combo = {
                 ...comboValue,
                 nftUnits: [
                     ...comboValue.nftUnits,
                     {
-                        id: nftId.toString(),
-                        unit: newNftUnit.nftUnit,
+                        id: nftId,
+                        unit: newErc1155Unit.nftUnit,
                     }
                 ]
             };
@@ -66,18 +66,18 @@ export const CreateNftComboForm: React.FC<INftComboInputProps> = (props) => {
             onChange(updatedCombo);
             
             // Reset the new NFT unit form
-            setNewNftUnit({
-                nftId: '',
-                nftUnit: '',
+            setNewErc1155Unit({
+                nftId: '1',
+                nftUnit: 1,
             });
         }
     };
 
-    const handleRemoveNftUnit = (index: number) => {
+    const handleRemoveErc1155Unit = (index: number) => {
         const updatedNftUnits = [...comboValue.nftUnits];
         updatedNftUnits.splice(index, 1);
         
-        const updatedCombo: INftCombo = {
+        const updatedCombo: IErc1155Combo = {
             ...comboValue,
             nftUnits: updatedNftUnits
         };
@@ -85,8 +85,8 @@ export const CreateNftComboForm: React.FC<INftComboInputProps> = (props) => {
         onChange(updatedCombo);
     };
 
-    const handleComboSettingChange = <K extends keyof INftCombo>(field: K, value: INftCombo[K]) => {
-        const updatedCombo: INftCombo = {
+    const handleComboSettingChange = <K extends keyof IErc1155Combo>(field: K, value: IErc1155Combo[K]) => {
+        const updatedCombo: IErc1155Combo = {
             ...comboValue,
             [field]: value
         };
@@ -99,7 +99,7 @@ export const CreateNftComboForm: React.FC<INftComboInputProps> = (props) => {
                 id="nft-combo-units"
                 label={t('app.plugins.draw.createDrawForm.step4.swapRules.nftComboUnits')}
             >
-                {comboValue.nftUnits.map((unit: INftComboUnit, index: number) => (
+                {comboValue.nftUnits.map((unit: IErc1155ComboUnit, index: number) => (
                     <div key={index} className="flex items-center justify-between p-4 border border-neutral-200 rounded-lg">
                         <div className="flex flex-col">
                             <span className="font-medium">
@@ -109,7 +109,7 @@ export const CreateNftComboForm: React.FC<INftComboInputProps> = (props) => {
                                 })}
                             </span>
                         </div>
-                        <Button variant="ghost" onClick={() => handleRemoveNftUnit(index)}>
+                        <Button variant="ghost" onClick={() => handleRemoveErc1155Unit(index)}>
                             {t('app.plugins.draw.proposalSettings.remove')}
                         </Button>
                     </div>
@@ -129,17 +129,17 @@ export const CreateNftComboForm: React.FC<INftComboInputProps> = (props) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <InputText
                         label={t('app.plugins.draw.proposalSettings.nftId')}
-                        value={newNftUnit.nftId ?? ''}
-                        onChange={(e) => setNewNftUnit({...newNftUnit, nftId: e.target.value})}
+                        value={newErc1155Unit.nftId ?? ''}
+                        onChange={(e) => setNewErc1155Unit({...newErc1155Unit, nftId: e.target.value})}
                     />
-                    <InputText
+                    <InputNumber
                         label={t('app.plugins.draw.proposalSettings.nftUnit')}
-                        value={newNftUnit.nftUnit ?? ''}
-                        onChange={(e) => setNewNftUnit({...newNftUnit, nftUnit: e.target.value})}
+                        value={newErc1155Unit.nftUnit ?? 0}
+                        onChange={(value) => setNewErc1155Unit({...newErc1155Unit, nftUnit: Number(value)})}
                     />
                 </div>
                 <div className="mt-4">
-                    <Button onClick={handleAddNftUnit}>
+                    <Button onClick={handleAddErc1155Unit}>
                         {t('app.plugins.draw.createDrawForm.step4.swapRules.addNftUnitButton')}
                     </Button>
                 </div>
@@ -148,13 +148,13 @@ export const CreateNftComboForm: React.FC<INftComboInputProps> = (props) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                 <InputNumber
                     label={t('app.plugins.draw.proposalSettings.maxExchangeCount')}
-                    value={Number(comboValue.maxExchangeCount)}
-                    onChange={(value) => handleComboSettingChange('maxExchangeCount', value.toString()) /* eslint-disable-line @typescript-eslint/no-unnecessary-type-conversion */}
+                    value={comboValue.maxExchangeCount}
+                    onChange={(value) => handleComboSettingChange('maxExchangeCount', Number(value)) /* eslint-disable-line @typescript-eslint/no-unnecessary-type-conversion */}
                 />
                 <InputNumber
                     label={t('app.plugins.draw.proposalSettings.maxSingleBatch')}
-                    value={Number(comboValue.maxSingleBatch)}
-                    onChange={(value) => handleComboSettingChange('maxSingleBatch', value.toString()) /* eslint-disable-line @typescript-eslint/no-unnecessary-type-conversion */}
+                    value={comboValue.maxSingleBatch}
+                    onChange={(value) => handleComboSettingChange('maxSingleBatch', Number(value)) /* eslint-disable-line @typescript-eslint/no-unnecessary-type-conversion */}
                 />
                 <Switch
                     label={t('app.plugins.draw.proposalSettings.isEnabled')}

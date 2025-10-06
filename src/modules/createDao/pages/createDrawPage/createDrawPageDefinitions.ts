@@ -13,8 +13,8 @@ export const createDrawWizardSteps: IWizardStepperStep[] = [
         order: 0,
         meta: {
             name: 'app.plugins.draw.createDrawPage.steps.METADATA.name',
-            title: 'app.plugins.draw.createDrawPage.steps.METADATA.title',
-            description: 'app.plugins.draw.createDrawPage.steps.METADATA.description',
+            // title: 'app.plugins.draw.createDrawPage.steps.METADATA.title',
+            // description: 'app.plugins.draw.createDrawPage.steps.METADATA.description',
         },
     },
     {
@@ -22,8 +22,8 @@ export const createDrawWizardSteps: IWizardStepperStep[] = [
         order: 1,
         meta: {
             name: 'app.plugins.draw.createDrawPage.steps.NFT_SETTINGS.name',
-            title: 'app.plugins.draw.createDrawPage.steps.NFT_SETTINGS.title',
-            description: 'app.plugins.draw.createDrawPage.steps.NFT_SETTINGS.description',
+            // title: 'app.plugins.draw.createDrawPage.steps.NFT_SETTINGS.title',
+            // description: 'app.plugins.draw.createDrawPage.steps.NFT_SETTINGS.description',
         },
     },
     {
@@ -31,8 +31,8 @@ export const createDrawWizardSteps: IWizardStepperStep[] = [
         order: 2,
         meta: {
             name: 'app.plugins.draw.createDrawPage.steps.TOKEN_SETTINGS.name',
-            title: 'app.plugins.draw.createDrawPage.steps.TOKEN_SETTINGS.title',
-            description: 'app.plugins.draw.createDrawPage.steps.TOKEN_SETTINGS.description',
+            // title: 'app.plugins.draw.createDrawPage.steps.TOKEN_SETTINGS.title',
+            // description: 'app.plugins.draw.createDrawPage.steps.TOKEN_SETTINGS.description',
         },
     },
     {
@@ -40,8 +40,8 @@ export const createDrawWizardSteps: IWizardStepperStep[] = [
         order: 3,
         meta: {
             name: 'app.plugins.draw.createDrawPage.steps.DRAW_SETTINGS.name',
-            title: 'app.plugins.draw.createDrawPage.steps.DRAW_SETTINGS.title',
-            description: 'app.plugins.draw.createDrawPage.steps.DRAW_SETTINGS.description',
+            // title: 'app.plugins.draw.createDrawPage.steps.DRAW_SETTINGS.title',
+            // description: 'app.plugins.draw.createDrawPage.steps.DRAW_SETTINGS.description',
         },
     },
 ];

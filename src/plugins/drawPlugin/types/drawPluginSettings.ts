@@ -22,7 +22,7 @@ export interface IDrawPluginSettings extends IPluginSettings {
     /**
      * Minimum token holding requirement
      */
-    minTokenAmount: bigint;
+    minTokenAmount: number;
     
     /**
      * Whether ERC1155 tokens are used for eligibility
@@ -32,12 +32,12 @@ export interface IDrawPluginSettings extends IPluginSettings {
     /**
      * ERC1155 token ID (required if isErc1155Eligible is true)
      */
-    eligibleNftId?: bigint;
+    eligibleNftId?: number;
     
     /**
      * Draw interval in seconds
      */
-    drawInterval: bigint;
+    drawInterval: number;
     
     /**
      * NFT combinations for exchange

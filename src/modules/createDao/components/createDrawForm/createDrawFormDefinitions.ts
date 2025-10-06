@@ -1,269 +1,221 @@
-import { type ISetupBodyForm } from "@/modules/createDao/dialogs/setupBodyDialog/setupBodyDialogDefinitions";
-// import { type ISetupStageSettingsForm } from "@/modules/createDao/dialogs/setupStageSettingsDialog";
-import { type IResourcesInputResource } from "@/shared/components/forms/resourcesInput";
+import { type IResourcesInputResource } from '@/shared/components/forms/resourcesInput';
 
-export enum DrawCreationMode {
-    LISTED_BODIES = 'LISTED_BODIES',
-    ANY_WALLET = 'ANY_WALLET',
-}
-
-export enum DrawStageType {
-    NORMAL = 'NORMAL',
-    OPTIMISTIC = 'OPTIMISTIC',
-}
-
-export enum DrawType {
-    BASIC = 'BASIC',
-    ADVANCED = 'ADVANCED',
-}
-
-export enum DrawPermission {
-    ANY = 'ANY',
-    SELECTED = 'SELECTED',
-}
-
-// Base interface for all create draw forms
+// 用于所有创建抽奖表单的基础接口
 export interface ICreateDrawFormDataBase {
     /**
-     * Name of the process.
+     * 流程名称
      */
     name: string;
     /**
-     * Key of the process used as prefix for proposals.
-     */
-    processKey?: string;
-    /**
-     * Description of the process.
+     * 流程描述
      */
     description: string;
     /**
-     * Resources of the process.
+     * 抽奖插件的标识
+     */
+    drawKey: string;
+    /**
+     * 流程资源
      */
     resources: IResourcesInputResource[];
 }
 
-// NFT unit within a combination
-export interface INftComboUnit {
+// 组合中的NFT单元
+export interface IErc1155ComboUnit {
     /**
      * NFT ID
      */
-    id: string;
+    id: number;
     /**
-     * Number of this NFT ID required per exchange
+     * 每次兑换所需的此NFT ID数量
      */
-    unit: string;
+    unit: number;
 }
 
-// NFT combination for exchange
-export interface INftCombo {
+// 用于兑换的NFT组合
+export interface IErc1155Combo {
     /**
-     * Combination ID
+     * 组合ID
      */
-    comboId: string;
+    comboId: number;
     /**
-     * Array of NFT units in this combination
+     * 此组合中的NFT单元数组
      */
-    nftUnits: INftComboUnit[];
+    nftUnits: IErc1155ComboUnit[];
     /**
-     * Whether this combination is enabled
+     * 此组合是否启用
      */
     isEnabled: boolean;
     /**
-     * Maximum total exchange count for this combination
+     * 此组合的最大总兑换次数
      */
-    maxExchangeCount: string;
+    maxExchangeCount: number;
     /**
-     * Maximum number of combinations that can be exchanged in a single batch
+     * 单次批次中可兑换的最大组合数
      */
-    maxSingleBatch: string;
+    maxSingleBatch: number;
     /**
-     * Current exchange count for this combination
+     * 此组合的当前兑换次数
      */
-    currentExchangeCount: string;
+    currentExchangeCount: number;
 }
 
-// Common fields for draw functionality
+// 抽奖功能的通用字段
 export interface IDrawCommonFields {
-    // Token settings
+    // 代币设置
     /**
-     * ERC20 token address for the draw plugin.
-     * Set to address(0) to deploy a new token.
+     * 抽奖插件的ERC20代币地址
+     * 设置为address(0)以部署新代币
      */
     tokenA?: string;
     /**
-     * ERC1155 token address for the draw plugin.
-     * Set to address(0) to deploy a new token.
+     * 抽奖插件的ERC1155代币地址
+     * 设置为address(0)以部署新代币
      */
     tokenB?: string;
-    
-    // Eligibility settings
+
+    // 资格设置
     /**
-     * Token address used for eligibility verification
+     * 用于资格验证的代币地址
      */
     eligibleToken?: string;
     /**
-     * Minimum token holding requirement
+     * 最低代币持有要求
      */
-    minTokenAmount?: string;
+    minTokenAmount?: number;
     /**
-     * Whether ERC1155 tokens are used for eligibility
+     * 是否使用ERC1155代币进行资格验证
      */
     isErc1155Eligible?: boolean;
     /**
-     * ERC1155 token ID (required if isErc1155Eligible is true)
+     * ERC1155代币ID（如果isErc1155Eligible为true则必需）
      */
     eligibleNftId?: string;
     /**
-     * Draw interval in seconds
+     * 抽奖间隔（秒）
      */
-    drawInterval?: string;
-    
+    drawInterval?: number;
+
     /**
-     * NFT combinations for exchange
+     * 用于兑换的NFT组合
      */
-    nftCombos?: INftCombo[];
+    nftCombos?: IErc1155Combo[];
 }
 
-// Extended fields for step-by-step form
+// 分步表单的扩展字段
 export interface IDrawExtendedFields extends IDrawCommonFields {
-    // Custom token settings
+    // 自定义代币设置
     /**
-     * Whether to use a custom token A address for swap rules
+     * 是否使用自定义代币A地址进行兑换规则
      */
     useCustomTokenA?: boolean;
     /**
-     * Custom token A address for swap rules (if useCustomTokenA is true)
+     * 自定义代币A地址（如果useCustomTokenA为true）
      */
     customTokenA?: string;
     /**
-     * Whether to use a custom eligible token
+     * 是否使用自定义资格代币
      */
     useCustomEligibleToken?: boolean;
-    
-    // NFT creation fields
+    // NFT创建字段
     /**
-     * Whether to create a new NFT
+     * 是否创建新的ERC1155代币
      */
-    isCreateNewNft?: boolean;
+    isCreateNewErc1155?: boolean;
     /**
-     * ERC1155 token URI (used only when deploying a new token)
+     * 代币创建字段
      */
-    erc1155Uri?: string;
-    
-    // Token creation fields
+    tokenBMetaData: IErc1155Metadata;
     /**
-     * Whether to create a new token
+     * 是否创建新的ERC20代币
      */
-    isCreateNewToken?: boolean;
+    isCreateNewErc20?: boolean;
     /**
-     * ERC20 token name (used only when deploying a new token)
+     * ERC20代币元数据
      */
-    tokenName?: string;
-    /**
-     * ERC20 token symbol (used only when deploying a new token)
-     */
-    tokenSymbol?: string;
-    /**
-     * Token decimals
-     */
-    tokenDecimals?: string;
-    /**
-     * Token initial supply
-     */
-    tokenInitialSupply?: string;
+    tokenAMetaData: IErc20Metadata;
 }
 
-export interface INftAttribute {
+export interface IErc1155Attribute {
     /**
-     * The type of trait
+     * 特质类型
      */
     trait_type: string;
     /**
-     * The value of the trait
+     * 特质值
      */
     value: string | number;
     /**
-     * Display type for numeric values
+     * 数值的显示类型
      */
     display_type?: 'number';
 }
 
-export interface ITokenMetadata {
+export interface IErc20Metadata {
     /**
-     * Name of the token
+     * 代币名称
      */
     name: string;
     /**
-     * Symbol of the token
+     * 代币符号
      */
     symbol: string;
     /**
-     * Decimals of the token
+     * 代币小数位数
      */
     decimals: number;
+    /**
+     * 代币初始供应量
+     */
+    initialSupply?: number;
 }
 
-export interface INftMetadata {
+export interface IErc1155Metadata {
     /**
-     * Name of the NFT
+     * ERC1155代币URI（仅在部署新代币时使用）
      */
-    name: string;
+    erc1155Uri?: string;
     /**
-     * Description of the NFT
+     * NFT名称
      */
-    description: string;
+    name?: string;
     /**
-     * IPFS URI for the NFT image (ipfs://{cid})
+     * NFT描述
      */
-    image: string;
+    description?: string;
     /**
-     * A URL to a multi-media attachment for the item. The file extensions GLTF, GLB, WEBM, MP4, M4V, OGV, and OGG are supported, along with the audio-only extensions MP3, WAV, and OGA.
-     * Animation_url also supports HTML pages, allowing you to build rich experiences and interactive NFTs using JavaScript canvas, WebGL, and more. Scripts and relative paths within the HTML page are now supported. However, access to browser extensions is not supported.
+     * NFT图像的IPFS URI（ipfs://{cid}）
+     */
+    image?: string;
+    /**
+     * 指向项目中多媒體附件的URL。支持的文件扩展名包括GLTF、GLB、WEBM、MP4、M4V、OGV和OGG，以及仅音频扩展名MP3、WAV和OGA。
+     * Animation_url还支持HTML页面，允许您使用JavaScript画布、WebGL等构建丰富的体验和交互式NFT。现在支持HTML页面中的脚本和相对路径。但不支持访问浏览器扩展。
      */
     animation_url?: string;
     /**
-     * This is the URL that will appear below the asset's image on OpenSea and will allow users to leave OpenSea and view the item on your site.
+     * 这是在OpenSea上显示在资产图像下方的URL，允许用户离开OpenSea并在您的网站上查看项目。
      */
     external_url?: string;
     /**
-     * Background color of the item on OpenSea. Must be a six-character hexadecimal without a pre-pended #.
+     * OpenSea上项目的背景色。必须是不带前缀#的六字符十六进制。
      */
     background_color?: string;
     /**
-     * Maximum supply of this NFT
+     * 此NFT的最大供应量
      */
     supply?: number;
     /**
-     * Attributes of the NFT
+     * NFT的属性
      */
-    attributes: INftAttribute[];
+    attributes?: IErc1155Attribute[];
 }
 
-// Main draw form interface
+// 主要抽奖表单接口
 export interface ICreateDrawForm extends ICreateDrawFormDataBase {
     /**
-     * Governance settings for the draw plugin
+     * 抽奖插件的治理设置
      */
     governance: IDrawExtendedFields;
 }
 
 export type ICreateDrawFormData = ICreateDrawForm;
-
-export interface ICreateDrawFormStage {
-    /**
-     * Internal ID of the stage used as reference for bodies.
-     */
-    internalId: string;
-    /**
-     * Name of the stage.
-     */
-    name: string;
-    /**
-     * List of bodies of the stage.
-     */
-    bodies: ISetupBodyForm[];
-    /**
-     * Settings of the stage.
-     */
-    // settings: ISetupStageSettingsForm;
-}

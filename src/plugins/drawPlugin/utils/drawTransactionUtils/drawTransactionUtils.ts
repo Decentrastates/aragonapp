@@ -248,7 +248,7 @@ class DrawTransactionUtils {
 
     buildPublishDrawProposalActions = (params: IBuildDrawProposalActionsParams): ITransactionRequest[] => {
         console.log('=== buildPublishDrawProposalActions called ===');
-        console.log('Params:', params);
+        console.log('buildPublishDrawProposalActions Params:', params);
         
         try {
             const { setupData, dao, executeConditionAddress } = params;
@@ -349,7 +349,7 @@ class DrawTransactionUtils {
                 eligibleToken: governanceSettings.eligibleToken ?? '0x0000000000000000000000000000000000000000',
                 minTokenAmount: BigInt(governanceSettings.minTokenAmount ?? '0'),
                 isErc1155Eligible: governanceSettings.isErc1155Eligible ?? false,
-                eligibleNftId: governanceSettings.eligibleNftId ? BigInt(governanceSettings.eligibleNftId) : undefined,
+                eligibleNftId: governanceSettings.eligibleNftId ? BigInt(governanceSettings.eligibleNftId) : BigInt(0),
                 drawInterval: BigInt(governanceSettings.drawInterval ?? '0')
             };
             
@@ -397,17 +397,7 @@ class DrawTransactionUtils {
                 eligibilityParams.isErc1155Eligible,
                 eligibilityParams.eligibleNftId ?? BigInt(0),
                 eligibilityParams.drawInterval,
-                initNFTCombos.map((combo) => ({
-                    comboId: combo.comboId,
-                    nftUnits: combo.nftUnits.map((unit) => ({
-                        id: unit.id,
-                        unit: unit.unit
-                    })),
-                    isEnabled: combo.isEnabled,
-                    maxExchangeCount: combo.maxExchangeCount,
-                    maxSingleBatch: combo.maxSingleBatch,
-                    currentExchangeCount: combo.currentExchangeCount
-                }))
+                initNFTCombos
             ]);
 
             console.log('Plugin Settings Data (encoded):', pluginSettingsData);

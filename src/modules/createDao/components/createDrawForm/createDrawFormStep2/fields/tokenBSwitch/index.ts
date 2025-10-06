@@ -1,0 +1,1 @@
+export { TokenBSwitch, type ITokenBSwitchProps } from './tokenBSwitch';

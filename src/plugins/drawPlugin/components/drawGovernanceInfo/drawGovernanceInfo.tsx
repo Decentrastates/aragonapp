@@ -1,13 +1,14 @@
 'use client';
 
 import { useTranslations } from '@/shared/components/translationsProvider';
-import type { IDrawPlugin } from '../../types';
+import type { IDaoPlugin } from '@/shared/api/daoService';
+import type { IDrawPluginSettings } from '../../types';
 
 export interface IDrawGovernanceInfoProps {
     /**
      * Plugin to display governance info for.
      */
-    plugin: IDrawPlugin;
+    plugin: IDaoPlugin<IDrawPluginSettings>;
 }
 
 export const DrawGovernanceInfo: React.FC<IDrawGovernanceInfoProps> = (props) => {
@@ -18,7 +19,8 @@ export const DrawGovernanceInfo: React.FC<IDrawGovernanceInfoProps> = (props) =>
     const { drawInterval, nftCombos } = plugin.settings;
     
     // Convert drawInterval from seconds to a more readable format
-    const drawIntervalHours = Number(drawInterval / BigInt(3600));
+    const drawIntervalHours = drawInterval / 3600;
+    console.log(drawIntervalHours);
     const drawIntervalDays = Math.floor(drawIntervalHours / 24);
     
     const activeCombos = nftCombos.filter(combo => combo.isEnabled).length;

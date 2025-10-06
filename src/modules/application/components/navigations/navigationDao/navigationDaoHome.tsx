@@ -3,6 +3,7 @@ import { ipfsUtils } from '@/shared/utils/ipfsUtils';
 import { DaoAvatar } from '@cddao/gov-ui-kit';
 import classNames from 'classnames';
 import type { ComponentProps } from 'react';
+import { useTranslations } from '@/shared/components/translationsProvider';
 
 export interface INavigationDaoHome extends ComponentProps<'button'> {
     /**
@@ -13,6 +14,7 @@ export interface INavigationDaoHome extends ComponentProps<'button'> {
 
 export const NavigationDaoHome: React.FC<INavigationDaoHome> = (props) => {
     const { dao, className, ...otherProps } = props;
+    const { t } = useTranslations();
 
     const daoAvatar = ipfsUtils.cidToSrc(dao.avatar);
 
@@ -24,7 +26,11 @@ export const NavigationDaoHome: React.FC<INavigationDaoHome> = (props) => {
     );
 
     return (
-        <button className={buttonClassName} {...otherProps}>
+        <button 
+            className={buttonClassName} 
+            aria-label={t('app.application.navigationDao.a11y.title')}
+            {...otherProps}
+        >
             <DaoAvatar src={daoAvatar} name={dao.name} size="lg" />
             <p className="hidden truncate text-base leading-tight font-normal text-neutral-800 md:block">{dao.name}</p>
         </button>

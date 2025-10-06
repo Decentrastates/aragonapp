@@ -1,10 +1,10 @@
 'use client';
 
+import type { ICreateDrawDetailsDialogParams } from '@/modules/createDao/dialogs/createDrawDetailsDialog';
 import { GovernanceDialogId } from '@/modules/governance/constants/governanceDialogId';
 import { GovernanceSlotId } from '@/modules/governance/constants/moduleSlots';
 import type { ISelectPluginDialogParams } from '@/modules/governance/dialogs/selectPluginDialog';
 import { usePermissionCheckGuard } from '@/modules/governance/hooks/usePermissionCheckGuard';
-import type { ICreateDrawDetailsDialogParams } from '@/modules/createDao/dialogs/createDrawDetailsDialog';
 import { type IDaoPlugin, useDao } from '@/shared/api/daoService';
 import { useDialogContext } from '@/shared/components/dialogProvider';
 import { Page } from '@/shared/components/page';
@@ -149,13 +149,6 @@ export const DaoSettingsPageClient: React.FC<IDaoSettingsPageClientProps> = (pro
                         {t('app.plugins.draw.settingsPanel.description') ||
                             'Deploy and manage the Draw plugin for your DAO.'}
                     </div>
-                    {processPlugins.map((process) => (
-                        <ProcessDataListItem
-                            key={process.uniqueId}
-                            process={process.meta}
-                            href={daoUtils.getDaoUrl(dao, `/settings/${process.meta.slug}`)}
-                        />
-                    ))}
                 </Page.MainSection>
             </Page.Main>
             <Page.Aside>

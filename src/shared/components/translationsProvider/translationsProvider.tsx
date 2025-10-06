@@ -49,14 +49,21 @@ export const TranslationsProvider: React.FC<ITranslationsProviderProps> = (props
         const handleLanguageChange = async (event: Event) => {
             // Type guard to ensure we have a CustomEvent with detail property
             if (!(event instanceof CustomEvent)) {
+                console.warn('Language change event is not a CustomEvent');
                 return;
             }
             
             const language = event.detail as string;
             
+            // Validate language is a string
+            if (typeof language !== 'string') {
+                console.warn('Language change event detail is not a string:', language);
+                return;
+            }
+            
             // Import the new translation file based on the language
             try {
-                let newTranslations;
+                let newTranslations: unknown;
                 switch (language) {
                     case 'zh':
                         newTranslations = await import('@/assets/locales/zh.json').then((module) => module.default);
@@ -66,12 +73,19 @@ export const TranslationsProvider: React.FC<ITranslationsProviderProps> = (props
                         newTranslations = await import('@/assets/locales/en.json').then((module) => module.default);
                         break;
                 }
-                setCurrentTranslations(newTranslations);
+                
+                // Validate that we received a valid translations object
+                if (newTranslations && typeof newTranslations === 'object') {
+                    setCurrentTranslations(newTranslations as Translations);
+                } else {
+                    console.error('Invalid translations object received:', newTranslations);
+                    // Fallback to initial translations if there's an error
+                    setCurrentTranslations(initialTranslations);
+                }
             } catch (error) {
                 console.error('Error loading translations:', error);
-                // Fallback to English if there's an error loading the translation file
-                const fallbackTranslations = await import('@/assets/locales/en.json').then((module) => module.default);
-                setCurrentTranslations(fallbackTranslations);
+                // Fallback to initial translations if there's an error loading the translation file
+                setCurrentTranslations(initialTranslations);
             }
         };
 
@@ -82,7 +96,7 @@ export const TranslationsProvider: React.FC<ITranslationsProviderProps> = (props
         return () => {
             window.removeEventListener('languageChange', handleLanguageChange as EventListener);
         };
-    }, []);
+    }, [initialTranslations]);
 
     return <translationsContext.Provider value={contextValues}>{children}</translationsContext.Provider>;
 };

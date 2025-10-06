@@ -3,53 +3,46 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
 import { InputText } from '@cddao/gov-ui-kit';
-import type { IDrawExtendedFields } from '../../../createDrawFormDefinitions';
-import { useEffect } from 'react';
+import type { ICreateDrawFormData } from '../../../createDrawFormDefinitions';
+import { useMemo } from 'react';
 
 export interface ITokenBFieldsProps {
   /**
-   * Prefix to prepend to all the form fields.
+   * 表单字段的前缀
    */
   fieldPrefix?: string;
   /**
-   * Whether to show the token B field
+   * 是否显示Token B字段
    */
   showField: boolean;
   /**
-   * Whether creating a new NFT
+   * 是否创建新NFT
    */
   isCreateNewNft: boolean;
-  /**
-   * Reset counter to trigger field reset
-   */
-  resetCounter?: number;
 }
 
 export const TokenBFields: React.FC<ITokenBFieldsProps> = (props) => {
-  const { fieldPrefix, showField, isCreateNewNft, resetCounter } = props;
+  const { fieldPrefix, showField, isCreateNewNft } = props;
 
   const { t } = useTranslations();
 
-  const tokenBRules = {
+  const tokenBRules = useMemo(() => ({
     required: !isCreateNewNft ? t('app.plugins.draw.createDrawForm.step2.tokenB.required') : false,
     pattern: {
       value: /^0x[a-fA-F0-9]{40}$/,
       message: t('app.plugins.draw.createDrawForm.step2.tokenB.invalidAddress'),
     },
-  };
+  }), [isCreateNewNft, t]);
 
-  const tokenBField = useFormField<IDrawExtendedFields, 'tokenB'>('tokenB', {
+  // Token B字段
+  const tokenBField = useFormField<ICreateDrawFormData, 'governance.tokenB'>('governance.tokenB', {
     label: t('app.plugins.draw.createDrawForm.step2.tokenB.label'),
     fieldPrefix,
     rules: tokenBRules,
     defaultValue: '',
   });
 
-  // Effect to reset field when resetCounter changes
-  useEffect(() => {
-    tokenBField.onChange('');
-  }, [resetCounter]);
-
+  // 如果不显示字段，则返回null
   if (!showField) {
     return null;
   }

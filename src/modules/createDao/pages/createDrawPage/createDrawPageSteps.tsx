@@ -22,8 +22,7 @@ export interface ICreateDrawPageClientStepsProps {
 }
 
 export const CreateDrawPageClientSteps: React.FC<ICreateDrawPageClientStepsProps> = (props) => {
-    const { steps, daoId } = props;
-    console.log('CreateDrawPageClientSteps', { steps, daoId });
+    const { steps } = props;
 
     const { t } = useTranslations();
     const [metadataStep, settingsStep, creationStep, permissionsStep] = steps;
@@ -43,7 +42,6 @@ export const CreateDrawPageClientSteps: React.FC<ICreateDrawPageClientStepsProps
                 {...settingsStep}
             >
                 <div className="flex flex-col gap-10">
-                    {/* <CreateDrawForm.Governance daoId={daoId} /> */}
                     <CreateDrawForm.Step2 />
                 </div>
             </WizardPage.Step>

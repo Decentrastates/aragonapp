@@ -18,69 +18,81 @@ export const EligibilityRules: React.FC<IEligibilityRulesProps> = (props) => {
     const { t } = useTranslations();
 
     // Use custom eligible token switch
-    const useCustomEligibleTokenField = useFormField<ICreateDrawFormData, 'governance.useCustomEligibleToken'>('governance.useCustomEligibleToken', {
-        label: t('app.plugins.draw.createDrawForm.step4.useCustomEligibleToken.label'),
-        fieldPrefix,
-        defaultValue: false,
-    });
+    const useCustomEligibleTokenField = useFormField<ICreateDrawFormData, 'governance.useCustomEligibleToken'>(
+        'governance.useCustomEligibleToken',
+        {
+            label: t('app.plugins.draw.createDrawForm.step4.useCustomEligibleToken.label'),
+            fieldPrefix,
+            defaultValue: false,
+        },
+    );
 
     // Eligible token rules - required only when using custom eligible token
     const eligibleTokenRules = {
-        required: useCustomEligibleTokenField.value ? t('app.plugins.draw.createDrawForm.step4.eligibleToken.required') : false,
+        required: useCustomEligibleTokenField.value
+            ? t('app.plugins.draw.createDrawForm.step4.eligibleToken.required')
+            : false,
         pattern: {
             value: /^0x[a-fA-F0-9]{40}$/,
-            message: t('app.plugins.draw.createDrawForm.step4.eligibleToken.invalidAddress')
-        }
+            message: t('app.plugins.draw.createDrawForm.step4.eligibleToken.invalidAddress'),
+        },
     };
 
     // Eligibility settings
-    const eligibleTokenField = useFormField<ICreateDrawFormData, 'governance.eligibleToken'>('governance.eligibleToken', {
-        label: t('app.plugins.draw.createDrawForm.step4.eligibleToken.label'),
-        fieldPrefix,
-        rules: eligibleTokenRules,
-        defaultValue: '',
-    });
-
-    const minTokenAmountField = useFormField<ICreateDrawFormData, 'governance.minTokenAmount'>('governance.minTokenAmount', {
-        label: t('app.plugins.draw.createDrawForm.step4.minTokenAmount.label'),
-        fieldPrefix,
-        rules: { 
-            required: t('app.plugins.draw.createDrawForm.step4.minTokenAmount.required'),
-            pattern: {
-                value: /^\d+$/,
-                message: t('app.plugins.draw.createDrawForm.step4.minTokenAmount.invalidNumber')
-            }
+    const eligibleTokenField = useFormField<ICreateDrawFormData, 'governance.eligibleToken'>(
+        'governance.eligibleToken',
+        {
+            label: t('app.plugins.draw.createDrawForm.step4.eligibleToken.label'),
+            fieldPrefix,
+            rules: eligibleTokenRules,
+            defaultValue: undefined,
         },
-        defaultValue: '100',
-    });
+    );
+
+    const minTokenAmountField = useFormField<ICreateDrawFormData, 'governance.minTokenAmount'>(
+        'governance.minTokenAmount',
+        {
+            label: t('app.plugins.draw.createDrawForm.step4.minTokenAmount.label'),
+            fieldPrefix,
+            rules: {
+                required: t('app.plugins.draw.createDrawForm.step4.minTokenAmount.required'),
+                pattern: {
+                    value: /^\d+$/,
+                    message: t('app.plugins.draw.createDrawForm.step4.minTokenAmount.invalidNumber'),
+                },
+            },
+            defaultValue: undefined,
+        },
+    );
 
     const drawIntervalField = useFormField<ICreateDrawFormData, 'governance.drawInterval'>('governance.drawInterval', {
         label: t('app.plugins.draw.createDrawForm.step4.drawInterval.label'),
         fieldPrefix,
-        rules: { 
+        rules: {
             required: t('app.plugins.draw.createDrawForm.step4.drawInterval.required'),
             pattern: {
                 value: /^\d+$/,
-                message: t('app.plugins.draw.createDrawForm.step4.drawInterval.invalidSeconds')
-            }
+                message: t('app.plugins.draw.createDrawForm.step4.drawInterval.invalidSeconds'),
+            },
         },
-        defaultValue: '86400', // 24 hours in seconds
+        defaultValue: undefined, // 24 hours in seconds
     });
 
     return (
         <>
+            <h3 className="text-lg font-medium">{t('app.plugins.draw.createDrawForm.step4.eligibilityRules.title')}</h3>
             <div className="mt-4">
-                <Switch 
+                <Switch
                     checked={useCustomEligibleTokenField.value ?? false}
                     onCheckedChanged={(value) => useCustomEligibleTokenField.onChange(value)}
                     label={useCustomEligibleTokenField.label}
                     helpText={t('app.plugins.draw.createDrawForm.step4.useCustomEligibleToken.helpText')}
                 />
-                
+
                 {useCustomEligibleTokenField.value ? (
                     <div className="mt-4">
-                        <InputText 
-                            {...eligibleTokenField} 
+                        <InputText
+                            {...eligibleTokenField}
                             placeholder={t('app.plugins.draw.createDrawForm.step4.eligibleToken.placeholder')}
                             helpText={t('app.plugins.draw.createDrawForm.step4.eligibleToken.helpText')}
                         />
@@ -93,14 +105,14 @@ export const EligibilityRules: React.FC<IEligibilityRulesProps> = (props) => {
                     </div>
                 )}
             </div>
-            
-            <InputText 
-                {...minTokenAmountField} 
+
+            <InputText
+                {...minTokenAmountField}
                 placeholder={t('app.plugins.draw.createDrawForm.step4.minTokenAmount.placeholder')}
                 helpText={t('app.plugins.draw.createDrawForm.step4.minTokenAmount.helpText')}
             />
-            <InputText 
-                {...drawIntervalField} 
+            <InputText
+                {...drawIntervalField}
                 placeholder={t('app.plugins.draw.createDrawForm.step4.drawInterval.placeholder')}
                 helpText={t('app.plugins.draw.createDrawForm.step4.drawInterval.helpText')}
             />

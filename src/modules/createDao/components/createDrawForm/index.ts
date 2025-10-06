@@ -10,7 +10,7 @@ export const CreateDrawForm = {
     Step4: CreateDrawFormStep4,
 };
 
-export * from './createDrawFormDefinitions';
+export type * from './createDrawFormDefinitions';
 export * from './createDrawFormStep1';
 export * from './createDrawFormStep2';
 export * from './createDrawFormStep3';

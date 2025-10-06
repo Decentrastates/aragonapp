@@ -25,6 +25,7 @@ export const WizardPageContainer = <TFormData extends FieldValues = FieldValues>
         className,
         ...wizardFormProps
     } = props;
+    // console.log('WizardPageContainer', props);
 
     return (
         <Wizard.Root

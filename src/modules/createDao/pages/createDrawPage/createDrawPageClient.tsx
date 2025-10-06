@@ -34,6 +34,7 @@ export const CreateDrawPageClient: React.FC<ICreateDrawPageClientProps> = (props
 
     const handleFormSubmit = (values: ICreateDrawFormData) => {
         const dialogParams: IPrepareDrawDialogParams = { daoId, values, pluginAddress };
+        console.log('handleFormSubmit', dialogParams)
         open(CreateDaoDialogId.PREPARE_DRAW, { params: dialogParams });
     };
 
@@ -44,6 +45,7 @@ export const CreateDrawPageClient: React.FC<ICreateDrawPageClientProps> = (props
 
     // 明确指定默认值的类型以解决 ESLint 错误
     const defaultValues: ICreateDrawFormData = createDrawFormUtils.buildDefaultData();
+    // console.log('defaultValues', defaultValues)
 
     return (
         <Page.Main fullWidth={true}>
