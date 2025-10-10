@@ -1,0 +1,1 @@
+export { isBatchActive, validatePurchase } from './icoValidationUtils';

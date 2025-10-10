@@ -7,4 +7,8 @@ export interface IPluginInfoSetup {
      * Translation key of the plugin description to be displayed during the plugin setup.
      */
     descriptionKey: string;
+    /**
+     * Translation key of the plugin author to be displayed during the plugin setup.
+     */
+    isActive?: boolean;
 }

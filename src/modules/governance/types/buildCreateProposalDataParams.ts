@@ -8,19 +8,19 @@ export interface IBuildCreateProposalDataParams<
     TSettings extends IPluginSettings = IPluginSettings,
 > {
     /**
-     * Metadata of the proposal in Hex format.
+     * 十六进制格式的提案元数据。
      */
     metadata: Hex;
     /**
-     * Actions to be executed.
+     * 要执行的操作。
      */
     actions: ITransactionRequest[];
     /**
-     * Form values collected on the create-proposal wizard.
+     * 在创建提案向导中收集的表单值。
      */
     proposal: TProposal;
     /**
-     * Process plugin used to create the proposal.
+     * 用于创建提案的流程插件。
      */
     plugin: IDaoPlugin<TSettings>;
 }

@@ -1,47 +1,75 @@
-'use client';
-
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import type { ICreateDrawForm } from '../createDrawFormDefinitions';
-import { TokenBSwitch } from './fields/tokenBSwitch';
-import { TokenBMetadataFields } from './fields/tokenBMetadataFields';
-import { TokenBFields } from './fields/tokenBFields/tokenBFields';
+import { RadioCard, RadioGroup } from '@cddao/gov-ui-kit';
+import { useFormContext } from 'react-hook-form';
+import { AppsType, type ICreateAppFormData } from '../createDrawFormDefinitions';
+import { DrawBodyField } from './fields/drawBodyField';
+// import { TokenBFields } from './fields/tokenBFields/tokenBFields';
+// import { TokenBMetadataFields } from './fields/tokenBMetadataFields';
+// import { createDrawFormUtils } from '../createDrawFormUtils';
 
-export interface ICreateDrawFormStep2Props {
+export interface ICreateAppFormProps {
     /**
-     * Prefix to prepend to all the form fields.
+     * ID of the DAO.
      */
-    fieldPrefix?: string;
-    /**
-     * 创建新ERC1155的默认值
-     */
-    defaultIsCreateNewErc1155?: boolean;
+    daoId: string;
 }
 
-export const CreateDrawFormStep2: React.FC<ICreateDrawFormStep2Props> = (props) => {
-    const { fieldPrefix, defaultIsCreateNewErc1155 } = props;
+export const CreateDrawFormStep2: React.FC<ICreateAppFormProps> = (props) => {
+    const { daoId } = props;
 
     const { t } = useTranslations();
+    const { setValue } = useFormContext();
 
-    // 创建新ERC1155的开关字段，使用传入的默认值
-    const isCreateNewNftField = useFormField<ICreateDrawForm, 'governance.isCreateNewErc1155'>('governance.isCreateNewErc1155', {
-        label: t('app.plugins.draw.createDrawForm.step2.isCreateNewNft.label'),
-        fieldPrefix,
-        defaultValue: defaultIsCreateNewErc1155 ?? true,
+    const {
+        value: appsType,
+        onChange: onAppTypeChange,
+        ...appsTypeField
+    } = useFormField<ICreateAppFormData, 'appsType'>('appsType', {
+        label: t('app.createDao.createAppsForm.apps.type.label'),
+        defaultValue: AppsType.DRAW,
+        rules: { required: true },
     });
+
+    const handleAppTypeChange = (value: string) => {
+        setValue('body', undefined);
+        onAppTypeChange(value);
+    };
+
+    const isICO = appsType === AppsType.ICO;
+    const isDraw = appsType === AppsType.DRAW;
 
     return (
         <div className="flex w-full flex-col gap-6">
-            <TokenBSwitch fieldPrefix={fieldPrefix} defaultIsCreateNewErc1155={defaultIsCreateNewErc1155} />
-            <TokenBMetadataFields 
-                showFields={isCreateNewNftField.value !== false} 
-                fieldPrefix={fieldPrefix} 
-            />
-            <TokenBFields 
-                showField={!(isCreateNewNftField.value !== false)} 
-                isCreateNewNft={isCreateNewNftField.value !== false} 
-                fieldPrefix={fieldPrefix} 
-            />
+            <RadioGroup
+                helpText={t('app.createDao.createAppsForm.apps.type.helpText')}
+                onValueChange={handleAppTypeChange}
+                className="w-full gap-4 md:flex-row"
+                value={appsType}
+                {...appsTypeField}
+            >
+                {Object.values(AppsType).map((type) => (
+                    <RadioCard
+                        key={type}
+                        label={t(`app.createDao.createAppsForm.apps.type.${type}.label`)}
+                        description={t(`app.createDao.createAppsForm.apps.type.${type}.description`)}
+                        value={type}
+                    />
+                ))}
+            </RadioGroup>
+
+            {isDraw && <DrawBodyField daoId={daoId} appsCategory={appsType} />}
+            {isICO && <DrawBodyField daoId={daoId} appsCategory={appsType} />}
+
+            {/* {isICO && <IcoBodyField daoId={daoId} />} */}
+
+            {/* <TokenBSwitch fieldPrefix={fieldPrefix} defaultIsCreateNewErc1155={defaultIsCreateNewErc1155} /> */}
+            {/* <TokenBMetadataFields showFields={isCreateNewNftField.value !== false} fieldPrefix={fieldPrefix} />
+            <TokenBFields
+                showField={!(isCreateNewNftField.value !== false)}
+                isCreateNewNft={isCreateNewNftField.value !== false}
+                fieldPrefix={fieldPrefix}
+            /> */}
         </div>
     );
 };

@@ -1,11 +1,11 @@
 import type { IDialogComponentProps } from '@/shared/components/dialogProvider';
-import type { ICreateDrawFormData } from '../../components/createDrawForm/createDrawFormDefinitions';
+import type { ICreateAppFormData } from '../../components/createDrawForm/createDrawFormDefinitions';
 
 export interface IPrepareDrawDialogParams {
     /**
      * Values of the create-draw form.
      */
-    values: ICreateDrawFormData;
+    values: ICreateAppFormData;
     /**
      * ID of the DAO to prepare the draw for.
      */

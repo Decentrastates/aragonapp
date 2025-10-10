@@ -1,21 +1,21 @@
 'use client';
 
-import { CreateDaoDialogId } from '@/modules/createDao/constants/createDaoDialogId';
-import { Carousel } from '@/shared/components/carousel';
+// import { CreateDaoDialogId } from '@/modules/createDao/constants/createDaoDialogId';
+// import { Carousel } from '@/shared/components/carousel';
 import { Container } from '@/shared/components/container';
-import { useDialogContext } from '@/shared/components/dialogProvider';
+// import { useDialogContext } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { Heading } from '@cddao/gov-ui-kit';
-import classNames from 'classnames';
+// import { Heading } from '@cddao/gov-ui-kit';
+// import classNames from 'classnames';
 import Image from 'next/image';
-import doItYourselfIcon from '../../../../assets/images/doItYourselfIcon.svg';
-import enterpriseServiceIcon from '../../../../assets/images/enterpriseServiceIcon.svg';
+// import doItYourselfIcon from '../../../../assets/images/doItYourselfIcon.svg';
+// import enterpriseServiceIcon from '../../../../assets/images/enterpriseServiceIcon.svg';
 import NetBackground from '../../../../assets/images/net_bg.svg';
-import noCodeSetupIcon from '../../../../assets/images/noCodeSetup.svg';
-import { useFeaturedDaos } from '../../api/cmsService';
+// import noCodeSetupIcon from '../../../../assets/images/noCodeSetup.svg';
+// import { useFeaturedDaos } from '../../api/cmsService';
 import type { IGetDaoListParams } from '../../api/daoExplorerService';
-import { CtaCard } from '../../components/ctaCard';
-import { DaoCarouselCard } from '../../components/daoCarouselCard';
+// import { CtaCard } from '../../components/ctaCard';
+// import { DaoCarouselCard } from '../../components/daoCarouselCard';
 import { ExploreDaos } from '../../components/exploreDaos';
 import { ExploreNav } from '../../components/exploreNav';
 import { ExploreSection } from '../../components/exploreSection';
@@ -31,8 +31,8 @@ export const ExploreDaosPageClient: React.FC<IExploreDaosPageClientProps> = (pro
     const { initialParams } = props;
 
     const { t } = useTranslations();
-    const { open } = useDialogContext();
-    const { data: featuredDaos } = useFeaturedDaos();
+    // const { open } = useDialogContext();
+    // const { data: featuredDaos } = useFeaturedDaos();
 
     return (
         <>
@@ -62,7 +62,7 @@ export const ExploreDaosPageClient: React.FC<IExploreDaosPageClientProps> = (pro
                 </Container>
             </div>
 
-            {featuredDaos && (
+            {/* {featuredDaos && (
                 <section className={classNames('flex flex-col gap-4 pt-10 md:gap-6 md:pt-16')}>
                     <Container className="w-full">
                         <Heading size="h1" as="h2" className="self-stretch">
@@ -77,14 +77,14 @@ export const ExploreDaosPageClient: React.FC<IExploreDaosPageClientProps> = (pro
                         </Carousel>
                     </div>
                 </section>
-            )}
+            )} */}
 
             <Container className="py-10 pb-16 md:px-6 md:py-20">
                 <main className="flex flex-col gap-10 md:gap-20">
                     <ExploreSection title={t('app.explore.exploreDaosPage.section.daos')}>
                         <ExploreDaos initialParams={initialParams} />
                     </ExploreSection>
-                    <ExploreSection title={t('app.explore.exploreDaosPage.section.cta')}>
+                    {/* <ExploreSection title={t('app.explore.exploreDaosPage.section.cta')}>
                         <div className="flex flex-col items-start gap-4 self-stretch md:flex-row md:gap-4 lg:gap-8">
                             <CtaCard
                                 imgSrc={noCodeSetupIcon as string}
@@ -111,7 +111,7 @@ export const ExploreDaosPageClient: React.FC<IExploreDaosPageClientProps> = (pro
                                 actionHref="https://docs.aragon.org/"
                             />
                         </div>
-                    </ExploreSection>
+                    </ExploreSection> */}
                 </main>
             </Container>
         </>

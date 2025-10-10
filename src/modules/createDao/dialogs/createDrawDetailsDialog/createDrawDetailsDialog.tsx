@@ -26,39 +26,39 @@ export const CreateDrawDetailsDialog: React.FC<ICreateDrawDetailsDialogProps> = 
     const { location } = props;
     const { id } = location;
 
-    invariant(location.params != null, 'CreateDrawDetailsDialog: required parameters must be set.');
+    invariant(location.params != null, 'CreateAppsDetailsDialog: required parameters must be set.');
     const { daoUrl, pluginAddress, onActionClick } = location.params;
 
     const { t } = useTranslations();
 
     const steps: IWizardDetailsDialogStep[] = [
         {
-            label: t('app.plugins.draw.createDrawDetailsDialog.steps.describe'),
+            label: t('app.plugins.draw.createAppsDetailsDialog.steps.describe'),
             icon: 'LABELS',
         },
         {
-            label: t('app.plugins.draw.createDrawDetailsDialog.steps.configureNft'),
+            label: t('app.plugins.draw.createAppsDetailsDialog.steps.configureNft'),
             icon: 'USERS',
         },
         {
-            label: t('app.plugins.draw.createDrawDetailsDialog.steps.configureRedemption'),
+            label: t('app.plugins.draw.createAppsDetailsDialog.steps.configureRedemption'),
             icon: 'USERS',
         },
-        {
-            label: t('app.plugins.draw.createDrawDetailsDialog.steps.configureDraw'),
-            icon: 'SMART_CONTRACT',
-        },
+        // {
+        //     label: t('app.plugins.draw.createAppsDetailsDialog.steps.configureDraw'),
+        //     icon: 'SMART_CONTRACT',
+        // },
     ];
 
     return (
         <WizardDetailsDialog
-            title={t('app.plugins.draw.createDrawDetailsDialog.title')}
-            description={t('app.plugins.draw.createDrawDetailsDialog.description')}
+            title={t('app.plugins.draw.createAppsDetailsDialog.title')}
+            description={t('app.plugins.draw.createAppsDetailsDialog.description')}
             steps={steps}
-            actionLabel={t('app.plugins.draw.createDrawDetailsDialog.actionLabel')}
+            actionLabel={t('app.plugins.draw.createAppsDetailsDialog.actionLabel')}
             onActionClick={onActionClick}
-            wizardLink={pluginAddress && daoUrl ? `${daoUrl}/create/${pluginAddress}/draw` : undefined}
-            infoLink="https://docs.cddao.com/draw-plugin"
+            wizardLink={pluginAddress && daoUrl ? `${daoUrl}/create/${pluginAddress}/apps` : undefined}
+            // infoLink="https://docs.cddao.com/draw-plugin"
             dialogId={id}
         />
     );

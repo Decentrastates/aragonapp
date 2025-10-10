@@ -50,6 +50,7 @@ export const Select: React.FC<ISelectProps> = (props) => {
   const { options, value, onValueChange, placeholder, disabled, className, 'aria-label': ariaLabel, 'aria-labelledby': ariaLabelledBy, id } = props;
   
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdownDirection, setDropdownDirection] = useState<'down' | 'up'>('down');
   const selectRef = useRef<HTMLDivElement>(null);
   
   // Close dropdown when clicking outside
@@ -65,6 +66,24 @@ export const Select: React.FC<ISelectProps> = (props) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+  
+  // Determine dropdown direction based on available space
+  useEffect(() => {
+    if (isOpen && selectRef.current) {
+      const rect = selectRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const spaceBelow = viewportHeight - rect.bottom;
+      const spaceAbove = rect.top;
+      
+      // Set dropdown direction based on available space
+      // If there's not enough space below, but more space above, show dropdown upwards
+      if (spaceBelow < 200 && spaceAbove > spaceBelow) {
+        setDropdownDirection('up');
+      } else {
+        setDropdownDirection('down');
+      }
+    }
+  }, [isOpen]);
   
   // Find selected option
   const selectedOption = options.find(option => option.value === value) ?? 
@@ -148,7 +167,18 @@ export const Select: React.FC<ISelectProps> = (props) => {
       
       {/* Dropdown menu */}
       {isOpen && (
-        <div className="absolute z-10 mt-1 w-full rounded-lg border border-gray-200 bg-white shadow-lg">
+        <div 
+          className={classNames(
+            'absolute z-10 w-full rounded-lg border border-gray-200 bg-white shadow-lg',
+            {
+              'mt-1': dropdownDirection === 'down',
+              'mb-1': dropdownDirection === 'up',
+            }
+          )}
+          style={{
+            [dropdownDirection === 'down' ? 'top' : 'bottom']: dropdownDirection === 'down' ? '100%' : '100%',
+          }}
+        >
           <ul className="max-h-60 overflow-auto py-1" role="listbox">
             {options.map((option) => {
               const isSelected = option.value === value;

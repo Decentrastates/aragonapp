@@ -1,10 +1,10 @@
 import type { IDao } from '@/shared/api/daoService';
 import type { IPluginInstallationSetupData } from '@/shared/utils/pluginTransactionUtils';
-import type { ICreateDrawFormData } from '@/modules/createDao/components/createDrawForm/createDrawFormDefinitions';
+import type { ICreateAppFormData } from '@/modules/createDao/components/createDrawForm/createDrawFormDefinitions';
 import type { Hex } from 'viem';
 
 export interface IBuildDrawProposalActionsParams {
-    values: ICreateDrawFormData;
+    values: ICreateAppFormData;
     dao: IDao;
     setupData: IPluginInstallationSetupData[];
     executeConditionAddress?: Hex;

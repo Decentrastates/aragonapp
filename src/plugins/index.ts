@@ -4,6 +4,8 @@ import { initialiseCapitalDistributorPlugin } from './capitalDistributorPlugin';
 import { capitalDistributorPluginDialogsDefinitions } from './capitalDistributorPlugin/constants/capitalDistributorPluginDialogsDefinitions';
 import { initialiseDrawPlugin } from './drawPlugin';
 import { drawPluginDialogsDefinitions } from './drawPlugin/constants/drawPluginDialogsDefinitions';
+import { initialiseIcoPlugin } from './icoPlugin';
+import { icoPluginDialogsDefinitions } from './icoPlugin/constants/icoPluginDialogsDefinitions';
 import { initialiseLockToVotePlugin } from './lockToVotePlugin';
 import { lockToVotePluginDialogsDefinitions } from './lockToVotePlugin/constants/lockToVotePluginDialogsDefinitions';
 import { initialiseMultisigPlugin } from './multisigPlugin';
@@ -18,6 +20,7 @@ export const initialisePlugins = () => {
     initialiseTokenPlugin();
     initialiseAdminPlugin();
     initialiseCapitalDistributorPlugin();
+    initialiseIcoPlugin();
     initialiseLockToVotePlugin();
     initialiseSppPlugin();
     initialiseDrawPlugin(); // 添加drawPlugin初始化
@@ -26,6 +29,7 @@ export const initialisePlugins = () => {
 export const pluginDialogsDefinitions = {
     ...adminPluginDialogsDefinitions,
     ...capitalDistributorPluginDialogsDefinitions,
+    ...icoPluginDialogsDefinitions,
     ...lockToVotePluginDialogsDefinitions,
     ...multisigPluginDialogsDefinitions,
     ...sppPluginDialogsDefinitions,

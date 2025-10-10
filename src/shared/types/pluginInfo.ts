@@ -4,6 +4,8 @@ import type { Network } from '../api/daoService';
 import type { IPlugin } from '../utils/pluginRegistryUtils';
 import type { IContractVersionInfo } from './contractVersionInfo';
 import type { IPluginInfoSetup } from './pluginInfoSetup';
+import { type PluginCategory, type PluginType } from './enum/pluginType';
+
 
 export interface IPluginInfo extends IPlugin {
     /**
@@ -26,4 +28,9 @@ export interface IPluginInfo extends IPlugin {
      * Plugin-specific pages shown on the DAO navigation.
      */
     pages?: (baseUrl: string, context: string) => INavigationLink[];
+    /**
+     * 判断插件的类型，用于前端的筛选
+     */
+    type?: PluginType;
+    category?: PluginCategory;
 }

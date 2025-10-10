@@ -1,46 +1,96 @@
 import type { IPluginSettings } from '@/shared/api/daoService';
-import type { INftCombo } from './drawPluginDeployment';
 
 export interface IDrawPluginSettings extends IPluginSettings {
     /**
-     * ERC20 token address for the draw plugin.
-     * Set to address(0) to deploy a new token.
+     * 抽奖插件的ERC20代币地址
+     * 设置为address(0)以部署新代币
      */
     tokenA: string;
-    
     /**
-     * ERC1155 token address for the draw plugin.
-     * Set to address(0) to deploy a new token.
+     * ERC20代币名称
+     */
+    erc20Name: string;
+    /**
+     * ERC20代币符号
+     */
+    erc20Symbol: string;
+    /**
+     * 抽奖插件的ERC1155代币地址
+     * 设置为address(0)以部署新代币
      */
     tokenB: string;
-    
     /**
-     * Token address used for eligibility verification
+     * ERC1155代币URI
+     */
+    erc1155Uri: string;
+    /**
+     * 用于资格验证的代币地址
      */
     eligibleToken: string;
-    
     /**
-     * Minimum token holding requirement
+     * 最低代币持有要求
      */
     minTokenAmount: number;
-    
     /**
-     * Whether ERC1155 tokens are used for eligibility
+     * 是否使用ERC1155代币进行资格验证
      */
     isErc1155Eligible: boolean;
-    
     /**
-     * ERC1155 token ID (required if isErc1155Eligible is true)
+     * ERC1155代币ID（如果isErc1155Eligible为true则必需）
      */
     eligibleNftId?: number;
-    
     /**
-     * Draw interval in seconds
+     * 抽奖间隔（秒）
      */
     drawInterval: number;
-    
     /**
-     * NFT combinations for exchange
+     * 用于兑换的NFT组合
      */
-    nftCombos: INftCombo[];
+    initNFTCombos: IErc1155Combo[];
+}
+/**
+ * 兑换的NFT组合
+ */
+export interface IErc1155Combo {
+    /**
+     * 组合ID
+     */
+    comboId: number;
+    /**
+     * 此组合中的NFT单位数组
+     */
+    erc1155Units: IErc1155ComboUnit[];
+    /**
+     * 此组合是否启用
+     */
+    isEnabled: boolean;
+    /**
+     * 此组合的最大总兑换次数
+     */
+    maxExchangeCount: number;
+    /**
+     * 单个批次中可兑换的最大组合数
+     */
+    maxSingleBatch: number;
+    /**
+     * 此组合的当前兑换次数
+     */
+    currentExchangeCount: number;
+}
+/**
+ * 组合中的NFT单位
+ */
+export interface IErc1155ComboUnit {
+    /**
+     * NFT ID
+     */
+    id: number;
+    /**
+     * 每次兑换所需的此NFT ID数量
+     */
+    unit: number;
+}
+
+export interface IDrawPluginData extends IDrawPluginSettings {
+    useCustomEligibleToken: boolean;
 }

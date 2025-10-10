@@ -1,0 +1,1 @@
+export { DrawPluginSetupERC1155, type IDrawPluginSetupERC1155Props } from './drawPluginSetupERC1155';

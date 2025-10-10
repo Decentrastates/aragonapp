@@ -1,1 +1,0 @@
-export { DrawGovernanceInfo } from './drawGovernanceInfo';

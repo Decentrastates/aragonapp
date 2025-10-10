@@ -1,1 +1,0 @@
-export { DrawProposalVotingSummary } from './drawProposalVotingSummary';

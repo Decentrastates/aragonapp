@@ -6,7 +6,7 @@ import { Page } from '@/shared/components/page';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { WizardPage } from '@/shared/components/wizards/wizardPage';
 import { useMemo } from 'react';
-import { type ICreateDrawFormData } from '@/modules/createDao/components/createDrawForm/createDrawFormDefinitions';
+import { type ICreateAppFormData } from '@/modules/createDao/components/createDrawForm/createDrawFormDefinitions';
 import { createDrawFormUtils } from '@/modules/createDao/components/createDrawForm/createDrawFormUtils';
 import type { IPrepareDrawDialogParams } from '@/modules/createDao/dialogs/prepareDrawDialog/prepareDrawDialog.api';
 import { createDrawWizardSteps } from './createDrawPageDefinitions';
@@ -32,7 +32,7 @@ export const CreateDrawPageClient: React.FC<ICreateDrawPageClientProps> = (props
 
     useProposalPermissionCheckGuard({ daoId, pluginAddress, redirectTab: 'settings' });
 
-    const handleFormSubmit = (values: ICreateDrawFormData) => {
+    const handleFormSubmit = (values: ICreateAppFormData) => {
         const dialogParams: IPrepareDrawDialogParams = { daoId, values, pluginAddress };
         console.log('handleFormSubmit', dialogParams)
         open(CreateDaoDialogId.PREPARE_DRAW, { params: dialogParams });
@@ -44,7 +44,7 @@ export const CreateDrawPageClient: React.FC<ICreateDrawPageClientProps> = (props
     );
 
     // 明确指定默认值的类型以解决 ESLint 错误
-    const defaultValues: ICreateDrawFormData = createDrawFormUtils.buildDefaultData();
+    const defaultValues: ICreateAppFormData = createDrawFormUtils.buildDefaultData();
     // console.log('defaultValues', defaultValues)
 
     return (

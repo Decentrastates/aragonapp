@@ -1,5 +1,5 @@
 import { Network, PluginInterfaceType } from '@/shared/api/daoService';
-import type { IPluginInfo } from '@/shared/types';
+import { PluginCategory, type IPluginInfo } from '@/shared/types';
 
 export const multisigPlugin: IPluginInfo = {
     id: PluginInterfaceType.MULTISIG,
@@ -29,4 +29,6 @@ export const multisigPlugin: IPluginInfo = {
         nameKey: 'app.plugins.multisig.meta.setup.name',
         descriptionKey: 'app.plugins.multisig.meta.setup.description',
     },
+    category: PluginCategory.PROCESS,
+    
 };

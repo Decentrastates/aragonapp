@@ -21,6 +21,8 @@ export interface ISetupBodyDialogStepsProps {
      * ID of the DAO.
      */
     daoId: string;
+
+    appsCategory?: string;
 }
 
 const setupBodySteps = [

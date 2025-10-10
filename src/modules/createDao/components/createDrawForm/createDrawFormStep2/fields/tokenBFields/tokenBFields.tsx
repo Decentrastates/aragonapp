@@ -35,7 +35,7 @@ export const TokenBFields: React.FC<ITokenBFieldsProps> = (props) => {
   }), [isCreateNewNft, t]);
 
   // Token B字段
-  const tokenBField = useFormField<ICreateDrawFormData, 'governance.tokenB'>('governance.tokenB', {
+  const tokenBField = useFormField<ICreateDrawFormData, 'body.tokenB'>('body.tokenB', {
     label: t('app.plugins.draw.createDrawForm.step2.tokenB.label'),
     fieldPrefix,
     rules: tokenBRules,

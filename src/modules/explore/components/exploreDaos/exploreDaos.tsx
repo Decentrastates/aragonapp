@@ -29,7 +29,7 @@ export const ExploreDaos: React.FC<IExploreDaosProps> = (props) => {
 
     const [daoFilter, setDaoFilter] = useFilterUrlParam({
         name: exploreDaoFilterParam,
-        fallbackValue: 'all',
+        fallbackValue: 'member', // Changed default to 'member'
         validValues: ['all', 'member'],
         enableUrlUpdate: true,
     });
@@ -42,7 +42,7 @@ export const ExploreDaos: React.FC<IExploreDaosProps> = (props) => {
         }
     };
 
-    // Reset the filter to "all" when the user disconnects while on the "member" tab
+    // Reset the filter to "member" when the user disconnects while on the "member" tab
     useEffect(() => {
         if (address == null && daoFilter === 'member') {
             setDaoFilter('all');
@@ -51,7 +51,7 @@ export const ExploreDaos: React.FC<IExploreDaosProps> = (props) => {
 
     const memberQueryParams = { sort: 'blockTimestamp', networks: networkUtils.getSupportedNetworks() };
     const memberParams =
-        daoFilter === 'member' && address != null
+        (daoFilter === 'member' || daoFilter === 'all') && address != null // Show member DAOs for both filters when connected
             ? { urlParams: { address }, queryParams: memberQueryParams }
             : undefined;
 
@@ -64,7 +64,6 @@ export const ExploreDaos: React.FC<IExploreDaosProps> = (props) => {
                     onChange={handleToggleChange}
                     value={daoFilter}
                 >
-                    <Toggle value="all" label={t('app.explore.exploreDao.filter.all')} />
                     <Toggle
                         value="member"
                         label={t('app.explore.exploreDao.filter.member')}

@@ -1,5 +1,5 @@
 import { Network, PluginInterfaceType } from '@/shared/api/daoService';
-import type { IPluginInfo } from '@/shared/types';
+import { PluginCategory, type IPluginInfo } from '@/shared/types';
 
 export const sppPlugin: IPluginInfo = {
     id: PluginInterfaceType.SPP,
@@ -24,4 +24,6 @@ export const sppPlugin: IPluginInfo = {
         [Network.CORN_MAINNET]: '0xcb20C04b91001acB05f2A439F7a90F6411406e7E',
         [Network.CHILIZ_MAINNET]: '0x48CEBbc661FafCFC274Ce2034a04d459ba774E3D',
     },
+    category: PluginCategory.PROCESS,
+    
 };

@@ -1,0 +1,1 @@
+export { IcoSetupGovernance } from './icoSetupGovernance';

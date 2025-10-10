@@ -1,0 +1,1 @@
+export { IcoSetupMembership } from './icoSetupMembership';

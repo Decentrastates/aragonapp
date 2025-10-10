@@ -22,30 +22,30 @@ export interface ICreateDrawPageClientStepsProps {
 }
 
 export const CreateDrawPageClientSteps: React.FC<ICreateDrawPageClientStepsProps> = (props) => {
-    const { steps } = props;
+    const { steps, daoId } = props;
 
     const { t } = useTranslations();
-    const [metadataStep, settingsStep, creationStep, permissionsStep] = steps;
+    const [metadataStep, settingsStep, creationStep] = steps;
 
     return (
         <>
             <WizardPage.Step
-                title={t(`app.plugins.draw.createDrawPage.steps.${CreateDrawWizardStep.METADATA}.title`)}
-                description={t(`app.plugins.draw.createDrawPage.steps.${CreateDrawWizardStep.METADATA}.description`)}
+                title={t(`app.createDao.createAppsForm.apps.${CreateDrawWizardStep.METADATA.toLowerCase()}.title`)}
+                description={t(`app.createDao.createAppsForm.apps.${CreateDrawWizardStep.METADATA.toLowerCase()}.description`)}
                 {...metadataStep}
             >
                 <CreateDrawForm.Step1 />
             </WizardPage.Step>
             <WizardPage.Step
-                title={t(`app.plugins.draw.createDrawPage.steps.${CreateDrawWizardStep.NFT_SETTINGS}.title`)}
-                description={t(`app.plugins.draw.createDrawPage.steps.${CreateDrawWizardStep.NFT_SETTINGS}.description`)}
+                title={t(`app.createDao.createAppsForm.apps.${CreateDrawWizardStep.SETTINGS.toLowerCase()}.title`)}
+                description={t(`app.createDao.createAppsForm.apps.${CreateDrawWizardStep.SETTINGS.toLowerCase()}.description`)}
                 {...settingsStep}
             >
                 <div className="flex flex-col gap-10">
-                    <CreateDrawForm.Step2 />
+                    <CreateDrawForm.Step2 daoId={daoId}/>
                 </div>
             </WizardPage.Step>
-            <WizardPage.Step
+            {/* <WizardPage.Step
                 title={t(`app.plugins.draw.createDrawPage.steps.${CreateDrawWizardStep.TOKEN_SETTINGS}.title`)}
                 description={t(
                     `app.plugins.draw.createDrawPage.steps.${CreateDrawWizardStep.TOKEN_SETTINGS}.description`,
@@ -53,13 +53,13 @@ export const CreateDrawPageClientSteps: React.FC<ICreateDrawPageClientStepsProps
                 {...creationStep}
             >
                 <CreateDrawForm.Step3 />
-            </WizardPage.Step>
+            </WizardPage.Step> */}
             <WizardPage.Step
-                title={t(`app.plugins.draw.createDrawPage.steps.${CreateDrawWizardStep.DRAW_SETTINGS}.title`)}
+                title={t(`app.createDao.createAppsForm.apps.${CreateDrawWizardStep.PUBLISH.toLowerCase()}.title`)}
                 description={t(
-                    `app.plugins.draw.createDrawPage.steps.${CreateDrawWizardStep.DRAW_SETTINGS}.description`,
+                    `app.createDao.createAppsForm.apps.${CreateDrawWizardStep.PUBLISH.toLowerCase()}.description`,
                 )}
-                {...permissionsStep}
+                {...creationStep}
             >
                 <CreateDrawForm.Step4 />
             </WizardPage.Step>

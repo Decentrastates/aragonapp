@@ -104,6 +104,24 @@
       }
     },
     "createDao": {
+      "createAppsForm": {
+        "apps": {
+          "label": "应用",
+          "type": {
+            "label": "类型",
+            "description": "选择应用类型",
+            "helpText": "选择应用类型",
+            "ICO": {
+              "label": "ICO",
+              "description": "ICO描述"
+            },
+            "DRAW": {
+              "label": "DRAW",
+              "description": "DRAW描述"
+            }
+          }
+        }
+      },
       "createDaoDetailsDialog": {
         "actionLabel": "Get started",
         "description": "Start simple and learn as you go. You can adapt your DAO at any time.",
@@ -414,7 +432,6 @@
           "transactionInfoTitle": "Propose process"
         }
       },
-
       "setupBodyDialog": {
         "a11y": {
           "description": "Create a new voting body for your DAO"
@@ -988,6 +1005,15 @@
           "cancel": "Cancel",
           "select": "Create proposal"
         },
+        "drawPluginSetupERC20": {
+          "label": "ERC20 Token Address",
+          "helpText": "The address must be an ERC-20 token contract deployed on the same chain as your DAO.",
+          "item": {
+            "invalidAddress": "Please enter a valid Ethereum address",
+            "invalidToken": "Unable to verify token contract",
+            "notERC20": "This address is not a valid ERC-20 token contract"
+          }
+        },
         "draw": {
           "description": "Select the draw plugin to use for creating the draw event.",
           "title": "Select draw plugin"
@@ -1349,7 +1375,7 @@
           "submitHelpText": "You will have to sign two transactions.",
           "submitLabel": "Publish process"
         },
-        "createDrawDetailsDialog": {
+        "createAppsDetailsDialog": {
           "title": "Create Draw Plugin",
           "description": "Deploy the Draw plugin to enable lottery and NFT exchange functionality for your DAO.",
           "actionLabel": "Get started",
@@ -1389,7 +1415,7 @@
           "noHistoryDescription": "There are no previous draw events to display."
         },
         "mainPage": {
-          "home": { 
+          "home": {
             "title": "Draw",
             "description": "Participate in the DAO governance lottery event and win generous rewards"
           },

@@ -100,6 +100,49 @@
       }
     },
     "createDao": {
+      "createAppsForm": {
+        "apps": {
+          "label": "应用",
+          "type": {
+            "label": "类型",
+            "description": "选择应用类型",
+            "helpText": "选择应用类型",
+            "ICO": {
+              "label": "ICO",
+              "description": "ICO描述"
+            },
+            "DRAW": {
+              "label": "DRAW",
+              "description": "DRAW描述"
+            }
+          },
+          "metadata": {
+            "title": "元数据",
+            "label": "元数据",
+            "description": "元数据描述"
+          },
+          "settings": {
+            "title": "设置",
+            "label": "设置",
+            "description": "选择应用插件进行配置"
+          },
+          "publish": {
+            "title": "发布",
+            "label": "发布",
+            "description": "发布描述"
+          },
+          "drawBodyField": {
+            "label": "抽奖插件配置",
+            "helpText": "选择抽奖插件进行配置",
+            "required": "必须为此流程添加一个应用插件。"
+          },
+          "icoBodyField": {
+            "label": "资产初始发行插件配置",
+            "helpText": "选择资产初始发行插件进行配置",
+            "required": "必须为此流程添加一个应用插件。"
+          }
+        }
+      },
       "createDaoDetailsDialog": {
         "actionLabel": "开始",
         "description": "从简单开始，边学边做。您可以随时调整您的DAO。",
@@ -360,7 +403,7 @@
         "name": "创建流程"
       },
       "layoutWizardCreateDraw": {
-        "name": "创建抽奖"
+        "name": "创建应用提案"
       },
       "prepareProcessDialog": {
         "button": {
@@ -406,6 +449,55 @@
           "description": "要发布您的治理流程，请在钱包中确认两笔链上交易。",
           "title": "发布治理流程",
           "transactionInfoTitle": "提议流程"
+        }
+      },
+      "setupAppsBodyDialog": { 
+        "a11y": {
+          "close": "关闭"
+        },
+        "title": "设置应用",
+        "description": "要设置您的应用，请在钱包中确认两笔链上交易。",
+        "select": {
+          "disabled": {
+            "label": "按请求"
+          },
+          "external": {
+            "description": "添加任何地址作为机构，例如Safe或Governor",
+            "label": "外部地址"
+          },
+          "plugin": {
+            "helpText": "机构安装的功能性应用插件。",
+            "label": "应用类型"
+          }
+        },
+        "erc20":{
+          "label": "ERC20代币", 
+          "title": "ERC20代币",
+          "description": "ERC20代币",
+          "placeholder": "请输入ERC20代币地址",
+          "required": "请输入ERC20代币地址",
+          "helpText": "请选择DAO管理的ERC20代币地址"
+        },
+        "erc1155":{
+          "uri": {
+            "label": "URI",
+            "title": "URI",
+            "description": "URI",
+            "placeholder": "请输入URI",
+            "required": "请输入URI"
+          },
+          "createCheckbox": {
+            "label": "创建新的ERC1155合约",
+            "title": "创建新的ERC1155合约",
+            "description": "创建新的ERC1155合约"
+          },
+          "address": {
+            "label": "合约地址",
+            "title": "合约地址",
+            "description": "合约地址",
+            "placeholder": "请输入合约地址",
+            "required": "请输入合约地址"
+          }
         }
       },
       "setupBodyDialog": {
@@ -969,9 +1061,18 @@
           "cancel": "取消",
           "select": "创建提案"
         },
-        "draw": {
-          "description": "选择用于创建抽奖活动的审批流程。",
-          "title": "选择抽奖插件发布提案流程"
+        "drawPluginSetupERC20": {
+          "label": "ERC20代币地址",
+          "helpText": "地址必须是部署在与您的 DAO 相同链上的 ERC-20 代币合约。",
+          "item": {
+            "invalidAddress": "请输入有效的以太坊地址",
+            "invalidToken": "无法验证代币合约",
+            "notERC20": "该地址不是有效的 ERC-20 代币合约"
+          }
+        },
+        "apps": {
+          "description": "选择用于部署应用的审批流程。",
+          "title": "选择发布提案流程"
         },
         "process": {
           "description": "选择用于创建提案的治理流程。",
@@ -1095,7 +1196,7 @@
               "label": "描述"
             },
             "name": {
-              "label": "抽奖名称"
+              "label": "名称"
             },
             "processKey": {
               "helpText": "前缀是此类提案唯一标识符的一部分。例如DRAW将导致DRAW-1，并为每个提案递增。",
@@ -1107,22 +1208,22 @@
           },
           "step1": {
             "name": {
-              "label": "抽奖名称",
-              "placeholder": "请输入抽奖名称"
+              "label": "名称",
+              "placeholder": "请输入名称"
             },
             "drawKey": {
-              "label": "抽奖标识",
-              "helpText": "用于标识此抽奖的唯一大写字母标识符，最多5个字符。"
+              "label": "标识",
+              "helpText": "用于标识此应用的唯一大写字母标识符，最多5个字符。"
             },
             "description": {
-              "label": "抽奖描述",
-              "placeholder": "请输入抽奖描述",
-              "helpText": "请输入抽奖描述"
+              "label": "描述",
+              "placeholder": "请输入本次部署应用的描述",
+              "helpText": "请输入本次部署应用的描述"
             },
             "resources": {
-              "label": "抽奖资源",
-              "placeholder": "请输入抽奖资源",
-              "helpText": "请输入抽奖资源"
+              "label": "资源",
+              "placeholder": "请输入资源",
+              "helpText": "请输入资源"
             }
           },
           "step2": {
@@ -1362,18 +1463,17 @@
           "submitHelpText": "您需要签署两笔交易。",
           "submitLabel": "发布流程"
         },
-        "createDrawDetailsDialog": {
-          "title": "创建抽奖插件",
-          "description": "部署抽奖插件，为您的DAO启用抽奖和NFT兑换功能。",
+        "createAppsDetailsDialog": {
+          "title": "部署应用插件",
+          "description": "为您的DAO启用新的应用功能。",
           "actionLabel": "开始",
           "steps": {
-            "describe": "描述新的抽奖类型",
-            "configureNft": "配置NFT",
-            "configureRedemption": "配置兑换规则",
-            "configureDraw": "配置抽奖规则",
+            "describe": "描述新的应用类型",
+            "configureNft": "配置应用",
+            "configureRedemption": "审查配置并进行发布",
             "review": "审核",
-            "create": "创建抽奖提案",
-            "success": "查看抽奖提案"
+            "create": "创建提案",
+            "success": "查看提案"
           }
         },
         "detailPage": {
@@ -1436,8 +1536,8 @@
           "participate": "参与抽奖"
         },
         "settingsPanel": {
-          "title": "抽奖设置",
-          "description": "部署和管理抽奖插件以启用DAO的抽奖功能",
+          "title": "应用安装",
+          "description": "部署和管理常规应用插件",
           "eligibilitySettings": "参与资格设置",
           "eligibleToken": "资格代币",
           "minTokenAmount": "最低代币数量",
@@ -1604,24 +1704,24 @@
           }
         },
         "createDrawPage": {
-          "finalStep": "创建抽奖",
-          "submitLabel": "创建抽奖",
-          "submitHelpText": "提交表单以创建新的抽奖提案",
+          "finalStep": "创建应用",
+          "submitLabel": "创建应用",
+          "submitHelpText": "提交表单以创建新的部署应用提案",
           "steps": {
             "METADATA": {
               "name": "描述抽奖",
               "title": "描述您的抽奖",
               "description": "为您的抽奖活动命名和添加描述，以帮助成员了解其目的。"
             },
-            "NFT_SETTINGS": {
-              "name": "配置抽奖代币（NFT）",
-              "title": "配置抽奖代币信息",
-              "description": "设置抽奖的参数，包括参与资格和奖励分配。"
+            "SETTINGS": {
+              "name": "配置应用插件",
+              "title": "配置应用插件",
+              "description": "设置应用的参数。"
             },
-            "TOKEN_SETTINGS": {
-              "name": "配置兑换代币",
-              "title": "配置兑换代币信息",
-              "description": "配置抽奖提案的创建和执行方式。"
+            "PUBLISH": {
+              "name": "审查配置",
+              "title": "审查配置，确认后发布",
+              "description": "审查配置，确认后发布"
             },
             "DRAW_SETTINGS": {
               "name": "配置抽奖规则",
@@ -1631,12 +1731,12 @@
           }
         },
         "prepareDrawDialog": {
-          "title": "准备抽奖插件",
-          "description": "准备抽奖插件以部署到您的DAO。",
+          "title": "准备应用插件",
+          "description": "准备应用插件以部署到您的DAO。",
           "button": {
-            "submit": "准备抽奖"
+            "submit": "准备部署"
           },
-          "transactionInfoTitle": "准备抽奖插件",
+          "transactionInfoTitle": "准备应用插件",
           "step": {
             "PIN_METADATA": {
               "label": "将元数据固定到IPFS",
@@ -2722,7 +2822,7 @@
           "versionInfoTitle": "合约"
         },
         "main": {
-          "drawAction": "抽奖",
+          "drawAction": "应用",
           "governanceAction": "流程",
           "governanceInfoTitle": "治理",
           "settingsInfoTitle": "DAO",

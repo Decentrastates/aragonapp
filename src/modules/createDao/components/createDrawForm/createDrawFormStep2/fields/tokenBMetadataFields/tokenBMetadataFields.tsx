@@ -26,7 +26,7 @@ export const TokenBMetadataFields: React.FC<ITokenBMetadataFieldsProps> = (props
     required: showFields ? t('app.plugins.draw.createDrawForm.step2.nftUri.required') : false,
   }), [showFields, t]);
 
-  const erc1155UriField = useFormField<ICreateDrawForm, 'governance.tokenBMetaData.erc1155Uri'>('governance.tokenBMetaData.erc1155Uri', {
+  const erc1155UriField = useFormField<ICreateDrawForm, 'body.tokenBMetaData.erc1155Uri'>('body.tokenBMetaData.erc1155Uri', {
     label: t('app.plugins.draw.createDrawForm.step2.nftUri.label'),
     fieldPrefix,
     rules: erc1155UriRules,

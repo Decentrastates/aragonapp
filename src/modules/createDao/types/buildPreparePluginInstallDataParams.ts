@@ -10,24 +10,23 @@ export interface IBuildPreparePluginInstallDataParams<
     TMembership extends ISetupBodyFormMembership<TMember> = ISetupBodyFormMembership<TMember>,
 > {
     /**
-     * The required form data for a body to be installed with a process.
+     * 安装流程所需的主体表单数据
      */
     body:
         | ISetupBodyFormNew<TGovernance, TMember, TMembership>
-        | ISetupBodyFormExisting<TGovernance, TMember, TMembership>;
+        | ISetupBodyFormExisting<TGovernance, TMember, TMembership>
     /**
-     * The metadata already in hex format of the process.
+     * 流程的十六进制格式元数据
      */
     metadata: Hex;
     /**
-     * The DAO to install the process to.
+     * 要安装流程的DAO
      */
     dao: IDao;
     /**
-     * Voting period of the plugin stage, only set when setting up advanced governance processes. The parameter is also
-     * used to properly set the executor target configuration for the plugin:
-     * - Target is global executor when plugin is setup as an advanced governance process (stageVotingPeriod is defined)
-     * - Target is DAO address when plugin is setup as a simple governance process (stageVotingPeriod is not defined)
+     * 插件阶段的投票期，仅在设置高级治理流程时设置。该参数还用于正确设置插件的执行器目标配置：
+     * - 当插件设置为高级治理流程时，目标是全局执行器（定义了stageVotingPeriod）
+     * - 当插件设置为简单治理流程时，目标是DAO地址（未定义stageVotingPeriod）
      */
     stageVotingPeriod?: IDateDuration;
 }

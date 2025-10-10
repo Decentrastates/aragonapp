@@ -158,7 +158,7 @@ export const TransactionDialogFooter = <TCustomStepId extends string = string>(
         displaySuccessLink && successHref
             ? buildSuccessLink(successHref, { receipt: txReceipt!, slug: proposalSlug })
             : undefined;
-
+    console.log('processedSuccessLink', processedSuccessLink);
     // The cancel button becomes "Proceed anyway" during indexing after 8 seconds
     // and navigates the user to a different page based on transaction type
     const cancelButtonLabel = showProceedAnyway

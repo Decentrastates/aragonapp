@@ -1,1 +1,0 @@
-export { TokenMetadataFields, type ITokenMetadataFieldsProps } from './tokenMetadataFields';

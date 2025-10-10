@@ -20,7 +20,7 @@ export interface ISelectPluginDialogParams {
     /**
      * Callback called on plugin selected.
      */
-    onPluginSelected?: (plugin: IDaoPlugin, variant: 'proposal' | 'process' | 'draw' | 'ico') => void;
+    onPluginSelected?: (plugin: IDaoPlugin, variant: 'proposal' | 'process' | 'draw' | 'ico' | 'apps') => void;
     /**
      * Plugin to preselect.
      */
@@ -28,7 +28,7 @@ export interface ISelectPluginDialogParams {
     /**
      * Variant of the dialog. Used to customize labels.
      */
-    variant?: 'proposal' | 'process' | 'draw' | 'ico';
+    variant?: 'proposal' | 'process' | 'draw' | 'ico' | 'apps';
     /**
      * Only allow plugins with full execute permissions.
      */

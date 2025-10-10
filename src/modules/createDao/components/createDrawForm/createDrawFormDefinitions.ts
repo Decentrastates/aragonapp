@@ -1,4 +1,11 @@
 import { type IResourcesInputResource } from '@/shared/components/forms/resourcesInput';
+import { type IAppsSetupBodyFormNew, type IAppsSetupBodyForm, type IAppsSetupBodyFormExisting } from '../../dialogs/setupAppsBodyDialog';
+import { type ISetupStageSettingsForm } from '../../dialogs/setupStageSettingsDialog';
+
+export enum AppsType {
+    ICO = 'ICO',
+    DRAW = 'DRAW',
+}
 
 // 用于所有创建抽奖表单的基础接口
 export interface ICreateDrawFormDataBase {
@@ -15,160 +22,59 @@ export interface ICreateDrawFormDataBase {
      */
     drawKey: string;
     /**
-     * 流程资源
+     * 插件资源
      */
     resources: IResourcesInputResource[];
+    /**
+     * 抽奖插件的标识
+     */
+    plugin: string;
 }
 
-// 组合中的NFT单元
-export interface IErc1155ComboUnit {
+// ICO 表单接口
+export interface ICreateAppFormDataIco extends ICreateDrawFormDataBase {
     /**
-     * NFT ID
+     * Advanced governance type.
      */
-    id: number;
+    appsType: AppsType.ICO;
     /**
-     * 每次兑换所需的此NFT ID数量
+     * Stages of the process.
      */
-    unit: number;
+    body: IAppsSetupBodyFormNew | IAppsSetupBodyFormExisting;
 }
 
-// 用于兑换的NFT组合
-export interface IErc1155Combo {
+export interface ICreateAppFormDataDraw extends ICreateDrawFormDataBase {
     /**
-     * 组合ID
+     * Advanced governance type.
      */
-    comboId: number;
+    appsType: AppsType.DRAW;
     /**
-     * 此组合中的NFT单元数组
+     * Stages of the process.
      */
-    nftUnits: IErc1155ComboUnit[];
-    /**
-     * 此组合是否启用
-     */
-    isEnabled: boolean;
-    /**
-     * 此组合的最大总兑换次数
-     */
-    maxExchangeCount: number;
-    /**
-     * 单次批次中可兑换的最大组合数
-     */
-    maxSingleBatch: number;
-    /**
-     * 此组合的当前兑换次数
-     */
-    currentExchangeCount: number;
+    body: IAppsSetupBodyFormNew | IAppsSetupBodyFormExisting;
 }
 
-// 抽奖功能的通用字段
-export interface IDrawCommonFields {
-    // 代币设置
-    /**
-     * 抽奖插件的ERC20代币地址
-     * 设置为address(0)以部署新代币
-     */
-    tokenA?: string;
-    /**
-     * 抽奖插件的ERC1155代币地址
-     * 设置为address(0)以部署新代币
-     */
-    tokenB?: string;
+export type ICreateAppFormData = ICreateAppFormDataIco | ICreateAppFormDataDraw;
 
-    // 资格设置
+export interface ICreateAppFormStage {
     /**
-     * 用于资格验证的代币地址
+     * Internal ID of the stage used as reference for bodies.
      */
-    eligibleToken?: string;
+    internalId: string;
     /**
-     * 最低代币持有要求
-     */
-    minTokenAmount?: number;
-    /**
-     * 是否使用ERC1155代币进行资格验证
-     */
-    isErc1155Eligible?: boolean;
-    /**
-     * ERC1155代币ID（如果isErc1155Eligible为true则必需）
-     */
-    eligibleNftId?: string;
-    /**
-     * 抽奖间隔（秒）
-     */
-    drawInterval?: number;
-
-    /**
-     * 用于兑换的NFT组合
-     */
-    nftCombos?: IErc1155Combo[];
-}
-
-// 分步表单的扩展字段
-export interface IDrawExtendedFields extends IDrawCommonFields {
-    // 自定义代币设置
-    /**
-     * 是否使用自定义代币A地址进行兑换规则
-     */
-    useCustomTokenA?: boolean;
-    /**
-     * 自定义代币A地址（如果useCustomTokenA为true）
-     */
-    customTokenA?: string;
-    /**
-     * 是否使用自定义资格代币
-     */
-    useCustomEligibleToken?: boolean;
-    // NFT创建字段
-    /**
-     * 是否创建新的ERC1155代币
-     */
-    isCreateNewErc1155?: boolean;
-    /**
-     * 代币创建字段
-     */
-    tokenBMetaData: IErc1155Metadata;
-    /**
-     * 是否创建新的ERC20代币
-     */
-    isCreateNewErc20?: boolean;
-    /**
-     * ERC20代币元数据
-     */
-    tokenAMetaData: IErc20Metadata;
-}
-
-export interface IErc1155Attribute {
-    /**
-     * 特质类型
-     */
-    trait_type: string;
-    /**
-     * 特质值
-     */
-    value: string | number;
-    /**
-     * 数值的显示类型
-     */
-    display_type?: 'number';
-}
-
-export interface IErc20Metadata {
-    /**
-     * 代币名称
+     * Name of the stage.
      */
     name: string;
     /**
-     * 代币符号
+     * List of bodies of the stage.
      */
-    symbol: string;
+    bodies: IAppsSetupBodyForm[];
     /**
-     * 代币小数位数
+     * Settings of the stage.
      */
-    decimals: number;
-    /**
-     * 代币初始供应量
-     */
-    initialSupply?: number;
+    settings: ISetupStageSettingsForm;
 }
+
 
 export interface IErc1155Metadata {
     /**
@@ -210,12 +116,17 @@ export interface IErc1155Metadata {
     attributes?: IErc1155Attribute[];
 }
 
-// 主要抽奖表单接口
-export interface ICreateDrawForm extends ICreateDrawFormDataBase {
+export interface IErc1155Attribute {
     /**
-     * 抽奖插件的治理设置
+     * 特质类型
      */
-    governance: IDrawExtendedFields;
+    trait_type: string;
+    /**
+     * 特质值
+     */
+    value: string | number;
+    /**
+     * 数值的显示类型
+     */
+    display_type?: 'number';
 }
-
-export type ICreateDrawFormData = ICreateDrawForm;

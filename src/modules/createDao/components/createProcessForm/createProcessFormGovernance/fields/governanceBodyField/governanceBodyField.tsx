@@ -45,6 +45,7 @@ export interface IGovernanceBodyFieldProps {
 
 export const GovernanceBodyField: React.FC<IGovernanceBodyFieldProps> = (props) => {
     const { fieldName, daoId, body, onEdit, onDelete, readOnly = false } = props;
+    console.log('GovernanceBodyField', props)
 
     const { t } = useTranslations();
 

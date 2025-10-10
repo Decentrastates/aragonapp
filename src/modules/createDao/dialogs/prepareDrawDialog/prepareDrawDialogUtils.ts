@@ -1,51 +1,26 @@
-import type {
-    ICreateDrawFormData,
-    IDrawExtendedFields,
-} from '@/modules/createDao/components/createDrawForm/createDrawFormDefinitions';
-import { drawPlugin } from '@/plugins/drawPlugin/constants/drawPlugin';
-import { drawTransactionUtils } from '@/plugins/drawPlugin/utils/drawTransactionUtils';
-import { drawPluginSetupAbi } from '@/plugins/drawPlugin/utils/drawTransactionUtils/drawPluginAbi';
+import type { ICreateAppFormData } from '@/modules/createDao/components/createDrawForm/createDrawFormDefinitions';
+import { CreateDaoSlotId } from '@/modules/createDao/constants/moduleSlots';
+// import type { ISetupBodyFormNew } from '@/modules/createDao/dialogs/setupBodyDialog/setupBodyDialogDefinitions';
+import type { IBuildPrepareCommonPluginInstallDataParams } from '@/modules/createDao/types';
+// import { drawPlugin } from '@/plugins/drawPlugin/constants/drawPlugin';
+// import { drawPluginSetupAbi } from '@/plugins/drawPlugin/utils/drawTransactionUtils/drawPluginAbi';
 import { networkDefinitions } from '@/shared/constants/networkDefinitions';
-import { pluginTransactionUtils } from '@/shared/utils/pluginTransactionUtils';
+import { pluginRegistryUtils } from '@/shared/utils/pluginRegistryUtils';
+import {
+    pluginTransactionUtils,
+    type IBuildApplyPluginsInstallationActionsParams,
+} from '@/shared/utils/pluginTransactionUtils';
 import type { ITransactionRequest } from '@/shared/utils/transactionUtils';
 import { transactionUtils } from '@/shared/utils/transactionUtils';
-import type { TransactionReceipt } from 'viem';
-import { encodeAbiParameters, parseEventLogs, type Hex } from 'viem';
-import { conditionFactoryAbi } from './conditionFactoryAbi';
-import type { IBuildDrawProposalActionsParams, IBuildDrawTransactionParams } from './prepareDrawDialogUtils.api';
-
-// 辅助函数，用于清理组合数据并转换为BigInt
-// const sanitizeComboData = (
-//     combos:
-//         | Array<{
-//               comboId?: number;
-//               nftUnits?: Array<{
-//                   id?: number;
-//                   unit?: number;
-//               }>;
-//               isEnabled?: boolean;
-//               maxExchangeCount?: number;
-//               maxSingleBatch?: number;
-//               currentExchangeCount?: number;
-//           }>
-//         | undefined,
-// ) => {
-//     if (!combos) {
-//         return [];
-//     }
-
-//     return combos.map((combo) => ({
-//         comboId: BigInt(combo.comboId ?? '0'),
-//         nftUnits: (combo.nftUnits ?? []).map((unit) => ({
-//             id: BigInt(unit.id ?? '0'),
-//             unit: BigInt(unit.unit ?? '0'),
-//         })),
-//         isEnabled: combo.isEnabled ?? false,
-//         maxExchangeCount: BigInt(combo.maxExchangeCount ?? '0'),
-//         maxSingleBatch: BigInt(combo.maxSingleBatch ?? '0'),
-//         currentExchangeCount: BigInt(combo.currentExchangeCount ?? '0'),
-//     }));
-// };
+import type { Hex, TransactionReceipt } from 'viem';
+// import { conditionFactoryAbi } from './conditionFactoryAbi';
+import { PluginInterfaceType } from '@/shared/api/daoService';
+import type {
+    IBuildDrawProposalActionsParams,
+    IBuildDrawTransactionParams,
+    IBuildPrepareInstallPluginActionParams,
+    IBuildPrepareInstallPluginsActionParams,
+} from './prepareDrawDialogUtils.api';
 
 class PrepareDrawDialogUtils {
     private publishDrawProposalMetadata = {
@@ -53,171 +28,89 @@ class PrepareDrawDialogUtils {
         summary: '该提案将应用插件安装以创建新的抽奖',
     };
 
-    preparePluginsMetadata = (values: ICreateDrawFormData) => {
-        console.log('Values:', values);
+    preparePluginsMetadata = (values: ICreateAppFormData) => {
+        
         // 为具体的插件创建详细元数据
         const pluginsMetadata = prepareDrawDialogUtils.prepareDrawMetadata(values);
+        
         return { pluginsMetadata: [pluginsMetadata] };
     };
 
     buildPrepareDrawTransaction = (params: IBuildDrawTransactionParams): Promise<ITransactionRequest> => {
-        console.log('=== buildPrepareDrawTransaction called ===');
-        console.log('buildPrepareDrawTransaction Params:', params);
 
         const { values, drawMetadata, dao } = params;
 
-        // 使用 IDrawExtendedFields 类型
-        const governance: IDrawExtendedFields =
-            'governance' in values ? values.governance : (values as IDrawExtendedFields);
+        // 从流程元数据中获取处理器和插件元数据
+        const { plugins: pluginsMetadata } = drawMetadata;
 
-        if (drawMetadata.plugins.length === 0) {
-            const errorMsg = '未找到插件元数据';
-            console.error('Error:', errorMsg);
-            throw new Error(errorMsg);
-        }
+        // 获取网络定义中的插件设置处理器和条件工厂地址
+        const { pluginSetupProcessor } = networkDefinitions[dao.network].addresses;
 
-        const repositoryAddress = drawPlugin.repositoryAddresses[dao.network];
-        console.log('Repository address for network', dao.network, ':', repositoryAddress);
+        // 构建插件安装操作数据
+        const pluginInstallActions = this.buildPrepareInstallPluginsActionData({ values, dao, pluginsMetadata });
+        
+        const installActionsData = pluginInstallActions;
 
-        // 检查仓库地址是否有效
-        // 使用类型断言来避免 ESLint 错误，因为我们知道某些网络可能没有有效的仓库地址
-        if ((repositoryAddress as string) === '0x0000000000000000000000000000000000000000') {
-            const errorMsg = `网络 ${dao.network} 上未找到有效的仓库地址`;
-            console.error('Error:', errorMsg);
-            throw new Error(errorMsg);
-        }
-        const targetAddress = repositoryAddress;
-
-        const daoAddr = dao.address as string | undefined;
-        if (!daoAddr || daoAddr.length !== 42 || !daoAddr.startsWith('0x')) {
-            const errorMsg = '无效的DAO地址: ' + (daoAddr ?? 'undefined');
-            console.error('Error:', errorMsg);
-            throw new Error(errorMsg);
-        }
-
-        console.log('DAO address:', daoAddr);
-        console.log('Target address (repository):', targetAddress);
-
-        const initNftCombos = governance.nftCombos ?? [];
-        console.log('initNftCombos NFT combos:', initNftCombos);
-
-        const tokenA =
-            governance.tokenA && governance.tokenA !== ''
-                ? governance.tokenA
-                : '0x0000000000000000000000000000000000000000';
-        const tokenB =
-            governance.tokenB && governance.tokenB !== ''
-                ? governance.tokenB
-                : '0x0000000000000000000000000000000000000000';
-        const eligibleToken =
-            governance.eligibleToken && governance.eligibleToken !== ''
-                ? governance.eligibleToken
-                : '0x0000000000000000000000000000000000000000';
-        const minTokenAmount = BigInt((governance.minTokenAmount ?? 0) * 10 ** 18);
-        const isErc1155Eligible = governance.isErc1155Eligible ?? false;
-        const eligibleNftId = BigInt(governance.eligibleNftId ?? 0);
-        const drawInterval = BigInt(governance.drawInterval ?? 0);
-
-        // 修复：正确处理 erc20Name 和 erc20Symbol，根据 isCreateNewToken 的值来决定
-        // 当 isCreateNewErc20 为 false 时，这些值应该为空字符串
-        const erc20Name = governance.isCreateNewErc20 ? governance.tokenAMetaData.name : '';
-        const erc20Symbol = governance.isCreateNewErc20 ? governance.tokenAMetaData.symbol : '';
-
-        // const isCreateNewNft = 'isCreateNewNft' in values ? values.isCreateNewNft as boolean | undefined : undefined;
-        const erc1155Uri = governance.tokenBMetaData.erc1155Uri ?? '';
-
-        console.log('Token parameters:', {
-            tokenA,
-            tokenB,
-            erc20Name,
-            erc20Symbol,
-            erc1155Uri,
-            eligibleToken,
-            minTokenAmount,
-            isErc1155Eligible,
-            eligibleNftId,
-            drawInterval,
-            initNftCombos
-        });
-
-        const pluginSettingsData = encodeAbiParameters(drawPluginSetupAbi, [
-            tokenA as Hex,
-            tokenB as Hex,
-            erc20Name, // 当 isCreateNewToken 为 false 时为空字符串
-            erc20Symbol, // 当 isCreateNewToken 为 false 时为空字符串
-            erc1155Uri,
-            eligibleToken as Hex,
-            minTokenAmount,
-            isErc1155Eligible,
-            eligibleNftId,
-            drawInterval,
-            initNftCombos
-        ]);
-
-        console.log('Plugin settings data (encoded):', pluginSettingsData);
-
-        const transactionData = pluginTransactionUtils.buildPrepareInstallationData(
-            targetAddress,
-            drawPlugin.installVersion,
-            pluginSettingsData,
-            dao.address as Hex,
-        );
-        console.log('Transaction data:', transactionData);
-
-        const networkDef = networkDefinitions[dao.network];
-        const { pluginSetupProcessor } = networkDef.addresses;
-        console.log('Network addresses:', { pluginSetupProcessor, network: dao.network });
-
-        const drawInstallAction = transactionData;
-        const installActionsData = [drawInstallAction];
-        console.log('Install actions data:', installActionsData);
-
-        const actionValues = { to: pluginSetupProcessor, value: BigInt(0) };
-        const installActionTransactions = installActionsData.map((data) => ({ ...actionValues, data }));
-        console.log('Install action transactions:', installActionTransactions);
+        const installActionTransactions = installActionsData.map((data) => ({
+            to: pluginSetupProcessor,
+            value: BigInt(0),
+            data,
+        }));
 
         const encodedTransaction = transactionUtils.encodeTransactionRequests(installActionTransactions, dao.network);
-        console.log('Encoded transaction:', encodedTransaction);
-        console.log('=== buildPrepareDrawTransaction completed ===');
 
         return Promise.resolve(encodedTransaction);
     };
 
     buildPublishDrawProposalActions = (params: IBuildDrawProposalActionsParams): ITransactionRequest[] => {
-        console.log('=== buildPublishDrawProposalActions called ===');
-        console.log('buildPublishDrawProposalActions Params:', params);
+        console.log('PrepareDrawDialogUtils: Building publish draw proposal actions', {
+            daoId: params.dao.id,
+            setupDataCount: params.setupData.length
+        });
 
-        if (params.setupData.length === 0) {
-            const errorMsg = '无效的 setupData - 为空';
-            console.error('Error:', errorMsg);
-            throw new Error(errorMsg);
-        }
+        // return actions;
+        const { dao, setupData } = params; // 解构参数
 
-        const actions = drawTransactionUtils.buildPublishDrawProposalActions(params);
+        // 构建应用插件安装操作的参数
+        const buildActionsParams: IBuildApplyPluginsInstallationActionsParams = {
+            dao, // DAO信息
+            setupData, // 设置数据
+        };
+        
+        console.log('PrepareDrawDialogUtils: Building apply plugins installation actions', {
+            daoId: dao.id,
+            setupDataAddresses: setupData.map(data => data.pluginAddress)
+        });
+        
+        // 构建提案操作
+        const proposalActions = pluginTransactionUtils.buildApplyPluginsInstallationActions(buildActionsParams);
+        
+        console.log('PrepareDrawDialogUtils: Proposal actions built', {
+            actionsCount: proposalActions.length,
+            daoId: dao.id
+        });
 
-        if (actions.length === 0) {
-            const errorMsg = '未生成任何操作';
-            console.error('Error:', errorMsg);
-            throw new Error(errorMsg);
-        }
-
-        console.log('Proposal actions:', actions);
-        console.log('=== buildPublishDrawProposalActions completed ===');
-
-        return actions;
+        // 返回提案操作
+        return proposalActions;
     };
+    
     // 提案元数据
     preparePublishDrawProposalMetadata = () => this.publishDrawProposalMetadata;
 
     getPluginInstallationSetupData = (receipt: TransactionReceipt) => {
-        console.log('=== getPluginInstallationSetupData called ===');
-        console.log('Receipt:', receipt);
+        console.log('getPluginInstallationSetupData ==========', {
+            receipt
+        });
 
         const result = pluginTransactionUtils.getPluginInstallationSetupData(receipt);
 
         if (result.length === 0) {
             const errorMsg = '未找到插件安装设置数据';
-            console.error('Error:', errorMsg);
+            console.error('PrepareDrawDialogUtils: Error - No setup data found', {
+                error: errorMsg,
+                transactionHash: receipt.transactionHash,
+                logsCount: receipt.logs.length
+            });
             throw new Error(errorMsg);
         }
 
@@ -230,95 +123,60 @@ class PrepareDrawDialogUtils {
         });
 
         console.log('Setup data result:', result);
-        console.log('=== getPluginInstallationSetupData completed ===');
 
         return result;
     };
-    getSafeConditionAddresses = (txReceipt: TransactionReceipt): Hex[] | undefined => {
-        const safeConditionLogs = parseEventLogs({
-            abi: conditionFactoryAbi,
-            eventName: 'SafeOwnerConditionDeployed',
-            logs: txReceipt.logs,
-            strict: false,
-        });
 
-        return safeConditionLogs.map((log) => log.args.newContract).filter((value) => value != null);
+    // 准备插件元数据
+    // private preparePluginMetadata = (plugin: ISetupBodyFormNew) => {
+    //     const { name, description, resources: links } = plugin; // 解构插件信息
+
+    //     // 返回插件元数据
+    //     return { name, description, links };
+    // };
+
+    private prepareDrawMetadata = (values: ICreateAppFormData) => {
+        const { name, description, resources: links } = values;
+        const baseMetadata = { name, description, links };
+        return baseMetadata;
+    };
+    
+    // 构建准备安装插件操作数据
+    private buildPrepareInstallPluginsActionData = (params: IBuildPrepareInstallPluginsActionParams) => {
+        const { values, pluginsMetadata, dao } = params; // 解构参数
+
+        const { body } = values; // 获取主体
+        body.plugin = PluginInterfaceType.DRAW_PLUGIN;
+
+        const installData = [
+            this.buildPrepareInstallPluginActionData({
+                body,
+                dao,
+                metadataCid: pluginsMetadata[0],
+            }),
+        ];
+        
+        return installData;
     };
 
-    private prepareDrawMetadata = (values: ICreateDrawFormData) => {
-        console.log('=== prepareDrawMetadata called ===');
-        console.log('prepareDrawMetadata Values:', values);
+    // 构建准备安装插件操作数据
+    private buildPrepareInstallPluginActionData = (params: IBuildPrepareInstallPluginActionParams) => {
+        const { metadataCid, dao, body } = params; // 解构参数
 
-        const { name, description, resources:links,drawKey } = values;
-        const baseMetadata = { name, description, links, drawKey };
-        console.log('Base metadata:', baseMetadata);
+        // 将元数据CID转换为十六进制
+        const metadata = transactionUtils.stringToMetadataHex(metadataCid);
+        // 准备函数参数
+        const prepareFunctionParams = { metadata, dao, body };
+        // 获取插槽函数
+        const prepareFunction = pluginRegistryUtils.getSlotFunction<IBuildPrepareCommonPluginInstallDataParams, Hex>({
+            slotId: CreateDaoSlotId.CREATE_DAO_BUILD_PREPARE_PLUGIN_INSTALL_DATA,
+            pluginId: body.plugin,
+        })!;
 
-
-        // const governance: IDrawExtendedFields =
-        //     'governance' in values ? values.governance : (values as IDrawExtendedFields);
-
-        // const isCreateNewNft = 'isCreateNewNft' in values ? (values.isCreateNewNft as boolean | undefined) : undefined;
-        // const isCreateNewToken =
-        //     'isCreateNewToken' in values ? (values.isCreateNewToken as boolean | undefined) : undefined;
-
-        // // 修复：无论是否创建新代币，都应该获取代币相关信息
-        // // 当 isCreateNewToken 为 false 时，我们仍然需要 tokenA 地址，但不需要名称和符号（这些应该从链上获取）
-        // const erc20Name = isCreateNewToken
-        //     ? governance.tokenAMetaData.name
-        //     : undefined;
-        // const erc20Symbol = isCreateNewToken
-        //     ? governance.tokenAMetaData.symbol
-        //     : undefined;
-
-        // const metadata: IPrepareDrawMetadata = {
-        //     plugins: [],
-        //     draw: undefined
-        //     // name,
-        //     // description,
-        //     // resources,
-        //     // contracts: {
-        //     //     erc1155: {
-        //     //         needsDeployment: isCreateNewNft ?? false,
-        //     //         address:
-        //     //             governance.tokenB && governance.tokenB !== ''
-        //     //                 ? governance.tokenB
-        //     //                 : '0x0000000000000000000000000000000000000000',
-        //     //         creationParams: isCreateNewNft
-        //     //             ? {
-        //     //                   uri: governance.erc1155Uri,
-        //     //               }
-        //     //             : undefined,
-        //     //     },
-        //     //     erc20: {
-        //     //         needsDeployment: isCreateNewToken ?? false,
-        //     //         address:
-        //     //             governance.tokenA && governance.tokenA !== ''
-        //     //                 ? governance.tokenA
-        //     //                 : '0x0000000000000000000000000000000000000000',
-        //     //         creationParams: isCreateNewToken
-        //     //             ? {
-        //     //                   name: erc20Name,
-        //     //                   symbol: erc20Symbol,
-        //     //                   decimals: governance.tokenAMetaData.decimals,
-        //     //                   initialSupply: governance.tokenAMetaData.initialSupply,
-        //     //               }
-        //     //             : undefined,
-        //     //     },
-        //     //     eligibleToken: {
-        //     //         address:
-        //     //             governance.eligibleToken && governance.eligibleToken !== ''
-        //     //                 ? governance.eligibleToken
-        //     //                 : '0x0000000000000000000000000000000000000000',
-        //     //         isErc1155Eligible: governance.isErc1155Eligible ?? false,
-        //     //         eligibleNftId: governance.eligibleNftId,
-        //     //     },
-        //     },
-        // };
-
-        // console.log('Draw metadata prepared:', values);
-        console.log('=== prepareDrawMetadata completed ===');
-
-        return values;
+        // 调用准备函数并返回结果
+        const result = prepareFunction(prepareFunctionParams);
+        
+        return result;
     };
 }
 

@@ -84,4 +84,8 @@ export interface IDaoPlugin<TSettings extends IPluginSettings = IPluginSettings>
      * Address of the create proposal condition of the plugin.
      */
     proposalCreationConditionAddress?: string;
+    /**
+     * Key of the plugin used to prefix the incremental proposal IDs in a draw.
+     */
+    drawKey?: string;
 }

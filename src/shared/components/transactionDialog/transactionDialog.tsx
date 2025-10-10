@@ -195,6 +195,7 @@ export const TransactionDialog = <TCustomStepId extends string>(props: ITransact
 
     useEffect(() => {
         if (waitTxError) {
+            console.log(waitTxError);
             handleTransactionError(TransactionDialogStep.CONFIRM)(waitTxError, { transaction });
         }
     }, [waitTxError, transaction, handleTransactionError]);

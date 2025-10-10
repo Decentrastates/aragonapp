@@ -4,20 +4,20 @@ import type { BodyType } from '../../types/enum';
 
 export interface ISetupBodyFormBase {
     /**
-     * Internal ID of the body used to reference the body.
+     * 用于引用主体的内部ID。
      */
     internalId: string;
     /**
-     * Type of the body to setup.
+     * 要设置的主体类型。
      */
     type: BodyType;
     /**
-     * ID of the plugin defining the membership and governance settings of the body.
+     * 定义主体成员资格和治理设置的插件ID。
      */
     plugin: string;
     /**
-     * Generic boolean which reflects the internal plugin-specific proposal creation settings, used for validation and
-     * for setting the correct condition rules when the plugin is installed as SPP sub-plugin.
+     * 通用布尔值，反映内部插件特定的提案创建设置，用于验证和
+     * 当插件作为SPP子插件安装时设置正确的条件规则。
      */
     canCreateProposal: boolean;
 }
@@ -28,38 +28,38 @@ export interface ISetupBodyFormNew<
     TMembership extends ISetupBodyFormMembership<TMember> = ISetupBodyFormMembership<TMember>,
 > extends ISetupBodyFormBase {
     /**
-     * NEW body type.
+     * 新主体类型。
      */
     type: BodyType.NEW;
     /**
-     * Name of the body.
+     * 主体名称。
      */
     name: string;
     /**
-     * Optional description of the voting body.
+     * 投票主体的可选描述。
      */
     description?: string;
     /**
-     * Resources of the body.
+     * 主体的资源。
      */
     resources: IResourcesInputResource[];
     /**
-     * Plugin-specific governance settings of the body.
+     * 主体的插件特定治理设置。
      */
     governance: TGovernance;
     /**
-     * Plugin-specific membership settings of the body.
+     * 主体的插件特定成员资格设置。
      */
     membership: TMembership;
 }
 
 export interface ISetupBodyFormExternal extends ISetupBodyFormBase, ICompositeAddress {
     /**
-     * EXTERNAL body type.
+     * 外部主体类型。
      */
     type: BodyType.EXTERNAL;
     /**
-     * Is given address a Safe multisig address.
+     * 给定地址是否为Safe多重签名地址。
      */
     isSafe: boolean;
 }
@@ -74,27 +74,27 @@ export interface ISetupBodyFormExisting<
             'description' | 'resources' | 'governance' | 'membership'
         > {
     /**
-     * EXISTING body type.
+     * 现有主体类型。
      */
     type: BodyType.EXISTING;
     /**
-     * Name of existing body, optional as not set for existing but external bodies.
+     * 现有主体的名称，对于现有的但外部的主体可以不设置。
      */
     name?: string;
     /**
-     * Address of the existing body.
+     * 现有主体的地址。
      */
     address: string;
     /**
-     * Build of the existing body.
+     * 现有主体的构建版本。
      */
     build?: string;
     /**
-     * Release of the existing body.
+     * 现有主体的发布版本。
      */
     release?: string;
     /**
-     * Address of the create proposal condition of the body.
+     * 主体的创建提案条件的地址。
      */
     proposalCreationConditionAddress?: string;
 }
@@ -110,7 +110,8 @@ export type ISetupBodyForm<
 
 export interface ISetupBodyFormMembership<TMember extends ICompositeAddress = ICompositeAddress> {
     /**
-     * Members of the plugin.
+     * 插件的成员。
      */
     members: TMember[];
 }
+

@@ -1,5 +1,5 @@
 import { Network, PluginInterfaceType } from '@/shared/api/daoService';
-import type { IPluginInfo } from '@/shared/types';
+import { PluginCategory, type IPluginInfo } from '@/shared/types';
 
 export const lockToVotePlugin: IPluginInfo = {
     id: PluginInterfaceType.LOCK_TO_VOTE,
@@ -28,4 +28,6 @@ export const lockToVotePlugin: IPluginInfo = {
         nameKey: 'app.plugins.lockToVote.meta.setup.name',
         descriptionKey: 'app.plugins.lockToVote.meta.setup.description',
     },
+    category: PluginCategory.PROCESS,
+    
 };

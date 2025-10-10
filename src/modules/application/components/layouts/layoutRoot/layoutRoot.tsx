@@ -69,7 +69,7 @@ export const LayoutRoot: React.FC<ILayoutRootProps> = async (props) => {
                         <div className="flex grow flex-col">{children}</div>
                         {process.env.NEXT_PUBLIC_FEATURE_DEBUG === 'true' && <DebugPanel />}
                     </ErrorBoundary>
-                    <Footer />
+                    {/* <Footer /> */}
                 </Providers>
             </body>
         </html>

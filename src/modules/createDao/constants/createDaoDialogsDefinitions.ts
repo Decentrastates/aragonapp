@@ -8,6 +8,7 @@ import { PublishDaoDialog } from '../dialogs/publishDaoDialog';
 import { SetupBodyDialog } from '../dialogs/setupBodyDialog';
 import { SetupStageSettingsDialog } from '../dialogs/setupStageSettingsDialog';
 import { CreateDaoDialogId } from './createDaoDialogId';
+import { SetupAppsBodyDialog } from '../dialogs/setupAppsBodyDialog';
 
 export const createDaoDialogsDefinitions: Record<CreateDaoDialogId, IDialogComponentDefinitions> = {
     [CreateDaoDialogId.PUBLISH_DAO]: { Component: PublishDaoDialog },
@@ -25,5 +26,10 @@ export const createDaoDialogsDefinitions: Record<CreateDaoDialogId, IDialogCompo
         Component: SetupStageSettingsDialog,
         size: 'lg',
         hiddenDescription: 'app.createDao.setupStageSettingsDialog.a11y.description',
+    },
+    [CreateDaoDialogId.SETUP_APPS_BODY]: {
+        Component: SetupAppsBodyDialog,
+        size: 'lg',
+        hiddenDescription: 'app.createDao.setupBodyDialog.a11y.description',
     },
 };

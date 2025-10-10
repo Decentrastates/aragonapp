@@ -1,1 +1,1 @@
-export { PluginType } from './pluginType';
+export { PluginType, PluginCategory } from './pluginType';

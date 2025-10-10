@@ -30,6 +30,7 @@ const summaryMaxLength = 480;
 
 export const CreateProcessFormMetadata: React.FC<ICreateProcessFormMetadataProps> = (props) => {
     const { fieldPrefix, displayProcessKey = true, pluginType = 'process' } = props;
+    console.log('CreateProcessFormMetadata', props);
 
     const { t } = useTranslations();
 

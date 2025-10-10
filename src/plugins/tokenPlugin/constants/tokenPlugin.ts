@@ -1,5 +1,5 @@
 import { Network, PluginInterfaceType } from '@/shared/api/daoService';
-import type { IPluginInfo } from '@/shared/types';
+import  { PluginCategory, type IPluginInfo } from '@/shared/types';
 
 export const tokenPlugin: IPluginInfo = {
     id: PluginInterfaceType.TOKEN_VOTING,
@@ -29,4 +29,5 @@ export const tokenPlugin: IPluginInfo = {
         nameKey: 'app.plugins.token.meta.setup.name',
         descriptionKey: 'app.plugins.token.meta.setup.description',
     },
+    category: PluginCategory.PROCESS,
 };

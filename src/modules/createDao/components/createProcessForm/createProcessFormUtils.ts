@@ -19,7 +19,7 @@ class CreateProcessFormUtils {
 
         return {
             internalId,
-            name: '',
+            name: '1111111',
             settings: this.defaultStageSettings,
             bodies: [],
         };

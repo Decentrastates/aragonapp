@@ -1,0 +1,1 @@
+export { SetupAppsBodyDialogErc1155, type ISetupAppsBodyDialogErc1155Props } from './setupAppsBodyDialogErc1155';

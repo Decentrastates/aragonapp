@@ -7,33 +7,30 @@ import { usePinJson } from '@/shared/api/ipfsService/mutations';
 import { type IDialogComponentProps, useDialogContext } from '@/shared/components/dialogProvider';
 import {
     type ITransactionDialogActionParams,
+    type ITransactionDialogStepMeta,
     TransactionDialog,
     type TransactionDialogStep,
-    type ITransactionDialogStepMeta,
 } from '@/shared/components/transactionDialog';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useDaoPlugins } from '@/shared/hooks/useDaoPlugins';
 import { useStepper } from '@/shared/hooks/useStepper';
 import { invariant } from '@cddao/gov-ui-kit';
-import { useCallback, useMemo, useState, useRef, useEffect } from 'react';
+import { useCallback, useMemo, useState } from 'react';
+import type { TransactionReceipt } from 'viem';
 import { useAccount } from 'wagmi';
 import type { IPrepareDrawDialogParams } from './prepareDrawDialog.api';
-import type { TransactionReceipt } from 'viem';
 import { prepareDrawDialogUtils } from './prepareDrawDialogUtils';
-import type { IPrepareDrawMetadata } from './prepareDrawDialogUtils.api';
+import type { IBuildDrawTransactionParams, IPrepareDrawMetadata } from './prepareDrawDialogUtils.api';
 
 export enum PrepareDrawStep {
     PIN_METADATA = 'PIN_METADATA',
 }
 
-// 定义步骤的元数据类型
-interface IPrepareDrawStepMeta extends ITransactionDialogStepMeta {}
-
 export interface IPrepareDrawDialogProps extends IDialogComponentProps<IPrepareDrawDialogParams> {}
 
 export const PrepareDrawDialog: React.FC<IPrepareDrawDialogProps> = (props) => {
     const { location } = props;
-    console.log('PrepareDrawDialog', props);
+    // console.log('PrepareDrawDialog', props);
 
     invariant(location.params != null, 'PrepareDrawDialog: required parameters must be set.');
     const { daoId, values, pluginAddress } = location.params;
@@ -42,15 +39,10 @@ export const PrepareDrawDialog: React.FC<IPrepareDrawDialogProps> = (props) => {
     invariant(address != null, 'PrepareDrawDialog: user must be connected.');
 
     const { t } = useTranslations();
-    const { status: pinJsonStatus, mutateAsync: pinJson } = usePinJson();
+    const { status, mutateAsync: pinJson } = usePinJson();
     const { open } = useDialogContext();
 
     const [drawMetadata, setDrawMetadata] = useState<IPrepareDrawMetadata>();
-    
-    // 添加防重复提交的ref
-    const isSubmittingRef = useRef(false);
-    // 添加步骤完成状态跟踪
-    const [isPinMetadataStepCompleted, setIsPinMetadataStepCompleted] = useState(false);
 
     const { data: dao } = useDao({ urlParams: { id: daoId } });
     const [plugin] = useDaoPlugins({ daoId, pluginAddress }) ?? [];
@@ -58,75 +50,42 @@ export const PrepareDrawDialog: React.FC<IPrepareDrawDialogProps> = (props) => {
 
     const isAdmin = plugin.meta.interfaceType === PluginInterfaceType.ADMIN;
 
-    const stepper = useStepper<IPrepareDrawStepMeta, PrepareDrawStep | TransactionDialogStep>({
+    const stepper = useStepper<ITransactionDialogStepMeta, PrepareDrawStep | TransactionDialogStep>({
         initialActiveStep: PrepareDrawStep.PIN_METADATA,
     });
-    const { nextStep, activeStep } = stepper;
-
+    const { nextStep } = stepper;
+    // 交易数据
     const handlePrepareTransaction = async () => {
         invariant(drawMetadata != null, 'PrepareDrawDialog: metadata not pinned');
         invariant(dao != null, 'PrepareDrawDialog: DAO cannot be fetched');
 
-        const transaction = await prepareDrawDialogUtils.buildPrepareDrawTransaction({
-            values,
-            drawMetadata,
-            dao,
-        });
+        const params: IBuildDrawTransactionParams = { values, drawMetadata, dao };
+        const transaction = await prepareDrawDialogUtils.buildPrepareDrawTransaction(params);
 
         return transaction;
     };
-
+    // 插件元数据转换为CID
     const handlePinJson = useCallback(
         async (params: ITransactionDialogActionParams) => {
-            // 检查是否正在提交，防止重复提交
-            if (isSubmittingRef.current) {
-                return;
-            }
-            
-            isSubmittingRef.current = true;
-            
-            try {
-                const { pluginsMetadata } = prepareDrawDialogUtils.preparePluginsMetadata(values);
-                console.log('pluginsMetadata', pluginsMetadata, 'params',params)
-                
-                // 按照 prepareProcessDialog.tsx 的方式处理元数据
-                const pinMetadataPromises = pluginsMetadata.map((body) => pinJson({ body }, params));
-                const pluginMetadata = (await Promise.all(pinMetadataPromises)).map(({ IpfsHash }) => IpfsHash);
+            const { pluginsMetadata } = prepareDrawDialogUtils.preparePluginsMetadata(values);
 
-                // 正确初始化 drawMetadataResult，包含所有必要字段
-                const metadata: IPrepareDrawMetadata = {
-                    plugins: pluginMetadata,
-                    draw: '', // 初始化为空字符串而不是 undefined
-                };
+            const pinMetadataPromises = pluginsMetadata.map((body) => pinJson({ body }, params));
+            const pluginMetadataResults = await Promise.all(pinMetadataPromises);
+            const pluginMetadata = pluginMetadataResults.map(({ IpfsHash }) => IpfsHash);
 
-                setDrawMetadata(metadata);
-                nextStep();
-                setIsPinMetadataStepCompleted(true); // 标记步骤已完成
-            } finally {
-                // 确保在完成后重置提交状态
-                isSubmittingRef.current = false;
-            }
+            const metadata: IPrepareDrawMetadata = { plugins: pluginMetadata };
+
+            setDrawMetadata(metadata);
+            nextStep();
         },
         [pinJson, nextStep, values],
     );
 
-    // 当PIN_METADATA步骤完成后，自动切换到下一步
-    useEffect(() => {
-        if (isPinMetadataStepCompleted && activeStep === PrepareDrawStep.PIN_METADATA) {
-            nextStep();
-        }
-    }, [isPinMetadataStepCompleted, activeStep, nextStep]);
-
     const handlePrepareInstallationSuccess = (txReceipt: TransactionReceipt) => {
-        // 执行成功处理逻辑
-        handleSuccessLogic(txReceipt);
-    };
-
-    const handleSuccessLogic = (txReceipt: TransactionReceipt) => {
         invariant(dao != null, 'PrepareDrawDialog: DAO cannot be fetched');
-        
+
         const setupData = prepareDrawDialogUtils.getPluginInstallationSetupData(txReceipt);
-        
+
         // 验证setupData
         if (setupData.length === 0) {
             throw new Error('No setup data found in transaction receipt');
@@ -137,30 +96,34 @@ export const PrepareDrawDialog: React.FC<IPrepareDrawDialogProps> = (props) => {
             dao,
             setupData,
         });
-        
+
         // 验证提案操作
         if (proposalActions.length === 0) {
             throw new Error('No proposal actions generated');
         }
 
         const proposalMetadata = prepareDrawDialogUtils.preparePublishDrawProposalMetadata();
-        
+
         const translationNamespace = `app.plugins.draw.publishDrawDialog.${isAdmin ? 'admin' : 'default'}`;
 
-        const txInfo = { title: t('app.plugins.draw.prepareDrawDialog.transactionInfoTitle'), current: 2, total: 2 };
-        
+        const txInfo = { title: t(`${translationNamespace}.transactionInfoTitle`), current: 2, total: 2 };
+
         const params: IPublishProposalDialogParams = {
-            proposal: { 
-                ...proposalMetadata, 
-                resources: [], 
-                actions: proposalActions
+            proposal: {
+                ...proposalMetadata,
+                resources: [],
+                actions: proposalActions,
             },
             daoId,
             plugin: plugin.meta,
             translationNamespace,
             transactionInfo: txInfo,
         };
-        
+
+        console.log('handlePrepareInstallationSuccess ---- ', {
+            params,
+        });
+
         open(GovernanceDialogId.PUBLISH_PROPOSAL, { params });
     };
 
@@ -173,14 +136,13 @@ export const PrepareDrawDialog: React.FC<IPrepareDrawDialogProps> = (props) => {
                 meta: {
                     label: t(`${pinMetadataNamespace}.label`),
                     errorLabel: t(`${pinMetadataNamespace}.errorLabel`),
-                    // 使用usePinJson的status状态，并结合完成状态
-                    state: isPinMetadataStepCompleted ? 'success' : pinJsonStatus,
+                    state: status,
                     action: handlePinJson,
-                    auto: true, // 自动执行
-                } satisfies IPrepareDrawStepMeta,
+                    auto: true,
+                },
             },
         ],
-        [handlePinJson, pinMetadataNamespace, t, isPinMetadataStepCompleted, pinJsonStatus],
+        [status, handlePinJson, pinMetadataNamespace, t],
     );
 
     return (

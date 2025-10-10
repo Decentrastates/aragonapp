@@ -22,7 +22,7 @@ export const TokenBSwitch: React.FC<ITokenBSwitchProps> = (props) => {
   const { t } = useTranslations();
 
   // 创建新ERC1155的开关字段，使用传入的默认值
-  const isCreateNewNftField = useFormField<ICreateDrawForm, 'governance.isCreateNewErc1155'>('governance.isCreateNewErc1155', {
+  const isCreateNewNftField = useFormField<ICreateDrawForm, 'body.isCreateNewErc1155'>('body.isCreateNewErc1155', {
     label: t('app.plugins.draw.createDrawForm.step2.isCreateNewNft.label'),
     fieldPrefix,
     defaultValue: defaultIsCreateNewErc1155 ?? true,

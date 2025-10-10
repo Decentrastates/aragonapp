@@ -1,1 +1,0 @@
-export { DrawSubmitVote } from './drawSubmitVote';
