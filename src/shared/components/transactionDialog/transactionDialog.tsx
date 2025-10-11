@@ -89,7 +89,7 @@ export const TransactionDialog = <TCustomStepId extends string>(props: ITransact
 
     const handleSendTransaction = useCallback(() => {
         const errorHandler = handleTransactionError(TransactionDialogStep.APPROVE);
-
+        console.log('handleSendTransaction', transaction);
         if (transaction == null) {
             errorHandler(new Error('TransactionDialog: transaction must be defined.'));
         } else {

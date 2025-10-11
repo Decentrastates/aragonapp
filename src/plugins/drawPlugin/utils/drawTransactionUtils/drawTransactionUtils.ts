@@ -1,6 +1,6 @@
 /**
- * Token插件交易工具类
- * 提供与Token插件相关的交易数据构建和处理功能
+ * 抽奖插件交易工具类
+ * 提供与抽奖插件相关的交易数据构建和处理功能
  */
 import type { IBuildPrepareCommonPluginInstallDataParams } from '@/modules/createDao/types';
 // import type { IBuildCreateProposalDataParams } from '@/modules/governance/types';
@@ -47,25 +47,29 @@ class DrawTransactionUtils {
         const repositoryAddress = drawPlugin.repositoryAddresses[dao.network];
         
         // 构建ERC20设置
-        const erc20Setting = {
+        const erc20Settings = {
             tokenAddress: (erc20.address as Hex | undefined) ?? zeroAddress,
         };
         
+        // 构建ERC1155设置
+        const erc1155Settings = {
+            tokenAddress: (erc1155.erc1155Address as Hex | undefined) ?? zeroAddress,
+            uri: erc1155.erc1155URI ?? '',
+        };
+        
         // 构建抽奖设置
-        const drawSetting = {
-            eligibleToken: (draw.eligibleToken as Hex | undefined) ?? zeroAddress,
+        const drawSettings = {
             minTokenAmount: BigInt(draw.minTokenAmount ?? 0),
             isErc1155Eligible: draw.isErc1155Eligible ?? false,
             eligibleERC1155Id: BigInt(draw.eligibleNftId ?? 0),
             drawInterval: BigInt(draw.drawInterval ?? 0),
         };
 
-        const initNFTCombos = this.buildInstallDataInitNFTCombos(draw.initNFTCombos ?? []);
-        
-        // 构建ERC1155设置
-        const erc1155Setting = {
-            tokenAddress: (erc1155.erc1155Address as Hex | undefined) ?? zeroAddress,
-            uri: erc1155.erc1155URI ?? '',
+        const initNFTCombo = draw.initNFTCombos ? this.buildInstallDataInitNFTCombos(draw.initNFTCombos) : {
+            nftUnits: [],
+            maxExchangeCount: BigInt(0),
+            maxSingleBatch: BigInt(0),
+            currentExchangeCount: BigInt(0),
         };
         
         // 获取目标配置
@@ -76,13 +80,14 @@ class DrawTransactionUtils {
         
         // 构建插件设置数据
         const data = [
-            erc20Setting,
-            drawSetting,
-            initNFTCombos,
-            erc1155Setting,
+            erc20Settings,
+            erc1155Settings,
+            drawSettings,
+            initNFTCombo,
             targetConfig,
             pluginMetadata,
         ] as const;
+        console.log('pluginSettingsData',data)
         
         const pluginSettingsData = encodeAbiParameters(drawPluginSetupAbi, data);
 
@@ -113,20 +118,16 @@ class DrawTransactionUtils {
         return transactionData;
     };
 
-    private buildInstallDataInitNFTCombos = (initNFTCombos: IErc1155Combo[]) => {
-        const combos = Array.isArray(initNFTCombos) ? initNFTCombos : [];
-
-        return combos.map((combo) => ({
-            comboId: BigInt(combo.comboId),
-            nftUnits: combo.erc1155Units.map((unit) => ({
+    private buildInstallDataInitNFTCombos = (initNFTCombo: IErc1155Combo) => {
+        return {
+            nftUnits: initNFTCombo.erc1155Units.map((unit) => ({
                 id: BigInt(unit.id),
                 unit: BigInt(unit.unit),
-            })),
-            isEnabled: combo.isEnabled,
-            maxExchangeCount: BigInt(combo.maxExchangeCount),
-            maxSingleBatch: BigInt(combo.maxSingleBatch),
-            currentExchangeCount: BigInt(combo.currentExchangeCount),
-        }));
+            })) as ReadonlyArray<{ id: bigint; unit: bigint }>,
+            maxExchangeCount: BigInt(initNFTCombo.maxExchangeCount),
+            maxSingleBatch: BigInt(initNFTCombo.maxSingleBatch),
+            currentExchangeCount: BigInt(initNFTCombo.currentExchangeCount),
+        };
     };
 }
 

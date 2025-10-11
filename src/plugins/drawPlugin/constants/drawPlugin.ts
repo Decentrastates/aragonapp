@@ -7,7 +7,7 @@ export const drawPlugin: IPluginInfo = {
     name: 'Token Drawing',
     installVersion: {
         release: 1,
-        build: 15,
+        build: 19,
         releaseNotes: 'https://github.com/decentrastates/draw-plugin/releases/tag/v1.3.1',
         description: 'NFT抽奖和批量兑换插件',
     },

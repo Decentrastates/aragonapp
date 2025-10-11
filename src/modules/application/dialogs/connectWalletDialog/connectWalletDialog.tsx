@@ -1,7 +1,7 @@
 import { AragonLogo } from '@/shared/components/aragonLogo';
 import { useDialogContext, type IDialogComponentProps } from '@/shared/components/dialogProvider';
 import { useTranslations } from '@/shared/components/translationsProvider';
-import { AvatarIcon, Dialog, IconType, Link } from '@cddao/gov-ui-kit';
+import { AvatarIcon, Dialog, IconType } from '@cddao/gov-ui-kit';
 import { useAppKit, useAppKitState } from '@reown/appkit/react';
 import { useCallback, useEffect } from 'react';
 import { useAccount } from 'wagmi';
@@ -86,18 +86,18 @@ export const ConnectWalletDialog: React.FC<IConnectWalletDialogProps> = (props) 
                         <AvatarIcon icon={IconType.CHECKMARK} variant="primary" size="sm" />
                         <p>{t('app.application.connectWalletDialog.feature.permissions')}</p>
                     </div>
-                    <div className="flex flex-row items-center gap-3">
+                    {/* <div className="flex flex-row items-center gap-3">
                         <AvatarIcon icon={IconType.APP_MEMBERS} variant="primary" size="sm" />
                         <p>{t('app.application.connectWalletDialog.feature.stats')}</p>
-                    </div>
-                    <div className="flex flex-row items-center gap-3">
+                    </div> */}
+                    {/* <div className="flex flex-row items-center gap-3">
                         <AvatarIcon icon={IconType.BLOCKCHAIN_SMARTCONTRACT} variant="primary" size="sm" />
                         <Link href={t('app.application.connectWalletDialog.auditLink')} isExternal={true}>
                             <span className="text-sm">
                                 {t('app.application.connectWalletDialog.feature.smartContracts')}
                             </span>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </Dialog.Content>
             <Dialog.Footer

@@ -28,11 +28,10 @@ export interface IBuildMetadataParams {
 class MetadataUtils {
     public baseUrl = 'https://app.aragon.org';
 
-    private defaultTitle = 'Governed on Aragon';
-    private defaultDescription =
-        'Explore the organizations using our modular governance stack to secure their onchain governance.';
+    private defaultTitle = 'DAO';
+    private defaultDescription = '';
     private defaultImage = '/og-share-large.png';
-    private defaultSiteName = 'Aragon';
+    private defaultSiteName = 'DAO';
 
     private authors = [{ name: this.defaultSiteName, url: this.baseUrl }];
 

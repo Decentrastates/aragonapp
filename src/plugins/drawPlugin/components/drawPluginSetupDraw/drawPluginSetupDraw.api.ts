@@ -40,7 +40,7 @@ export interface IDrawPluginSetupDrawForm {
     isErc1155Eligible?: boolean;
     eligibleNftId?: number;
     drawInterval?: number;
-    initNFTCombos?: IErc1155Combo[];
+    initNFTCombos?: IErc1155Combo;
 }
 
 

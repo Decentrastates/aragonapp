@@ -451,7 +451,7 @@
           "transactionInfoTitle": "提议流程"
         }
       },
-      "setupAppsBodyDialog": { 
+      "setupAppsBodyDialog": {
         "a11y": {
           "close": "关闭"
         },
@@ -470,15 +470,15 @@
             "label": "应用类型"
           }
         },
-        "erc20":{
-          "label": "ERC20代币", 
+        "erc20": {
+          "label": "ERC20代币",
           "title": "ERC20代币",
           "description": "ERC20代币",
           "placeholder": "请输入ERC20代币地址",
           "required": "请输入ERC20代币地址",
           "helpText": "请选择DAO管理的ERC20代币地址"
         },
-        "erc1155":{
+        "erc1155": {
           "uri": {
             "label": "URI",
             "title": "URI",
@@ -1070,7 +1070,7 @@
             "notERC20": "该地址不是有效的 ERC-20 代币合约"
           }
         },
-        "apps": {
+        "draw": {
           "description": "选择用于部署应用的审批流程。",
           "title": "选择发布提案流程"
         },
@@ -1802,6 +1802,16 @@
           "availableCombos": "可兑换组合数",
           "redeemAmountPlaceholder": "请输入本次兑换数量",
           "submit": "兑换"
+        }
+      },
+      "ico": {
+        "meta": {
+          "title": "ICO",
+          "setup": {
+            "title": "ICO",
+            "description": "部署ICO插件",
+            "name": "ICO插件"
+          }
         }
       },
       "admin": {

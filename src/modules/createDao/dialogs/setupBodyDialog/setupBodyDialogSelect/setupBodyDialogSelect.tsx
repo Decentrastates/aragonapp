@@ -2,7 +2,7 @@ import { useWhitelistValidation } from '@/modules/createDao/hooks/useWhitelistVa
 import type { Network } from '@/shared/api/daoService';
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
-import type { IPluginInfo } from '@/shared/types';
+import { PluginCategory, type IPluginInfo } from '@/shared/types';
 import { pluginRegistryUtils } from '@/shared/utils/pluginRegistryUtils';
 import { RadioCard, RadioGroup } from '@cddao/gov-ui-kit';
 import { zeroAddress } from 'viem';
@@ -30,7 +30,7 @@ export const SetupBodyDialogSelect: React.FC<ISetupBodyDialogSelectProps> = (pro
     const plugins = pluginRegistryUtils.getPlugins() as IPluginInfo[];
 
     const availablePlugins = plugins
-        .filter((plugin) => plugin.setup != null)
+        .filter((plugin) => (plugin.setup != null && plugin.category == PluginCategory.PROCESS))
         .filter((plugin) => {
             // keep only plugins that have a non-zero repository address for the current network
             return plugin.repositoryAddresses[network] !== zeroAddress;

@@ -24,6 +24,7 @@ export const SetupBodyDialog: React.FC<ISetupBodyDialogProps> = (props) => {
 
     invariant(location.params != null, 'SetupBodyDialog: required parameters must be set.');
     const { onSubmit, initialValues, isSubPlugin, daoId } = location.params;
+    console.log("SetupBodyDialog",location)
 
     const { t } = useTranslations();
     const { address } = useAccount();

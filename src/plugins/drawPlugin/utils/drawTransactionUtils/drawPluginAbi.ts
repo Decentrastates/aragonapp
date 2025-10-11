@@ -189,4 +189,29 @@ export const drawPluginAbi = [
     ],
     stateMutability: "view",
   },
+  {
+    name: "setInitialNFTCombo",
+    type: "function",
+    inputs: [
+      {
+        name: "combo",
+        type: "tuple",
+        components: [
+          {
+            name: "nftUnits",
+            type: "tuple[]",
+            components: [
+              { name: "id", type: "uint256" },
+              { name: "unit", type: "uint256" },
+            ],
+          },
+          { name: "maxExchangeCount", type: "uint256" },
+          { name: "maxSingleBatch", type: "uint256" },
+          { name: "currentExchangeCount", type: "uint256" },
+        ],
+      },
+    ],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
 ] as const;

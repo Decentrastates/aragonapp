@@ -90,6 +90,8 @@ export const TransactionDialogFooter = <TCustomStepId extends string = string>(
         proposalSlug,
     } = props;
 
+    console.log(props, 'props')
+
     // For two step transactions we move from first to second step automatically on success, so in those cases
     // we will not have a success link and just use the default label to satisfy the interface.
     const { label: successLabel, href: successHref, onClick: successOnClick } = successLink ?? { label: '' };
@@ -105,6 +107,9 @@ export const TransactionDialogFooter = <TCustomStepId extends string = string>(
     const isIndexing = stepId === TransactionDialogStep.INDEXING;
 
     const [showProceedAnyway, setShowProceedAnyway] = useState(false);
+
+        console.log(state, showProceedAnyway,'showProceedAnyway')
+
 
     useEffect(() => {
         let timer: NodeJS.Timeout;

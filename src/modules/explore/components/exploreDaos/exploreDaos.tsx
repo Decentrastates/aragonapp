@@ -30,7 +30,7 @@ export const ExploreDaos: React.FC<IExploreDaosProps> = (props) => {
     const [daoFilter, setDaoFilter] = useFilterUrlParam({
         name: exploreDaoFilterParam,
         fallbackValue: 'member', // Changed default to 'member'
-        validValues: ['all', 'member'],
+        validValues: ['all','member'],
         enableUrlUpdate: true,
     });
 
@@ -46,15 +46,19 @@ export const ExploreDaos: React.FC<IExploreDaosProps> = (props) => {
     useEffect(() => {
         if (address == null && daoFilter === 'member') {
             setDaoFilter('all');
+            initialParams.queryParams.pageSize = 0;
+        } else if (address != null) {
+            setDaoFilter('member');
+            initialParams.queryParams.pageSize = 10;
         }
-    }, [address, daoFilter, setDaoFilter]);
+    }, [address, daoFilter, initialParams.queryParams, setDaoFilter]);
 
     const memberQueryParams = { sort: 'blockTimestamp', networks: networkUtils.getSupportedNetworks() };
     const memberParams =
-        (daoFilter === 'member' || daoFilter === 'all') && address != null // Show member DAOs for both filters when connected
+        daoFilter === 'member' && address != null // Only provide member params when filter is member and user is connected
             ? { urlParams: { address }, queryParams: memberQueryParams }
             : undefined;
-
+    console.log('memberParams', memberParams, 'initialParams', initialParams);
     return (
         <div className="flex grow flex-col gap-3">
             <div className="flex items-center justify-between">

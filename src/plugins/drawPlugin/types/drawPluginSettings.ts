@@ -24,10 +24,6 @@ export interface IDrawPluginSettings extends IPluginSettings {
      */
     erc1155Uri: string;
     /**
-     * 用于资格验证的代币地址
-     */
-    eligibleToken: string;
-    /**
      * 最低代币持有要求
      */
     minTokenAmount: number;
@@ -46,24 +42,16 @@ export interface IDrawPluginSettings extends IPluginSettings {
     /**
      * 用于兑换的NFT组合
      */
-    initNFTCombos: IErc1155Combo[];
+    initNFTCombos: IErc1155Combo;
 }
 /**
  * 兑换的NFT组合
  */
 export interface IErc1155Combo {
     /**
-     * 组合ID
-     */
-    comboId: number;
-    /**
      * 此组合中的NFT单位数组
      */
     erc1155Units: IErc1155ComboUnit[];
-    /**
-     * 此组合是否启用
-     */
-    isEnabled: boolean;
     /**
      * 此组合的最大总兑换次数
      */
@@ -89,8 +77,4 @@ export interface IErc1155ComboUnit {
      * 每次兑换所需的此NFT ID数量
      */
     unit: number;
-}
-
-export interface IDrawPluginData extends IDrawPluginSettings {
-    useCustomEligibleToken: boolean;
 }

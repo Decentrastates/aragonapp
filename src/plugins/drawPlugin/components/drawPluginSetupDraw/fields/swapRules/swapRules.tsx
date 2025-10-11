@@ -3,7 +3,7 @@
 import { useTranslations } from '@/shared/components/translationsProvider';
 import { useFormField } from '@/shared/hooks/useFormField';
 import { useFormContext, useWatch } from 'react-hook-form';
-import type { IDrawPluginData, IErc1155Combo } from '../../../../types/drawPluginSettings';
+import type { IDrawPluginSettings, IErc1155Combo } from '../../../../types/drawPluginSettings';
 import { NftComboForm } from './nftComboForm/nftComboForm';
 // import { SwapInfo } from './swapInfo';
 
@@ -22,7 +22,7 @@ export const SwapRules: React.FC<ISwapRulesProps> = (props) => {
     const { control } = useFormContext();
 
     // NFT组合设置（兑换规则）- 现在只有一个组合
-    const nftComboField = useFormField<IDrawPluginData, 'initNFTCombos'>('initNFTCombos', {
+    const nftComboField = useFormField<IDrawPluginSettings, 'initNFTCombos'>('initNFTCombos', {
         label: t('app.plugins.draw.createDrawForm.step4.nftCombos.label'),
         fieldPrefix,
         defaultValue: undefined,
@@ -63,24 +63,20 @@ export const SwapRules: React.FC<ISwapRulesProps> = (props) => {
 
     // 如果有nftInitialSupply，则计算maxNftId
     const maxNftId = nftInitialSupply ? Number(nftInitialSupply) : 0;
-    // 将字段值转换为单个组合（如果数组为空则为undefined）
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    const singleComboValue = nftComboField.value?.[0];
-
     // 处理单个组合的变更
     const handleComboChange = (combo: IErc1155Combo | undefined) => {
-        // 将单个组合转换回数组格式以保持表单兼容性
-        nftComboField.onChange(combo ? [combo] : []);
+        nftComboField.onChange(combo);
     };
 
     return (
         <div className="mt-4">
             {/* <SwapInfo fieldPrefix={fieldPrefix} /> */}
             <NftComboForm
-                value={singleComboValue}
+                value={nftComboField.value}
                 onChange={handleComboChange}
                 maxNftId={maxNftId}
                 tokenA={effectiveTokenA}
+                formPrefix = {fieldPrefix}
             />
         </div>
     );
